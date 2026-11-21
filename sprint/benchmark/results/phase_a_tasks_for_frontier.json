@@ -1,0 +1,254 @@
+[
+  {
+    "name": "eval_stack",
+    "theorem_name": "evalStack",
+    "description": "Stack evaluator (push positive, 0 = pop two and add)",
+    "goal_state": "xs : List Int\n⊢ Int",
+    "test_cases": [
+      {
+        "input": "[3, 4, 0]",
+        "expected": "7"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[5]",
+        "expected": "5"
+      }
+    ]
+  },
+  {
+    "name": "majority_element",
+    "theorem_name": "majorityElement",
+    "description": "Boyer-Moore majority vote",
+    "goal_state": "xs : List Int\n⊢ Int",
+    "test_cases": [
+      {
+        "input": "[3, 3, 4, 2, 3, 3, 5]",
+        "expected": "3"
+      },
+      {
+        "input": "[1]",
+        "expected": "1"
+      },
+      {
+        "input": "[1, 2, 1]",
+        "expected": "1"
+      }
+    ]
+  },
+  {
+    "name": "map_with_index",
+    "theorem_name": "mapWithIndex",
+    "description": "Multiply each element by its 1-based index",
+    "goal_state": "xs : List Int\n⊢ List Int",
+    "test_cases": [
+      {
+        "input": "[2, 3, 4]",
+        "expected": "[2, 6, 12]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[5]",
+        "expected": "[5]"
+      }
+    ]
+  },
+  {
+    "name": "max_subarray_sum",
+    "theorem_name": "maxSubarraySum",
+    "description": "Maximum contiguous subarray sum (Kadane's algorithm)",
+    "goal_state": "xs : List Int\n⊢ Int",
+    "test_cases": [
+      {
+        "input": "[2, -1, 3, -2]",
+        "expected": "4"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[-1, -2, -3]",
+        "expected": "0"
+      }
+    ]
+  },
+  {
+    "name": "prefix_while_increasing",
+    "theorem_name": "prefixWhileIncreasing",
+    "description": "Take prefix while strictly increasing",
+    "goal_state": "xs : List Int\n⊢ List Int",
+    "test_cases": [
+      {
+        "input": "[1, 3, 2, 4]",
+        "expected": "[1, 3]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[5]",
+        "expected": "[5]"
+      }
+    ]
+  },
+  {
+    "name": "unfold_n",
+    "theorem_name": "unfoldN",
+    "description": "Generate list by repeated function application",
+    "goal_state": "n : Nat\nf : Int → Int\nseed : Int\n⊢ List Int",
+    "test_cases": [
+      {
+        "input": "4",
+        "input2": "(fun x : Int => x + 1)",
+        "input3": "0",
+        "expected": "[0, 1, 2, 3]"
+      },
+      {
+        "input": "0",
+        "input2": "(fun x : Int => x + 1)",
+        "input3": "5",
+        "expected": "[]"
+      },
+      {
+        "input": "3",
+        "input2": "(fun x : Int => x * 2)",
+        "input3": "1",
+        "expected": "[1, 2, 4]"
+      }
+    ]
+  },
+  {
+    "name": "sum_at_odd_indices",
+    "theorem_name": "sumAtOddIndices",
+    "description": "Sum of elements at 0-indexed odd positions (index-tracking fold)",
+    "goal_state": "xs : List Int\n⊢ Int",
+    "test_cases": [
+      {
+        "input": "[1, 2, 3, 4, 5]",
+        "expected": "6"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[7]",
+        "expected": "0"
+      }
+    ]
+  },
+  {
+    "name": "zip_diff",
+    "theorem_name": "zipDiff",
+    "description": "Pairwise differences between consecutive elements (b-a for each adjacent pair)",
+    "goal_state": "xs : List Int\n⊢ List Int",
+    "test_cases": [
+      {
+        "input": "[1, 5, 3, 8]",
+        "expected": "[4, -2, 5]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[7]",
+        "expected": "[]"
+      }
+    ]
+  },
+  {
+    "name": "longest_increasing_run",
+    "theorem_name": "longestIncreasingRun",
+    "description": "Length of longest strictly-increasing contiguous subsequence",
+    "goal_state": "xs : List Int\n⊢ Nat",
+    "test_cases": [
+      {
+        "input": "[1, 2, 3, 1, 2, 3, 4]",
+        "expected": "4"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[5]",
+        "expected": "1"
+      }
+    ]
+  },
+  {
+    "name": "max_subarray_product",
+    "theorem_name": "maxSubarrayProduct",
+    "description": "Maximum product of any contiguous subarray (dual tuple accumulator, signs interact)",
+    "goal_state": "xs : List Int\n⊢ Int",
+    "test_cases": [
+      {
+        "input": "[2, 3, -2, 4]",
+        "expected": "6"
+      },
+      {
+        "input": "[-2, 0, -1]",
+        "expected": "0"
+      },
+      {
+        "input": "[2, -5, -2, -4, 3]",
+        "expected": "24"
+      }
+    ]
+  },
+  {
+    "name": "merge_sorted_desc",
+    "theorem_name": "mergeSortedDesc",
+    "description": "Merge two descending-sorted lists into a descending-sorted result",
+    "goal_state": "xs : List Int\nys : List Int\n⊢ List Int",
+    "test_cases": [
+      {
+        "input": "[5, 3, 1]",
+        "input2": "[4, 2]",
+        "expected": "[5, 4, 3, 2, 1]"
+      },
+      {
+        "input": "[]",
+        "input2": "[3, 2, 1]",
+        "expected": "[3, 2, 1]"
+      },
+      {
+        "input": "[3, 2, 1]",
+        "input2": "[]",
+        "expected": "[3, 2, 1]"
+      }
+    ]
+  },
+  {
+    "name": "window_sums",
+    "theorem_name": "windowSums",
+    "description": "Sum of every contiguous k-element window ([] when k=0 or k>length)",
+    "goal_state": "k : Nat\nxs : List Int\n⊢ List Int",
+    "test_cases": [
+      {
+        "input": "3",
+        "input2": "[1, 2, 3, 4, 5]",
+        "expected": "[6, 9, 12]"
+      },
+      {
+        "input": "2",
+        "input2": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "1",
+        "input2": "[5]",
+        "expected": "[5]"
+      }
+    ]
+  }
+]

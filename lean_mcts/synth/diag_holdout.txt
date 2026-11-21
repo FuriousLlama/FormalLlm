@@ -1,0 +1,8 @@
+# Sprint 28 diagnostic hold-out tasks (6 of 18)
+# These tasks have NO augmented variants in training data
+eval_stack
+majority_element
+map_with_index
+max_subarray_sum
+prefix_while_increasing
+unfold_n

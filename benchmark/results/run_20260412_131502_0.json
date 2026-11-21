@@ -1,0 +1,218 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact xss.flatten"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 4,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 845,
+      "n_tactic_valid": 3,
+      "n_tactic_solved": 3,
+      "n_oracle_calls": 1,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 2,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.7397,
+      "t_oracle_s": 0.372,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 1.1117,
+      "ms_per_step": 0.88,
+      "ms_per_oracle": 372.0,
+      "pct_step": 66.5,
+      "pct_policy": 0.0,
+      "pct_oracle": 33.5,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 3
+    },
+    "task": "flatten",
+    "category": "multi_type",
+    "ghc_equivalent": "flatten",
+    "wall_time_s": 1.12,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "trivial"
+    ],
+    "rollouts_used": 500,
+    "tree_size": 471,
+    "stats": {
+      "n_expand_calls": 4,
+      "n_tactic_steps": 879,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 606,
+      "n_oracle_calls": 599,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 15,
+      "n_simulate_calls": 4,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.1472,
+      "t_oracle_s": 56.3095,
+      "t_simulate_s": 3.0574,
+      "t_select_s": 0.0231,
+      "t_total_s": 61.5373,
+      "ms_per_step": 2.44,
+      "ms_per_oracle": 94.0,
+      "pct_step": 3.5,
+      "pct_policy": 0.0,
+      "pct_oracle": 91.5,
+      "pct_simulate": 5.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 470
+    },
+    "task": "zip_sum",
+    "category": "multi_arg",
+    "ghc_equivalent": "zip_sum",
+    "wall_time_s": 61.57,
+    "tier_budget": 500,
+    "total_rollouts_tiered": 750
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "constructor",
+      "trivial",
+      "norm_num"
+    ],
+    "rollouts_used": 485,
+    "tree_size": 7430,
+    "stats": {
+      "n_expand_calls": 485,
+      "n_tactic_steps": 18029,
+      "n_tactic_valid": 2325,
+      "n_tactic_solved": 9485,
+      "n_oracle_calls": 8790,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 105,
+      "n_oracle_batches": 222,
+      "n_simulate_calls": 484,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0003,
+      "t_step_s": 40.3976,
+      "t_oracle_s": 668.1337,
+      "t_simulate_s": 366.6872,
+      "t_select_s": 0.0081,
+      "t_total_s": 1075.227,
+      "ms_per_step": 2.24,
+      "ms_per_oracle": 76.0,
+      "pct_step": 3.8,
+      "pct_policy": 0.0,
+      "pct_oracle": 62.1,
+      "pct_simulate": 34.1
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1,
+      "2": 467,
+      "3": 6961
+    },
+    "task": "partition_positive",
+    "category": "product_return",
+    "ghc_equivalent": "partition_positive",
+    "wall_time_s": 1075.33,
+    "tier_budget": 500,
+    "total_rollouts_tiered": 735
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "constructor"
+    ],
+    "rollouts_used": 500,
+    "tree_size": 145,
+    "stats": {
+      "n_expand_calls": 30,
+      "n_tactic_steps": 4452,
+      "n_tactic_valid": 30,
+      "n_tactic_solved": 114,
+      "n_oracle_calls": 102,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 12,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 30,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 32.0201,
+      "t_oracle_s": 11.567,
+      "t_simulate_s": 1.8571,
+      "t_select_s": 0.0023,
+      "t_total_s": 45.4466,
+      "ms_per_step": 7.19,
+      "ms_per_oracle": 113.4,
+      "pct_step": 70.5,
+      "pct_policy": 0.0,
+      "pct_oracle": 25.5,
+      "pct_simulate": 4.1
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 24,
+      "2": 120
+    },
+    "task": "dedup_count",
+    "category": "multi_step",
+    "ghc_equivalent": "dedup_count",
+    "wall_time_s": 45.46,
+    "tier_budget": 500,
+    "total_rollouts_tiered": 750
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "constructor"
+    ],
+    "rollouts_used": 500,
+    "tree_size": 139,
+    "stats": {
+      "n_expand_calls": 30,
+      "n_tactic_steps": 4452,
+      "n_tactic_valid": 30,
+      "n_tactic_solved": 108,
+      "n_oracle_calls": 96,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 12,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 30,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 28.8779,
+      "t_oracle_s": 11.8522,
+      "t_simulate_s": 1.6308,
+      "t_select_s": 0.0022,
+      "t_total_s": 42.3631,
+      "ms_per_step": 6.49,
+      "ms_per_oracle": 123.5,
+      "pct_step": 68.2,
+      "pct_policy": 0.0,
+      "pct_oracle": 28.0,
+      "pct_simulate": 3.8
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 23,
+      "2": 115
+    },
+    "task": "filter_map_abs",
+    "category": "filtermap",
+    "ghc_equivalent": "filter_map_abs",
+    "wall_time_s": 42.38,
+    "tier_budget": 500,
+    "total_rollouts_tiered": 750
+  }
+]

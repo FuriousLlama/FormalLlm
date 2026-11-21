@@ -1,0 +1,1061 @@
+{
+  "config": {
+    "config": "B3",
+    "tier": "held_out_12",
+    "base_model": "Qwen/Qwen2.5-Coder-1.5B",
+    "n": 8,
+    "temperature": 0.2,
+    "k": 10,
+    "index_path": "sprint/benchmark/results/phase_b_index.npz",
+    "wall_generate": 21.1,
+    "wall_verify": 20.2
+  },
+  "summary": {
+    "solved": 0,
+    "total": 12,
+    "solve_rate": 0.0,
+    "solved_tasks": []
+  },
+  "per_task": [
+    {
+      "name": "eval_stack",
+      "theorem_name": "evalStack",
+      "solved": false,
+      "n_candidates": 3,
+      "retrieved": [
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int \u00d7 List Int | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat \u00d7 List Nat | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "appendList",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2115\nbs : List \u2115\n\u22a2 Array \u2115",
+          "tactic": "exact bs.foldl (init := as) fun xs v => xs.push v"
+        },
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2124 \u00d7 \u2124)\n\u22a2 Array \u2124 \u00d7 Array \u2124",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "argmax",
+          "kind": "SIMPLE",
+          "state": "\u03b1 : Type_1\n\u03b2 : Type_2\ninst : inst : Preorder \u03b2\ninst_1 : DecidableLT \u03b2\nf : (\u03b1 \u2192 \u03b2)\nxs : List \u03b1\n\u22a2 Option \u03b1",
+          "tactic": "exact l.foldl (argAux fun b c => f c < f b) none"
+        },
+        {
+          "name": "append",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\nbs : Array \u2124\n\u22a2 Array \u2124",
+          "tactic": "exact bs.foldl (init := as) fun xs v => xs.push v"
+        },
+        {
+          "name": "sublists'",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List (List \u2124)",
+          "tactic": "exact let f a arr := arr.foldl (init := arr) fun r l => r.push (a :: l)\n  (l.foldr f #[[]]).toList"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc a => acc + a",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 6,
+          "error": null
+        },
+        {
+          "tactic": "exact xs.foldl (init := 0) fun a b => a + b",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 6,
+          "error": null
+        },
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc x => acc + x",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 6,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "majority_element",
+      "theorem_name": "majorityElement",
+      "solved": false,
+      "n_candidates": 0,
+      "retrieved": [
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2124 \u00d7 \u2124)\n\u22a2 Array \u2124 \u00d7 Array \u2124",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2115 \u00d7 \u2115)\n\u22a2 Array \u2115 \u00d7 Array \u2115",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "unzipTR",
+          "kind": "SIMPLE",
+          "state": "l : List (\u2115 \u00d7 \u2115)\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "unzipTR",
+          "kind": "SIMPLE",
+          "state": "l : List (\u2124 \u00d7 \u2124)\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int \u00d7 List Int | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat \u00d7 List Nat | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "appendList",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2115\nbs : List \u2115\n\u22a2 Array \u2115",
+          "tactic": "exact bs.foldl (init := as) fun xs v => xs.push v"
+        }
+      ],
+      "candidates": []
+    },
+    {
+      "name": "map_with_index",
+      "theorem_name": "mapWithIndex",
+      "solved": false,
+      "n_candidates": 0,
+      "retrieved": [
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Nat \u2192 Nat \u2192 Array Nat \u2192 List Nat | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "mapIdxMAux'",
+          "kind": "EQCOMP",
+          "state": "m : Type \u2192 Type\ninst : Monad m\n\u03b1 : Type_7\nf : (\u2115 \u2192 \u03b1 \u2192 m PUnit.{v + 1})\nx : \u2115\nxs : List \u03b1\n\u22a2 m PUnit.{v + 1}",
+          "tactic": "exact match x_arg0, x_arg1 with | _, [] => pure \u27e8\u27e9 | i, a :: as => f i a *> mapIdxMAux' f (i + 1) as"
+        },
+        {
+          "name": "mapIdxM'",
+          "kind": "SIMPLE",
+          "state": "m : Type \u2192 Type\ninst : Monad m\n\u03b1 : Type_7\nf : (\u2115 \u2192 \u03b1 \u2192 m PUnit.{v + 1})\nxs : List \u03b1\n\u22a2 m PUnit.{v + 1}",
+          "tactic": "exact mapIdxMAux' f 0 as"
+        },
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "modifyTailIdx",
+          "kind": "WHERE",
+          "state": "l : List \u2115\ni : \u2115\nf : List \u2115 \u2192 List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : Nat \u2192 List Nat \u2192 List Nat | 0, l => f l | _+1, [] => [] | i+1, a :: l => a :: go i l; go i l"
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "range",
+          "kind": "WHERE",
+          "state": "n : \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec loop : Nat \u2192 List Nat \u2192 List Nat | 0,   acc => acc | n+1, acc => loop n (n::acc); loop n []"
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int \u00d7 List Int | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        }
+      ],
+      "candidates": []
+    },
+    {
+      "name": "max_subarray_sum",
+      "theorem_name": "maxSubarraySum",
+      "solved": false,
+      "n_candidates": 0,
+      "retrieved": [
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2124 \u00d7 \u2124)\n\u22a2 Array \u2124 \u00d7 Array \u2124",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2115 \u00d7 \u2115)\n\u22a2 Array \u2115 \u00d7 Array \u2115",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "unzipTR",
+          "kind": "SIMPLE",
+          "state": "l : List (\u2115 \u00d7 \u2115)\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "unzipTR",
+          "kind": "SIMPLE",
+          "state": "l : List (\u2124 \u00d7 \u2124)\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int \u00d7 List Int | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat \u00d7 List Nat | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "appendList",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2115\nbs : List \u2115\n\u22a2 Array \u2115",
+          "tactic": "exact bs.foldl (init := as) fun xs v => xs.push v"
+        }
+      ],
+      "candidates": []
+    },
+    {
+      "name": "prefix_while_increasing",
+      "theorem_name": "prefixWhileIncreasing",
+      "solved": false,
+      "n_candidates": 3,
+      "retrieved": [
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Nat \u2192 Nat \u2192 Array Nat \u2192 List Nat | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "merge",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nf : (\u03b1 \u2192 \u03b1 \u2192 Bool)\narr : Array \u03b1\narr_1 : Array \u03b1\n\u22a2 Array \u03b1",
+          "tactic": "exact let rec go : Array Nat := if hi : i \u2265 xs.size then\n      acc ++ ys[j:]\n    else if hj : j \u2265 ys.size then\n      acc"
+        },
+        {
+          "name": "foldM",
+          "kind": "SIMPLE",
+          "state": "n : \u2115\nf : (i : \u2115) \u2192 i < n \u2192 \u2115 \u2192 Id \u2115\ninit : \u2115\n\u22a2 Id \u2115",
+          "tactic": "exact let rec @[specialize] loop : \u2200 i, i \u2264 n \u2192 Nat \u2192 Id Nat\n    | 0,   h, a => pure a\n    | i+1, h, a => f (n-i-1) (by "
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "eraseTR",
+          "kind": "WHERE",
+          "state": "l : List \u2115\na : \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 Array Nat \u2192 List Nat | [], _ => l | x::xs, acc => bif x == a then acc.toListAppend xs else"
+        },
+        {
+          "name": "firstM",
+          "kind": "WHERE",
+          "state": "\u03b2 : Type\n\u03b1 : Type\nm : Type \u2192 Type\ninst : Alternative m\nf : (\u03b1 \u2192 m \u03b2)\narr : Array \u03b1\n\u22a2 m \u03b2",
+          "tactic": "exact let rec go : Id Int := if hlt : i < as.size then\n      f as[i] <|> go (i+1)\n    else\n      failure; go 0"
+        },
+        {
+          "name": "setTR",
+          "kind": "WHERE",
+          "state": "l : List \u2115\nn : \u2115\na : \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 Nat \u2192 Array Nat \u2192 List Nat | [], _, _ => l | _::xs, 0, acc => acc.toListAppend (a::xs) | x"
+        },
+        {
+          "name": "mapFinIdx",
+          "kind": "WHERE",
+          "state": "as : List \u2124\nf : (i : \u2115) \u2192 \u2124 \u2192 i < as.length \u2192 \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : (bs : List Int) \u2192 (acc : Array Int) \u2192 bs.length + acc.size = as.length \u2192 List Int | [], acc, h => acc"
+        },
+        {
+          "name": "takeWhile\u2082TR",
+          "kind": "WHERE",
+          "state": "R : \u2115 \u2192 \u2115 \u2192 Bool\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 List Nat \u2192 List Nat \u2192 List Nat \u00d7 List Nat | a::as, b::bs, acca, accb => bif R a"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact let rec go : List Int \u2192 List Int | [], _ => l | x::xs, acc => go xs (acc.push x); go xs #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Type mismatch\n  fun x => ?m.6\nhas type\n  (x : ?m.4) \u2192 ?m.7 x\nbut is expected to have type\n  List \u2124; Function expected at\n  go xs\nbut this term has type\n  List \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  #[]; Unknown identifier `l`"
+        },
+        {
+          "tactic": "exact let rec go : List Int \u2192 List Int | [], _ => [] | x::xs, acc => go xs (acc.push x); go xs #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Type mismatch\n  fun x => ?m.6\nhas type\n  (x : ?m.4) \u2192 ?m.7 x\nbut is expected to have type\n  List \u2124; Function expected at\n  go xs\nbut this term has type\n  List \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  #[]; Function expected at\n  go xs\nbut this term has type\n  List \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  (acc.push x)"
+        },
+        {
+          "tactic": "exact let rec go : List Int \u2192 List Int | [], acc => acc | x::xs, acc => go xs (acc.push x); go xs []",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Type mismatch\n  fun x => ?m.6\nhas type\n  (x : ?m.4) \u2192 ?m.7 x\nbut is expected to have type\n  List \u2124; Function expected at\n  go xs\nbut this term has type\n  List \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  []; Function expected at\n  go xs\nbut this term has type\n  List \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  (acc.push x)"
+        }
+      ]
+    },
+    {
+      "name": "unfold_n",
+      "theorem_name": "unfoldN",
+      "solved": false,
+      "n_candidates": 6,
+      "retrieved": [
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Nat \u2192 Nat \u2192 Array Nat \u2192 List Nat | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "modifyTailIdx",
+          "kind": "WHERE",
+          "state": "l : List \u2115\ni : \u2115\nf : List \u2115 \u2192 List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : Nat \u2192 List Nat \u2192 List Nat | 0, l => f l | _+1, [] => [] | i+1, a :: l => a :: go i l; go i l"
+        },
+        {
+          "name": "range",
+          "kind": "WHERE",
+          "state": "n : \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec loop : Nat \u2192 List Nat \u2192 List Nat | 0,   acc => acc | n+1, acc => loop n (n::acc); loop n []"
+        },
+        {
+          "name": "replicateTR",
+          "kind": "SIMPLE",
+          "state": "n : \u2115\na : \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec loop : Nat \u2192 List Int \u2192 List Int\n    | 0, as => as\n    | n+1, as => loop n (a::as)\n  loop n []"
+        },
+        {
+          "name": "replicateTR",
+          "kind": "SIMPLE",
+          "state": "n : \u2115\na : \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec loop : Nat \u2192 List Nat \u2192 List Nat\n    | 0, as => as\n    | n+1, as => loop n (a::as)\n  loop n []"
+        },
+        {
+          "name": "modifyTailIdx",
+          "kind": "WHERE",
+          "state": "l : List \u2124\ni : \u2115\nf : List \u2124 \u2192 List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : Nat \u2192 List Int \u2192 List Int | 0, l => f l | _+1, [] => [] | i+1, a :: l => a :: go i l; go i l"
+        },
+        {
+          "name": "drop",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : \u2115\nx_arg1 : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact match x_arg0, x_arg1 with | 0,   as => as | _+1, [] => [] | n+1, _::as => List.drop n as"
+        },
+        {
+          "name": "take",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : \u2115\nx_arg1 : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact match x_arg0, x_arg1 with | 0,   _ => [] | _+1, [] => [] | n+1, a::as => a :: List.take n as"
+        },
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact let rec go : Nat \u2192 Int \u2192 List Int | 0, _ => [] | n+1, seed => go n (f seed); go n seed",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 4,
+          "error": null
+        },
+        {
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push (f a); bif L.any isEmpty then [] else (L.foldr go #[[]]).toList",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Unknown identifier `acc.foldl`; Unknown identifier `L.any`; Unknown identifier `L.foldr`"
+        },
+        {
+          "tactic": "exact let rec go : Nat \u2192 Int \u2192 List Int | 0, _ => [] | n+1, acc => go n (f acc) :: acc",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; Application type mismatch: The argument\n  go n (f acc)\nhas type\n  List \u2124\nbut is expected to have type\n  \u2124\nin the application\n  List.cons (go n (f acc)); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact let rec go : Nat \u2192 Int \u2192 List Int | 0, _ => [] | n+1, seed => go n (f seed)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact let rec go : Nat \u2192 Int \u2192 List Int | 0, _ => [] | n+1, s => go n (f s) ++ [s]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact let rec go : Nat \u2192 Int \u2192 List Int | 0, _ => [] | n+1, a => go n (f a) ++ [a]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        }
+      ]
+    },
+    {
+      "name": "sum_at_odd_indices",
+      "theorem_name": "sumAtOddIndices",
+      "solved": false,
+      "n_candidates": 1,
+      "retrieved": [
+        {
+          "name": "mapIdxMAux'",
+          "kind": "EQCOMP",
+          "state": "m : Type \u2192 Type\ninst : Monad m\n\u03b1 : Type_7\nf : (\u2115 \u2192 \u03b1 \u2192 m PUnit.{v + 1})\nx : \u2115\nxs : List \u03b1\n\u22a2 m PUnit.{v + 1}",
+          "tactic": "exact match x_arg0, x_arg1 with | _, [] => pure \u27e8\u27e9 | i, a :: as => f i a *> mapIdxMAux' f (i + 1) as"
+        },
+        {
+          "name": "mapIdxM'",
+          "kind": "SIMPLE",
+          "state": "m : Type \u2192 Type\ninst : Monad m\n\u03b1 : Type_7\nf : (\u2115 \u2192 \u03b1 \u2192 m PUnit.{v + 1})\nxs : List \u03b1\n\u22a2 m PUnit.{v + 1}",
+          "tactic": "exact mapIdxMAux' f 0 as"
+        },
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int \u00d7 List Int | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat \u00d7 List Nat | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Nat \u2192 Nat \u2192 Array Nat \u2192 List Nat | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "modifyTailIdx",
+          "kind": "WHERE",
+          "state": "l : List \u2115\ni : \u2115\nf : List \u2115 \u2192 List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : Nat \u2192 List Nat \u2192 List Nat | 0, l => f l | _+1, [] => [] | i+1, a :: l => a :: go i l; go i l"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact match xs with | [] => 0 | x :: xs => x + go xs",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Unknown identifier `go`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        }
+      ]
+    },
+    {
+      "name": "zip_diff",
+      "theorem_name": "zipDiff",
+      "solved": false,
+      "n_candidates": 2,
+      "retrieved": [
+        {
+          "name": "cyclicPermutations",
+          "kind": "EQCOMP",
+          "state": "\u03b1 : Type\nxs : List \u03b1\n\u22a2 List (List \u03b1)",
+          "tactic": "exact match x_arg with | [] => [[]] | l@(_ :: _) => dropLast (zipWith (\u00b7 ++ \u00b7) (tails l) (inits l))"
+        },
+        {
+          "name": "zipWithRight'",
+          "kind": "SIMPLE",
+          "state": "\u03b1 : Type_1\n\u03b2 : Type_2\n\u03b3 : Type_3\nf : (Option \u03b1 \u2192 \u03b2 \u2192 \u03b3)\nxs : List \u03b1\nxs_1 : List \u03b2\n\u22a2 List \u03b3 \u00d7 List \u03b1",
+          "tactic": "exact zipWithLeft' (flip f) bs as"
+        },
+        {
+          "name": "zipWithRight",
+          "kind": "SIMPLE",
+          "state": "\u03b1 : Type_1\n\u03b2 : Type_2\n\u03b3 : Type_3\nf : (Option \u03b1 \u2192 \u03b2 \u2192 \u03b3)\nxs : List \u03b1\nxs_1 : List \u03b2\n\u22a2 List \u03b3",
+          "tactic": "exact zipWithLeft (flip f) bs as"
+        },
+        {
+          "name": "revzip",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List (\u2124 \u00d7 \u2124)",
+          "tactic": "exact List.zip l l.reverse"
+        },
+        {
+          "name": "revzip",
+          "kind": "SIMPLE",
+          "state": "l : List \u2115\n\u22a2 List (\u2115 \u00d7 \u2115)",
+          "tactic": "exact List.zip l l.reverse"
+        },
+        {
+          "name": "zipWith",
+          "kind": "SIMPLE",
+          "state": "\u03b1 : Type\n\u03b2 : Type_1\n\u03b3 : Type_2\nf : (\u03b1 \u2192 \u03b2 \u2192 \u03b3)\narr : Array \u03b1\narr_1 : Array \u03b2\n\u22a2 Array \u03b3",
+          "tactic": "exact Id.run (zipWithMAux as bs (pure <| f \u00b7 \u00b7) 0 #[])"
+        },
+        {
+          "name": "zip",
+          "kind": "SIMPLE",
+          "state": "\u03b1 : Type\n\u03b2 : Type_1\narr : Array \u03b1\narr_1 : Array \u03b2\n\u22a2 Array (\u03b1 \u00d7 \u03b2)",
+          "tactic": "exact List.zipWith Prod.mk as bs"
+        },
+        {
+          "name": "zipWithM",
+          "kind": "SIMPLE",
+          "state": "\u03b1 : Type\n\u03b2 : Type_1\n\u03b3 : Type\nm : Type \u2192 Type\ninst : Monad m\nf : (\u03b1 \u2192 \u03b2 \u2192 m \u03b3)\narr : Array \u03b1\narr_1 : Array \u03b2\n\u22a2 m (Array \u03b3)",
+          "tactic": "exact zipWithMAux as bs f 0 #[]"
+        },
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact List.map (fun x => x + 1) xs",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null
+        },
+        {
+          "tactic": "exact List.map (\u00b7 + 1) xs",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "longest_increasing_run",
+      "theorem_name": "longestIncreasingRun",
+      "solved": false,
+      "n_candidates": 3,
+      "retrieved": [
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2124 \u00d7 \u2124)\n\u22a2 Array \u2124 \u00d7 Array \u2124",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2115 \u00d7 \u2115)\n\u22a2 Array \u2115 \u00d7 Array \u2115",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int \u00d7 List Int | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat \u00d7 List Nat | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "unzipTR",
+          "kind": "SIMPLE",
+          "state": "l : List (\u2115 \u00d7 \u2115)\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+        },
+        {
+          "name": "unzipTR",
+          "kind": "SIMPLE",
+          "state": "l : List (\u2124 \u00d7 \u2124)\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Nat \u2192 Nat \u2192 Array Nat \u2192 List Nat | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact let rec go : List Int \u2192 Nat | [], acc => acc | x :: xs, acc => go xs (acc + x)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "unexpected token '#eval'; expected term; Type mismatch\n  fun x => ?m.6\nhas type\n  (x : ?m.4) \u2192 ?m.7 x\nbut is expected to have type\n  \u2115; Function expected at\n  go xs\nbut this term has type\n  \u2115\n\nNote: Expected a function because this term is being applied to the argument\n  (acc + x)"
+        },
+        {
+          "tactic": "exact let rec go : List Int \u2192 Nat | [], acc => acc | x::xs, acc => go xs (acc + x)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "unexpected token '#eval'; expected term; Type mismatch\n  fun x => ?m.6\nhas type\n  (x : ?m.4) \u2192 ?m.7 x\nbut is expected to have type\n  \u2115; Function expected at\n  go xs\nbut this term has type\n  \u2115\n\nNote: Expected a function because this term is being applied to the argument\n  (acc + x)"
+        },
+        {
+          "tactic": "exact Nat.ofList xs",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown constant `Nat.ofList`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        }
+      ]
+    },
+    {
+      "name": "max_subarray_product",
+      "theorem_name": "maxSubarrayProduct",
+      "solved": false,
+      "n_candidates": 3,
+      "retrieved": [
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2124 \u00d7 \u2124)\n\u22a2 Array \u2124 \u00d7 Array \u2124",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2115 \u00d7 \u2115)\n\u22a2 Array \u2115 \u00d7 Array \u2115",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int \u00d7 List Int | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat \u00d7 List Nat | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "unzipTR",
+          "kind": "SIMPLE",
+          "state": "l : List (\u2115 \u00d7 \u2115)\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+        },
+        {
+          "name": "unzipTR",
+          "kind": "SIMPLE",
+          "state": "l : List (\u2124 \u00d7 \u2124)\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Nat \u2192 Nat \u2192 Array Nat \u2192 List Nat | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact let rec go : List Int \u2192 Array Int \u2192 Int | [], acc => acc.foldr (fun a b => a + b) 0 | x::xs, acc => go xs (acc.push x)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "unexpected token '#eval'; expected term; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact xs.foldl (init := 0) fun (acc, x) => acc + x",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Type mismatch\n  (acc, x)\nhas type\n  ?m.5 \u00d7 ?m.6\nbut is expected to have type\n  \u2124; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact let rec go : List Int \u2192 Array Int \u2192 Int | [], acc => acc.toList | x::xs, acc => go xs (acc.push x); match xs with\n  | [] => 0\n  | x::xs => x + go xs #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Type mismatch\n  acc.toList\nhas type\n  List \u2124\nbut is expected to have type\n  \u2124; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        }
+      ]
+    },
+    {
+      "name": "merge_sorted_desc",
+      "theorem_name": "mergeSortedDesc",
+      "solved": false,
+      "n_candidates": 5,
+      "retrieved": [
+        {
+          "name": "headD",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : List \u2124\nx_arg1 : \u2124\n\u22a2 \u2124",
+          "tactic": "exact match x_arg0, x_arg1 with | [],   fallback => fallback | a::_, _ => a"
+        },
+        {
+          "name": "getLastD",
+          "kind": "EQCOMP",
+          "state": "\u03b1 : Type\nxs : List \u03b1\nx : \u03b1\n\u22a2 \u03b1",
+          "tactic": "exact match x_arg0, x_arg1 with | [],   a\u2080 => a\u2080 | a::as, _ => getLast (a::as) (fun h => List.noConfusion rfl (heq_of_eq"
+        },
+        {
+          "name": "bagInter",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : List \u2124\nx_arg1 : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact match x_arg0, x_arg1 with | [], _ => [] | _, [] => [] | a :: l\u2081, l\u2082 => if l\u2082.elem a then a :: List.bagInter l\u2081 (l\u2082"
+        },
+        {
+          "name": "drop",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : \u2115\nx_arg1 : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact match x_arg0, x_arg1 with | 0,   as => as | _+1, [] => [] | n+1, _::as => List.drop n as"
+        },
+        {
+          "name": "isPrefixOf",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : List \u2124\nx_arg1 : List \u2124\n\u22a2 Bool",
+          "tactic": "exact match x_arg0, x_arg1 with | [],    _ => true | _,     [] => false | a::as, b::bs => a == b && List.isPrefixOf as b"
+        },
+        {
+          "name": "pbind",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : Option \u2124\nx_arg1 : (a : \u2124) \u2192 x_arg0 = some a \u2192 Option \u2124\n\u22a2 Option \u2124",
+          "tactic": "exact match x_arg0, x_arg1 with | none, _ => none | some a, f => f a rfl"
+        },
+        {
+          "name": "head",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : List \u2115\nx_arg1 : x_arg0 \u2260 []\n\u22a2 \u2115",
+          "tactic": "exact match x_arg0, x_arg1 with | a::_, _ => a"
+        },
+        {
+          "name": "all",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : List \u2115\nx_arg1 : \u2115 \u2192 Bool\n\u22a2 Bool",
+          "tactic": "exact match x_arg0, x_arg1 with | [], _ => true | h :: t, p => p h && List.all t p"
+        },
+        {
+          "name": "isSublist",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : List \u2124\nx_arg1 : List \u2124\n\u22a2 Bool",
+          "tactic": "exact match x_arg0, x_arg1 with | [], _ => true | _, [] => false | l\u2081@(hd\u2081::tl\u2081), hd\u2082::tl\u2082 => if hd\u2081 == hd\u2082 then tl\u2081.isS"
+        },
+        {
+          "name": "shiftLeft",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : \u2124\nx_arg1 : \u2115\n\u22a2 \u2124",
+          "tactic": "exact match x_arg0, x_arg1 with | Int.ofNat n, s => Int.ofNat (n <<< s) | Int.negSucc n, s => Int.negSucc (((n + 1) <<< "
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact match xs, ys with | [], _ => [] | _, [] => [] | x::xs, y::ys => if x == y then x::List.bagInter xs ys else List.bagInter xs ys",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 7,
+          "error": null
+        },
+        {
+          "tactic": "exact match xs, ys with | [], _ => [] | _, [] => [] | x::xs, y::ys => x + y :: List.sum xs ys",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Function expected at\n  xs.sum\nbut this term has type\n  \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  ys; failed to synthesize instance of type class\n  HAdd \u2124 (List \u2124) ?m.21\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact match xs, ys with | [], _ => [] | _, [] => [] | x::xs, y::ys => x + y :: List.map succ (xs ++ ys)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown identifier `succ`; failed to synthesize instance of type class\n  HAdd \u2124 (List \u2124) ?m.23\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact match xs, ys with | [], _ => [] | _, [] => [] | x::xs, y::ys => if x == y then x::ys else x::xs",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 7,
+          "error": null
+        },
+        {
+          "tactic": "exact match xs, ys with | [], _ => [] | _, [] => [] | x :: xs, y :: ys => if x == y then x :: List.bagInter xs ys else List.bagInter xs ys",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 7,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "window_sums",
+      "theorem_name": "windowSums",
+      "solved": false,
+      "n_candidates": 3,
+      "retrieved": [
+        {
+          "name": "sectionsTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nxs : List (List \u03b1)\n\u22a2 List (List \u03b1)",
+          "tactic": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeftTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124 \u2192 \u2124\nas : List \u2124\nbs : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 List Int \u2192 Array Int \u2192 List Int \u00d7 List Int | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "zipWithLeft'TR",
+          "kind": "WHERE",
+          "state": "f : \u2115 \u2192 Option \u2115 \u2192 \u2115\nas : List \u2115\nbs : List \u2115\n\u22a2 List \u2115 \u00d7 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 List Nat \u2192 Array Nat \u2192 List Nat \u00d7 List Nat | [], bs, acc => (acc.toList, bs) | as, [], acc"
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Nat \u2192 Nat \u2192 Array Nat \u2192 List Nat | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "dropSliceTR",
+          "kind": "WHERE",
+          "state": "\u03b1 : Type_1\nx : \u2115\nx_1 : \u2115\nxs : List \u03b1\n\u22a2 List \u03b1",
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+        },
+        {
+          "name": "appendList",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2115\nbs : List \u2115\n\u22a2 Array \u2115",
+          "tactic": "exact bs.foldl (init := as) fun xs v => xs.push v"
+        },
+        {
+          "name": "unzip",
+          "kind": "SIMPLE",
+          "state": "as : Array (\u2124 \u00d7 \u2124)\n\u22a2 Array \u2124 \u00d7 Array \u2124",
+          "tactic": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+        },
+        {
+          "name": "argmax",
+          "kind": "SIMPLE",
+          "state": "\u03b1 : Type_1\n\u03b2 : Type_2\ninst : inst : Preorder \u03b2\ninst_1 : DecidableLT \u03b2\nf : (\u03b1 \u2192 \u03b2)\nxs : List \u03b1\n\u22a2 Option \u03b1",
+          "tactic": "exact l.foldl (argAux fun b c => f c < f b) none"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact l.foldl (init := #[]) fun acc l' => acc.push (l'.head + k); l",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "unknown tactic; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact l.foldl (init := #[]) fun acc l' =>\n      l.foldl (init := acc) fun acc' a =>\n        acc'.push (a + k); bif L.any isEmpty then [] else (L.foldr go #[[]]).toList",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown identifier `l.foldl`; unexpected token 'bif'; expected command; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact l.foldl (init := #[]) fun acc l' => l'.push (k + l'); bif L.any isEmpty then [] else (L.foldr go #[[]]).toList",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown identifier `l.foldl`; unexpected token 'bif'; expected command; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        }
+      ]
+    }
+  ]
+}

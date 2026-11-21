@@ -1,0 +1,1831 @@
+{
+  "total_tasks": 200,
+  "total_solved": 200,
+  "total_expressions": 568,
+  "elapsed_seconds": 2093.1,
+  "workers": 28,
+  "type_breakdown": {
+    "Int": {
+      "solved": 35,
+      "total": 35
+    },
+    "List Int": {
+      "solved": 148,
+      "total": 148
+    },
+    "List Nat": {
+      "solved": 5,
+      "total": 5
+    },
+    "Nat": {
+      "solved": 10,
+      "total": 10
+    },
+    "Option Int": {
+      "solved": 2,
+      "total": 2
+    }
+  },
+  "tasks": {
+    "synth_takeWhile_gt2_foldl_prod": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 2))).foldl (fun a b => a * b) 1"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 2))).foldl (fun a b => a * b) 1"
+    },
+    "synth_filter_odd_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).foldl (fun a b => a + b) 0"
+    },
+    "synth_foldl_minval": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.foldl min 0"
+      ],
+      "reference": "exact xs.foldl min 0"
+    },
+    "synth_take3_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 3).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.take 3).foldl (fun a b => a + b) 0"
+    },
+    "synth_map_plus1_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x + 1)).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.map (fun x => x + 1)).foldl (fun a b => a + b) 0"
+    },
+    "synth_map_times3_foldl_minval": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x * 3)).foldl min 0"
+      ],
+      "reference": "exact (xs.map (fun x => x * 3)).foldl min 0"
+    },
+    "synth_map_times3_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x * 3)).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.map (fun x => x * 3)).foldl (fun a b => a + b) 0"
+    },
+    "synth_filter_odd_foldl_minval": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).foldl min 0"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).foldl min 0"
+    },
+    "synth_filter_even_foldl_minval": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 = 0))).foldl min 0"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 = 0))).foldl min 0"
+    },
+    "synth_drop1_foldl_prod": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.drop 1).foldl (fun a b => a * b) 1"
+      ],
+      "reference": "exact (xs.drop 1).foldl (fun a b => a * b) 1"
+    },
+    "synth_dropWhile_ne0_foldl_prod": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x \u2260 0))).foldl (fun a b => a * b) 1"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x \u2260 0))).foldl (fun a b => a * b) 1"
+    },
+    "synth_filter_even_foldl_prod": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 = 0))).foldl (fun a b => a * b) 1"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 = 0))).foldl (fun a b => a * b) 1"
+    },
+    "synth_dropWhile_lt1_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x < -1))).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x < -1))).foldl (fun a b => a + b) 0"
+    },
+    "synth_takeWhile_gt0_foldl_maxval": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 0))).foldl max 0"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 0))).foldl max 0"
+    },
+    "synth_filter_gt0_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 0))).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 0))).foldl (fun a b => a + b) 0"
+    },
+    "synth_drop3_foldl_prod": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.drop 3).foldl (fun a b => a * b) 1"
+      ],
+      "reference": "exact (xs.drop 3).foldl (fun a b => a * b) 1"
+    },
+    "synth_drop1_foldl_minval": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.drop 1).foldl min 0"
+      ],
+      "reference": "exact (xs.drop 1).foldl min 0"
+    },
+    "synth_map_times2_foldl_minval": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x * 2)).foldl min 0"
+      ],
+      "reference": "exact (xs.map (fun x => x * 2)).foldl min 0"
+    },
+    "synth_map_times3_foldl_prod": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x * 3)).foldl (fun a b => a * b) 1"
+      ],
+      "reference": "exact (xs.map (fun x => x * 3)).foldl (fun a b => a * b) 1"
+    },
+    "synth_takeWhile_odd_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x % 2 \u2260 0))).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x % 2 \u2260 0))).foldl (fun a b => a + b) 0"
+    },
+    "synth_dropWhile_lt1_foldl_prod": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x < -1))).foldl (fun a b => a * b) 1"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x < -1))).foldl (fun a b => a * b) 1"
+    },
+    "synth_take1_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 1).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.take 1).foldl (fun a b => a + b) 0"
+    },
+    "synth_dropWhile_gt1_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 1))).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 1))).foldl (fun a b => a + b) 0"
+    },
+    "synth_map_times2_foldl_prod": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x * 2)).foldl (fun a b => a * b) 1"
+      ],
+      "reference": "exact (xs.map (fun x => x * 2)).foldl (fun a b => a * b) 1"
+    },
+    "synth_take2_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 2).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.take 2).foldl (fun a b => a + b) 0"
+    },
+    "synth_takeWhile_gt0_foldl_prod": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 0))).foldl (fun a b => a * b) 1"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 0))).foldl (fun a b => a * b) 1"
+    },
+    "synth_take2_foldl_maxval": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 2).foldl max 0"
+      ],
+      "reference": "exact (xs.take 2).foldl max 0"
+    },
+    "synth_dropWhile_lt0_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x < 0))).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x < 0))).foldl (fun a b => a + b) 0"
+    },
+    "synth_drop3_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.drop 3).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.drop 3).foldl (fun a b => a + b) 0"
+    },
+    "synth_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact xs.foldl (fun a b => a + b) 0"
+    },
+    "synth_filter_lt1_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x < -1))).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x < -1))).foldl (fun a b => a + b) 0"
+    },
+    "synth_drop2_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.drop 2).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.drop 2).foldl (fun a b => a + b) 0"
+    },
+    "synth_map_plus2_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x + 2)).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.map (fun x => x + 2)).foldl (fun a b => a + b) 0"
+    },
+    "synth_takeWhile_gt2_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 2))).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 2))).foldl (fun a b => a + b) 0"
+    },
+    "synth_filter_gt1_foldl_sum": {
+      "return_type": "Int",
+      "candidates_tested": 100,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 1))).foldl (fun a b => a + b) 0"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 1))).foldl (fun a b => a + b) 0"
+    },
+    "synth_filter_gt2_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 2))).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 2))).map (fun x => x - 1)"
+    },
+    "synth_take2_map_times3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 2).map (fun x => x * 3)"
+      ],
+      "reference": "exact (xs.take 2).map (fun x => x * 3)"
+    },
+    "synth_dropWhile_gt0_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 0))).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 0))).map (fun x => x * x)"
+    },
+    "synth_filter_lt0_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x < 0))).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x < 0))).map (fun x => x * x)"
+    },
+    "synth_filter_gt0_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 0))).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 0))).map (fun x => x - 1)"
+    },
+    "synth_dropWhile_lt0_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x < 0))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x < 0))).map (fun x => -x)"
+    },
+    "synth_filter_gt0_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 0))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 0))).map (fun x => -x)"
+    },
+    "synth_takeWhile_lt0_map_times3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x * 3)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x * 3)"
+    },
+    "synth_dropWhile_gt0_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 0))).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 0))).map (fun x => x - 1)"
+    },
+    "synth_filter_gt0_dropWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 0))).dropWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 0))).dropWhile (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_mergeSort_filter_gt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (List.mergeSort xs).filter (fun x => decide (x > 1))"
+      ],
+      "reference": "exact (List.mergeSort xs).filter (fun x => decide (x > 1))"
+    },
+    "synth_takeWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.takeWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact xs.takeWhile (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_drop1_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.drop 1).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.drop 1).map (fun x => x * x)"
+    },
+    "synth_dropWhile_gt1_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 1))).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 1))).map (fun x => x - 1)"
+    },
+    "synth_filter_gt1_eraseDups": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 1))).eraseDups"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 1))).eraseDups"
+    },
+    "synth_filter_ge0_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2265 0))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2265 0))).map (fun x => -x)"
+    },
+    "synth_takeWhile_lt0_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => -x)"
+    },
+    "synth_mergeSort": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact List.mergeSort xs"
+      ],
+      "reference": "exact List.mergeSort xs"
+    },
+    "synth_eraseDups_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.eraseDups.map (fun x => x - 1)"
+      ],
+      "reference": "exact xs.eraseDups.map (fun x => x - 1)"
+    },
+    "synth_reverse_dropWhile_ne0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.dropWhile (fun x => decide (x \u2260 0))"
+      ],
+      "reference": "exact xs.reverse.dropWhile (fun x => decide (x \u2260 0))"
+    },
+    "synth_filter_le0_dropWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2264 0))).dropWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2264 0))).dropWhile (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_filter_lt0_dropWhile_lt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x < 0))).dropWhile (fun x => decide (x < -1))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x < 0))).dropWhile (fun x => decide (x < -1))"
+    },
+    "synth_takeWhile_lt0_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x * x)"
+    },
+    "synth_map_square_mergeSort": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact List.mergeSort (xs.map (fun x => x * x))"
+      ],
+      "reference": "exact List.mergeSort (xs.map (fun x => x * x))"
+    },
+    "synth_filter_gt1_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 1))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 1))).map (fun x => -x)"
+    },
+    "synth_mergeSort_dropWhile_lt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (List.mergeSort xs).dropWhile (fun x => decide (x < -1))"
+      ],
+      "reference": "exact (List.mergeSort xs).dropWhile (fun x => decide (x < -1))"
+    },
+    "synth_drop1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.drop 1"
+      ],
+      "reference": "exact xs.drop 1"
+    },
+    "synth_takeWhile_gt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.takeWhile (fun x => decide (x > 1))"
+      ],
+      "reference": "exact xs.takeWhile (fun x => decide (x > 1))"
+    },
+    "synth_filter_ne0_dropWhile_gt2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2260 0))).dropWhile (fun x => decide (x > 2))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2260 0))).dropWhile (fun x => decide (x > 2))"
+    },
+    "synth_map_plus1_filter_lt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x + 1)).filter (fun x => decide (x < -1))"
+      ],
+      "reference": "exact (xs.map (fun x => x + 1)).filter (fun x => decide (x < -1))"
+    },
+    "synth_reverse_dropWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.dropWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact xs.reverse.dropWhile (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_filter_gt0_take3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 0))).take 3"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 0))).take 3"
+    },
+    "synth_map_minus1_filter_gt2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x - 1)).filter (fun x => decide (x > 2))"
+      ],
+      "reference": "exact (xs.map (fun x => x - 1)).filter (fun x => decide (x > 2))"
+    },
+    "synth_filter_lt0_map_times3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x < 0))).map (fun x => x * 3)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x < 0))).map (fun x => x * 3)"
+    },
+    "synth_take3_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 3).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.take 3).map (fun x => x - 1)"
+    },
+    "synth_reverse_dropWhile_ge0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.dropWhile (fun x => decide (x \u2265 0))"
+      ],
+      "reference": "exact xs.reverse.dropWhile (fun x => decide (x \u2265 0))"
+    },
+    "synth_takeWhile_gt1_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 1))).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 1))).map (fun x => x + 1)"
+    },
+    "synth_filter_even_dropWhile_gt2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 = 0))).dropWhile (fun x => decide (x > 2))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 = 0))).dropWhile (fun x => decide (x > 2))"
+    },
+    "synth_dropWhile_lt0_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x < 0))).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x < 0))).map (fun x => x * x)"
+    },
+    "synth_filter_odd_map_plus2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x + 2)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x + 2)"
+    },
+    "synth_takeWhile_lt0_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x - 1)"
+    },
+    "synth_takeWhile_lt0_map_times2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x * 2)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x * 2)"
+    },
+    "synth_filter_gt2_map_times3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 2))).map (fun x => x * 3)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 2))).map (fun x => x * 3)"
+    },
+    "synth_filter_gt2_takeWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 2))).takeWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 2))).takeWhile (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_mergeSort_filter_gt2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (List.mergeSort xs).filter (fun x => decide (x > 2))"
+      ],
+      "reference": "exact (List.mergeSort xs).filter (fun x => decide (x > 2))"
+    },
+    "synth_mergeSort_dropWhile_ne0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (List.mergeSort xs).dropWhile (fun x => decide (x \u2260 0))"
+      ],
+      "reference": "exact (List.mergeSort xs).dropWhile (fun x => decide (x \u2260 0))"
+    },
+    "synth_eraseDups_takeWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.eraseDups.takeWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact xs.eraseDups.takeWhile (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_filter_odd_dropWhile_lt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).dropWhile (fun x => decide (x < -1))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).dropWhile (fun x => decide (x < -1))"
+    },
+    "synth_take2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.take 2"
+      ],
+      "reference": "exact xs.take 2"
+    },
+    "synth_filter_gt0_dropWhile_gt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 0))).dropWhile (fun x => decide (x > 1))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 0))).dropWhile (fun x => decide (x > 1))"
+    },
+    "synth_filter_gt0_take2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 0))).take 2"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 0))).take 2"
+    },
+    "synth_filter_ne0_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2260 0))).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2260 0))).map (fun x => x * x)"
+    },
+    "synth_filter_ne0_eraseDups": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2260 0))).eraseDups"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2260 0))).eraseDups"
+    },
+    "synth_map_negate_filter_gt2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => -x)).filter (fun x => decide (x > 2))"
+      ],
+      "reference": "exact (xs.map (fun x => -x)).filter (fun x => decide (x > 2))"
+    },
+    "synth_take1_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 1).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.take 1).map (fun x => -x)"
+    },
+    "synth_takeWhile_gt1_map_plus2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 1))).map (fun x => x + 2)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 1))).map (fun x => x + 2)"
+    },
+    "synth_filter_odd_take2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).take 2"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).take 2"
+    },
+    "synth_reverse_dropWhile_gt0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.dropWhile (fun x => decide (x > 0))"
+      ],
+      "reference": "exact xs.reverse.dropWhile (fun x => decide (x > 0))"
+    },
+    "synth_filter_odd_dropWhile_gt0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).dropWhile (fun x => decide (x > 0))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).dropWhile (fun x => decide (x > 0))"
+    },
+    "synth_eraseDups_dropWhile_lt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.eraseDups.dropWhile (fun x => decide (x < -1))"
+      ],
+      "reference": "exact xs.eraseDups.dropWhile (fun x => decide (x < -1))"
+    },
+    "synth_reverse_map_times2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.map (fun x => x * 2)"
+      ],
+      "reference": "exact xs.reverse.map (fun x => x * 2)"
+    },
+    "synth_filter_gt2_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 2))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 2))).map (fun x => -x)"
+    },
+    "synth_eraseDups_dropWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.eraseDups.dropWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact xs.eraseDups.dropWhile (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_dropWhile_gt2_reverse": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 2))).reverse"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 2))).reverse"
+    },
+    "synth_dropWhile_even": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.dropWhile (fun x => decide (x % 2 = 0))"
+      ],
+      "reference": "exact xs.dropWhile (fun x => decide (x % 2 = 0))"
+    },
+    "synth_map_minus1_filter_le0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x - 1)).filter (fun x => decide (x \u2264 0))"
+      ],
+      "reference": "exact (xs.map (fun x => x - 1)).filter (fun x => decide (x \u2264 0))"
+    },
+    "synth_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.map (fun x => x - 1)"
+      ],
+      "reference": "exact xs.map (fun x => x - 1)"
+    },
+    "synth_takeWhile_ne0_reverse": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x \u2260 0))).reverse"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x \u2260 0))).reverse"
+    },
+    "synth_takeWhile_even_map_plus2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x % 2 = 0))).map (fun x => x + 2)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x % 2 = 0))).map (fun x => x + 2)"
+    },
+    "synth_reverse_takeWhile_gt0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.takeWhile (fun x => decide (x > 0))"
+      ],
+      "reference": "exact xs.reverse.takeWhile (fun x => decide (x > 0))"
+    },
+    "synth_dropWhile_gt2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.dropWhile (fun x => decide (x > 2))"
+      ],
+      "reference": "exact xs.dropWhile (fun x => decide (x > 2))"
+    },
+    "synth_filter_gt2_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 2))).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 2))).map (fun x => x * x)"
+    },
+    "synth_reverse_map_plus2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.map (fun x => x + 2)"
+      ],
+      "reference": "exact xs.reverse.map (fun x => x + 2)"
+    },
+    "synth_take2_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 2).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.take 2).map (fun x => x + 1)"
+    },
+    "synth_eraseDups_dropWhile_even": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.eraseDups.dropWhile (fun x => decide (x % 2 = 0))"
+      ],
+      "reference": "exact xs.eraseDups.dropWhile (fun x => decide (x % 2 = 0))"
+    },
+    "synth_filter_ne0_dropWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2260 0))).dropWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2260 0))).dropWhile (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_takeWhile_gt2_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 2))).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 2))).map (fun x => x + 1)"
+    },
+    "synth_dropWhile_even_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x % 2 = 0))).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x % 2 = 0))).map (fun x => x + 1)"
+    },
+    "synth_filter_odd_dropWhile_lt0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).dropWhile (fun x => decide (x < 0))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).dropWhile (fun x => decide (x < 0))"
+    },
+    "synth_takeWhile_gt1_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 1))).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 1))).map (fun x => x - 1)"
+    },
+    "synth_filter_even_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 = 0))).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 = 0))).map (fun x => x * x)"
+    },
+    "synth_drop3_map_times3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.drop 3).map (fun x => x * 3)"
+      ],
+      "reference": "exact (xs.drop 3).map (fun x => x * 3)"
+    },
+    "synth_filter_even_map_times2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 = 0))).map (fun x => x * 2)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 = 0))).map (fun x => x * 2)"
+    },
+    "synth_mergeSort_reverse": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (List.mergeSort xs).reverse"
+      ],
+      "reference": "exact (List.mergeSort xs).reverse"
+    },
+    "synth_reverse_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.map (fun x => x * x)"
+      ],
+      "reference": "exact xs.reverse.map (fun x => x * x)"
+    },
+    "synth_filter_gt1_reverse": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 1))).reverse"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 1))).reverse"
+    },
+    "synth_mergeSort_filter_ne0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (List.mergeSort xs).filter (fun x => decide (x \u2260 0))"
+      ],
+      "reference": "exact (List.mergeSort xs).filter (fun x => decide (x \u2260 0))"
+    },
+    "synth_map_negate_mergeSort": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact List.mergeSort (xs.map (fun x => -x))"
+      ],
+      "reference": "exact List.mergeSort (xs.map (fun x => -x))"
+    },
+    "synth_takeWhile_odd_map_plus2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x % 2 \u2260 0))).map (fun x => x + 2)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x % 2 \u2260 0))).map (fun x => x + 2)"
+    },
+    "synth_map_plus2_mergeSort": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact List.mergeSort (xs.map (fun x => x + 2))"
+      ],
+      "reference": "exact List.mergeSort (xs.map (fun x => x + 2))"
+    },
+    "synth_dropWhile_even_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x % 2 = 0))).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x % 2 = 0))).map (fun x => x - 1)"
+    },
+    "synth_drop2_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.drop 2).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.drop 2).map (fun x => x - 1)"
+    },
+    "synth_mergeSort_takeWhile_ne0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (List.mergeSort xs).takeWhile (fun x => decide (x \u2260 0))"
+      ],
+      "reference": "exact (List.mergeSort xs).takeWhile (fun x => decide (x \u2260 0))"
+    },
+    "synth_filter_le0_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2264 0))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2264 0))).map (fun x => -x)"
+    },
+    "synth_dropWhile_gt2_map_plus2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 2))).map (fun x => x + 2)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 2))).map (fun x => x + 2)"
+    },
+    "synth_takeWhile_gt2_map_times3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 2))).map (fun x => x * 3)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 2))).map (fun x => x * 3)"
+    },
+    "synth_filter_gt0_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 0))).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 0))).map (fun x => x + 1)"
+    },
+    "synth_takeWhile_lt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.takeWhile (fun x => decide (x < -1))"
+      ],
+      "reference": "exact xs.takeWhile (fun x => decide (x < -1))"
+    },
+    "synth_filter_lt0_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x < 0))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x < 0))).map (fun x => -x)"
+    },
+    "synth_filter_odd_map_times2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x * 2)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x * 2)"
+    },
+    "synth_filter_odd_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x + 1)"
+    },
+    "synth_dropWhile_odd_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x % 2 \u2260 0))).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x % 2 \u2260 0))).map (fun x => x + 1)"
+    },
+    "synth_scanl_scanSum_filter_gt2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact ((List.scanl (fun a b => a + b) 0 xs).drop 1).filter (fun x => decide (x > 2))"
+      ],
+      "reference": "exact ((List.scanl (fun a b => a + b) 0 xs).drop 1).filter (fun x => decide (x > 2))"
+    },
+    "synth_dropWhile_lt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.dropWhile (fun x => decide (x < -1))"
+      ],
+      "reference": "exact xs.dropWhile (fun x => decide (x < -1))"
+    },
+    "synth_takeWhile_even_map_times3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x % 2 = 0))).map (fun x => x * 3)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x % 2 = 0))).map (fun x => x * 3)"
+    },
+    "synth_takeWhile_even_map_times2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x % 2 = 0))).map (fun x => x * 2)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x % 2 = 0))).map (fun x => x * 2)"
+    },
+    "synth_filter_ge0_dropWhile_even": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2265 0))).dropWhile (fun x => decide (x % 2 = 0))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2265 0))).dropWhile (fun x => decide (x % 2 = 0))"
+    },
+    "synth_dropWhile_gt1_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 1))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 1))).map (fun x => -x)"
+    },
+    "synth_filter_even_reverse": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 = 0))).reverse"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 = 0))).reverse"
+    },
+    "synth_mergeSort_filter_gt0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (List.mergeSort xs).filter (fun x => decide (x > 0))"
+      ],
+      "reference": "exact (List.mergeSort xs).filter (fun x => decide (x > 0))"
+    },
+    "synth_eraseDups_map_plus2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.eraseDups.map (fun x => x + 2)"
+      ],
+      "reference": "exact xs.eraseDups.map (fun x => x + 2)"
+    },
+    "synth_filter_le0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.filter (fun x => decide (x \u2264 0))"
+      ],
+      "reference": "exact xs.filter (fun x => decide (x \u2264 0))"
+    },
+    "synth_filter_ge0_map_times3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2265 0))).map (fun x => x * 3)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2265 0))).map (fun x => x * 3)"
+    },
+    "synth_filter_gt1_take3": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 1))).take 3"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 1))).take 3"
+    },
+    "synth_drop1_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.drop 1).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.drop 1).map (fun x => x + 1)"
+    },
+    "synth_dropWhile_gt0_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 0))).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 0))).map (fun x => x + 1)"
+    },
+    "synth_filter_ge0_map_times2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2265 0))).map (fun x => x * 2)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2265 0))).map (fun x => x * 2)"
+    },
+    "synth_take2_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 2).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.take 2).map (fun x => -x)"
+    },
+    "synth_dropWhile_odd_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x % 2 \u2260 0))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x % 2 \u2260 0))).map (fun x => -x)"
+    },
+    "synth_filter_odd_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x * x)"
+    },
+    "synth_filter_lt0_take2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x < 0))).take 2"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x < 0))).take 2"
+    },
+    "synth_eraseDups": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.eraseDups"
+      ],
+      "reference": "exact xs.eraseDups"
+    },
+    "synth_filter_ne0_dropWhile_lt0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2260 0))).dropWhile (fun x => decide (x < 0))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2260 0))).dropWhile (fun x => decide (x < 0))"
+    },
+    "synth_dropWhile_gt2_map_plus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 2))).map (fun x => x + 1)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 2))).map (fun x => x + 1)"
+    },
+    "synth_filter_ne0_map_negate": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2260 0))).map (fun x => -x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2260 0))).map (fun x => -x)"
+    },
+    "synth_takeWhile_gt2_map_plus2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 2))).map (fun x => x + 2)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 2))).map (fun x => x + 2)"
+    },
+    "synth_filter_lt0_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x < 0))).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x < 0))).map (fun x => x - 1)"
+    },
+    "synth_reverse_dropWhile_gt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.dropWhile (fun x => decide (x > 1))"
+      ],
+      "reference": "exact xs.reverse.dropWhile (fun x => decide (x > 1))"
+    },
+    "synth_map_square_eraseDups": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x * x)).eraseDups"
+      ],
+      "reference": "exact (xs.map (fun x => x * x)).eraseDups"
+    },
+    "synth_filter_lt1_map_square": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x < -1))).map (fun x => x * x)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x < -1))).map (fun x => x * x)"
+    },
+    "synth_filter_ge0_dropWhile_gt2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2265 0))).dropWhile (fun x => decide (x > 2))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2265 0))).dropWhile (fun x => decide (x > 2))"
+    },
+    "synth_takeWhile_lt0_map_plus2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x + 2)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x < 0))).map (fun x => x + 2)"
+    },
+    "synth_filter_odd_map_minus1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x - 1)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).map (fun x => x - 1)"
+    },
+    "synth_filter_lt1_reverse": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x < -1))).reverse"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x < -1))).reverse"
+    },
+    "synth_filter_odd_eraseDups": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).eraseDups"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).eraseDups"
+    },
+    "synth_reverse": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse"
+      ],
+      "reference": "exact xs.reverse"
+    },
+    "synth_dropWhile_lt1_reverse": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x < -1))).reverse"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x < -1))).reverse"
+    },
+    "synth_takeWhile_gt2_map_times2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x > 2))).map (fun x => x * 2)"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x > 2))).map (fun x => x * 2)"
+    },
+    "synth_filter_gt1": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.filter (fun x => decide (x > 1))"
+      ],
+      "reference": "exact xs.filter (fun x => decide (x > 1))"
+    },
+    "synth_scanl_scanSum_filter_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact ((List.scanl (fun a b => a + b) 0 xs).drop 1).filter (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact ((List.scanl (fun a b => a + b) 0 xs).drop 1).filter (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_filter_odd_takeWhile_lt0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).takeWhile (fun x => decide (x < 0))"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 \u2260 0))).takeWhile (fun x => decide (x < 0))"
+    },
+    "synth_takeWhile_even_reverse": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x % 2 = 0))).reverse"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x % 2 = 0))).reverse"
+    },
+    "synth_map_plus2_filter_ge0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x + 2)).filter (fun x => decide (x \u2265 0))"
+      ],
+      "reference": "exact (xs.map (fun x => x + 2)).filter (fun x => decide (x \u2265 0))"
+    },
+    "synth_dropWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.dropWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact xs.dropWhile (fun x => decide (x % 2 \u2260 0))"
+    },
+    "synth_map_plus2_filter_ne0": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.map (fun x => x + 2)).filter (fun x => decide (x \u2260 0))"
+      ],
+      "reference": "exact (xs.map (fun x => x + 2)).filter (fun x => decide (x \u2260 0))"
+    },
+    "synth_take2_map_times2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.take 2).map (fun x => x * 2)"
+      ],
+      "reference": "exact (xs.take 2).map (fun x => x * 2)"
+    },
+    "synth_filter_gt0_map_times2": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 0))).map (fun x => x * 2)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 0))).map (fun x => x * 2)"
+    },
+    "synth_map_natAbs_mergeSort": {
+      "return_type": "List Nat",
+      "candidates_tested": 16,
+      "solutions_found": 1,
+      "solutions": [
+        "exact List.mergeSort (xs.map (fun x => x.natAbs))"
+      ],
+      "reference": "exact List.mergeSort (xs.map (fun x => x.natAbs))"
+    },
+    "synth_reverse_map_natAbs": {
+      "return_type": "List Nat",
+      "candidates_tested": 16,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.map (fun x => x.natAbs)"
+      ],
+      "reference": "exact xs.reverse.map (fun x => x.natAbs)"
+    },
+    "synth_filter_even_map_natAbs": {
+      "return_type": "List Nat",
+      "candidates_tested": 16,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 = 0))).map (fun x => x.natAbs)"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 = 0))).map (fun x => x.natAbs)"
+    },
+    "synth_eraseDups_map_natAbs": {
+      "return_type": "List Nat",
+      "candidates_tested": 16,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.eraseDups.map (fun x => x.natAbs)"
+      ],
+      "reference": "exact xs.eraseDups.map (fun x => x.natAbs)"
+    },
+    "synth_dropWhile_odd_map_natAbs": {
+      "return_type": "List Nat",
+      "candidates_tested": 16,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x % 2 \u2260 0))).map (fun x => x.natAbs)"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x % 2 \u2260 0))).map (fun x => x.natAbs)"
+    },
+    "synth_dropWhile_gt1_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 1))).length"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 1))).length"
+    },
+    "synth_filter_le0_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x \u2264 0))).length"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x \u2264 0))).length"
+    },
+    "synth_dropWhile_gt2_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 2))).length"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 2))).length"
+    },
+    "synth_dropWhile_odd_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x % 2 \u2260 0))).length"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x % 2 \u2260 0))).length"
+    },
+    "synth_dropWhile_gt0_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x > 0))).length"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x > 0))).length"
+    },
+    "synth_dropWhile_lt0_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x < 0))).length"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x < 0))).length"
+    },
+    "synth_filter_even_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x % 2 = 0))).length"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x % 2 = 0))).length"
+    },
+    "synth_filter_gt1_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.filter (fun x => decide (x > 1))).length"
+      ],
+      "reference": "exact (xs.filter (fun x => decide (x > 1))).length"
+    },
+    "synth_takeWhile_lt0_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.takeWhile (fun x => decide (x < 0))).length"
+      ],
+      "reference": "exact (xs.takeWhile (fun x => decide (x < 0))).length"
+    },
+    "synth_dropWhile_even_length": {
+      "return_type": "Nat",
+      "candidates_tested": 30,
+      "solutions_found": 1,
+      "solutions": [
+        "exact (xs.dropWhile (fun x => decide (x % 2 = 0))).length"
+      ],
+      "reference": "exact (xs.dropWhile (fun x => decide (x % 2 = 0))).length"
+    },
+    "synth_getLast_q": {
+      "return_type": "Option Int",
+      "candidates_tested": 2,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.getLast?"
+      ],
+      "reference": "exact xs.getLast?"
+    },
+    "synth_head_q": {
+      "return_type": "Option Int",
+      "candidates_tested": 2,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.head?"
+      ],
+      "reference": "exact xs.head?"
+    },
+    "synth_reverse_takeWhile_odd": {
+      "return_type": "List Int",
+      "candidates_tested": 420,
+      "solutions_found": 1,
+      "solutions": [
+        "exact xs.reverse.takeWhile (fun x => decide (x % 2 \u2260 0))"
+      ],
+      "reference": "exact xs.reverse.takeWhile (fun x => decide (x % 2 \u2260 0))"
+    }
+  }
+}

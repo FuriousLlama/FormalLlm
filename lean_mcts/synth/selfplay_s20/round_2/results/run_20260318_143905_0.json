@@ -1,0 +1,202 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xss.flatten).filter (fun x => decide (x > 0))"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 44,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 698,
+      "n_tactic_valid": 3,
+      "n_tactic_solved": 43,
+      "n_oracle_calls": 41,
+      "n_oracle_passed": 7,
+      "n_oracle_prefiltered": 2,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.2615,
+      "t_step_s": 0.2375,
+      "t_oracle_s": 1.596,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 5.095,
+      "ms_per_step": 0.34,
+      "ms_per_oracle": 38.9,
+      "pct_step": 4.7,
+      "pct_policy": 64.0,
+      "pct_oracle": 31.3,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 43
+    },
+    "task": "flatten",
+    "category": "multi_type",
+    "ghc_equivalent": "flatten",
+    "wall_time_s": 5.1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.zip ys).map (fun (x, y) => x + y) -- Replace '?' with the appropriate argument."
+    ],
+    "rollouts_used": 1,
+    "tree_size": 502,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 694,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 501,
+      "n_oracle_calls": 494,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 10,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.8971,
+      "t_step_s": 2.0466,
+      "t_oracle_s": 20.0597,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 25.0034,
+      "ms_per_step": 2.95,
+      "ms_per_oracle": 40.6,
+      "pct_step": 8.2,
+      "pct_policy": 11.6,
+      "pct_oracle": 80.2,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 501
+    },
+    "task": "zip_sum",
+    "category": "multi_arg",
+    "ghc_equivalent": "zip_sum",
+    "wall_time_s": 25.01
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact xs.partition (fun x => decide (x > 0))"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 17,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 686,
+      "n_tactic_valid": 12,
+      "n_tactic_solved": 16,
+      "n_oracle_calls": 16,
+      "n_oracle_passed": 3,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.8208,
+      "t_step_s": 3.171,
+      "t_oracle_s": 0.5999,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 6.5916,
+      "ms_per_step": 4.62,
+      "ms_per_oracle": 37.5,
+      "pct_step": 48.1,
+      "pct_policy": 42.8,
+      "pct_oracle": 9.1,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 16
+    },
+    "task": "partition_positive",
+    "category": "product_return",
+    "ghc_equivalent": "partition_positive",
+    "wall_time_s": 6.59
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact xs.eraseDups.map (fun x => (x, xs.count x)) -- (3, 1) (4, 1) (5, 0)"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 28,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 675,
+      "n_tactic_valid": 9,
+      "n_tactic_solved": 27,
+      "n_oracle_calls": 25,
+      "n_oracle_passed": 4,
+      "n_oracle_prefiltered": 2,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.7527,
+      "t_step_s": 6.0316,
+      "t_oracle_s": 1.0718,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 9.8561,
+      "ms_per_step": 8.94,
+      "ms_per_oracle": 42.9,
+      "pct_step": 61.2,
+      "pct_policy": 27.9,
+      "pct_oracle": 10.9,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 27
+    },
+    "task": "dedup_count",
+    "category": "multi_step",
+    "ghc_equivalent": "dedup_count",
+    "wall_time_s": 9.86
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.filter (fun x => decide (x > 0))).map (fun x => x.toNat) -- Error: Expected a type, got a function."
+    ],
+    "rollouts_used": 1,
+    "tree_size": 55,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 696,
+      "n_tactic_valid": 5,
+      "n_tactic_solved": 54,
+      "n_oracle_calls": 52,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 2,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.9399,
+      "t_step_s": 4.9152,
+      "t_oracle_s": 3.1736,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 11.0288,
+      "ms_per_step": 7.06,
+      "ms_per_oracle": 61.0,
+      "pct_step": 44.6,
+      "pct_policy": 26.7,
+      "pct_oracle": 28.8,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 54
+    },
+    "task": "filter_map_abs",
+    "category": "filtermap",
+    "ghc_equivalent": "filter_map_abs",
+    "wall_time_s": 11.03
+  }
+]

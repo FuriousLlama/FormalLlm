@@ -1,0 +1,44 @@
+[
+  {
+    "solved": false,
+    "tactics": [
+      "norm_num",
+      "norm_num"
+    ],
+    "rollouts_used": 20,
+    "tree_size": 847,
+    "stats": {
+      "n_expand_calls": 20,
+      "n_tactic_steps": 6499,
+      "n_tactic_valid": 41,
+      "n_tactic_solved": 1725,
+      "n_oracle_calls": 1717,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 8,
+      "n_oracle_batches": 54,
+      "n_simulate_calls": 20,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.2533,
+      "t_step_s": 15.3502,
+      "t_oracle_s": 111.2883,
+      "t_simulate_s": 16.2814,
+      "t_select_s": 0.0005,
+      "t_total_s": 146.1737,
+      "ms_per_step": 2.36,
+      "ms_per_oracle": 64.8,
+      "pct_step": 10.5,
+      "pct_policy": 2.2,
+      "pct_oracle": 76.1,
+      "pct_simulate": 11.1
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 128,
+      "2": 718
+    },
+    "task": "second_smallest",
+    "category": "diag_a",
+    "ghc_equivalent": "second_smallest",
+    "wall_time_s": 146.24
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'dotProductSelf': missing 'type' in []",
+    "task": "dot_product_self",
+    "category": "diag_a",
+    "ghc_equivalent": "dot_product_self",
+    "wall_time_s": 0.0
+  }
+]

@@ -1,0 +1,4507 @@
+[
+  {
+    "name": "fTwice",
+    "type": "forall a. (a -> a) -> a -> a",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "f"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "f"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fCountNegative",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fLength"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fIsNegative"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumEven",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fEven"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fCountOdd",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fLength"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fOdd"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumNegative",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fIsNegative"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fProductPositive",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fProduct"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fIsPositive"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMinPositive",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMinimum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fIsPositive"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fCountOddPositive",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fLength"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Lam",
+                "binders": [
+                  {
+                    "name": "x",
+                    "kind": "val"
+                  }
+                ],
+                "body": {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Prim",
+                    "op": "&&"
+                  },
+                  "args": [
+                    {
+                      "tag": "App",
+                      "fun": {
+                        "tag": "Var",
+                        "name": "fOdd"
+                      },
+                      "args": [
+                        {
+                          "tag": "Var",
+                          "name": "x"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "App",
+                      "fun": {
+                        "tag": "Var",
+                        "name": "fIsPositive"
+                      },
+                      "args": [
+                        {
+                          "tag": "Var",
+                          "name": "x"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumAbs",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fAbs"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumTriples",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fTriple"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumSucc",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fSucc"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumNegated",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fNegate"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fProductDoubles",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fProduct"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fDouble"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fProductAbs",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fProduct"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fAbs"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMaxSquare",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMaximum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fSquare"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMinAbs",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMinimum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fAbs"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMaxDouble",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMaximum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fDouble"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMinSquare",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMinimum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fSquare"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapHalve",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fHalve"
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapSignum",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fSignum"
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapClamp",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fClamp"
+            },
+            "args": [
+              {
+                "tag": "Lit",
+                "sort": "Int",
+                "val": 0
+              },
+              {
+                "tag": "Lit",
+                "sort": "Int",
+                "val": 100
+              }
+            ]
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fReverseTail",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fReverse"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fTail"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSortNub",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSort"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fNubInt"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fReverseTake",
+    "type": "Int -> [Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "n",
+          "kind": "val"
+        },
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fReverse"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fTake"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "n"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fTakeSort",
+    "type": "Int -> [Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "n",
+          "kind": "val"
+        },
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fTake"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "n"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fSort"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSortFilter",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSort"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fIsPositive"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fNubReverse",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fNubInt"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fReverse"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fTailReverse",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fTail"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fReverse"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSortMapAbs",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSort"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fAbs"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fReverseMapNeg",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fReverse"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fNegate"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fTakeWhileSort",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fTakeWhile"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fIsPositive"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fSort"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fFilterSort",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fIsPositive"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fSort"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fReverseInit",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fReverse"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fInit"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fFilterEven",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fEven"
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fFilterOdd",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fOdd"
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fFilterPositive",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fIsPositive"
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fTakeWhilePos",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fTakeWhile"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fIsPositive"
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fDropWhileNeg",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fDropWhile"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fIsNegative"
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fDropWhileZero",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fDropWhile"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fIsZero"
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumDouble",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fDouble"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fEvenCount",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fLength"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fEven"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fReverseSort",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fReverse"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fSort"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSquareList",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fSquare"
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fTwice",
+    "type": "forall a. (a -> a) -> a -> a",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "f"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "f"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fApplyThrice",
+    "type": "forall a. (a -> a) -> a -> a",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "f"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "f"
+            },
+            "args": [
+              {
+                "tag": "App",
+                "fun": {
+                  "tag": "Var",
+                  "name": "f"
+                },
+                "args": [
+                  {
+                    "tag": "Var",
+                    "name": "x"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapTwice",
+    "type": "forall a. (a -> a) -> [a] -> [a]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "f"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "f"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fFilterTwice",
+    "type": "forall a. (a -> Bool) -> [a] -> [a]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "p",
+          "kind": "val"
+        },
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "p"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "p"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fDoubleApply",
+    "type": "forall b c a. (b -> c) -> (a -> b) -> a -> c",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "g",
+          "kind": "val"
+        },
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "f"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "g"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fTripleApply",
+    "type": "forall c d b a. (c -> d) -> (b -> c) -> (a -> b) -> a -> d",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "g",
+          "kind": "val"
+        },
+        {
+          "name": "h",
+          "kind": "val"
+        },
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "f"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "g"
+            },
+            "args": [
+              {
+                "tag": "App",
+                "fun": {
+                  "tag": "Var",
+                  "name": "h"
+                },
+                "args": [
+                  {
+                    "tag": "Var",
+                    "name": "x"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSelfMap",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fDouble"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fSucc"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fDoubleThenFilter",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fIsPositive"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fDouble"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fFilterThenMap",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fSucc"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fIsPositive"
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fApplyAndSucc",
+    "type": "(Int -> Int) -> Int -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSucc"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "f"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fApplyToDouble",
+    "type": "(Int -> Int) -> Int -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "f"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fDouble"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fApplyAndNegate",
+    "type": "(Int -> Int) -> Int -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fNegate"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "f"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSuccTwice",
+    "type": "Int -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSucc"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fSucc"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fDoubleTwice",
+    "type": "Int -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fDouble"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fDouble"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fNegateTwice",
+    "type": "Int -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "x",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fNegate"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fNegate"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "x"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fUncurryMax",
+    "type": "(Int, Int) -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "ds",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "Case",
+        "scrutinee": {
+          "tag": "Var",
+          "name": "ds"
+        },
+        "alts": [
+          {
+            "pat": {
+              "tag": "PTuple",
+              "vars": [
+                "x",
+                "y"
+              ]
+            },
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Var",
+                "name": "fMax"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Var",
+                  "name": "y"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fUncurryMin",
+    "type": "(Int, Int) -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "ds",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "Case",
+        "scrutinee": {
+          "tag": "Var",
+          "name": "ds"
+        },
+        "alts": [
+          {
+            "pat": {
+              "tag": "PTuple",
+              "vars": [
+                "x",
+                "y"
+              ]
+            },
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Var",
+                "name": "fMin"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Var",
+                  "name": "y"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fBothDouble",
+    "type": "(Int, Int) -> (Int, Int)",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "ds",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "Case",
+        "scrutinee": {
+          "tag": "Var",
+          "name": "ds"
+        },
+        "alts": [
+          {
+            "pat": {
+              "tag": "PTuple",
+              "vars": [
+                "x",
+                "y"
+              ]
+            },
+            "body": {
+              "tag": "Tuple",
+              "elems": [
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Var",
+                    "name": "fDouble"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    }
+                  ]
+                },
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Var",
+                    "name": "fDouble"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "y"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fBothSucc",
+    "type": "(Int, Int) -> (Int, Int)",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "ds",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "Case",
+        "scrutinee": {
+          "tag": "Var",
+          "name": "ds"
+        },
+        "alts": [
+          {
+            "pat": {
+              "tag": "PTuple",
+              "vars": [
+                "x",
+                "y"
+              ]
+            },
+            "body": {
+              "tag": "Tuple",
+              "elems": [
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Var",
+                    "name": "fSucc"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    }
+                  ]
+                },
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Var",
+                    "name": "fSucc"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "y"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fBothAbs",
+    "type": "(Int, Int) -> (Int, Int)",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "ds",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "Case",
+        "scrutinee": {
+          "tag": "Var",
+          "name": "ds"
+        },
+        "alts": [
+          {
+            "pat": {
+              "tag": "PTuple",
+              "vars": [
+                "x",
+                "y"
+              ]
+            },
+            "body": {
+              "tag": "Tuple",
+              "elems": [
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Var",
+                    "name": "fAbs"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    }
+                  ]
+                },
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Var",
+                    "name": "fAbs"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "y"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSwapApply",
+    "type": "(Int -> Int) -> (Int, Int) -> (Int, Int)",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "ds",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "Case",
+        "scrutinee": {
+          "tag": "Var",
+          "name": "ds"
+        },
+        "alts": [
+          {
+            "pat": {
+              "tag": "PTuple",
+              "vars": [
+                "x",
+                "y"
+              ]
+            },
+            "body": {
+              "tag": "Tuple",
+              "elems": [
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Var",
+                    "name": "f"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "y"
+                    }
+                  ]
+                },
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Var",
+                    "name": "f"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapPairs",
+    "type": "(Int -> Int) -> [(Int, Int)] -> [(Int, Int)]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "f",
+          "kind": "val"
+        },
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "ds",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "Case",
+              "scrutinee": {
+                "tag": "Var",
+                "name": "ds"
+              },
+              "alts": [
+                {
+                  "pat": {
+                    "tag": "PTuple",
+                    "vars": [
+                      "a",
+                      "b"
+                    ]
+                  },
+                  "body": {
+                    "tag": "Tuple",
+                    "elems": [
+                      {
+                        "tag": "App",
+                        "fun": {
+                          "tag": "Var",
+                          "name": "f"
+                        },
+                        "args": [
+                          {
+                            "tag": "Var",
+                            "name": "a"
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "App",
+                        "fun": {
+                          "tag": "Var",
+                          "name": "f"
+                        },
+                        "args": [
+                          {
+                            "tag": "Var",
+                            "name": "b"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMaybeDouble",
+    "type": "Maybe Int -> Maybe Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "mx",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMaybeMap"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fDouble"
+          },
+          {
+            "tag": "Var",
+            "name": "mx"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMaybeSucc",
+    "type": "Maybe Int -> Maybe Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "mx",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMaybeMap"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fSucc"
+          },
+          {
+            "tag": "Var",
+            "name": "mx"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMaybeAbs",
+    "type": "Maybe Int -> Maybe Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "mx",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMaybeMap"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fAbs"
+          },
+          {
+            "tag": "Var",
+            "name": "mx"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMaybeToZero",
+    "type": "Maybe Int -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "mx",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFromMaybe"
+        },
+        "args": [
+          {
+            "tag": "Lit",
+            "sort": "Int",
+            "val": 0
+          },
+          {
+            "tag": "Var",
+            "name": "mx"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fDefaultList",
+    "type": "Int -> [Maybe Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "d",
+          "kind": "val"
+        },
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFromMaybe"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "d"
+              }
+            ]
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fDefaultZeroList",
+    "type": "[Maybe Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFromMaybe"
+            },
+            "args": [
+              {
+                "tag": "Lit",
+                "sort": "Int",
+                "val": 0
+              }
+            ]
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fExtractPositive",
+    "type": "[Maybe Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fIsPositive"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fCatMaybes"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fCountJustPositive",
+    "type": "[Maybe Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fLength"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "fIsPositive"
+              },
+              {
+                "tag": "App",
+                "fun": {
+                  "tag": "Var",
+                  "name": "fCatMaybes"
+                },
+                "args": [
+                  {
+                    "tag": "Var",
+                    "name": "xs"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumJusts",
+    "type": "[Maybe Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fCatMaybes"
+            },
+            "args": [
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fExtractDefaults",
+    "type": "Int -> [Maybe Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "d",
+          "kind": "val"
+        },
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "m",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Var",
+                "name": "fFromMaybe"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "d"
+                },
+                {
+                  "tag": "Var",
+                  "name": "m"
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fDefaultFilterPos",
+    "type": "Int -> [Maybe Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "d",
+          "kind": "val"
+        },
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Var",
+            "name": "fIsPositive"
+          },
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "App",
+                "fun": {
+                  "tag": "Var",
+                  "name": "fFromMaybe"
+                },
+                "args": [
+                  {
+                    "tag": "Var",
+                    "name": "d"
+                  }
+                ]
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fDefaultSorted",
+    "type": "Int -> [Maybe Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "d",
+          "kind": "val"
+        },
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSort"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fMap"
+            },
+            "args": [
+              {
+                "tag": "App",
+                "fun": {
+                  "tag": "Var",
+                  "name": "fFromMaybe"
+                },
+                "args": [
+                  {
+                    "tag": "Var",
+                    "name": "d"
+                  }
+                ]
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fFilterNonZero",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "x",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "/="
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Lit",
+                  "sort": "Int",
+                  "val": 0
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMaxNonZero",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMaximum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Lam",
+                "binders": [
+                  {
+                    "name": "x",
+                    "kind": "val"
+                  }
+                ],
+                "body": {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Prim",
+                    "op": "/="
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    },
+                    {
+                      "tag": "Lit",
+                      "sort": "Int",
+                      "val": 0
+                    }
+                  ]
+                }
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumNonZero",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Lam",
+                "binders": [
+                  {
+                    "name": "x",
+                    "kind": "val"
+                  }
+                ],
+                "body": {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Prim",
+                    "op": "/="
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    },
+                    {
+                      "tag": "Lit",
+                      "sort": "Int",
+                      "val": 0
+                    }
+                  ]
+                }
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fCountNonZero",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fLength"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Lam",
+                "binders": [
+                  {
+                    "name": "x",
+                    "kind": "val"
+                  }
+                ],
+                "body": {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Prim",
+                    "op": "/="
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    },
+                    {
+                      "tag": "Lit",
+                      "sort": "Int",
+                      "val": 0
+                    }
+                  ]
+                }
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fTakeWhileSmall",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fTakeWhile"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "x",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "<"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Lit",
+                  "sort": "Int",
+                  "val": 100
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fFilterLarge",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "x",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": ">"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Lit",
+                  "sort": "Int",
+                  "val": 100
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fFilterSmall",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFilter"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "x",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "<"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Lit",
+                  "sort": "Int",
+                  "val": 10
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fSumSmall",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fSum"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Lam",
+                "binders": [
+                  {
+                    "name": "x",
+                    "kind": "val"
+                  }
+                ],
+                "body": {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Prim",
+                    "op": "<"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    },
+                    {
+                      "tag": "Lit",
+                      "sort": "Int",
+                      "val": 10
+                    }
+                  ]
+                }
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fCountLarge",
+    "type": "[Int] -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fLength"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Var",
+              "name": "fFilter"
+            },
+            "args": [
+              {
+                "tag": "Lam",
+                "binders": [
+                  {
+                    "name": "x",
+                    "kind": "val"
+                  }
+                ],
+                "body": {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Prim",
+                    "op": ">"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    },
+                    {
+                      "tag": "Lit",
+                      "sort": "Int",
+                      "val": 100
+                    }
+                  ]
+                }
+              },
+              {
+                "tag": "Var",
+                "name": "xs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMaybeToNeg",
+    "type": "Maybe Int -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "mx",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fFromMaybe"
+        },
+        "args": [
+          {
+            "tag": "App",
+            "fun": {
+              "tag": "Prim",
+              "op": "negate"
+            },
+            "args": [
+              {
+                "tag": "Lit",
+                "sort": "Int",
+                "val": 1
+              }
+            ]
+          },
+          {
+            "tag": "Var",
+            "name": "mx"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fPairAdd",
+    "type": "(Int, Int) -> (Int, Int) -> (Int, Int)",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "ds",
+          "kind": "val"
+        },
+        {
+          "name": "ds1",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "Case",
+        "scrutinee": {
+          "tag": "Var",
+          "name": "ds"
+        },
+        "alts": [
+          {
+            "pat": {
+              "tag": "PTuple",
+              "vars": [
+                "a",
+                "b"
+              ]
+            },
+            "body": {
+              "tag": "Case",
+              "scrutinee": {
+                "tag": "Var",
+                "name": "ds1"
+              },
+              "alts": [
+                {
+                  "pat": {
+                    "tag": "PTuple",
+                    "vars": [
+                      "c",
+                      "d"
+                    ]
+                  },
+                  "body": {
+                    "tag": "Tuple",
+                    "elems": [
+                      {
+                        "tag": "App",
+                        "fun": {
+                          "tag": "Prim",
+                          "op": "+"
+                        },
+                        "args": [
+                          {
+                            "tag": "Var",
+                            "name": "a"
+                          },
+                          {
+                            "tag": "Var",
+                            "name": "c"
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "App",
+                        "fun": {
+                          "tag": "Prim",
+                          "op": "+"
+                        },
+                        "args": [
+                          {
+                            "tag": "Var",
+                            "name": "b"
+                          },
+                          {
+                            "tag": "Var",
+                            "name": "d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fUncurryMul",
+    "type": "(Int, Int) -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "ds",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "Case",
+        "scrutinee": {
+          "tag": "Var",
+          "name": "ds"
+        },
+        "alts": [
+          {
+            "pat": {
+              "tag": "PTuple",
+              "vars": [
+                "x",
+                "y"
+              ]
+            },
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "*"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Var",
+                  "name": "y"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fUncurrySub",
+    "type": "(Int, Int) -> Int",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "ds",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "Case",
+        "scrutinee": {
+          "tag": "Var",
+          "name": "ds"
+        },
+        "alts": [
+          {
+            "pat": {
+              "tag": "PTuple",
+              "vars": [
+                "x",
+                "y"
+              ]
+            },
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "-"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Var",
+                  "name": "y"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapAbsPlus",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "x",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "+"
+              },
+              "args": [
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Var",
+                    "name": "fAbs"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    }
+                  ]
+                },
+                {
+                  "tag": "Lit",
+                  "sort": "Int",
+                  "val": 1
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapSquarePlus",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "x",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "+"
+              },
+              "args": [
+                {
+                  "tag": "App",
+                  "fun": {
+                    "tag": "Prim",
+                    "op": "*"
+                  },
+                  "args": [
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    },
+                    {
+                      "tag": "Var",
+                      "name": "x"
+                    }
+                  ]
+                },
+                {
+                  "tag": "Lit",
+                  "sort": "Int",
+                  "val": 1
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapMinusOne",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "x",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "-"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Lit",
+                  "sort": "Int",
+                  "val": 1
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapTimesThree",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "x",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "*"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Lit",
+                  "sort": "Int",
+                  "val": 3
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  },
+  {
+    "name": "fMapPlusTwo",
+    "type": "[Int] -> [Int]",
+    "recursive": false,
+    "package": "compositions",
+    "body": {
+      "tag": "Lam",
+      "binders": [
+        {
+          "name": "xs",
+          "kind": "val"
+        }
+      ],
+      "body": {
+        "tag": "App",
+        "fun": {
+          "tag": "Var",
+          "name": "fMap"
+        },
+        "args": [
+          {
+            "tag": "Lam",
+            "binders": [
+              {
+                "name": "x",
+                "kind": "val"
+              }
+            ],
+            "body": {
+              "tag": "App",
+              "fun": {
+                "tag": "Prim",
+                "op": "+"
+              },
+              "args": [
+                {
+                  "tag": "Var",
+                  "name": "x"
+                },
+                {
+                  "tag": "Lit",
+                  "sort": "Int",
+                  "val": 2
+                }
+              ]
+            }
+          },
+          {
+            "tag": "Var",
+            "name": "xs"
+          }
+        ]
+      }
+    },
+    "ok": true
+  }
+]

@@ -1,0 +1,149 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "goal_start failed: 'stateId'",
+    "task": "sum_of_squares_comp",
+    "category": "compositional",
+    "ghc_equivalent": "sum_of_squares_comp",
+    "wall_time_s": 2.23
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'rangeSum': missing 'type' in []",
+    "task": "range_sum",
+    "category": "compositional",
+    "ghc_equivalent": "range_sum",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "goal_start failed: 'stateId'",
+    "task": "count_unique",
+    "category": "compositional",
+    "ghc_equivalent": "count_unique",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'reverseFilter': missing 'type' in []",
+    "task": "reverse_filter",
+    "category": "compositional",
+    "ghc_equivalent": "reverse_filter",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "goal_start failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "sum_positives_squared",
+    "category": "compositional",
+    "ghc_equivalent": "sum_positives_squared",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 1,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 727,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 0,
+      "n_oracle_calls": 0,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 0,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0444,
+      "t_oracle_s": 0.0,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0001,
+      "t_total_s": 0.0445,
+      "ms_per_step": 0.06,
+      "ms_per_oracle": 0,
+      "pct_step": 99.8,
+      "pct_policy": 0.0,
+      "pct_oracle": 0.0,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1
+    },
+    "task": "max_abs_comp",
+    "category": "compositional",
+    "ghc_equivalent": "max_abs_comp",
+    "wall_time_s": 0.05
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "exact xs.foldl min 0",
+      "exact (xs.drop 3).foldl (fun a b => a * b) 1",
+      "exact xs.drop 3"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 401,
+    "stats": {
+      "n_expand_calls": 69,
+      "n_tactic_steps": 13136,
+      "n_tactic_valid": 95,
+      "n_tactic_solved": 340,
+      "n_oracle_calls": 339,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 9,
+      "n_simulate_calls": 60,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0001,
+      "t_step_s": 52.7589,
+      "t_oracle_s": 16.3996,
+      "t_simulate_s": 11.4025,
+      "t_select_s": 0.0024,
+      "t_total_s": 80.5634,
+      "ms_per_step": 4.02,
+      "ms_per_oracle": 48.4,
+      "pct_step": 65.5,
+      "pct_policy": 0.0,
+      "pct_oracle": 20.4,
+      "pct_simulate": 14.2
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 6,
+      "2": 339,
+      "3": 55
+    },
+    "task": "sorted_positives",
+    "category": "compositional",
+    "ghc_equivalent": "sorted_positives",
+    "wall_time_s": 80.57
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'lengthEvens': missing 'type' in ['hasSorry', 'hasUnsafe', 'messages']",
+    "task": "length_evens",
+    "category": "compositional",
+    "ghc_equivalent": "length_evens",
+    "wall_time_s": 0.0
+  }
+]

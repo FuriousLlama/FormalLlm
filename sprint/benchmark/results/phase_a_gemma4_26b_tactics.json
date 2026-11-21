@@ -1,0 +1,126 @@
+{
+  "eval_stack": [
+    "exact xs.foldl (fun acc x => if x > 0 then x :: acc else acc) 0 |>.sum",
+    "exact let rec eval : List Int → Int | [] => 0 | [x] => x | (0 :: a :: b :: rest) => eval ( (a + b) :: rest) | (x :: rest) => if x > 0 then eval (x :: rest) else eval rest; eval xs",
+    "exact xs.foldl (fun acc x => if x > 0 then x + acc else acc) 0",
+    "exact match xs with | [] => 0 | [x] => x | 0 :: a :: b :: rest => (a + b) + (xs.filter (fun v => v > 0)).sum | _ => xs.filter (fun v => v > 0) |>.sum",
+    "exact let rec loop : List Int → Int | [] => 0 | [x] => x | x :: rest => if x > 0 then loop (x :: rest) else loop rest; loop xs",
+    "exact xs.filter (fun x => x > 0) |>.sum",
+    "exact (xs.filter (fun x => x > 0)).foldl (fun acc x => acc + x) 0",
+    "exact let rec compute : List Int → Int | [] => 0 | [x] => x | x :: rest => if x > 0 then compute (x :: rest) else compute rest; compute xs"
+  ],
+  "majority_element": [
+    "exact xs.foldl (fun (cand, count) x => if count == 0 then (x, 1) else if x == cand then (cand, count + 1) else (cand, count - 1)) (0, 0) |> .1",
+    "exact let rec loop : List Int → Int → Int → Int | [] _ _ => 0 | x::xs' cand count => if count == 0 then loop xs' x 1 else if x == cand then loop xs' cand (count + 1) else loop xs' cand (count - 1); loop xs 0 0",
+    "exact (xs.foldl (fun (acc : (Int × Int)) x => if acc.2 == 0 then (x, 1) else if x == acc.1 then (acc.1, acc.2 + 1) else (acc.1, acc.2 - 1)) (0, 0)).1",
+    "exact match xs with | [] => 0 | x::xs' => (xs.foldl (fun (cand, count) x => if count == 0 then (x, 1) else if x == cand then (cand, count + 1) else (cand, count - 1)) (x, 1)).1",
+    "exact xs.foldl (fun (acc : Nat × Int) x => if acc.1 == 0 then (1, x) else if x == acc.2 then (acc.1 + 1, x) else (acc.1 - 1, acc.2)) (0, 0) |> .2",
+    "exact let rec find_maj (l : List Int) (c : Int) (n : Int) : Int := match l with | [] => c | h::t => if n == 0 then find_maj t h 1 else if h == c then find_maj t c (n + 1) else find_maj t c (n - 1); find_maj xs 0 0",
+    "exact (xs.foldl (fun (c, n) x => if n == 0 then (x, 1) else if x == c then (c, n + 1) else (c, n - 1)) (0, 0)).1",
+    "exact (xs.foldl (fun (acc : Nat × Int) x => if acc.1 == 0 then (1, x) else if x == acc.2 then (acc.1 + 1, x) else (acc.1 - 1, acc.2)) (0, 0)).2"
+  ],
+  "map_with_index": [
+    "exact xs.zip (List.range xs.length).map (fun i => i + 1) |>.map (fun (x, i) => x * i)",
+    "exact xs.zip (List.range xs.length).map (fun i => i + 1) |>.map (fun pair => pair.1 * pair.2)",
+    "exact xs.mapIndexed (fun i x => x * (i + 1))",
+    "exact let rec loop : List Int → Nat → List Int | [] _ => [] | x :: xs' i => (x * (i + 1)) :: loop xs' (i + 1); loop xs 1",
+    "exact xs.foldr (fun x acc i => (x * i) :: acc) [] (List.range xs.length).reverse.map (fun i => i + 1)",
+    "exact xs.zip (List.range xs.length).map (fun i => i + 1) |>.map (fun p => p.1 * p.2)",
+    "exact xs.foldl (fun acc x => acc.push (x * (acc.length + 1))) #[] |>.toList",
+    "exact match xs with | [] => [] | x :: xs' => (x * 1) :: xs'.mapIndexed (fun i x => x * (i + 2))"
+  ],
+  "max_subarray_sum": [
+    "exact xs.foldl (fun (max_so_far, current_max) x => let new_current := max 0 (current_max + x) in (max max_so_far new_current, new_current)) (0, 0) |> .1",
+    "exact let rec kadane : List Int → Int → Int → Int | [] _ _ => 0 | x::xs current_max global_max => let new_current := max 0 (current_max + x) in kadane xs new_current (max global_max new_current); kadane xs 0 0",
+    "exact xs.foldl (fun acc x => max acc (xs.sublist 0 (xs.indexOf x + 1).sum)) 0",
+    "exact (xs.foldl (fun (max_so_far, current_max) x => let next_max := max 0 (current_max + x) in (max max_so_far next_max, next_max)) (0, 0)).1",
+    "exact match xs with | [] => 0 | _ => xs.foldl (fun (m, c) x => let c' := max 0 (c + x) in (max m c', c')) (0, 0) |> .1",
+    "exact xs.foldl (fun acc x => max acc (xs.take (xs.length - xs.length.dropWhile (fun _ => true)).sum)) 0",
+    "exact let rec loop : List Int → Int → Int → Int | [] _ _ => 0 | x::xs cur glob => let next := max 0 (cur + x) in loop xs next (max glob next); loop xs 0 0",
+    "exact (xs.map (fun i => xs.sublist 0 i.sum) |> List.maximum? |> Option.getOrDefault 0)"
+  ],
+  "prefix_while_increasing": [
+    "exact match xs with | [] => [] | [x] => [x] | x::y::zs => if x < y then x :: (match xs.tail with | [] => [] | ys => (match ys with | h::t => if y < h then y :: (match t with | [] => [] | _ => []) | _ => [])) else [x]",
+    "exact let rec loop : List Int → List Int | [] => [] | [x] => [x] | x::y::zs => if x < y then x :: loop (y::zs) else [x]; loop xs",
+    "exact xs.takeWhile (fun i => i < xs.get! (xs.indexOf i + 1) ∨ xs.indexOf i = xs.length - 1)",
+    "exact xs.foldr (fun x acc => if acc.isEmpty || x < acc.head! then acc else x :: acc) []",
+    "exact xs.takeWhile (fun x => true) |> (fun l => if l.isEmpty then [] else l.take (l.spanId (fun i => i < l.length - 1 ∧ l.get! i < l.get! (i + 1))).length)",
+    "exact let rec go : List Int → List Int | [] => [] | [x] => [x] | x::y::zs => if x < y then x :: go (y::zs) else [x]; go xs",
+    "exact xs.take (match xs with | [] => 0 | [x] => 1 | x::y::zs => (let rec count i : Nat := if i < xs.length - 1 && xs.get! i < xs.get! (i + 1) then count (i + 1) else i; count 0))",
+    "exact xs.drop (xs.spanId (fun i => i < xs.length - 1 ∧ xs.get! i < xs.get! (i + 1))).length |> (fun n => xs.take n)"
+  ],
+  "unfold_n": [
+    "exact Nat.rec (fun _ => []) (fun _ acc => f seed :: acc) n",
+    "exact List.range n |> List.map (fun i => (fun loop s => if i == 0 then [] else s :: loop (i-1) (f s)) n seed)",
+    "exact (fun loop n s => if n == 0 then [] else s :: loop (n - 1) (f s)) n seed",
+    "exact (fun n f seed => List.iterate f seed |>.take n) n f seed",
+    "exact match n with | 0 => [] | n + 1 => (fun loop s => s :: loop (n) (f s)) n seed",
+    "exact (fun n f s => (List.iterate f s).take n) n f seed",
+    "exact (fun n f s => if n == 0 then [] else (fun rec i val => if i == 0 then [] else val :: rec (i-1) (f val)) n n s) n f seed",
+    "exact (fun n f s => (List.unfold (fun x => (f x, f x)) s).take n) n f seed"
+  ],
+  "sum_at_odd_indices": [
+    "exact xs.foldl (fun (acc, idx) x => if idx % 2 = 1 then (acc + x, idx + 1) else (acc, idx + 1)) (0, 0) |> .1",
+    "exact let rec loop : List Int → Int → Int | [] _ => 0 | x :: xs' i => if i % 2 = 1 then x + loop xs' (i + 1) else loop xs' (i + 1); loop xs 0",
+    "exact xs.zip (List.range xs.length).map (fun i => if i % 2 = 1 then xs.get! i else 0) |> List.sum",
+    "exact xs.foldl (fun acc x => acc) 0",
+    "exact xs.enumerate.foldl (fun acc (i, x) => if i % 2 = 1 then acc + x else acc) 0",
+    "exact (xs.zip (List.range xs.length)).filter (fun pair => pair.1 % 2 = 1) |> List.map (fun pair => pair.2) |> List.sum",
+    "exact let rec aux : List Int → Int → Int | [] _ => 0 | _ :: ys i => if i % 2 = 1 then xs.get! (i + 1) + aux ys (i + 2) else aux ys (i + 1) -- error in logic, corrected: ",
+    "exact xs.foldl (fun acc x => acc) 0",
+    "exact xs.foldl (fun (acc, i) x => (if i % 2 = 1 then acc + x else acc, i + 1)) (0, 0) |> (fun res => res.1)",
+    "exact xs.mapIdx (fun i x => if i % 2 = 1 then x else 0) |> List.sum",
+    "exact xs.foldr (fun x acc => acc) 0",
+    "exact (xs.zip (List.range xs.length)).foldl (fun acc pair => if pair.1 % 2 = 1 then acc + pair.2 else acc) 0"
+  ],
+  "zip_diff": [
+    "exact match xs with | [] => [] | [_] => [] | a :: b :: as => (b - a) :: (match (b :: as) with | [] => [] | _::as' => (match as' with | [] => [] | _::as'' => []))",
+    "exact let rec loop : List Int → List Int | [] => [] | [x] => [] | x :: y :: ys => (y - x) :: loop (y :: ys); loop xs",
+    "exact xs.zip (xs.drop 1).map (fun p => p.2 - p.1)",
+    "exact xs.zip (xs.drop 1).map (fun (a, b) => b - a)",
+    "exact xs.zip (xs.drop 1).map (fun p => p.2 - p.1) | [] => []",
+    "exact xs.foldl (fun acc x => if acc.isEmpty then [] else (acc.last!.head! - x) :: acc) []",
+    "exact xs.zip (xs.drop 1).map (fun p => p.2 - p.1) | [] => []",
+    "exact match xs with | [] => [] | [_] => [] | a :: b :: as => (b - a) :: (match (b :: as) with | [] => [] | _::as' => [])"
+  ],
+  "longest_increasing_run": [
+    "exact xs.foldl (fun (max_len, curr_len, last_val) x => if x > last_val then (max max_len (curr_len + 1), curr_len + 1, x) else (max_len, 1, x)) (0, 0, -Int.maxBound) |> (fun (m, _, _) => m)",
+    "exact let rec loop : List Int → Nat → Nat → Nat → Nat | [] _ _ _ => 0 | [x] _ _ _ => 1 | x::xs max_run curr_run last_val => if x > last_val then max (max_run, curr_run + 1) (loop xs max_run (curr_run + 1) x) else max max_run (loop xs max_run 1 x); loop xs 0 0 0",
+    "exact xs.zip (xs.tail) |> List.filter (fun (a, b) => a < b) |> List.length |> (fun len => if xs.isEmpty then 0 else len + 1)",
+    "exact xs.foldl (fun (acc : List Nat) x => if acc.isEmpty || x > (xs.get? (acc.length - 2) |> Option.get!) then acc.push x else [x]) [] |> List.maximum? |> Option.getD 0",
+    "exact if xs.isEmpty then 0 else xs.foldl (fun (max_len, curr_len, prev) x => if x > prev then (max max_len (curr_len + 1), curr_len + 1, x) else (max_len, 1, x)) (0, 0, -Int.maxBound) |> (fun (m, _, _) => m)",
+    "exact xs.mapPrec (fun x => x) |> (fun l => if l.isEmpty then 0 else l.foldl (fun (m, c, p) x => if x > p then (max m (c + 1), c + 1, x) else (m, 1, x)) (0, 0, -Int.maxBound) |> (fun (res, _, _) => res))",
+    "exact let rec compute : List Int → Nat → Nat → Nat → Nat | [] _ _ _ => 0 | x::xs max_run curr_run last_val => let next_run := if x > last_val then curr_run + 1 else 1; let next_max := max max_run next_run; compute xs next_max next_run x; compute xs 0 0 0",
+    "exact xs.foldr (fun x acc => if acc.isEmpty || x >= (acc.head! |> (fun v => v)) then [x] else x :: acc) [] |> (fun runs => if runs.isEmpty then 0 else runs.map Nat.length |> List.maximum? |> Option.getD 0)"
+  ],
+  "max_subarray_product": [
+    "exact xs.foldl (fun (acc : (Int × Int × Int)) x => let (max_so_far, min_so_far, global_max) := acc in let new_max := max x (max (x * max_so_far) (x * min_so_far)) in let new_min := min x (min (x * max_so_far) (x * min_so_far)) in (new_max, new_min, max global_max new_max)) (0, 1, 0).3",
+    "exact let rec loop : List Int → Int → Int → Int → Int | [] _ _ res => res | a::as cur_max cur_min res => let next_max := max a (max (a * cur_max) (a * cur_min)) in let next_min := min a (min (a * cur_max) (a * cur_min)) in loop as next_max next_min (max res next_max); loop xs 1 1 (if xs.isEmpty then 0 else xs.head!.abs * 0) -- simplified logic for structure",
+    "exact xs.foldl (fun (acc : List Int) x => acc.cons x) [] |> List.sublists |> List.map (fun s => if s.isEmpty then 0 else s.foldl (*) 1) |> List.maximum!.get!",
+    "exact let rec compute : List Int → Int → Int → Int → Int | [] _ _ res => res | h::t max_p min_p res => let p1 := h * max_p in let p2 := h * min_p in let p3 := h in let cur_max := max p1 (max p2 p3) in let cur_min := min p1 (min p2 p3) in compute t cur_max cur_min (max res cur_max); compute xs 1 1 (if xs.isEmpty then 0 else xs.head!.abs * 0)",
+    "exact xs.map (fun x => x) |> List.sublists |> List.map (fun sub => if sub.isEmpty then 0 else sub.foldl (*) 1) |> List.maximum!.get!",
+    "exact let rec findMax : List Int → Int → Int → Int → Int | [] _ _ res => res | x::xs curMax curMin res => let candidates := [x, x * curMax, x * curMin] in let nextMax := candidates.foldl max (x) in let nextMin := candidates.foldl min (x) in findMax xs nextMax nextMin (max res nextMax); findMax xs 1 1 (if xs.isEmpty then 0 else xs.head!.abs * 0)",
+    "exact xs.foldl (fun (acc : (Int × Int × Int)) x => let (mx, mn, g) := acc in let n_mx := max x (max (x * mx) (x * mn)) in let n_mn := min x (min (x * mx) (x * mn)) in (n_mx, n_mn, max g n_mx)) (0, 1, 0).3",
+    "exact (xs.sublists.map (fun s => if s.isEmpty then 0 else s.foldl (*) 1)).maximum!.get!"
+  ],
+  "merge_sorted_desc": [
+    "exact let rec merge : List Int → List Int → List Int | [], ys => ys | xs, [] => xs | x::xs, y::ys => if x >= y then x :: merge xs (y::ys) else y :: merge (x::xs) ys; merge xs ys",
+    "exact match xs with | [] => ys | x::xs' => match ys with | [] => x::xs' | y::ys' => if x >= y then x :: (let rec merge : List Int → List Int → List Int | [], ys => ys | xs, [] => xs | x::xs, y::ys => if x >= y then x :: merge xs (y::ys) else y :: merge (x::xs) ys; merge xs' (y::ys')) else y :: (let rec merge : List Int → List Int → List Int | [], ys => ys | xs, [] => xs | x::xs, y::ys => if x >= .empty then x :: merge xs (y::ys) else y :: merge (x::xs) ys; merge (x::xs) ys')",
+    "exact xs.append ys |> List.sort (fun a b => a > b) |> List.dedup",
+    "exact xs.foldl (fun acc y => if y `elem` xs then acc else y :: acc) xs.sort (fun a b => a > b)",
+    "exact (xs ++ ys).sort (fun a b => a > b)",
+    "exact let rec loop : List Int → List Int → List Int | [], ys => ys | xs, [] => xs | x::xs, y::ys => if x >= y then x :: loop xs (y::ys) else y :: loop (x::xs) ys; loop xs ys",
+    "exact (xs.map (fun x => x) ++ ys.map (fun y => y)).sort (fun a b => a > b)",
+    "exact xs.foldr (fun x acc => if x `elem` ys then acc else x :: acc) (ys.sort (fun a b => a > b))"
+  ],
+  "window_sums": [
+    "exact if k == 0 || k > xs.length then [] else (let rec loop i : List Int := if i + k > xs.length then [] else (xs.sublist i k).sum :: loop (i + 1); loop 0)",
+    "exact if k == 0 || k > xs.length then [] else xs.indices.filter (fun i => i + k <= xs.length).map (fun i => xs.sublist i k).sum",
+    "exact if k == 0 || k > xs.length then [] else xs.sublist 0 xs.length.take (xs.length - k + 1).map (fun i => xs.sublist i k).sum",
+    "exact if k == 0 || k > xs.length then [] else (let rec go i : List Int := if i + k > xs.length then [] else (xs.sublist i k).sum :: go (i + 1); go 0)",
+    "exact if k == 0 || k > xs.length then [] else xs.map (fun _ => 0).take (if xs.length >= k then xs.length - k + 1 else 0).zip (xs.indices.map (fun i => xs.sublist i k).sum)",
+    "exact if k == 0 || k > xs.length then [] else (let rec loop i : List Int := if i + k > xs.length then [] else (xs.sublist i k).sum :: loop (i `` i + 1); loop 0) where loop i := if i + k > xs.length then [] else (xs.sublist i k).sum :: loop (i + 1)",
+    "exact if k == 0 || k > xs.length then [] else (xs.sublist 0 xs.length).map (fun i => xs.sublist i k).sum",
+    "exact if k == 0 || k > xs.length then [] else (let rec compute i : List Int := if i + k > xs.length then [] else (xs.sublist i k).sum :: compute (i + 1); compute 0)"
+  ]
+}

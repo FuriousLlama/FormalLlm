@@ -1,0 +1,588 @@
+{
+ "eval_stack": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => ys.elem x)\n\nGoal:\nxs : List \u2124",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init :=",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => acc + x",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+   "exact xs.foldl (init := 0) fun acc x => acc + x"
+  ]
+ },
+ "majority_element": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 3 = 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 3 \u2260 0)\n\nGoal",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := ",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => acc + x",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+   "exact xs.foldl (init := 0) fun acc x => acc + x"
+  ]
+ },
+ "map_with_index": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List",
+    "extracted": "exact xs.filter (fun x => x % 2 == 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 3 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 3 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 5 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x =>",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2265 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2264 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2",
+    "extracted": "exact xs.filter (fun x => x % 2 == 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 3 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 3 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 5 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x =>",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2265 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2264 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List",
+    "extracted": "exact xs.filter (fun x => x % 2 == 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.filter (fun x => x % 2 == 0)",
+   "exact xs.filter (fun x => x > 0)"
+  ]
+ },
+ "max_subarray_sum": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := ",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => acc + x",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := ",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => acc + x",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.foldl (init := 0) fun acc x => acc + x",
+   "exact xs.foldl (init := 0) (fun acc x => acc + x)"
+  ]
+ },
+ "prefix_while_increasing": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 1)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = ",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 1)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 1)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 1)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 1)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List Int\n\u22a2 List",
+    "extracted": "exact xs.filter (fun x => x % 2 == 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0 && x < 10)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0 || x < 10)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0 && x < 10 || x > 10 && x < 20)\n\n",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2265 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2264 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2265 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2264 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.filter (fun x => x > 0)",
+   "exact xs.filter (fun x => x % 2 == 0)"
+  ]
+ },
+ "unfold_n": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\n",
+    "extracted": "exact List.range n.map f seed",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact",
+    "extracted": "exact List.range n.map f seed",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\n",
+    "extracted": "exact List.range n.map f seed",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact List.range n.map f seed.toArray\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 Array Int\nTactic: exact",
+    "extracted": "exact List.range n.map f seed",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int",
+    "extracted": "exact List.range n.map f",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int",
+    "extracted": "exact List.range n.map f",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f\n\nGoal:\nn : Nat\nf : Int",
+    "extracted": "exact List.range n.map f",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map f seed\n\n",
+    "extracted": "exact List.range n.map f seed",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact List.range n.map f seed",
+   "exact List.range n.map f"
+  ]
+ },
+ "sum_at_odd_indices": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 3 = 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 3 \u2260 0)\n\nGoal",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => acc + x",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+   "exact xs.foldl (init := 0) fun acc x => acc + x"
+  ]
+ },
+ "zip_diff": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs :",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 3 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 3 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 5 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x =>",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2265 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2264 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0 && x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0 && x % 2 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0 && x % 2 = 0)\n\nGoal:\nxs : List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0 && x < 10)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 10 && x < 20)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 20 && x < 30)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0 && x < 10)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0 || x < 10)\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => x > 0 && x < 10 || x > 10 && x < 20)\n\n",
+    "extracted": "exact xs.filter (fun x => x > 0)",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.filter (fun x => x > 0)"
+  ]
+ },
+ "longest_increasing_run": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x == 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 == 1)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 == 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 == 1)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 == ",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := ",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => acc + x",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact xs.foldl (init := ",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => acc + x",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+   "exact xs.foldl (init := 0) fun acc x => acc + x"
+  ]
+ },
+ "max_subarray_product": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " \nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init :=",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => acc + x",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " \nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:\nexact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => acc + x\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := ",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => acc + x",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) (fun acc x => acc + x)\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.foldl (init := 0) (fun acc x => acc + x)",
+   "exact xs.foldl (init := 0) fun acc x => acc + x"
+  ]
+ },
+ "merge_sorted_desc": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !",
+    "extracted": "exact xs.filter (fun x => !ys.elem x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !",
+    "extracted": "exact xs.filter (fun x => !ys.elem x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \ufffd",
+    "extracted": "exact xs.filter (fun x => !ys.elem x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \ufffd",
+    "extracted": "exact xs.filter (fun x => !ys.elem x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !",
+    "extracted": "exact xs.filter (fun x => !ys.elem x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !",
+    "extracted": "exact xs.filter (fun x => !ys.elem x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !",
+    "extracted": "exact xs.filter (fun x => !ys.elem x)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !",
+    "extracted": "exact xs.filter (fun x => !ys.elem x)",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.filter (fun x => !ys.elem x)"
+  ]
+ },
+ "window_sums": {
+  "prompt": "You are an expert Lean 4 programmer. Given a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nk : Nat\nxs : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.take k\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x > 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x < 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x = 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x \u2260 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 = 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 3 = 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => x % 3 \u2260 0)\n\nGoal:\nxs : List \u2124\n\u22a2 List \u2124\nTactic",
+    "extracted": "exact xs.take k",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.take k\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs",
+    "extracted": "exact xs.take k",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x < k)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys",
+    "extracted": "exact xs.filter (fun x => x < k)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x < k)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124",
+    "extracted": "exact xs.filter (fun x => x < k)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x < k)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.filter (fun x => x < 0)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.filter (fun x => x > 0)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.filter (fun x => x = 0)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.filter (fun x => x \u2260 0)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.filter (fun x => x % 2 = 0)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.filter (fun x => x % 2 \u2260 0)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.filter (fun x => x % 3 = 0)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.filter (fun x => x % 3 \u2260 0)\n\nGoal:\nl : List \u2124\n\u22a2",
+    "extracted": "exact xs.filter (fun x => x < k)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.take k\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs",
+    "extracted": "exact xs.take k",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.take k\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124",
+    "extracted": "exact xs.take k",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.filter (fun x => x < k)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List \u2124",
+    "extracted": "exact xs.filter (fun x => x < k)",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.take k",
+   "exact xs.filter (fun x => x < k)"
+  ]
+ }
+}

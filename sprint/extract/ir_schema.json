@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Clean IR — Typed Lambda Calculus for Haskell Core",
+  "description": "Clean IR schema: GHC-specific noise (I#, $f*, TyArg, __DEFAULT) removed. First-class primitives replace typeclass-dispatched operations.",
+
+  "$defs": {
+    "expr": {
+      "discriminator": { "propertyName": "tag" },
+      "oneOf": [
+        { "$ref": "#/$defs/Var" },
+        { "$ref": "#/$defs/Lit" },
+        { "$ref": "#/$defs/Con" },
+        { "$ref": "#/$defs/Prim" },
+        { "$ref": "#/$defs/App" },
+        { "$ref": "#/$defs/Lam" },
+        { "$ref": "#/$defs/Let" },
+        { "$ref": "#/$defs/Case" },
+        { "$ref": "#/$defs/Tuple" }
+      ]
+    },
+
+    "Var": {
+      "type": "object",
+      "properties": {
+        "tag":  { "const": "Var" },
+        "name": { "type": "string", "pattern": "^[a-zA-Z_][a-zA-Z0-9_']*$" }
+      },
+      "required": ["tag", "name"],
+      "additionalProperties": false
+    },
+
+    "Lit": {
+      "type": "object",
+      "properties": {
+        "tag":  { "const": "Lit" },
+        "sort": { "const": "Int" },
+        "val":  { "type": "integer" }
+      },
+      "required": ["tag", "sort", "val"],
+      "additionalProperties": false
+    },
+
+    "Con": {
+      "type": "object",
+      "properties": {
+        "tag":  { "const": "Con" },
+        "name": {
+          "type": "string",
+          "enum": [":", "[]", "True", "False", "Just", "Nothing", "(,)", "(,,)"]
+        }
+      },
+      "required": ["tag", "name"],
+      "additionalProperties": false
+    },
+
+    "Prim": {
+      "type": "object",
+      "properties": {
+        "tag": { "const": "Prim" },
+        "op":  {
+          "type": "string",
+          "enum": [
+            "+", "-", "*", "div", "mod",
+            "==", "/=", "<", "<=", ">", ">=",
+            "&&", "||", "not",
+            "negate", "abs", "signum"
+          ]
+        }
+      },
+      "required": ["tag", "op"],
+      "additionalProperties": false
+    },
+
+    "App": {
+      "type": "object",
+      "properties": {
+        "tag":  { "const": "App" },
+        "fun":  { "$ref": "#/$defs/expr" },
+        "args": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/expr" },
+          "minItems": 1
+        }
+      },
+      "required": ["tag", "fun", "args"],
+      "additionalProperties": false
+    },
+
+    "Lam": {
+      "type": "object",
+      "properties": {
+        "tag": { "const": "Lam" },
+        "binders": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/valBinder" },
+          "minItems": 1
+        },
+        "body": { "$ref": "#/$defs/expr" }
+      },
+      "required": ["tag", "binders", "body"],
+      "additionalProperties": false
+    },
+
+    "Let": {
+      "type": "object",
+      "properties": {
+        "tag": { "const": "Let" },
+        "binds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/binding" },
+          "minItems": 1
+        },
+        "body": { "$ref": "#/$defs/expr" }
+      },
+      "required": ["tag", "binds", "body"],
+      "additionalProperties": false
+    },
+
+    "Case": {
+      "type": "object",
+      "properties": {
+        "tag":       { "const": "Case" },
+        "scrutinee": { "$ref": "#/$defs/expr" },
+        "alts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/alt" },
+          "minItems": 1
+        }
+      },
+      "required": ["tag", "scrutinee", "alts"],
+      "additionalProperties": false
+    },
+
+    "Tuple": {
+      "type": "object",
+      "properties": {
+        "tag": { "const": "Tuple" },
+        "elems": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/expr" },
+          "minItems": 2
+        }
+      },
+      "required": ["tag", "elems"],
+      "additionalProperties": false
+    },
+
+    "valBinder": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "kind": { "const": "val" }
+      },
+      "required": ["name", "kind"],
+      "additionalProperties": false
+    },
+
+    "binding": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "val":  { "$ref": "#/$defs/expr" }
+      },
+      "required": ["name", "val"],
+      "additionalProperties": false
+    },
+
+    "alt": {
+      "type": "object",
+      "properties": {
+        "pat":  { "$ref": "#/$defs/pat" },
+        "body": { "$ref": "#/$defs/expr" }
+      },
+      "required": ["pat", "body"],
+      "additionalProperties": false
+    },
+
+    "pat": {
+      "discriminator": { "propertyName": "tag" },
+      "oneOf": [
+        { "$ref": "#/$defs/PCon" },
+        { "$ref": "#/$defs/PTuple" },
+        { "$ref": "#/$defs/PLit" },
+        { "$ref": "#/$defs/PWild" }
+      ]
+    },
+
+    "PCon": {
+      "type": "object",
+      "properties": {
+        "tag":  { "const": "PCon" },
+        "con":  { "type": "string" },
+        "vars": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["tag", "con", "vars"],
+      "additionalProperties": false
+    },
+
+    "PTuple": {
+      "type": "object",
+      "properties": {
+        "tag":  { "const": "PTuple" },
+        "vars": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 2
+        }
+      },
+      "required": ["tag", "vars"],
+      "additionalProperties": false
+    },
+
+    "PLit": {
+      "type": "object",
+      "properties": {
+        "tag": { "const": "PLit" },
+        "val": { "type": "integer" }
+      },
+      "required": ["tag", "val"],
+      "additionalProperties": false
+    },
+
+    "PWild": {
+      "type": "object",
+      "properties": {
+        "tag": { "const": "PWild" }
+      },
+      "required": ["tag"],
+      "additionalProperties": false
+    },
+
+    "function": {
+      "type": "object",
+      "properties": {
+        "name":      { "type": "string" },
+        "type":      { "type": "string" },
+        "recursive": { "type": "boolean" },
+        "package":   { "type": "string" },
+        "body":      { "$ref": "#/$defs/expr" },
+        "ok":        { "const": true }
+      },
+      "required": ["name", "type", "recursive", "package", "body", "ok"],
+      "additionalProperties": false
+    }
+  },
+
+  "type": "array",
+  "items": { "$ref": "#/$defs/function" }
+}

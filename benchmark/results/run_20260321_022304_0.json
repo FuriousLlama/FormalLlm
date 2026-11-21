@@ -1,0 +1,44 @@
+[
+  {
+    "solved": false,
+    "tactics": [
+      "constructor",
+      "exact (xs.filter (fun x => decide (x < 0))).foldl (fun a b => a * b) 1"
+    ],
+    "rollouts_used": 50,
+    "tree_size": 51,
+    "stats": {
+      "n_expand_calls": 50,
+      "n_tactic_steps": 1332,
+      "n_tactic_valid": 280,
+      "n_tactic_solved": 123,
+      "n_oracle_calls": 256,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 50,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.2184,
+      "t_step_s": 2.6951,
+      "t_oracle_s": 19.16,
+      "t_simulate_s": 8.9637,
+      "t_select_s": 0.0002,
+      "t_total_s": 34.0374,
+      "ms_per_step": 2.02,
+      "ms_per_oracle": 74.8,
+      "pct_step": 7.9,
+      "pct_policy": 9.5,
+      "pct_oracle": 56.3,
+      "pct_simulate": 26.3
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1,
+      "2": 49
+    },
+    "task": "sum_and_product",
+    "category": "multistep",
+    "ghc_equivalent": "sum_and_product",
+    "wall_time_s": 34.09
+  }
+]

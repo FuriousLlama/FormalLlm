@@ -1,0 +1,46 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "constructor",
+      "exact (xs.filter (fun x => decide (x > 0))).length",
+      "exact (xs.filter (fun x => decide (x \u2264 0))).length"
+    ],
+    "rollouts_used": 62,
+    "tree_size": 111,
+    "stats": {
+      "n_expand_calls": 62,
+      "n_tactic_steps": 2196,
+      "n_tactic_valid": 66,
+      "n_tactic_solved": 49,
+      "n_oracle_calls": 46,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 3,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 61,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.0539,
+      "t_step_s": 7.5505,
+      "t_oracle_s": 2.06,
+      "t_simulate_s": 60.6985,
+      "t_select_s": 0.0009,
+      "t_total_s": 73.3639,
+      "ms_per_step": 3.44,
+      "ms_per_oracle": 44.8,
+      "pct_step": 10.3,
+      "pct_policy": 4.2,
+      "pct_oracle": 2.8,
+      "pct_simulate": 82.7
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 18,
+      "2": 53,
+      "3": 39
+    },
+    "task": "partition_and_count",
+    "category": "v2_multi_step",
+    "ghc_equivalent": "partition_and_count",
+    "wall_time_s": 73.37
+  }
+]

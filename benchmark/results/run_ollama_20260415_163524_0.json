@@ -1,0 +1,45 @@
+[
+  {
+    "solved": false,
+    "tactics": [
+      "exact (0 : \u2124)"
+    ],
+    "rollouts_used": 10,
+    "tree_size": 7,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 174,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 147,
+      "n_oracle_calls": 146,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 1.7044,
+      "t_step_s": 0.4622,
+      "t_oracle_s": 48.4683,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 50.6349,
+      "ms_per_step": 2.66,
+      "ms_per_oracle": 332.0,
+      "pct_step": 0.9,
+      "pct_policy": 3.4,
+      "pct_oracle": 95.7,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 6
+    },
+    "abort_reason": "patience_exceeded",
+    "task": "majority_element",
+    "category": "diag_b",
+    "ghc_equivalent": "majority_element",
+    "wall_time_s": 50.69,
+    "policy_name": "ollama",
+    "ef_catalog_match": null
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact List.rec 0 (fun h _ acc => h - acc) xs"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 48,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 32,
+      "n_oracle_calls": 32,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0748,
+      "t_oracle_s": 1.8525,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 1.9272,
+      "ms_per_step": 1.56,
+      "ms_per_oracle": 57.9,
+      "pct_step": 3.9,
+      "pct_policy": 0.0,
+      "pct_oracle": 96.1,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "alternating_sum",
+    "category": "stretch_s1",
+    "ghc_equivalent": "alternating_sum",
+    "wall_time_s": 1.93,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.filter (fun x => decide (x % 2 = 0))).foldl (fun a b => a + b) 0"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 122,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 788,
+      "n_tactic_valid": 6,
+      "n_tactic_solved": 166,
+      "n_oracle_calls": 95,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 3,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.7592,
+      "t_oracle_s": 5.5113,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 7.2705,
+      "ms_per_step": 2.23,
+      "ms_per_oracle": 58.0,
+      "pct_step": 24.2,
+      "pct_policy": 0.0,
+      "pct_oracle": 75.8,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 121
+    },
+    "task": "sum_even_only",
+    "category": "stretch_s1",
+    "ghc_equivalent": "sum_even_only",
+    "wall_time_s": 7.27,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.filter (fun x => decide (x > 0))).foldl (fun a b => a * b) 1"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 122,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 788,
+      "n_tactic_valid": 6,
+      "n_tactic_solved": 166,
+      "n_oracle_calls": 95,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 3,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.7921,
+      "t_oracle_s": 5.3112,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 7.1033,
+      "ms_per_step": 2.27,
+      "ms_per_oracle": 55.9,
+      "pct_step": 25.2,
+      "pct_policy": 0.0,
+      "pct_oracle": 74.8,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 121
+    },
+    "task": "product_positive",
+    "category": "stretch_s1",
+    "ghc_equivalent": "product_positive",
+    "wall_time_s": 7.11,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.filter (fun x => decide (x < 0))).map (fun x => -x)"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 464,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 764,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 500,
+      "n_oracle_calls": 137,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 4,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.9653,
+      "t_oracle_s": 9.1691,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 11.1344,
+      "ms_per_step": 2.57,
+      "ms_per_oracle": 66.9,
+      "pct_step": 17.7,
+      "pct_policy": 0.0,
+      "pct_oracle": 82.3,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 463
+    },
+    "task": "abs_of_negatives",
+    "category": "stretch_s1",
+    "ghc_equivalent": "abs_of_negatives",
+    "wall_time_s": 11.14,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact Nat.rec 0 (fun k acc => acc + (k + 1) * (k + 1) * (k + 1)) n"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 24,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 24,
+      "n_oracle_calls": 24,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0315,
+      "t_oracle_s": 1.3412,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 1.3727,
+      "ms_per_step": 1.31,
+      "ms_per_oracle": 55.9,
+      "pct_step": 2.3,
+      "pct_policy": 0.0,
+      "pct_oracle": 97.7,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "sum_cubes",
+    "category": "stretch_s1",
+    "ghc_equivalent": "sum_cubes",
+    "wall_time_s": 1.37,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  }
+]

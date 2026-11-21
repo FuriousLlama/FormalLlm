@@ -1,0 +1,244 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact ((List.range n).foldl (fun (a, b) _ => (b, a + b)) (0, 1)).1"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 80,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 767,
+      "n_tactic_valid": 2,
+      "n_tactic_solved": 79,
+      "n_oracle_calls": 50,
+      "n_oracle_passed": 4,
+      "n_oracle_prefiltered": 4,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.181,
+      "t_step_s": 0.4097,
+      "t_oracle_s": 2.3056,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 5.8963,
+      "ms_per_step": 0.53,
+      "ms_per_oracle": 46.1,
+      "pct_step": 6.9,
+      "pct_policy": 53.9,
+      "pct_oracle": 39.1,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 79
+    },
+    "task": "fibonacci",
+    "category": "recurrence",
+    "ghc_equivalent": "fibonacci",
+    "wall_time_s": 5.9
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact ((List.range n).foldl (fun (acc, ab) _ => (acc ++ [ab.1], (ab.2, ab.1 + ab.2))) ([], (0, 1))).1"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 63,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 781,
+      "n_tactic_valid": 3,
+      "n_tactic_solved": 62,
+      "n_oracle_calls": 61,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.896,
+      "t_step_s": 1.1184,
+      "t_oracle_s": 2.5105,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 6.5249,
+      "ms_per_step": 1.43,
+      "ms_per_oracle": 41.2,
+      "pct_step": 17.1,
+      "pct_policy": 44.4,
+      "pct_oracle": 38.5,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 62
+    },
+    "task": "fib_list",
+    "category": "recurrence",
+    "ghc_equivalent": "fib_list",
+    "wall_time_s": 6.53
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact Nat.rec 1 (fun k acc => acc * (k + 1)) n"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 80,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 767,
+      "n_tactic_valid": 2,
+      "n_tactic_solved": 79,
+      "n_oracle_calls": 50,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 4,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0021,
+      "t_step_s": 0.3824,
+      "t_oracle_s": 1.3898,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 1.7743,
+      "ms_per_step": 0.5,
+      "ms_per_oracle": 27.8,
+      "pct_step": 21.6,
+      "pct_policy": 0.1,
+      "pct_oracle": 78.3,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 79
+    },
+    "task": "factorial",
+    "category": "recurrence",
+    "ghc_equivalent": "factorial",
+    "wall_time_s": 1.78
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (List.range n).map (fun i => (List.range (i + 1)).foldl (\u00b7 + \u00b7) 0)"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 63,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 781,
+      "n_tactic_valid": 3,
+      "n_tactic_solved": 62,
+      "n_oracle_calls": 50,
+      "n_oracle_passed": 3,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0038,
+      "t_step_s": 1.1002,
+      "t_oracle_s": 2.0393,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 3.1433,
+      "ms_per_step": 1.41,
+      "ms_per_oracle": 40.8,
+      "pct_step": 35.0,
+      "pct_policy": 0.1,
+      "pct_oracle": 64.9,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 62
+    },
+    "task": "triangular_numbers",
+    "category": "recurrence",
+    "ghc_equivalent": "triangular_numbers",
+    "wall_time_s": 3.15
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "constructor",
+      "exact (xs.map (fun x => x * x)).foldl (fun a b => a + b) 0"
+    ],
+    "rollouts_used": 16,
+    "tree_size": 42,
+    "stats": {
+      "n_expand_calls": 16,
+      "n_tactic_steps": 2320,
+      "n_tactic_valid": 149,
+      "n_tactic_solved": 26,
+      "n_oracle_calls": 24,
+      "n_oracle_passed": 5,
+      "n_oracle_prefiltered": 2,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 15,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.7407,
+      "t_step_s": 7.1407,
+      "t_oracle_s": 1.8626,
+      "t_simulate_s": 25.2387,
+      "t_select_s": 0.0001,
+      "t_total_s": 36.9827,
+      "ms_per_step": 3.08,
+      "ms_per_oracle": 77.6,
+      "pct_step": 19.3,
+      "pct_policy": 7.4,
+      "pct_oracle": 5.0,
+      "pct_simulate": 68.2
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 16,
+      "2": 25
+    },
+    "task": "running_parts",
+    "category": "recurrence",
+    "ghc_equivalent": "running_parts",
+    "wall_time_s": 36.99
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (List.range n).map (fun i => (List.range i).foldl (fun a _ => a * 2) 1)"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 63,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 781,
+      "n_tactic_valid": 3,
+      "n_tactic_solved": 62,
+      "n_oracle_calls": 50,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0022,
+      "t_step_s": 1.0868,
+      "t_oracle_s": 1.9107,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 2.9996,
+      "ms_per_step": 1.39,
+      "ms_per_oracle": 38.2,
+      "pct_step": 36.2,
+      "pct_policy": 0.1,
+      "pct_oracle": 63.7,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 62
+    },
+    "task": "powers_of_2",
+    "category": "recurrence",
+    "ghc_equivalent": "powers_of_2",
+    "wall_time_s": 3.0
+  }
+]

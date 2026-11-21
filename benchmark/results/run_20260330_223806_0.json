@@ -1,0 +1,57 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'sumAbsPositives': missing 'type' in ['hasSorry', 'hasUnsafe', 'messages']",
+    "task": "sum_abs_positives",
+    "category": "v3_stretch",
+    "ghc_equivalent": "sum_abs_positives",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'normalizeToMax': missing 'type' in ['hasSorry', 'hasUnsafe', 'messages']",
+    "task": "normalize_to_max",
+    "category": "v3_stretch",
+    "ghc_equivalent": "normalize_to_max",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'countSignChanges': missing 'type' in ['hasSorry', 'hasUnsafe', 'messages']",
+    "task": "count_sign_changes",
+    "category": "v3_stretch",
+    "ghc_equivalent": "count_sign_changes",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'sortedAbs': missing 'type' in ['hasSorry', 'hasUnsafe', 'messages']",
+    "task": "sorted_abs",
+    "category": "v3_stretch",
+    "ghc_equivalent": "sorted_abs",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'sumSquaresPositive': missing 'type' in ['hasSorry', 'hasUnsafe', 'messages']",
+    "task": "sum_squares_positive",
+    "category": "v3_stretch",
+    "ghc_equivalent": "sum_squares_positive",
+    "wall_time_s": 0.0
+  }
+]

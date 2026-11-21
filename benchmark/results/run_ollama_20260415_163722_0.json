@@ -1,0 +1,45 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.foldl (fun (c, n) x => if n == 0 then (x, 1) else if c == x then (c, n + 1) else (c, n - 1)) (0, 0)).1"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 3,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 171,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 143,
+      "n_oracle_calls": 143,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 4.9918,
+      "t_step_s": 0.5113,
+      "t_oracle_s": 48.1914,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 53.6945,
+      "ms_per_step": 2.99,
+      "ms_per_oracle": 337.0,
+      "pct_step": 1.0,
+      "pct_policy": 9.3,
+      "pct_oracle": 89.8,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 2
+    },
+    "abort_reason": null,
+    "task": "majority_element",
+    "category": "diag_b",
+    "ghc_equivalent": "majority_element",
+    "wall_time_s": 53.71,
+    "policy_name": "ollama",
+    "ef_catalog_match": false
+  }
+]

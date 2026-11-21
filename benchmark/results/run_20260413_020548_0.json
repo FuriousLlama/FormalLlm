@@ -1,0 +1,57 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "flatten",
+    "category": "multi_type",
+    "ghc_equivalent": "flatten",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "zip_sum",
+    "category": "multi_arg",
+    "ghc_equivalent": "zip_sum",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "partition_positive",
+    "category": "product_return",
+    "ghc_equivalent": "partition_positive",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "dedup_count",
+    "category": "multi_step",
+    "ghc_equivalent": "dedup_count",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "filter_map_abs",
+    "category": "filtermap",
+    "ghc_equivalent": "filter_map_abs",
+    "wall_time_s": 0.0
+  }
+]

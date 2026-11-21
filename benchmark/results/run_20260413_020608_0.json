@@ -1,0 +1,112 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "count_positive",
+    "category": "filter_fold",
+    "ghc_equivalent": "count_positive",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "map_square",
+    "category": "map_fold",
+    "ghc_equivalent": "map_square",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "sort_desc",
+    "category": "pipeline",
+    "ghc_equivalent": "sort_desc",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "sum_doubles",
+    "category": "map_fold",
+    "ghc_equivalent": "sum_doubles",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "max_abs",
+    "category": "map_fold",
+    "ghc_equivalent": "max_abs",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "take_positives",
+    "category": "pipeline",
+    "ghc_equivalent": "take_positives",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "nub_sort",
+    "category": "pipeline",
+    "ghc_equivalent": "nub_sort",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "drop_negatives",
+    "category": "pipeline",
+    "ghc_equivalent": "drop_negatives",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "count_even",
+    "category": "filter_fold",
+    "ghc_equivalent": "count_even",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "accum_sum",
+    "category": "accumulator",
+    "ghc_equivalent": "accum_sum",
+    "wall_time_s": 0.0
+  }
+]

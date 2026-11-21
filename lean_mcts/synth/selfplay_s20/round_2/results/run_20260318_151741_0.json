@@ -1,0 +1,214 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "have h := xs.foldl (fun (a, b) x => (a + x, b + x)) (0, 0)",
+      "constructor",
+      "exact h.1",
+      "exact xs.foldl (fun a b => a * b) 1"
+    ],
+    "rollouts_used": 152,
+    "tree_size": 495,
+    "stats": {
+      "n_expand_calls": 152,
+      "n_tactic_steps": 3191,
+      "n_tactic_valid": 157,
+      "n_tactic_solved": 343,
+      "n_oracle_calls": 335,
+      "n_oracle_passed": 5,
+      "n_oracle_prefiltered": 8,
+      "n_oracle_batches": 8,
+      "n_simulate_calls": 151,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.2417,
+      "t_step_s": 7.231,
+      "t_oracle_s": 25.6162,
+      "t_simulate_s": 301.7228,
+      "t_select_s": 0.0071,
+      "t_total_s": 337.8189,
+      "ms_per_step": 2.27,
+      "ms_per_oracle": 76.5,
+      "pct_step": 2.1,
+      "pct_policy": 1.0,
+      "pct_oracle": 7.6,
+      "pct_simulate": 89.3
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 112,
+      "2": 113,
+      "3": 134,
+      "4": 135
+    },
+    "task": "sum_and_product",
+    "category": "multistep",
+    "ghc_equivalent": "sum_and_product",
+    "wall_time_s": 337.83
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "constructor",
+      "exact (xs.filter (fun x => decide (x > 0))).length",
+      "exact (xs.filter (fun x => decide (x < 0))).length  -- Incorrect type error: Type mismatch at position 1. Expected a value of type \"List (match (fun x => decide (x < 0)))\", but has type \"List \u2115\""
+    ],
+    "rollouts_used": 72,
+    "tree_size": 159,
+    "stats": {
+      "n_expand_calls": 72,
+      "n_tactic_steps": 3637,
+      "n_tactic_valid": 86,
+      "n_tactic_solved": 87,
+      "n_oracle_calls": 82,
+      "n_oracle_passed": 3,
+      "n_oracle_prefiltered": 5,
+      "n_oracle_batches": 4,
+      "n_simulate_calls": 71,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.8467,
+      "t_step_s": 12.965,
+      "t_oracle_s": 4.7949,
+      "t_simulate_s": 93.2893,
+      "t_select_s": 0.0008,
+      "t_total_s": 113.8968,
+      "ms_per_step": 3.56,
+      "ms_per_oracle": 58.5,
+      "pct_step": 11.4,
+      "pct_policy": 2.5,
+      "pct_oracle": 4.2,
+      "pct_simulate": 81.9
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 29,
+      "2": 89,
+      "3": 40
+    },
+    "task": "count_pos_neg",
+    "category": "multistep",
+    "ghc_equivalent": "count_pos_neg",
+    "wall_time_s": 113.9
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact xs.partition (fun x => decide (x % 2 = 0)) -- Expected: List \u2124 \u00d7 List \u2124"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 17,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 683,
+      "n_tactic_valid": 13,
+      "n_tactic_solved": 16,
+      "n_oracle_calls": 16,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.8094,
+      "t_step_s": 3.3087,
+      "t_oracle_s": 0.7541,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 6.8723,
+      "ms_per_step": 4.84,
+      "ms_per_oracle": 47.1,
+      "pct_step": 48.1,
+      "pct_policy": 40.9,
+      "pct_oracle": 11.0,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 16
+    },
+    "task": "split_even_odd",
+    "category": "multistep",
+    "ghc_equivalent": "split_even_odd",
+    "wall_time_s": 6.88
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact xs.foldl (fun (mn, mx) x => (min mn x, max mx x)) (0, 0)"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 101,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 676,
+      "n_tactic_valid": 12,
+      "n_tactic_solved": 100,
+      "n_oracle_calls": 99,
+      "n_oracle_passed": 3,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0019,
+      "t_step_s": 1.8798,
+      "t_oracle_s": 8.6993,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 10.5809,
+      "ms_per_step": 2.78,
+      "ms_per_oracle": 87.9,
+      "pct_step": 17.8,
+      "pct_policy": 0.0,
+      "pct_oracle": 82.2,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 100
+    },
+    "task": "min_and_max",
+    "category": "multistep",
+    "ghc_equivalent": "min_and_max",
+    "wall_time_s": 10.58
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "have h := xs.foldl (fun (a, b) c => (a + 1, b + c)) (0, 0)",
+      "exact h"
+    ],
+    "rollouts_used": 19,
+    "tree_size": 47,
+    "stats": {
+      "n_expand_calls": 19,
+      "n_tactic_steps": 1409,
+      "n_tactic_valid": 23,
+      "n_tactic_solved": 28,
+      "n_oracle_calls": 21,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 18,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.7803,
+      "t_step_s": 5.4281,
+      "t_oracle_s": 2.4952,
+      "t_simulate_s": 55.0791,
+      "t_select_s": 0.0001,
+      "t_total_s": 65.7828,
+      "ms_per_step": 3.85,
+      "ms_per_oracle": 118.8,
+      "pct_step": 8.3,
+      "pct_policy": 4.2,
+      "pct_oracle": 3.8,
+      "pct_simulate": 83.7
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 28,
+      "2": 18
+    },
+    "task": "length_and_sum",
+    "category": "multistep",
+    "ghc_equivalent": "length_and_sum",
+    "wall_time_s": 65.79
+  }
+]

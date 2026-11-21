@@ -1,0 +1,1170 @@
+{
+  "config": {
+    "config": "B1",
+    "k": 10,
+    "tier": "held_out_12",
+    "base_model": "Qwen/Qwen2.5-Coder-1.5B",
+    "n": 8,
+    "temperature": 0.2,
+    "prompt_style": "spec",
+    "query_style": "goal",
+    "generations_file": "sprint/benchmark/results/rerun_2026-11-21/jobB_b1_spec.generations.json",
+    "wall_generate": 535.4
+  },
+  "summary": {
+    "solved": 0,
+    "total": 12,
+    "solve_rate": 0.0,
+    "solved_tasks": [],
+    "unique_per_task": {
+      "eval_stack": 2,
+      "majority_element": 5,
+      "map_with_index": 5,
+      "max_subarray_sum": 2,
+      "prefix_while_increasing": 3,
+      "unfold_n": 5,
+      "sum_at_odd_indices": 7,
+      "zip_diff": 3,
+      "longest_increasing_run": 7,
+      "max_subarray_product": 2,
+      "merge_sorted_desc": 3,
+      "window_sums": 6
+    },
+    "zero_candidate_tasks": [],
+    "verdict_totals": {
+      "pass": 0,
+      "compile_fail": 39,
+      "wrong_output": 11,
+      "infra_error": 0
+    }
+  },
+  "per_task": [
+    {
+      "name": "eval_stack",
+      "solved": false,
+      "n_candidates": 2,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "or",
+        "and",
+        "prod",
+        "contains",
+        "contains",
+        "elem",
+        "beq'",
+        "blt'",
+        "blt'",
+        "ble'"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 2,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldr (\u00b7 + \u00b7) 0",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "7",
+              "expected": "7",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "6",
+              "expected": "6",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "16",
+              "expected": "1",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact (xs.foldr (\u00b7 + \u00b7) 0)",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "7",
+              "expected": "7",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "6",
+              "expected": "6",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "16",
+              "expected": "1",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ]
+    },
+    {
+      "name": "majority_element",
+      "solved": false,
+      "n_candidates": 5,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "or",
+        "and",
+        "prod",
+        "contains",
+        "contains",
+        "elem",
+        "beq'",
+        "blt'",
+        "blt'",
+        "ble'"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 4,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact (xs.majorityElement)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Invalid field `majorityElement`: The environment does not contain `List.majorityElement`, so it is not possible to project the field `majorityElement` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.majorityElement",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Invalid field `majorityElement`: The environment does not contain `List.majorityElement`, so it is not possible to project the field `majorityElement` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.majority_element",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Invalid field `majority_element`: The environment does not contain `List.majority_element`, so it is not possible to project the field `majority_element` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.foldr (\u00b7 + \u00b7) 0",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "23",
+              "expected": "3",
+              "passed": false
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "4",
+              "expected": "1",
+              "passed": false
+            },
+            {
+              "actual": "8",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "8",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "22",
+              "expected": "3",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact xs.maj",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Invalid field `maj`: The environment does not contain `List.maj`, so it is not possible to project the field `maj` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ]
+    },
+    {
+      "name": "map_with_index",
+      "solved": false,
+      "n_candidates": 5,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "partialSums",
+        "dropLastTR",
+        "partialProds",
+        "Poly.insertSorted",
+        "insert",
+        "qsortOrd",
+        "join",
+        "flattenTR",
+        "replaceIf",
+        "fillNones"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 5,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact mapWithIndex xs (\u03bb x, x * (1 + x))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token ','; expected '\u21a6', '=>'; Function expected at\n  mapWithIndex xs\nbut this term has type\n  List \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  failed to pretty print term (use 'set_option pp.rawOnError true' for raw representation); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact mapWithIndex xs (\u03bb x, x * (1 + index xs x))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token ','; expected '\u21a6', '=>'; Function expected at\n  mapWithIndex xs\nbut this term has type\n  List \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  failed to pretty print term (use 'set_option pp.rawOnError true' for raw representation); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact mapWithIndex xs (\u03bb x, x * (x + 1))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token ','; expected '\u21a6', '=>'; Function expected at\n  mapWithIndex xs\nbut this term has type\n  List \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  failed to pretty print term (use 'set_option pp.rawOnError true' for raw representation); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.mapWithIndex (fun i x => i * x)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `mapWithIndex`: The environment does not contain `List.mapWithIndex`, so it is not possible to project the field `mapWithIndex` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.mapWithIndex (fun (x, i) => x * i + 1)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `mapWithIndex`: The environment does not contain `List.mapWithIndex`, so it is not possible to project the field `mapWithIndex` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ]
+    },
+    {
+      "name": "max_subarray_sum",
+      "solved": false,
+      "n_candidates": 2,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 7,
+      "retrieved_names": [
+        "or",
+        "and",
+        "prod",
+        "contains",
+        "contains",
+        "elem",
+        "beq'",
+        "blt'",
+        "blt'",
+        "ble'"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 2,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact (xs.foldr (\u00b7 + \u00b7) 0)",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "2",
+              "expected": "4",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "-6",
+              "expected": "0",
+              "passed": false
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact xs.foldr (\u00b7 + \u00b7) 0",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "2",
+              "expected": "4",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "-6",
+              "expected": "0",
+              "passed": false
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ]
+    },
+    {
+      "name": "prefix_while_increasing",
+      "solved": false,
+      "n_candidates": 3,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 7,
+      "retrieved_names": [
+        "partialSums",
+        "dropLastTR",
+        "partialProds",
+        "Poly.insertSorted",
+        "insert",
+        "qsortOrd",
+        "join",
+        "flattenTR",
+        "replaceIf",
+        "fillNones"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 3,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "prefix_while_increasing xs",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unknown tactic; unsolved goals\nxs : List \u2124\n\u22a2 List \u2124; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact prefix_while_increasing xs",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Unknown identifier `prefix_while_increasing`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact match xs with\n  | [] => []\n  | x :: xs' => if x < List.hd xs' then x :: prefixWhileIncreasing xs' else []\nend",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Unknown constant `List.hd`; Invalid `end`: There is no current scope to end\n\nNote: Scopes are introduced using `namespace` and `section`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ]
+    },
+    {
+      "name": "unfold_n",
+      "solved": false,
+      "n_candidates": 5,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "takeD",
+        "take",
+        "drop",
+        "replaceFTR",
+        "filterMapTR",
+        "lookmap",
+        "mapIdx",
+        "replicate",
+        "dropSlice",
+        "dropSlice"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 5,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact let rec go : Int \u2192 Array Int \u2192 List Int | 0, acc => acc.toList | n+1, a :: as => go n (acc.push (f a)) as",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; Type mismatch\n  a :: as\nhas type\n  List ?m.10\nbut is expected to have type\n  Array \u2124; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec go : Int \u2192 List Int \u2192 List Int | n, acc => if n = 0 then acc else go (n - 1) (f acc.size :: acc); go seed #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `size`: The environment does not contain `List.size`, so it is not possible to project the field `size` from an expression\n  acc\nof type `List \u2124`; Application type mismatch: The argument\n  #[]\nhas type\n  Array ?m.23\nbut is expected to have type\n  List \u2124\nin the application\n  go seed #[]; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact match n, f, seed with | 0, _, _ => [] | n+1, f', seed' => f' seed' :: unfoldN n f seed'",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec go : Int \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, a :: as => go n (a :: acc); go n as",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid pattern(s): `n` is an explicit pattern variable, but it only occurs in positions that are inaccessible to pattern matching:\n  .(match n, 1 with\n    | Int.ofNat m, Int.ofNat n => Int.ofNat (m + n)\n    | Int.ofNat m, Int.negSucc n => Int.subNatNat m n.succ\n    | Int.negSucc m, Int.ofNat n => Int.subNatNat n m.succ\n    | Int.negSucc m, Int.negSucc n => Int.negSucc (m + n).succ)\n  \n  a :: as; Unknown identifier `as`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact match n, f, seed with | 0, _, _ => [] | n+1, f', seed' => f' seed' :: unfoldN (n-1) f seed'",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ]
+    },
+    {
+      "name": "sum_at_odd_indices",
+      "solved": false,
+      "n_candidates": 7,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "or",
+        "and",
+        "prod",
+        "contains",
+        "contains",
+        "elem",
+        "beq'",
+        "blt'",
+        "blt'",
+        "ble'"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 5,
+        "wrong_output": 2,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact (xs.foldr (\u00b7 + \u00b7) 0 (fun i x => if i.odd then x else 0))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Function expected at\n  List.foldr (fun x1 x2 => x1 + x2) 0 xs\nbut this term has type\n  ?m.13\n\nNote: Expected a function because this term is being applied to the argument\n  (fun i x => if i.odd then x else 0); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact (xs.foldr (\u00b7 + \u00b7) 0 (fun _ => 1) (fun _ => 0))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Function expected at\n  List.foldr (fun x1 x2 => x1 + x2) 0 xs\nbut this term has type\n  ?m.13\n\nNote: Expected a function because this term is being applied to the argument\n  (fun _ => 1); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact (List.foldr (\u00b7 + \u00b7) 0 (List.filter (fun x => Nat.blt (Int.toNat x) 0) xs))",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "0",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "60",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "-6",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact (xs.foldr (\u00b7 + \u00b7) 0 (\u00b7 mod 2))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Function expected at\n  List.foldr (fun x1 x2 => x1 + x2) 0 xs\nbut this term has type\n  ?m.13\n\nNote: Expected a function because this term is being applied to the argument\n  (\u00b7 mod 2); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact (List.foldr (\u00b7 + \u00b7) 0 (List.filter (fun x => Nat.blt x 0) xs))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Application type mismatch: The argument\n  x\nhas type\n  \u2124\nbut is expected to have type\n  \u2115\nin the application\n  Nat.blt x; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact (List.foldr (\u00b7 + \u00b7) 0 (List.filter (fun x => Nat.blt 0 (Int.toNat x)) xs))",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "15",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "7",
+              "expected": "0",
+              "passed": false
+            },
+            {
+              "actual": "3",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "100",
+              "expected": "60",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "-6",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact (List.foldr (\u00b7 + \u00b7) 0 (List.filter (fun x => Nat.odd (List.index_of xs x)) xs))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Unknown constant `Nat.odd`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ]
+    },
+    {
+      "name": "zip_diff",
+      "solved": false,
+      "n_candidates": 3,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "partialSums",
+        "dropLastTR",
+        "partialProds",
+        "Poly.insertSorted",
+        "insert",
+        "qsortOrd",
+        "join",
+        "flattenTR",
+        "replaceIf",
+        "fillNones"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 3,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact zip_diff xs",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Unknown identifier `zip_diff`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.zipDiff",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Invalid field `zipDiff`: The environment does not contain `List.zipDiff`, so it is not possible to project the field `zipDiff` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact zipDiff xs",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ]
+    },
+    {
+      "name": "longest_increasing_run",
+      "solved": false,
+      "n_candidates": 7,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "or",
+        "and",
+        "all",
+        "any",
+        "isEmpty",
+        "isEqv",
+        "isPerm",
+        "isSublist",
+        "isPrefixOf",
+        "blt'"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 7,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact match xs with | [], _ => 0 | _ :: _ => 1 + List.length (List.dropWhile (fun x => x <= List.hd xs) xs) end",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Too many patterns in match alternative: Expected 1, but found 2:\n  @List.nil\u271d _, .(_); Invalid `end`: There is no current scope to end\n\nNote: Scopes are introduced using `namespace` and `section`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact match xs with | [], _ => 0 | _ :: _ => 1 + List.length (List.filter (fun x => x < List.hd xs) xs) end",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Too many patterns in match alternative: Expected 1, but found 2:\n  @List.nil\u271d _, .(_); Invalid `end`: There is no current scope to end\n\nNote: Scopes are introduced using `namespace` and `section`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact match xs with | [], _ => 0 | _ :: [], _ => 0 | _ :: _ :: [], _ => 1 | _ :: l\u2081, l\u2082 => if l\u2081.isPrefixOf l\u2082 then longestIncreasingRun l\u2082 else 1 + longestIncreasingRun l\u2081",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Too many patterns in match alternative: Expected 1, but found 2:\n  @List.nil\u271d _, .(_); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact match xs with | [] => 0 | _ :: _ => 1 + List.length (List.filter (fun x => x > List.last xs) xs)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown constant `List.last`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact match xs with | [], _ => 0 | _ :: [], _ => 0 | _ :: _ :: _, _ => 1 + longestIncreasingRun (List.tail xs) | _ :: _ :: _ :: _, _ => longestIncreasingRun (List.tail xs) end",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Too many patterns in match alternative: Expected 1, but found 2:\n  @List.nil\u271d _, .(_); Invalid `end`: There is no current scope to end\n\nNote: Scopes are introduced using `namespace` and `section`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact match xs with | [], _ => 0 | _ :: _ => 1 + List.length (List.filter (fun x => x < List.hd xs) (List.tail xs)) end",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Too many patterns in match alternative: Expected 1, but found 2:\n  @List.nil\u271d _, .(_); Invalid `end`: There is no current scope to end\n\nNote: Scopes are introduced using `namespace` and `section`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact match xs with | [], _ => 0 | _ :: _ => 1 + List.length (List.filter (fun x => List.nth xs (List.length xs - 1) > x) xs) end",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Too many patterns in match alternative: Expected 1, but found 2:\n  @List.nil\u271d _, .(_); Invalid `end`: There is no current scope to end\n\nNote: Scopes are introduced using `namespace` and `section`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ]
+    },
+    {
+      "name": "max_subarray_product",
+      "solved": false,
+      "n_candidates": 2,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "or",
+        "and",
+        "prod",
+        "contains",
+        "contains",
+        "elem",
+        "beq'",
+        "blt'",
+        "blt'",
+        "ble'"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 2,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldr (\u00b7 * \u00b7) 1",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "-48",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "-240",
+              "expected": "24",
+              "passed": false
+            },
+            {
+              "actual": "1",
+              "expected": "0",
+              "passed": false
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "24",
+              "expected": "24",
+              "passed": true
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact (xs.foldr (\u00b7 * \u00b7) 1)",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "-48",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "-240",
+              "expected": "24",
+              "passed": false
+            },
+            {
+              "actual": "1",
+              "expected": "0",
+              "passed": false
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "24",
+              "expected": "24",
+              "passed": true
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ]
+    },
+    {
+      "name": "merge_sorted_desc",
+      "solved": false,
+      "n_candidates": 3,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "removeAll",
+        "removeAll",
+        "replaceFTR",
+        "lookmap",
+        "filterMapTR",
+        "append",
+        "tailD",
+        "tailD",
+        "erasePTR",
+        "reverseAux"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 2,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.sort (fun x y => y > x) ++ ys.sort (fun x y => y > x)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Invalid field `sort`: The environment does not contain `List.sort`, so it is not possible to project the field `sort` from an expression\n  xs\nof type `List \u2124`; Invalid field `sort`: The environment does not contain `List.sort`, so it is not possible to project the field `sort` from an expression\n  ys\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.merge ys",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "[4, 2, 5, 3, 1]",
+              "expected": "[5, 4, 3, 2, 1]",
+              "passed": false
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 5]",
+              "expected": "[5, 3]",
+              "passed": false
+            },
+            {
+              "actual": "[5, 5, 5]",
+              "expected": "[5, 5, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[8, 3, 10, 5]",
+              "expected": "[10, 8, 5, 3]",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact xs.sort @desc @desc ys.sort @desc",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Invalid field `sort`: The environment does not contain `List.sort`, so it is not possible to project the field `sort` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ]
+    },
+    {
+      "name": "window_sums",
+      "solved": false,
+      "n_candidates": 6,
+      "n_empty_extracted": 0,
+      "n_empty_raw": 0,
+      "n_hit_max_tokens": 8,
+      "retrieved_names": [
+        "Poly.insertSorted",
+        "eraseTR",
+        "erasePTR",
+        "replaceTR",
+        "takeTR",
+        "eraseIdxTR",
+        "takeWhileTR",
+        "rotate",
+        "replaceFTR",
+        "takeTR"
+      ],
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 5,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [], _, _ => xs | x::xs, k, acc => match k with | 0 => acc.toList | k' => go xs (k' - 1) (acc.push x); go xs k' (acc.push x) end; go xs k #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown identifier `k'`; Unknown identifier `acc.push`; Invalid `end`: There is no current scope to end\n\nNote: Scopes are introduced using `namespace` and `section`",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [], _, _ => xs | x :: xs, 0, acc => go xs (acc.push x) | a :: as, n+1, acc => go as n (acc.push a); go xs n #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Application type mismatch: The argument\n  acc.push x\nhas type\n  Array \u2124\nbut is expected to have type\n  \u2115\nin the application\n  go xs (acc.push x); Unknown identifier `n`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [], _, _ => xs | x :: xs, 0, acc => go xs (acc.push x) | x :: xs, n+1, acc => go xs n (acc.push x); go xs n #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Application type mismatch: The argument\n  acc.push x\nhas type\n  Array \u2124\nbut is expected to have type\n  \u2115\nin the application\n  go xs (acc.push x); Unknown identifier `n`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [], _, _ => xs | x :: xs, k, acc => match k with | 0 => go xs 0 (acc.push x) | k' => go xs (k' - 1) (acc.push x); go xs k (acc.push x) end",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown identifier `acc.push`; Invalid `end`: There is no current scope to end\n\nNote: Scopes are introduced using `namespace` and `section`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [], _, _ => xs | x::xs, n+1, acc => go xs n (acc.push x); go xs n #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Missing cases:\n(List.cons (Int.negSucc _) _), Nat.zero, (Array.mk _)\n(List.cons (Int.ofNat _) _), Nat.zero, (Array.mk _); Unknown identifier `n`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [], _, _ => xs | x :: xs, k, acc => if k == 0 then acc.toList else go xs (k-1) (acc.push x); go xs k #[]",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "[1, 2, 3]",
+              "expected": "[6, 9, 12]",
+              "passed": false
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[5]",
+              "expected": "[5]",
+              "passed": true
+            },
+            {
+              "actual": "[1, 2]",
+              "expected": "[3, 5]",
+              "passed": false
+            },
+            {
+              "actual": "[1, 2, 3]",
+              "expected": "[]",
+              "passed": false
+            },
+            {
+              "actual": "[1]",
+              "expected": "[1, 2, 3, 4]",
+              "passed": false
+            },
+            {
+              "actual": "[10, 20]",
+              "expected": "[30, 50]",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ]
+    }
+  ]
+}

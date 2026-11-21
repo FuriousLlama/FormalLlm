@@ -1,0 +1,139 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Symbol not found stutter",
+    "task": "stutter",
+    "category": "fundamentals",
+    "ghc_equivalent": "stutter",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Symbol not found alternateSign",
+    "task": "alternate_sign",
+    "category": "fundamentals",
+    "ghc_equivalent": "alternate_sign",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Symbol not found pairDiff",
+    "task": "pair_diff",
+    "category": "fundamentals",
+    "ghc_equivalent": "pair_diff",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Symbol not found secondMax",
+    "task": "second_max",
+    "category": "fundamentals",
+    "ghc_equivalent": "second_max",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "norm_num",
+      "norm_num",
+      "norm_num"
+    ],
+    "rollouts_used": 50,
+    "tree_size": 2152,
+    "stats": {
+      "n_expand_calls": 50,
+      "n_tactic_steps": 10882,
+      "n_tactic_valid": 93,
+      "n_tactic_solved": 2101,
+      "n_oracle_calls": 2082,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 19,
+      "n_oracle_batches": 45,
+      "n_simulate_calls": 50,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.5053,
+      "t_step_s": 28.6973,
+      "t_oracle_s": 87.214,
+      "t_simulate_s": 83.426,
+      "t_select_s": 0.0022,
+      "t_total_s": 202.8448,
+      "ms_per_step": 2.64,
+      "ms_per_oracle": 41.9,
+      "pct_step": 14.1,
+      "pct_policy": 1.7,
+      "pct_oracle": 43.0,
+      "pct_simulate": 41.1
+    },
+    "task": "match_head_or_sum",
+    "category": "fundamentals",
+    "ghc_equivalent": "match_head_or_sum",
+    "wall_time_s": 202.87
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Symbol not found allEven",
+    "task": "all_even",
+    "category": "fundamentals",
+    "ghc_equivalent": "all_even",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Symbol not found firstNegIdx",
+    "task": "first_neg_idx",
+    "category": "fundamentals",
+    "ghc_equivalent": "first_neg_idx",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Symbol not found cumulMax",
+    "task": "cumul_max",
+    "category": "fundamentals",
+    "ghc_equivalent": "cumul_max",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Symbol not found rle",
+    "task": "rle",
+    "category": "fundamentals",
+    "ghc_equivalent": "rle",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Symbol not found interleave",
+    "task": "interleave",
+    "category": "fundamentals",
+    "ghc_equivalent": "interleave",
+    "wall_time_s": 0.0
+  }
+]

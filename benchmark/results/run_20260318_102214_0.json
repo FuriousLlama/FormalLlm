@@ -1,0 +1,57 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "sum_and_product",
+    "category": "multistep",
+    "ghc_equivalent": "sum_and_product",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "count_pos_neg",
+    "category": "multistep",
+    "ghc_equivalent": "count_pos_neg",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "split_even_odd",
+    "category": "multistep",
+    "ghc_equivalent": "split_even_odd",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "min_and_max",
+    "category": "multistep",
+    "ghc_equivalent": "min_and_max",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "length_and_sum",
+    "category": "multistep",
+    "ghc_equivalent": "length_and_sum",
+    "wall_time_s": 0.0
+  }
+]

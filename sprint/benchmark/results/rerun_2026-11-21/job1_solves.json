@@ -1,0 +1,6615 @@
+{
+ "canaries": {
+  "start_w1": {
+   "correct": true,
+   "constant": false,
+   "wrong_fn": false,
+   "noncompiling": false,
+   "ref_correct": true,
+   "ref_wrong": false,
+   "ok": true
+  },
+  "start_w3": {
+   "correct": true,
+   "constant": false,
+   "wrong_fn": false,
+   "noncompiling": false,
+   "ref_correct": true,
+   "ref_wrong": false,
+   "ok": true
+  },
+  "start_w2": {
+   "correct": true,
+   "constant": false,
+   "wrong_fn": false,
+   "noncompiling": false,
+   "ref_correct": true,
+   "ref_wrong": false,
+   "ok": true
+  },
+  "start_w0": {
+   "correct": true,
+   "constant": false,
+   "wrong_fn": false,
+   "noncompiling": false,
+   "ref_correct": true,
+   "ref_wrong": false,
+   "ok": true
+  },
+  "end_w3": {
+   "correct": true,
+   "constant": false,
+   "wrong_fn": false,
+   "noncompiling": false,
+   "ref_correct": true,
+   "ref_wrong": false,
+   "ok": true
+  },
+  "end_w2": {
+   "correct": true,
+   "constant": false,
+   "wrong_fn": false,
+   "noncompiling": false,
+   "ref_correct": true,
+   "ref_wrong": false,
+   "ok": true
+  },
+  "end_w0": {
+   "correct": true,
+   "constant": false,
+   "wrong_fn": false,
+   "noncompiling": false,
+   "ref_correct": true,
+   "ref_wrong": false,
+   "ok": true
+  },
+  "end_w1": {
+   "correct": true,
+   "constant": false,
+   "wrong_fn": false,
+   "noncompiling": false,
+   "ref_correct": true,
+   "ref_wrong": false,
+   "ok": true
+  }
+ },
+ "sets": {
+  "S26": {
+   "20260329_120327": [
+    "t2"
+   ],
+   "20260330_125719": [
+    "hard"
+   ],
+   "20260330_131618": [
+    "v2"
+   ],
+   "20260329_122614": [
+    "recurrence"
+   ],
+   "20260330_131845": [
+    "fundamentals"
+   ],
+   "20260329_103252": [
+    "multistep"
+   ],
+   "20260330_134244": [
+    "deep_multistep"
+   ],
+   "20260329_122724": [
+    "compositional"
+   ],
+   "20260329_122757": [
+    "recursive"
+   ],
+   "20260329_120219": [
+    "stretch"
+   ],
+   "20260329_114841": [
+    "v3"
+   ],
+   "20260329_115213": [
+    "v3_stretch"
+   ]
+  },
+  "S27": {
+   "20260330_225303": [
+    "t2",
+    "hard",
+    "v2"
+   ],
+   "20260330_225321": [
+    "recurrence"
+   ],
+   "20260330_225621": [
+    "fundamentals"
+   ],
+   "20260330_230346": [
+    "multistep"
+   ],
+   "20260330_231214": [
+    "deep_multistep"
+   ],
+   "20260330_231253": [
+    "compositional"
+   ],
+   "20260330_231332": [
+    "recursive"
+   ],
+   "20260330_231841": [
+    "stretch"
+   ],
+   "20260330_231909": [
+    "v3"
+   ],
+   "20260330_232011": [
+    "v3_stretch"
+   ]
+  },
+  "S27_diag": {
+   "20260330_214544": [
+    "diag"
+   ],
+   "20260330_221125": [
+    "diag"
+   ]
+  }
+ },
+ "summary": {
+  "S26": {
+   "t2": {
+    "n_tasks": 10,
+    "recorded_solved": 10,
+    "GENUINE": 10
+   },
+   "hard": {
+    "n_tasks": 5,
+    "recorded_solved": 2,
+    "GENUINE": 1,
+    "RECORDED-UNSOLVED": 3,
+    "FALSE-POSITIVE": 1
+   },
+   "v2": {
+    "n_tasks": 20,
+    "recorded_solved": 20,
+    "GENUINE": 18,
+    "FALSE-POSITIVE": 1,
+    "WEAK-TEST PASS": 1
+   },
+   "recurrence": {
+    "n_tasks": 6,
+    "recorded_solved": 6,
+    "GENUINE": 6
+   },
+   "fundamentals": {
+    "n_tasks": 10,
+    "recorded_solved": 9,
+    "GENUINE": 9,
+    "RECORDED-UNSOLVED": 1
+   },
+   "multistep": {
+    "n_tasks": 5,
+    "recorded_solved": 5,
+    "GENUINE": 2,
+    "FALSE-POSITIVE": 3
+   },
+   "deep_multistep": {
+    "n_tasks": 6,
+    "recorded_solved": 5,
+    "WEAK-TEST PASS": 1,
+    "RECORDED-UNSOLVED": 1,
+    "GENUINE": 3,
+    "FALSE-POSITIVE": 1
+   },
+   "compositional": {
+    "n_tasks": 8,
+    "recorded_solved": 8,
+    "GENUINE": 7,
+    "WEAK-TEST PASS": 1
+   },
+   "recursive": {
+    "n_tasks": 15,
+    "recorded_solved": 15,
+    "GENUINE": 15
+   },
+   "stretch": {
+    "n_tasks": 20,
+    "recorded_solved": 14,
+    "GENUINE": 13,
+    "WEAK-TEST PASS": 1,
+    "RECORDED-UNSOLVED": 6
+   },
+   "v3": {
+    "n_tasks": 10,
+    "recorded_solved": 10,
+    "GENUINE": 10
+   },
+   "v3_stretch": {
+    "n_tasks": 5,
+    "recorded_solved": 3,
+    "GENUINE": 3,
+    "RECORDED-UNSOLVED": 2
+   },
+   "TOTAL": {
+    "n_tasks": 120,
+    "recorded_solved": 107,
+    "GENUINE": 97,
+    "FALSE-POSITIVE": 6,
+    "WEAK-TEST PASS": 4,
+    "UNVERIFIABLE": 0
+   }
+  },
+  "S27": {
+   "t2": {
+    "n_tasks": 10,
+    "recorded_solved": 10,
+    "GENUINE": 9,
+    "WEAK-TEST PASS": 1
+   },
+   "hard": {
+    "n_tasks": 5,
+    "recorded_solved": 1,
+    "GENUINE": 1,
+    "RECORDED-UNSOLVED": 4
+   },
+   "v2": {
+    "n_tasks": 20,
+    "recorded_solved": 19,
+    "GENUINE": 17,
+    "WEAK-TEST PASS": 1,
+    "FALSE-POSITIVE": 1,
+    "RECORDED-UNSOLVED": 1
+   },
+   "recurrence": {
+    "n_tasks": 6,
+    "recorded_solved": 6,
+    "GENUINE": 6
+   },
+   "fundamentals": {
+    "n_tasks": 10,
+    "recorded_solved": 9,
+    "GENUINE": 9,
+    "RECORDED-UNSOLVED": 1
+   },
+   "multistep": {
+    "n_tasks": 5,
+    "recorded_solved": 4,
+    "GENUINE": 2,
+    "FALSE-POSITIVE": 2,
+    "RECORDED-UNSOLVED": 1
+   },
+   "deep_multistep": {
+    "n_tasks": 6,
+    "recorded_solved": 4,
+    "WEAK-TEST PASS": 1,
+    "RECORDED-UNSOLVED": 2,
+    "GENUINE": 3
+   },
+   "compositional": {
+    "n_tasks": 8,
+    "recorded_solved": 8,
+    "GENUINE": 8
+   },
+   "recursive": {
+    "n_tasks": 15,
+    "recorded_solved": 15,
+    "GENUINE": 15
+   },
+   "stretch": {
+    "n_tasks": 20,
+    "recorded_solved": 14,
+    "GENUINE": 14,
+    "RECORDED-UNSOLVED": 6
+   },
+   "v3": {
+    "n_tasks": 10,
+    "recorded_solved": 10,
+    "GENUINE": 10
+   },
+   "v3_stretch": {
+    "n_tasks": 5,
+    "recorded_solved": 4,
+    "GENUINE": 3,
+    "RECORDED-UNSOLVED": 1,
+    "WEAK-TEST PASS": 1
+   },
+   "TOTAL": {
+    "n_tasks": 120,
+    "recorded_solved": 104,
+    "GENUINE": 97,
+    "FALSE-POSITIVE": 3,
+    "WEAK-TEST PASS": 4,
+    "UNVERIFIABLE": 0
+   }
+  },
+  "S27_diag": {
+   "diag": {
+    "n_tasks": 36,
+    "recorded_solved": 6,
+    "RECORDED-UNSOLVED": 30,
+    "GENUINE": 6
+   },
+   "TOTAL": {
+    "n_tasks": 36,
+    "recorded_solved": 6,
+    "GENUINE": 6,
+    "FALSE-POSITIVE": 0,
+    "WEAK-TEST PASS": 0,
+    "UNVERIFIABLE": 0
+   }
+  }
+ },
+ "records": [
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "count_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + 1 else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "map_square",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (h * h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "sort_desc",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.mergeSort xs).reverse"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "sum_doubles",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.map (fun x => x * 2)).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "max_abs",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.map (fun x => x.natAbs)).foldl max 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "take_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.takeWhile (fun x => decide (x > 0))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "nub_sort",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.mergeSort (xs.eraseDups)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "drop_negatives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.dropWhile (fun x => decide (x < 0))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "count_even",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h % 2 = 0) then acc + 1 else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120327_0.json",
+   "tier": "t2",
+   "task": "accum_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.scanl (fun a b => a + b) 0 xs).drop 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_125719_0.json",
+   "tier": "hard",
+   "task": "flatten",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xss.flatten"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 15,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_125719_0.json",
+   "tier": "hard",
+   "task": "zip_sum",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_125719_0.json",
+   "tier": "hard",
+   "task": "partition_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "trivial",
+    "norm_num"
+   ],
+   "standalone": {
+    "passed": false,
+    "n_passed": 0,
+    "n_total": 3,
+    "error": "unsolved goals\ncase snd\nxs : List ℤ\n⊢ List ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "error": "unsolved goals\ncase snd\nxs : List ℤ\n⊢ List ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "mismatches": []
+   },
+   "classification": "FALSE-POSITIVE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_125719_0.json",
+   "tier": "hard",
+   "task": "dedup_count",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_125719_0.json",
+   "tier": "hard",
+   "task": "filter_map_abs",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "concat_all",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xss.flatten"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 15,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "longest_sublist",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xss.map List.length).foldl max 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 15,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "merge_sorted",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.mergeSort (xs ++ ys)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "dot_product",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.zipWith (fun a b => a * b) xs ys).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "symmetric_diff",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => !(ys.contains x))) ++ (ys.filter (fun y => !(xs.contains y)))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "count_unique_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x > 0)) |>.eraseDups).length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "sum_sorted_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "max_even",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x % 2 = 0))).foldl max 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "reverse_evens",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x % 2 = 0))).reverse"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "square_positives_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h * h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "partition_and_count",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact (xs.filter (fun x => decide (x > 0))).length",
+    "exact (xs.filter (fun x => decide (x ≤ 0))).length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "normalize",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.mergeSort (xs.eraseDups)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "stats",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "norm_num",
+    "norm_num"
+   ],
+   "standalone": {
+    "passed": false,
+    "n_passed": 0,
+    "n_total": 3,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℤ\n\ncase snd\nxs : List ℤ\n⊢ ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℤ\n\ncase snd\nxs : List ℤ\n⊢ ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "mismatches": []
+   },
+   "classification": "FALSE-POSITIVE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "split_apply",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact List.mergeSort (xs.map (fun x => x * 2))",
+    "exact xs.map (fun x => x + 1)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "n_inputs": 32,
+    "mismatches": [
+     {
+      "args": [
+       "[2, 1]"
+      ],
+      "candidate": "([2, 4], [3, 2])",
+      "reference": "([4, 2], [3, 2])"
+     },
+     {
+      "args": [
+       "[3, -1]"
+      ],
+      "candidate": "([-2, 6], [4, 0])",
+      "reference": "([6, -2], [4, 0])"
+     },
+     {
+      "args": [
+       "[3, 2, 1]"
+      ],
+      "candidate": "([2, 4, 6], [4, 3, 2])",
+      "reference": "([6, 4, 2], [4, 3, 2])"
+     },
+     {
+      "args": [
+       "[-2, -5, -1]"
+      ],
+      "candidate": "([-10, -4, -2], [-1, -4, 0])",
+      "reference": "([-4, -10, -2], [-1, -4, 0])"
+     },
+     {
+      "args": [
+       "[1, -1, 1, -1]"
+      ],
+      "candidate": "([-2, -2, 2, 2], [2, 0, 2, 0])",
+      "reference": "([2, -2, 2, -2], [2, 0, 2, 0])"
+     },
+     {
+      "args": [
+       "[5, 4, 3, 2, 1]"
+      ],
+      "candidate": "([2, 4, 6, 8, 10], [6, 5, 4, 3, 2])",
+      "reference": "([10, 8, 6, 4, 2], [6, 5, 4, 3, 2])"
+     }
+    ],
+    "n_mismatch": 17
+   },
+   "classification": "WEAK-TEST PASS"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "filter_then_stats",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact (xs.filter (fun x => decide (x > 0))).length",
+    "exact (xs.filter (fun x => decide (x > 0))).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "prefix_sums",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.scanl (fun a b => a + b) 0 xs).drop 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "running_max",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.scanl max 0 xs).drop 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "first_n_squares",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.range n).map (fun i => i * i)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "every_other",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.zipIdx.filter (fun (_, i) => decide (i % 2 = 0))).map Prod.fst"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131618_0.json",
+   "tier": "v2",
+   "task": "pairwise_sums",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.zip xs.tail).map (fun (a, b) => a + b)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122614_0.json",
+   "tier": "recurrence",
+   "task": "fibonacci",
+   "recorded_solved": true,
+   "tactics": [
+    "exact ((List.range n).foldl (fun (a, b) _ => (b, a + b)) (0, 1)).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122614_0.json",
+   "tier": "recurrence",
+   "task": "fib_list",
+   "recorded_solved": true,
+   "tactics": [
+    "exact ((List.range n).foldl (fun (acc, ab) _ => (acc ++ [ab.1], (ab.2, ab.1 + ab.2))) ([], (0, 1))).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122614_0.json",
+   "tier": "recurrence",
+   "task": "factorial",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 1 (fun k acc => acc * (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122614_0.json",
+   "tier": "recurrence",
+   "task": "triangular_numbers",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.range n).map (fun i => (List.range (i + 1)).foldl (· + ·) 0)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122614_0.json",
+   "tier": "recurrence",
+   "task": "running_parts",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122614_0.json",
+   "tier": "recurrence",
+   "task": "powers_of_2",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.range n).map (fun i => (List.range i).foldl (fun a _ => a * 2) 1)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "stutter",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => h :: h :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "alternate_sign",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.foldl (fun (acc, pos) h => (acc ++ [if pos then h else -h], !pos)) ([], true)).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "pair_diff",
+   "recorded_solved": true,
+   "tactics": [
+    "exact match xs with | [] => [] | h :: t => (t.foldl (fun (acc, prev) curr => (acc ++ [prev - curr], curr)) ([], h)).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "second_max",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.foldl (fun (best, second) h => if h > best then (h, best) else if h > second then (best, h) else (best, second)) (0, 0)).2"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "match_head_or_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact if xs.length > 2 then xs.foldl (fun a b => a + b) 0 else match xs with | [] => 0 | h :: _ => h"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "all_even",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 1 (fun h _ acc => if decide (h % 2 = 0) then acc else 0) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "first_neg_idx",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.foldl (fun (idx, found) h => if found then (idx, true) else if decide (h < 0) then (idx, true) else (idx + 1, false)) (0, false)).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "cumul_max",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.scanl max 0 xs).drop 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "rle",
+   "recorded_solved": true,
+   "tactics": [
+    "exact match xs with | [] => [] | h :: t => let (groups, cur, cnt) := t.foldl (fun (groups, cur, cnt) x => if x == cur then (groups, cur, cnt + 1) else (groups ++ [(cur, cnt)], x, 1)) ([], h, 1); groups ++ [(cur, cnt)]"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_131845_0.json",
+   "tier": "fundamentals",
+   "task": "interleave",
+   "recorded_solved": false,
+   "tactics": [
+    "norm_num",
+    "norm_num",
+    "norm_num",
+    "norm_num"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_103252_0.json",
+   "tier": "multistep",
+   "task": "sum_and_product",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.foldl (fun a b => a * b) 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_103252_0.json",
+   "tier": "multistep",
+   "task": "count_pos_neg",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "norm_num",
+    "norm_num"
+   ],
+   "standalone": {
+    "passed": false,
+    "n_passed": 0,
+    "n_total": 4,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℕ\n\ncase snd\nxs : List ℤ\n⊢ ℕ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℕ\n\ncase snd\nxs : List ℤ\n⊢ ℕ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "mismatches": []
+   },
+   "classification": "FALSE-POSITIVE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_103252_0.json",
+   "tier": "multistep",
+   "task": "split_even_odd",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "trivial",
+    "norm_num"
+   ],
+   "standalone": {
+    "passed": false,
+    "n_passed": 0,
+    "n_total": 4,
+    "error": "unsolved goals\ncase snd\nxs : List ℤ\n⊢ List ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "error": "unsolved goals\ncase snd\nxs : List ℤ\n⊢ List ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "mismatches": []
+   },
+   "classification": "FALSE-POSITIVE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_103252_0.json",
+   "tier": "multistep",
+   "task": "min_and_max",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "norm_num",
+    "norm_num"
+   ],
+   "standalone": {
+    "passed": false,
+    "n_passed": 0,
+    "n_total": 4,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℤ\n\ncase snd\nxs : List ℤ\n⊢ ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℤ\n\ncase snd\nxs : List ℤ\n⊢ ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "mismatches": []
+   },
+   "classification": "FALSE-POSITIVE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_103252_0.json",
+   "tier": "multistep",
+   "task": "length_and_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.length",
+    "exact xs.foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_134244_0.json",
+   "tier": "deep_multistep",
+   "task": "sum_count_max",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.length",
+    "exact (xs.filter (fun x => decide (x > 2))).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "n_inputs": 32,
+    "mismatches": [
+     {
+      "args": [
+       "[1, 2]"
+      ],
+      "candidate": "((3, 2), 0)",
+      "reference": "((3, 2), 2)"
+     },
+     {
+      "args": [
+       "[2, 1]"
+      ],
+      "candidate": "((3, 2), 0)",
+      "reference": "((3, 2), 2)"
+     },
+     {
+      "args": [
+       "[3, 3]"
+      ],
+      "candidate": "((6, 2), 6)",
+      "reference": "((6, 2), 3)"
+     },
+     {
+      "args": [
+       "[1, 1, 1]"
+      ],
+      "candidate": "((3, 3), 0)",
+      "reference": "((3, 3), 1)"
+     },
+     {
+      "args": [
+       "[0, 0, 1]"
+      ],
+      "candidate": "((1, 3), 0)",
+      "reference": "((1, 3), 1)"
+     },
+     {
+      "args": [
+       "[1, -1, 1, -1]"
+      ],
+      "candidate": "((0, 4), 0)",
+      "reference": "((0, 4), 1)"
+     }
+    ],
+    "n_mismatch": 18
+   },
+   "classification": "WEAK-TEST PASS"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_134244_0.json",
+   "tier": "deep_multistep",
+   "task": "stats_triple",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor",
+    "constructor",
+    "norm_num",
+    "norm_num"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_134244_0.json",
+   "tier": "deep_multistep",
+   "task": "partition_lengths",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "constructor",
+    "exact (xs.filter (fun x => decide (x > 0))).length",
+    "exact (xs.filter (fun x => decide (x < 0))).length",
+    "exact xs.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_134244_0.json",
+   "tier": "deep_multistep",
+   "task": "fold_and_length",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_134244_0.json",
+   "tier": "deep_multistep",
+   "task": "filter_both_ways",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "trivial",
+    "norm_num"
+   ],
+   "standalone": {
+    "passed": false,
+    "n_passed": 0,
+    "n_total": 4,
+    "error": "unsolved goals\ncase snd\nxs : List ℤ\n⊢ List ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "error": "unsolved goals\ncase snd\nxs : List ℤ\n⊢ List ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "mismatches": []
+   },
+   "classification": "FALSE-POSITIVE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260330_134244_0.json",
+   "tier": "deep_multistep",
+   "task": "recurrence_and_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122724_0.json",
+   "tier": "compositional",
+   "task": "sum_of_squares_comp",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc + h * h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122724_0.json",
+   "tier": "compositional",
+   "task": "range_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.range n).foldl (fun acc i => acc + i) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122724_0.json",
+   "tier": "compositional",
+   "task": "count_unique",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x > 0)) |>.eraseDups).length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "n_inputs": 32,
+    "mismatches": [
+     {
+      "args": [
+       "[0]"
+      ],
+      "candidate": "0",
+      "reference": "1"
+     },
+     {
+      "args": [
+       "[-3]"
+      ],
+      "candidate": "0",
+      "reference": "1"
+     },
+     {
+      "args": [
+       "[-1, 3]"
+      ],
+      "candidate": "1",
+      "reference": "2"
+     },
+     {
+      "args": [
+       "[3, -1]"
+      ],
+      "candidate": "1",
+      "reference": "2"
+     },
+     {
+      "args": [
+       "[-2, -5, -1]"
+      ],
+      "candidate": "0",
+      "reference": "3"
+     },
+     {
+      "args": [
+       "[0, 0, 1]"
+      ],
+      "candidate": "1",
+      "reference": "2"
+     }
+    ],
+    "n_mismatch": 17
+   },
+   "classification": "WEAK-TEST PASS"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122724_0.json",
+   "tier": "compositional",
+   "task": "reverse_filter",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x > 0))).reverse"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122724_0.json",
+   "tier": "compositional",
+   "task": "sum_positives_squared",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h * h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122724_0.json",
+   "tier": "compositional",
+   "task": "max_abs_comp",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.map (fun x => x.natAbs)).foldl max 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122724_0.json",
+   "tier": "compositional",
+   "task": "sorted_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.mergeSort xs).filter (fun x => decide (x > 0))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122724_0.json",
+   "tier": "compositional",
+   "task": "length_evens",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h % 2 = 0) then acc + 1 else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "sum_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "count_negative",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h < 0) then acc + 1 else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "first_or_zero",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ _ => h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "product_abs",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.map (fun x => x.natAbs)).foldl (fun a b => a * b) 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "max_or_zero",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > acc) then h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "keep_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => if decide (h > 0) then h :: acc else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "stutter_rec",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => h :: h :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "negate_all",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (-h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "square_all",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (h * h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "keep_even",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => if decide (h % 2 = 0) then h :: acc else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "factorial_rec",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 1 (fun k acc => acc * (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "triangular_rec",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "power_of_two",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 1 (fun _ acc => acc * 2) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "square_nat",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + 2 * k + 1) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_122757_0.json",
+   "tier": "recursive",
+   "task": "count_down_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "alternating_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => h - acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "sum_even_only",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x % 2 = 0))).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "product_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x > 0))).foldl (fun a b => a * b) 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "abs_of_negatives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x < 0))).map (fun x => -x)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "sum_cubes",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + (k + 1) * (k + 1) * (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "last_or_default",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.foldl (fun _ h => h) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "double_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h > 0) then h * 2 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "clamp_values",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (max (-5) (min 5 h)) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "replace_neg_zero",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h < 0) then 0 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "negate_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc - h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "deviation_from_max",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (let v := xs.foldl max 0; xs.map (fun h => h - v))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "count_distinct",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.map (fun x => x.natAbs)).foldl max 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "n_inputs": 32,
+    "mismatches": [
+     {
+      "args": [
+       "[0]"
+      ],
+      "candidate": "0",
+      "reference": "1"
+     },
+     {
+      "args": [
+       "[5]"
+      ],
+      "candidate": "5",
+      "reference": "1"
+     },
+     {
+      "args": [
+       "[-3]"
+      ],
+      "candidate": "3",
+      "reference": "1"
+     },
+     {
+      "args": [
+       "[3, 3]"
+      ],
+      "candidate": "3",
+      "reference": "1"
+     },
+     {
+      "args": [
+       "[-1, 3]"
+      ],
+      "candidate": "3",
+      "reference": "2"
+     },
+     {
+      "args": [
+       "[3, -1]"
+      ],
+      "candidate": "3",
+      "reference": "2"
+     }
+    ],
+    "n_mismatch": 19
+   },
+   "classification": "WEAK-TEST PASS"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "is_sorted_asc",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "max_min_diff",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (match xs with | [] => 0 | h :: t => t.foldl max h - t.foldl min h)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "sum_abs_values",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc + if decide (h ≥ 0) then h else -h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "longest_nondec_prefix",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "compress_consecutive",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "count_peaks",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "sliding_max_2",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_120219_0.json",
+   "tier": "stretch",
+   "task": "count_inversions",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "abs_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc + if decide (h ≥ 0) then h else -h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "cube_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + (k + 1) * (k + 1) * (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "double_evens",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h % 2 = 0) then h * 2 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "relu_list",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h < 0) then 0 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "last_element",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.foldl (fun _ h => h) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "neg_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc - h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "max_minus_min",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (match xs with | [] => 0 | h :: t => t.foldl max h - t.foldl min h)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "deviations_v3",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (let v := xs.foldl max 0; xs.map (fun h => h - v))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "clamp_to_range",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (max (-5) (min 5 h)) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_114841_0.json",
+   "tier": "v3",
+   "task": "replace_neg_v3",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h < 0) then 0 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_115213_0.json",
+   "tier": "v3_stretch",
+   "task": "sum_abs_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_115213_0.json",
+   "tier": "v3_stretch",
+   "task": "normalize_to_max",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_115213_0.json",
+   "tier": "v3_stretch",
+   "task": "count_sign_changes",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_115213_0.json",
+   "tier": "v3_stretch",
+   "task": "sorted_abs",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.map (fun x => x.natAbs)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S26",
+   "run": "run_20260329_115213_0.json",
+   "tier": "v3_stretch",
+   "task": "sum_squares_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h * h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "count_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + 1 else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "map_square",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (h * h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "sort_desc",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.mergeSort xs).reverse"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "sum_doubles",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.map (fun x => x * 2)).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "max_abs",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.map (fun x => x.natAbs)).foldl max 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "take_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.takeWhile (fun x => decide (x > 0))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "nub_sort",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.reverse).eraseDups"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "n_inputs": 32,
+    "mismatches": [
+     {
+      "args": [
+       "[1, 2]"
+      ],
+      "candidate": "[2, 1]",
+      "reference": "[1, 2]"
+     },
+     {
+      "args": [
+       "[-1, 3]"
+      ],
+      "candidate": "[3, -1]",
+      "reference": "[-1, 3]"
+     },
+     {
+      "args": [
+       "[1, 2, 3]"
+      ],
+      "candidate": "[3, 2, 1]",
+      "reference": "[1, 2, 3]"
+     },
+     {
+      "args": [
+       "[-2, -5, -1]"
+      ],
+      "candidate": "[-1, -5, -2]",
+      "reference": "[-5, -2, -1]"
+     },
+     {
+      "args": [
+       "[0, 0, 1]"
+      ],
+      "candidate": "[1, 0]",
+      "reference": "[0, 1]"
+     },
+     {
+      "args": [
+       "[1, 2, 3, 4, 5]"
+      ],
+      "candidate": "[5, 4, 3, 2, 1]",
+      "reference": "[1, 2, 3, 4, 5]"
+     }
+    ],
+    "n_mismatch": 18
+   },
+   "classification": "WEAK-TEST PASS"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "drop_negatives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.dropWhile (fun x => decide (x < 0))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "count_even",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h % 2 = 0) then acc + 1 else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "t2",
+   "task": "accum_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.scanl (fun a b => a + b) 0 xs).drop 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "hard",
+   "task": "flatten",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xss.flatten"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 15,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "hard",
+   "task": "zip_sum",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "hard",
+   "task": "partition_positive",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor",
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "hard",
+   "task": "dedup_count",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "hard",
+   "task": "filter_map_abs",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "concat_all",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xss.flatten"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 15,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "longest_sublist",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xss.map List.length).foldl max 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 15,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "merge_sorted",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.mergeSort (xs ++ ys)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "dot_product",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.zipWith (fun a b => a * b) xs ys).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "symmetric_diff",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => !(ys.contains x))) ++ (ys.filter (fun y => !(xs.contains y)))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "count_unique_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x > 0))).eraseDups.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "sum_sorted_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "max_even",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x % 2 = 0))).foldl max 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "reverse_evens",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x % 2 = 0))).reverse"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "square_positives_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h * h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "partition_and_count",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact (xs.filter (fun x => decide (x > 0))).length",
+    "exact (xs.filter (fun x => decide (x ≤ 0))).length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "normalize",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.reverse).eraseDups"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "n_inputs": 32,
+    "mismatches": [
+     {
+      "args": [
+       "[1, 2]"
+      ],
+      "candidate": "[2, 1]",
+      "reference": "[1, 2]"
+     },
+     {
+      "args": [
+       "[-1, 3]"
+      ],
+      "candidate": "[3, -1]",
+      "reference": "[-1, 3]"
+     },
+     {
+      "args": [
+       "[1, 2, 3]"
+      ],
+      "candidate": "[3, 2, 1]",
+      "reference": "[1, 2, 3]"
+     },
+     {
+      "args": [
+       "[-2, -5, -1]"
+      ],
+      "candidate": "[-1, -5, -2]",
+      "reference": "[-5, -2, -1]"
+     },
+     {
+      "args": [
+       "[0, 0, 1]"
+      ],
+      "candidate": "[1, 0]",
+      "reference": "[0, 1]"
+     },
+     {
+      "args": [
+       "[1, 2, 3, 4, 5]"
+      ],
+      "candidate": "[5, 4, 3, 2, 1]",
+      "reference": "[1, 2, 3, 4, 5]"
+     }
+    ],
+    "n_mismatch": 18
+   },
+   "classification": "WEAK-TEST PASS"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "stats",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "norm_num",
+    "norm_num"
+   ],
+   "standalone": {
+    "passed": false,
+    "n_passed": 0,
+    "n_total": 3,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℤ\n\ncase snd\nxs : List ℤ\n⊢ ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℤ\n\ncase snd\nxs : List ℤ\n⊢ ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "mismatches": []
+   },
+   "classification": "FALSE-POSITIVE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "split_apply",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor",
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "filter_then_stats",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact (xs.filter (fun x => decide (x > 0))).length",
+    "exact (xs.filter (fun x => decide (x > 0))).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "prefix_sums",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.scanl (fun a b => a + b) 0 xs).drop 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "running_max",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.scanl max 0 xs).drop 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "first_n_squares",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.range n).map (fun i => i * i)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "every_other",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.zipIdx.filter (fun (_, i) => decide (i % 2 = 0))).map Prod.fst"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225303_0.json",
+   "tier": "v2",
+   "task": "pairwise_sums",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.zip xs.tail).map (fun (a, b) => a + b)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225321_0.json",
+   "tier": "recurrence",
+   "task": "fibonacci",
+   "recorded_solved": true,
+   "tactics": [
+    "exact ((List.range n).foldl (fun (a, b) _ => (b, a + b)) (0, 1)).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225321_0.json",
+   "tier": "recurrence",
+   "task": "fib_list",
+   "recorded_solved": true,
+   "tactics": [
+    "exact ((List.range n).foldl (fun (acc, ab) _ => (acc ++ [ab.1], (ab.2, ab.1 + ab.2))) ([], (0, 1))).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225321_0.json",
+   "tier": "recurrence",
+   "task": "factorial",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 1 (fun k acc => acc * (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225321_0.json",
+   "tier": "recurrence",
+   "task": "triangular_numbers",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.range n).map (fun i => (List.range (i + 1)).foldl (· + ·) 0)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225321_0.json",
+   "tier": "recurrence",
+   "task": "running_parts",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225321_0.json",
+   "tier": "recurrence",
+   "task": "powers_of_2",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.range n).map (fun i => (List.range i).foldl (fun a _ => a * 2) 1)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "stutter",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => h :: h :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "alternate_sign",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.foldl (fun (acc, pos) h => (acc ++ [if pos then h else -h], !pos)) ([], true)).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "pair_diff",
+   "recorded_solved": true,
+   "tactics": [
+    "exact match xs with | [] => [] | h :: t => (t.foldl (fun (acc, prev) curr => (acc ++ [prev - curr], curr)) ([], h)).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "second_max",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.foldl (fun (best, second) h => if h > best then (h, best) else if h > second then (best, h) else (best, second)) (0, 0)).2"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "match_head_or_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact if xs.length > 2 then xs.foldl (fun a b => a + b) 0 else match xs with | [] => 0 | h :: _ => h"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "all_even",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 1 (fun h _ acc => if decide (h % 2 = 0) then acc else 0) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "first_neg_idx",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.foldl (fun (idx, found) h => if found then (idx, true) else if decide (h < 0) then (idx, true) else (idx + 1, false)) (0, false)).1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "cumul_max",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.scanl max 0 xs).drop 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "rle",
+   "recorded_solved": true,
+   "tactics": [
+    "exact match xs with | [] => [] | h :: t => let (groups, cur, cnt) := t.foldl (fun (groups, cur, cnt) x => if x == cur then (groups, cur, cnt + 1) else (groups ++ [(cur, cnt)], x, 1)) ([], h, 1); groups ++ [(cur, cnt)]"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_225621_0.json",
+   "tier": "fundamentals",
+   "task": "interleave",
+   "recorded_solved": false,
+   "tactics": [
+    "norm_num",
+    "norm_num",
+    "norm_num"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_230346_0.json",
+   "tier": "multistep",
+   "task": "sum_and_product",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.foldl (fun a b => a * b) 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_230346_0.json",
+   "tier": "multistep",
+   "task": "count_pos_neg",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "norm_num",
+    "norm_num"
+   ],
+   "standalone": {
+    "passed": false,
+    "n_passed": 0,
+    "n_total": 4,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℕ\n\ncase snd\nxs : List ℤ\n⊢ ℕ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℕ\n\ncase snd\nxs : List ℤ\n⊢ ℕ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "mismatches": []
+   },
+   "classification": "FALSE-POSITIVE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_230346_0.json",
+   "tier": "multistep",
+   "task": "split_even_odd",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor",
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_230346_0.json",
+   "tier": "multistep",
+   "task": "min_and_max",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "norm_num",
+    "norm_num"
+   ],
+   "standalone": {
+    "passed": false,
+    "n_passed": 0,
+    "n_total": 4,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℤ\n\ncase snd\nxs : List ℤ\n⊢ ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "error": "unsolved goals\ncase fst\nxs : List ℤ\n⊢ ℤ\n\ncase snd\nxs : List ℤ\n⊢ ℤ; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+    "mismatches": []
+   },
+   "classification": "FALSE-POSITIVE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_230346_0.json",
+   "tier": "multistep",
+   "task": "length_and_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.length",
+    "exact xs.foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231214_0.json",
+   "tier": "deep_multistep",
+   "task": "sum_count_max",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.length",
+    "exact (xs.filter (fun x => decide (x > 2))).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "n_inputs": 32,
+    "mismatches": [
+     {
+      "args": [
+       "[1, 2]"
+      ],
+      "candidate": "((3, 2), 0)",
+      "reference": "((3, 2), 2)"
+     },
+     {
+      "args": [
+       "[2, 1]"
+      ],
+      "candidate": "((3, 2), 0)",
+      "reference": "((3, 2), 2)"
+     },
+     {
+      "args": [
+       "[3, 3]"
+      ],
+      "candidate": "((6, 2), 6)",
+      "reference": "((6, 2), 3)"
+     },
+     {
+      "args": [
+       "[1, 1, 1]"
+      ],
+      "candidate": "((3, 3), 0)",
+      "reference": "((3, 3), 1)"
+     },
+     {
+      "args": [
+       "[0, 0, 1]"
+      ],
+      "candidate": "((1, 3), 0)",
+      "reference": "((1, 3), 1)"
+     },
+     {
+      "args": [
+       "[1, -1, 1, -1]"
+      ],
+      "candidate": "((0, 4), 0)",
+      "reference": "((0, 4), 1)"
+     }
+    ],
+    "n_mismatch": 18
+   },
+   "classification": "WEAK-TEST PASS"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231214_0.json",
+   "tier": "deep_multistep",
+   "task": "stats_triple",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor",
+    "constructor",
+    "norm_num",
+    "norm_num"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231214_0.json",
+   "tier": "deep_multistep",
+   "task": "partition_lengths",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "constructor",
+    "exact (xs.filter (fun x => decide (x > 0))).length",
+    "exact (xs.filter (fun x => decide (x < 0))).length",
+    "exact xs.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231214_0.json",
+   "tier": "deep_multistep",
+   "task": "fold_and_length",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231214_0.json",
+   "tier": "deep_multistep",
+   "task": "filter_both_ways",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor",
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231214_0.json",
+   "tier": "deep_multistep",
+   "task": "recurrence_and_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "constructor",
+    "exact xs.foldl (fun a b => a + b) 0",
+    "exact xs.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 3,
+    "n_total": 3,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231253_0.json",
+   "tier": "compositional",
+   "task": "sum_of_squares_comp",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc + h * h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231253_0.json",
+   "tier": "compositional",
+   "task": "range_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.range n).foldl (fun acc i => acc + i) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231253_0.json",
+   "tier": "compositional",
+   "task": "count_unique",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs).eraseDups.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231253_0.json",
+   "tier": "compositional",
+   "task": "reverse_filter",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.reverse).filter (fun x => decide (x > 0))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231253_0.json",
+   "tier": "compositional",
+   "task": "sum_positives_squared",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h * h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231253_0.json",
+   "tier": "compositional",
+   "task": "max_abs_comp",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.map (fun x => x.natAbs)).foldl max 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231253_0.json",
+   "tier": "compositional",
+   "task": "sorted_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (List.mergeSort xs).filter (fun x => decide (x > 0))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231253_0.json",
+   "tier": "compositional",
+   "task": "length_evens",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h % 2 = 0) then acc + 1 else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "sum_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "count_negative",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h < 0) then acc + 1 else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "first_or_zero",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ _ => h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "product_abs",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.map (fun x => x.natAbs)).foldl (fun a b => a * b) 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "max_or_zero",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > acc) then h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "keep_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => if decide (h > 0) then h :: acc else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "stutter_rec",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => h :: h :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "negate_all",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (-h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "square_all",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (h * h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "keep_even",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => if decide (h % 2 = 0) then h :: acc else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "factorial_rec",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 1 (fun k acc => acc * (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "triangular_rec",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "power_of_two",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 1 (fun _ acc => acc * 2) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "square_nat",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + 2 * k + 1) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231332_0.json",
+   "tier": "recursive",
+   "task": "count_down_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "alternating_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => h - acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "sum_even_only",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x % 2 = 0))).foldl (fun a b => a + b) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "product_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x > 0))).foldl (fun a b => a * b) 1"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "abs_of_negatives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.filter (fun x => decide (x < 0))).map (fun x => -x)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "sum_cubes",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + (k + 1) * (k + 1) * (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "last_or_default",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.foldl (fun _ h => h) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "double_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h > 0) then h * 2 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "clamp_values",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (max (-5) (min 5 h)) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "replace_neg_zero",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h < 0) then 0 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "negate_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc - h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "deviation_from_max",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (let v := xs.foldl max 0; xs.map (fun h => h - v))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "count_distinct",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs).eraseDups.length"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "is_sorted_asc",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "max_min_diff",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (match xs with | [] => 0 | h :: t => t.foldl max h - t.foldl min h)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "sum_abs_values",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc + if decide (h ≥ 0) then h else -h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "longest_nondec_prefix",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "compress_consecutive",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "count_peaks",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "sliding_max_2",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231841_0.json",
+   "tier": "stretch",
+   "task": "count_inversions",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "abs_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc + if decide (h ≥ 0) then h else -h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "cube_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact Nat.rec 0 (fun k acc => acc + (k + 1) * (k + 1) * (k + 1)) n"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 13,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "double_evens",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h % 2 = 0) then h * 2 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "relu_list",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h < 0) then 0 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "last_element",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.foldl (fun _ h => h) 0"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "neg_sum",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc - h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "max_minus_min",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (match xs with | [] => 0 | h :: t => t.foldl max h - t.foldl min h)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "deviations_v3",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (let v := xs.foldl max 0; xs.map (fun h => h - v))"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "clamp_to_range",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (max (-5) (min 5 h)) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_231909_0.json",
+   "tier": "v3",
+   "task": "replace_neg_v3",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec [] (fun h _ acc => (if decide (h < 0) then 0 else h) :: acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_232011_0.json",
+   "tier": "v3_stretch",
+   "task": "sum_abs_positives",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_232011_0.json",
+   "tier": "v3_stretch",
+   "task": "normalize_to_max",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_232011_0.json",
+   "tier": "v3_stretch",
+   "task": "count_sign_changes",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (let v := xs.foldl (fun a b => a + b) 0; xs.foldl (fun acc h => if decide (h ≥ v) then acc + 1 else acc) 0)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": false,
+    "n_inputs": 32,
+    "mismatches": [
+     {
+      "args": [
+       "[0]"
+      ],
+      "candidate": "1",
+      "reference": "0"
+     },
+     {
+      "args": [
+       "[5]"
+      ],
+      "candidate": "1",
+      "reference": "0"
+     },
+     {
+      "args": [
+       "[-3]"
+      ],
+      "candidate": "1",
+      "reference": "0"
+     },
+     {
+      "args": [
+       "[-2, -5, -1]"
+      ],
+      "candidate": "3",
+      "reference": "0"
+     },
+     {
+      "args": [
+       "[0, 0, 1]"
+      ],
+      "candidate": "1",
+      "reference": "0"
+     },
+     {
+      "args": [
+       "[1, -1, 1, -1]"
+      ],
+      "candidate": "2",
+      "reference": "3"
+     }
+    ],
+    "n_mismatch": 14
+   },
+   "classification": "WEAK-TEST PASS"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_232011_0.json",
+   "tier": "v3_stretch",
+   "task": "sorted_abs",
+   "recorded_solved": true,
+   "tactics": [
+    "exact xs.map (fun x => x.natAbs)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27",
+   "run": "run_20260330_232011_0.json",
+   "tier": "v3_stretch",
+   "task": "sum_squares_positive",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => if decide (h > 0) then acc + h * h else acc) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "second_smallest",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "map_with_index",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "prefix_while_increasing",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "remove_duplicates_keep_last",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.reverse.eraseDups).reverse"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "dot_product_self",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc + h * h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "max_subarray_sum",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "longest_plateau",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "dutch_flag",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "majority_element",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "equilibrium_index",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "chunks_of",
+   "recorded_solved": false,
+   "tactics": [
+    "exact []"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "diag_transpose",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "insert_sorted",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "unfold_n",
+   "recorded_solved": false,
+   "tactics": [
+    "exact []"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "interleave_zip",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "diag_insertion_sort",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.mergeSort (xs.reverse)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "eval_stack",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_214544_0.json",
+   "tier": "diag",
+   "task": "all_sublists",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "second_smallest",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "map_with_index",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "prefix_while_increasing",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "remove_duplicates_keep_last",
+   "recorded_solved": true,
+   "tactics": [
+    "exact (xs.reverse.eraseDups).reverse"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "dot_product_self",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.rec 0 (fun h _ acc => acc + h * h) xs"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "max_subarray_sum",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "longest_plateau",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "dutch_flag",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "majority_element",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "equilibrium_index",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "chunks_of",
+   "recorded_solved": false,
+   "tactics": [
+    "exact []"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "diag_transpose",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "insert_sorted",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "unfold_n",
+   "recorded_solved": false,
+   "tactics": [
+    "exact []"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "interleave_zip",
+   "recorded_solved": false,
+   "tactics": [
+    "trivial"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "diag_insertion_sort",
+   "recorded_solved": true,
+   "tactics": [
+    "exact List.mergeSort (xs.reverse)"
+   ],
+   "standalone": {
+    "passed": true,
+    "n_passed": 4,
+    "n_total": 4,
+    "error": null,
+    "fails": []
+   },
+   "reference": {
+    "ok": true,
+    "n_inputs": 32,
+    "mismatches": [],
+    "n_mismatch": 0
+   },
+   "classification": "GENUINE"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "eval_stack",
+   "recorded_solved": false,
+   "tactics": [
+    "exact 0"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  },
+  {
+   "set": "S27_diag",
+   "run": "run_20260330_221125_0.json",
+   "tier": "diag",
+   "task": "all_sublists",
+   "recorded_solved": false,
+   "tactics": [
+    "constructor"
+   ],
+   "classification": "RECORDED-UNSOLVED"
+  }
+ ]
+}

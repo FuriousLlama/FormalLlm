@@ -1,0 +1,1650 @@
+{
+  "config": {
+    "tier": "held_out_12",
+    "model": "Qwen/Qwen2.5-Coder-7B",
+    "prompt_style": "spec",
+    "fewshot": "sprint/benchmark/results/phase_a_fewshot.json",
+    "n": 8,
+    "temperature": 0.2,
+    "top_p": 0.95,
+    "max_new_tokens": 256,
+    "format": "completion",
+    "extra_tests": "sprint/benchmark/results/rerun_2026-11-21/held_out_12_extra_tests.json",
+    "generations_file": "sprint/benchmark/results/rerun_2026-11-21/jobA_qwen_7b_spec_t0.2.generations.json",
+    "wall_generate": 342.0,
+    "wall_verify": 18.4
+  },
+  "summary": {
+    "solved": 4,
+    "total": 12,
+    "solve_rate": 0.333,
+    "solved_tasks": [
+      "majority_element",
+      "max_subarray_sum",
+      "zip_diff",
+      "merge_sorted_desc"
+    ],
+    "verdict_totals": {
+      "pass": 10,
+      "compile_fail": 31,
+      "wrong_output": 7,
+      "infra_error": 0
+    },
+    "unique_per_task": {
+      "eval_stack": 6,
+      "majority_element": 7,
+      "map_with_index": 3,
+      "max_subarray_sum": 3,
+      "prefix_while_increasing": 5,
+      "unfold_n": 5,
+      "sum_at_odd_indices": 1,
+      "zip_diff": 2,
+      "longest_increasing_run": 2,
+      "max_subarray_product": 7,
+      "merge_sorted_desc": 4,
+      "window_sums": 3
+    },
+    "solved_with_extra": 4,
+    "solved_with_extra_tasks": [
+      "majority_element",
+      "max_subarray_sum",
+      "zip_diff",
+      "merge_sorted_desc"
+    ]
+  },
+  "per_task": [
+    {
+      "name": "eval_stack",
+      "theorem_name": "evalStack",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 8,
+      "n_candidates": 6,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 3,
+        "wrong_output": 3,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Type mismatch\n  fun x => ?m.6\nhas type\n  (x : ?m.4) \u2192 ?m.7 x\nbut is expected to have type\n  \u2124; Function expected at\n  loop xs\nbut this term has type\n  \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  0; Function expected at\n  loop xs\nbut this term has type\n  \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  (acc + loop xs 0)",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec eval : List Int \u2192 Int | [] => 0 | a::as => match a with | 0 => eval as + eval as | a => a + eval as; eval xs",
+          "passed": false,
+          "n_passed": 3,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "7",
+              "expected": "7",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "9",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "3",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "17",
+              "expected": "1",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact match xs with | [] => 0 | x::xs => match x with | 0 => evalStack xs | x => evalStack xs + x",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => match a with | 0 => loop as (acc + loop as 0) | a => loop as (acc + a); loop xs 0",
+          "passed": false,
+          "n_passed": 3,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "7",
+              "expected": "7",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "9",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "3",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "17",
+              "expected": "1",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + acc) | x => loop xs (acc + x); loop xs 0",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Type mismatch\n  fun x => ?m.6\nhas type\n  (x : ?m.4) \u2192 ?m.7 x\nbut is expected to have type\n  \u2124; Function expected at\n  loop xs\nbut this term has type\n  \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  0; Function expected at\n  loop xs\nbut this term has type\n  \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  (acc + acc)",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0",
+          "passed": false,
+          "n_passed": 3,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "7",
+              "expected": "7",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "9",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "3",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "17",
+              "expected": "1",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "majority_element",
+      "theorem_name": "majorityElement",
+      "solved": true,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 2,
+      "n_candidates": 7,
+      "verdict_counts": {
+        "pass": 3,
+        "compile_fail": 4,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact let rec loop : Int \u2192 Int \u2192 List Int \u2192 Int | _, _, [] => acc | _, _, a::as => loop (acc + 1) a as | _, _, a::as => loop (acc - 1) a as; loop 0 0 xs",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Unknown identifier `acc`; Unknown identifier `acc`; Unknown identifier `acc`",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | x::xs, m, c => if c == 0 then loop xs x 1 else loop xs m (if x == m then c + 1 else c - 1); loop xs 0 0",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], a, b => a | x::xs, a, b => if b = 0 then loop xs x 1 else if x = a then loop xs a (b + 1) else loop xs a (b - 1); loop xs 0 0",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 List Int \u2192 Int | _, _, _, [] => acc | _, _, _, _::[] => acc | _, _, _, _::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "unexpected token '#eval'; expected '=>'; Unknown identifier `acc`; Unknown identifier `acc`",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | a::as, m, c => if c == 0 then loop as a 1 else loop as m (if a == m then c + 1 else c - 1); loop xs 0 0",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 Int | i, _, _ => i | i, j, k => match k with | 0 => loop i j 0 | 1 => loop i (i + 1) 0 | _ => loop i (i - 1) (k - 1); loop 0 0 0",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Redundant alternative: Any expression matching\n  i, j, k\nwill match one of the preceding alternatives; fail to show termination for\n  oracle_majorityElement_11.loop\nwith errors\nfailed to infer structural recursion:\nCannot use parameter #1:\n  the type \u2124 does not have a `.brecOn` recursor\nCannot use parameter #2:\n  the type \u2124 does not have a `.brecOn` recursor\nCannot use parameter #3:\n  the type \u2124 does not have a `.brecOn` recursor\n\n\nCould not find a decreasing measure.\nThe basic measures relate at each recursive call as follows:\n(<, \u2264, =: relation proved, ? all proofs failed, _: no proof attempted)\n             x1 x2 x3\n1) 3:93-103   =  =  =\n2) 3:111-127  =  ?  ?\n3) 3:135-157  =  _  _\nPlease use `termination_by` to specify a decreasing measure.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 Int | _, _, 1 => x | _, _, 0 => y | x, y, n => loop y x (n - 1); loop xs.head xs.tail 1",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 6,
+          "error": "Unknown identifier `x`; Unknown identifier `y`; Application type mismatch: The argument\n  xs.head\nhas type\n  xs \u2260 [] \u2192 \u2124\nbut is expected to have type\n  \u2124\nin the application\n  loop xs.head",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": true,
+      "extra_results": [
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | x::xs, m, c => if c == 0 then loop xs x 1 else loop xs m (if x == m then c + 1 else c - 1); loop xs 0 0",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], a, b => a | x::xs, a, b => if b = 0 then loop xs x 1 else if x = a then loop xs a (b + 1) else loop xs a (b - 1); loop xs 0 0",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | a::as, m, c => if c == 0 then loop as a 1 else loop as m (if a == m then c + 1 else c - 1); loop xs 0 0",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "2",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        }
+      ]
+    },
+    {
+      "name": "map_with_index",
+      "theorem_name": "mapWithIndex",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 0,
+      "n_candidates": 3,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 3,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.map_with_index fun i x => x * (i + 1)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `map_with_index`: The environment does not contain `List.map_with_index`, so it is not possible to project the field `map_with_index` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.map_with_index (fun i x => x * (i + 1))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `map_with_index`: The environment does not contain `List.map_with_index`, so it is not possible to project the field `map_with_index` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.mapWithIndex (fun i x => x * (i + 1))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `mapWithIndex`: The environment does not contain `List.mapWithIndex`, so it is not possible to project the field `mapWithIndex` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "max_subarray_sum",
+      "theorem_name": "maxSubarraySum",
+      "solved": true,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 0,
+      "n_candidates": 3,
+      "verdict_counts": {
+        "pass": 2,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+          "passed": false,
+          "n_passed": 3,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "5",
+              "expected": "4",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, _ => max_sum | a::as, max_sum, max_ending_here => loop as (max max_sum (max_ending_here + a)) (max a (max_ending_here + a)); loop xs 0 0",
+          "passed": true,
+          "n_passed": 4,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "4",
+              "expected": "4",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, curr_sum => max_sum | a::as, max_sum, curr_sum => loop as (max max_sum (curr_sum + a)) (max 0 (curr_sum + a)); loop xs 0 0",
+          "passed": true,
+          "n_passed": 4,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "4",
+              "expected": "4",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": true,
+      "extra_results": [
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, _ => max_sum | a::as, max_sum, max_ending_here => loop as (max max_sum (max_ending_here + a)) (max a (max_ending_here + a)); loop xs 0 0",
+          "passed": true,
+          "n_passed": 4,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "4",
+              "expected": "4",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, curr_sum => max_sum | a::as, max_sum, curr_sum => loop as (max max_sum (curr_sum + a)) (max 0 (curr_sum + a)); loop xs 0 0",
+          "passed": true,
+          "n_passed": 4,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "4",
+              "expected": "4",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        }
+      ]
+    },
+    {
+      "name": "prefix_while_increasing",
+      "theorem_name": "prefixWhileIncreasing",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 3,
+      "n_candidates": 5,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 5,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (x::acc) else acc; loop xs []",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `last`: The environment does not contain `List.last`, so it is not possible to project the field `last` from an expression\n  acc\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.foldl (init := []) fun acc x => if acc.isEmpty || x > acc.last then acc.push x else acc",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `last`: The environment does not contain `List.last`, so it is not possible to project the field `last` from an expression\n  acc\nof type `List \u2124`; Invalid field `push`: The environment does not contain `List.push`, so it is not possible to project the field `push` from an expression\n  acc\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if x > acc.last then loop xs (acc.push x) else acc; loop xs #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `last`: The environment does not contain `List.last`, so it is not possible to project the field `last` from an expression\n  acc\nof type `List \u2124`; Invalid field `push`: The environment does not contain `List.push`, so it is not possible to project the field `push` from an expression\n  acc\nof type `List \u2124`; Application type mismatch: The argument\n  #[]\nhas type\n  Array ?m.29\nbut is expected to have type\n  List \u2124\nin the application\n  loop xs #[]",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => if a > acc.last then loop as (acc.push a) else acc; loop xs #[]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `last`: The environment does not contain `List.last`, so it is not possible to project the field `last` from an expression\n  acc\nof type `List \u2124`; Invalid field `push`: The environment does not contain `List.push`, so it is not possible to project the field `push` from an expression\n  acc\nof type `List \u2124`; Application type mismatch: The argument\n  #[]\nhas type\n  Array ?m.29\nbut is expected to have type\n  List \u2124\nin the application\n  loop xs #[]",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (acc.push x) else acc; loop xs []",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `last`: The environment does not contain `List.last`, so it is not possible to project the field `last` from an expression\n  acc\nof type `List \u2124`; Invalid field `push`: The environment does not contain `List.push`, so it is not possible to project the field `push` from an expression\n  acc\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "unfold_n",
+      "theorem_name": "unfoldN",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 3,
+      "n_candidates": 5,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 5,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact List.range n.map (fun i => f ^ i seed)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `map`: The environment does not contain `Nat.map`, so it is not possible to project the field `map` from an expression\n  n\nof type `\u2115`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact (List.range n).map (fun _ => seed).map f",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Invalid field `map`: The environment does not contain `Function.map`, so it is not possible to project the field `map` from an expression\n  fun x => seed\nof type `?m.4 \u2192 \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact List.unfold (fun x => if x < n then some (f x, x + 1) else none) seed",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Unknown constant `List.unfold`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact List.unfold (fun x => Some (x, f x)) seed (n+1)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Unknown constant `List.unfold`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact List.unfold (fun x => Some (x, f x)) seed n",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Unknown constant `List.unfold`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "sum_at_odd_indices",
+      "theorem_name": "sumAtOddIndices",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 4,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "1",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "7",
+              "expected": "0",
+              "passed": false
+            },
+            {
+              "actual": "1",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "100",
+              "expected": "60",
+              "passed": false
+            },
+            {
+              "actual": "-1",
+              "expected": "-6",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "zip_diff",
+      "theorem_name": "zipDiff",
+      "solved": true,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 3,
+      "n_candidates": 2,
+      "verdict_counts": {
+        "pass": 2,
+        "compile_fail": 0,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.zipWith (fun a b => b - a) xs.tail",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "[4, -2, 5]",
+              "expected": "[4, -2, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[1]",
+              "expected": "[1]",
+              "passed": true
+            },
+            {
+              "actual": "[0, 0]",
+              "expected": "[0, 0]",
+              "passed": true
+            },
+            {
+              "actual": "[-9, -4]",
+              "expected": "[-9, -4]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact xs.zipWith (fun a b => b - a) (xs.drop 1)",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "[4, -2, 5]",
+              "expected": "[4, -2, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[1]",
+              "expected": "[1]",
+              "passed": true
+            },
+            {
+              "actual": "[0, 0]",
+              "expected": "[0, 0]",
+              "passed": true
+            },
+            {
+              "actual": "[-9, -4]",
+              "expected": "[-9, -4]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": true,
+      "extra_results": [
+        {
+          "tactic": "exact xs.zipWith (fun a b => b - a) xs.tail",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "[4, -2, 5]",
+              "expected": "[4, -2, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[1]",
+              "expected": "[1]",
+              "passed": true
+            },
+            {
+              "actual": "[0, 0]",
+              "expected": "[0, 0]",
+              "passed": true
+            },
+            {
+              "actual": "[-9, -4]",
+              "expected": "[-9, -4]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact xs.zipWith (fun a b => b - a) (xs.drop 1)",
+          "passed": true,
+          "n_passed": 6,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "[4, -2, 5]",
+              "expected": "[4, -2, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[1]",
+              "expected": "[1]",
+              "passed": true
+            },
+            {
+              "actual": "[0, 0]",
+              "expected": "[0, 0]",
+              "passed": true
+            },
+            {
+              "actual": "[-9, -4]",
+              "expected": "[-9, -4]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        }
+      ]
+    },
+    {
+      "name": "longest_increasing_run",
+      "theorem_name": "longestIncreasingRun",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 6,
+      "n_candidates": 2,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 2,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "2",
+              "expected": "4",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "1",
+              "passed": false
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "5",
+              "passed": false
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "2",
+              "expected": "4",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "1",
+              "passed": false
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "2",
+              "expected": "5",
+              "passed": false
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "3",
+              "passed": true
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "max_subarray_product",
+      "theorem_name": "maxSubarrayProduct",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 0,
+      "n_candidates": 7,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 7,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int \u2192 Int | [], max, min, prod => prod | a::as, max, min, prod => let new_max := max * a | min * a, a in let new_min := min * a | max * a, a in let new_prod := max * a | min * a, a in loop as new_max new_min new_prod; loop xs 1 1 1",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "expected ';' or line break; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_prod, _ => max_prod | a::as, max_prod, min_prod => let new_max_prod := max (a * max_prod) (a * min_prod) (a) in let new_min_prod := min (a * max_prod) (a * min_prod) (a) in loop as new_max_prod new_min_prod; loop xs 1 1",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "expected ';' or line break; Function expected at\n  max (a * max_prod) (a * min_prod)\nbut this term has type\n  \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  (a); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod); loop xs (1, 1)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "expected ';' or line break; Function expected at\n  max (a * max_prod) (a * min_prod)\nbut this term has type\n  \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  (a); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | x::xs, (max_prod, min_prod) => let new_max_prod := max x (max (x * max_prod) (x * min_prod)) let new_min_prod := min x (min (x * max_prod) (x * min_prod)) loop xs (new_max_prod, new_min_prod); loop xs (1, 1)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "expected ';' or line break; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | x::xs, (max_prod, min_prod) => let new_max_prod := max x (max (max_prod * x) (min_prod * x)) let new_min_prod := min x (min (max_prod * x) (min_prod * x)) loop xs (new_max_prod, new_min_prod); loop xs (1, 1)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "expected ';' or line break; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod); loop xs (1, 1).fst",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "expected ';' or line break; Function expected at\n  max (a * max_prod) (a * min_prod)\nbut this term has type\n  \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  (a); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod) loop xs (1, 1)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "expected ';' or line break; Function expected at\n  max (a * max_prod) (a * min_prod)\nbut this term has type\n  \u2124\n\nNote: Expected a function because this term is being applied to the argument\n  (a); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "merge_sorted_desc",
+      "theorem_name": "mergeSortedDesc",
+      "solved": true,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 3,
+      "n_candidates": 4,
+      "verdict_counts": {
+        "pass": 3,
+        "compile_fail": 1,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact mergeSortedDesc xs ys",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact let rec mergeSortedDesc : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::mergeSortedDesc xs (y::ys) else y::mergeSortedDesc (x::xs) ys; mergeSortedDesc xs ys",
+          "passed": true,
+          "n_passed": 7,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "[5, 4, 3, 2, 1]",
+              "expected": "[5, 4, 3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 3]",
+              "expected": "[5, 3]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 5, 5]",
+              "expected": "[5, 5, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[10, 8, 5, 3]",
+              "expected": "[10, 8, 5, 3]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x > y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+          "passed": true,
+          "n_passed": 7,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "[5, 4, 3, 2, 1]",
+              "expected": "[5, 4, 3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 3]",
+              "expected": "[5, 3]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 5, 5]",
+              "expected": "[5, 5, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[10, 8, 5, 3]",
+              "expected": "[10, 8, 5, 3]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+          "passed": true,
+          "n_passed": 7,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "[5, 4, 3, 2, 1]",
+              "expected": "[5, 4, 3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 3]",
+              "expected": "[5, 3]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 5, 5]",
+              "expected": "[5, 5, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[10, 8, 5, 3]",
+              "expected": "[10, 8, 5, 3]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": true,
+      "extra_results": [
+        {
+          "tactic": "exact let rec mergeSortedDesc : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::mergeSortedDesc xs (y::ys) else y::mergeSortedDesc (x::xs) ys; mergeSortedDesc xs ys",
+          "passed": true,
+          "n_passed": 7,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "[5, 4, 3, 2, 1]",
+              "expected": "[5, 4, 3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 3]",
+              "expected": "[5, 3]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 5, 5]",
+              "expected": "[5, 5, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[10, 8, 5, 3]",
+              "expected": "[10, 8, 5, 3]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x > y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+          "passed": true,
+          "n_passed": 7,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "[5, 4, 3, 2, 1]",
+              "expected": "[5, 4, 3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 3]",
+              "expected": "[5, 3]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 5, 5]",
+              "expected": "[5, 5, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[10, 8, 5, 3]",
+              "expected": "[10, 8, 5, 3]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        },
+        {
+          "tactic": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+          "passed": true,
+          "n_passed": 7,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "[5, 4, 3, 2, 1]",
+              "expected": "[5, 4, 3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 3]",
+              "expected": "[5, 3]",
+              "passed": true
+            },
+            {
+              "actual": "[5, 5, 5]",
+              "expected": "[5, 5, 5]",
+              "passed": true
+            },
+            {
+              "actual": "[10, 8, 5, 3]",
+              "expected": "[10, 8, 5, 3]",
+              "passed": true
+            }
+          ],
+          "verdict": "pass"
+        }
+      ]
+    },
+    {
+      "name": "window_sums",
+      "theorem_name": "windowSums",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 0,
+      "n_hit_max_tokens": 2,
+      "n_candidates": 3,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 3,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldl (init := #[]) fun acc x => match acc with | [] => [x] | _::as => (x + as.head!)::as",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Application type mismatch: The argument\n  #[]\nhas type\n  Array ?m.31\nbut is expected to have type\n  List \u2124\nin the application\n  List.foldl\n    (fun acc x =>\n      match acc with\n      | [] => [x]\n      | head :: as => (x + as.head!) :: as)\n    #[]; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.windowSums k",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Invalid field `windowSums`: The environment does not contain `List.windowSums`, so it is not possible to project the field `windowSums` from an expression\n  xs\nof type `List \u2124`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        },
+        {
+          "tactic": "exact xs.foldl (init := #[]) fun acc x => if acc.length < k then acc else acc.drop 1.push (acc.sum + x - acc.head!)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Application type mismatch: The argument\n  fun n => List.drop n acc\nhas type\n  \u2115 \u2192 List \u2124\nbut is expected to have type\n  List \u2124\nin the application\n  if acc.length < k then acc else fun n => List.drop n acc; unexpected identifier after decimal point; consider parenthesizing the number; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    }
+  ]
+}

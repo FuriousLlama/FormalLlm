@@ -1,0 +1,150 @@
+{
+  "protocol": "sprint30.md \u00a7B-3 oracle retrieval protocol",
+  "rule": "Selection based solely on task goal state + description. No test cases or reference tactics consulted.",
+  "selections": {
+    "eval_stack": [
+      121,
+      195,
+      246,
+      315,
+      398,
+      36,
+      46,
+      68,
+      85,
+      96
+    ],
+    "majority_element": [
+      46,
+      233,
+      121,
+      149,
+      195,
+      246,
+      263,
+      315,
+      398,
+      36
+    ],
+    "map_with_index": [
+      2,
+      13,
+      75,
+      111,
+      121,
+      176,
+      195,
+      198,
+      246,
+      315
+    ],
+    "max_subarray_sum": [
+      46,
+      233,
+      121,
+      149,
+      195,
+      246,
+      263,
+      315,
+      398,
+      36
+    ],
+    "prefix_while_increasing": [
+      121,
+      2,
+      3,
+      10,
+      13,
+      29,
+      30,
+      33,
+      39,
+      60
+    ],
+    "unfold_n": [
+      2,
+      13,
+      176,
+      198,
+      334,
+      352,
+      368,
+      32,
+      107,
+      121
+    ],
+    "sum_at_odd_indices": [
+      75,
+      111,
+      121,
+      195,
+      246,
+      315,
+      398,
+      2,
+      13,
+      176
+    ],
+    "zip_diff": [
+      353,
+      27,
+      37,
+      55,
+      103,
+      116,
+      148,
+      382,
+      121,
+      195
+    ],
+    "longest_increasing_run": [
+      46,
+      233,
+      121,
+      195,
+      246,
+      315,
+      398,
+      149,
+      263,
+      2
+    ],
+    "max_subarray_product": [
+      46,
+      233,
+      121,
+      195,
+      246,
+      315,
+      398,
+      149,
+      263,
+      2
+    ],
+    "merge_sorted_desc": [
+      0,
+      1,
+      31,
+      32,
+      38,
+      41,
+      47,
+      56,
+      58,
+      62
+    ],
+    "window_sums": [
+      121,
+      195,
+      246,
+      315,
+      398,
+      2,
+      13,
+      36,
+      46,
+      68
+    ]
+  }
+}

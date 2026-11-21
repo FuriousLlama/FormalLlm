@@ -1,0 +1,99 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+sprint0/corpus/*.json
+sprint0/extract/*.json
+sprint0/model/checkpoints/
+*.hs.tmp
+
+# Hackage package extraction cache (large build artifacts, re-creatable)
+hackage-packages/
+
+# Per-package intermediate extraction files (re-creatable)
+sprint/extract/pkg_raw/
+sprint/extract/pkg_clean/
+logs/
+
+# Lean MCTS build artifacts
+lean_mcts/.venv/
+lean_mcts/env/FormalNav/.lake/
+lean_mcts/env/FormalNav/.github/
+lean_mcts/env/FormalNav/build/
+lean_mcts/benchmark/results/
+
+# Nested .lake inside Lean project subdirs
+lean_mcts/env/FormalNav/FormalNav/.lake/
+
+# Transient oracle eval artifacts (regenerated per benchmark run)
+lean_mcts/env/FormalNav/FormalNav/_Eval_*.lean
+
+# Stale lake-generated stray files inside FormalNav/FormalNav/ subdir
+# (the real project root is lean_mcts/env/FormalNav/, so these nested copies are artifacts)
+lean_mcts/env/FormalNav/FormalNav/FormalNav.lean
+lean_mcts/env/FormalNav/FormalNav/lake-manifest.json
+
+# Stray FormalNav copies (lake sometimes creates these)
+lean_mcts/FormalNav/
+
+# Training data (large, reproducible via training scripts)
+lean_mcts/train/*.jsonl
+# ...except the 404-pair S29 corpus (training set for S29, retrieval corpus for S30 Phase B)
+!lean_mcts/train/diverse_train_v2.jsonl
+!lean_mcts/train/diverse_val_v2.jsonl
+lean_mcts/train/*.log
+lean_mcts/train/*.pt
+lean_mcts/train/data_stats.json
+
+# LoRA adapter checkpoints (reproducible via training)
+lean_mcts/train/adapter_*/
+lean_mcts/train/policy_adapter/
+lean_mcts/train/synth_adapter/
+lean_mcts/train/synth_v2_adapter/
+
+# Training run logs
+lean_mcts/train/runs/
+
+# Synthesized data (reproducible via enumerate.py)
+lean_mcts/synth/*.jsonl
+# ...except runtime inputs: the ExpandedFixed expression library (policy.py default)
+# and the generated-task tier definitions (tasks.py)
+!lean_mcts/synth/expressions.jsonl
+!lean_mcts/synth/synth_tasks.jsonl
+lean_mcts/synth/enum_stats*.json
+lean_mcts/synth/grammar_v2.json
+
+# --- Public-release hygiene ---------------------------------------------
+# Model weights, compiled objects, logs: never tracked
+*.safetensors
+*.pt
+*.log
+*.o
+*.hi
+*.bak
+.pytest_cache/
+.claude/
+
+# All adapter / run directories under train/ (benchmark result dirs excepted)
+lean_mcts/train/*/
+!lean_mcts/train/bench_s23_*/
+
+# Self-play rounds: keep results/run_*.json and convergence.json only
+lean_mcts/synth/selfplay_*/round_*/adapter_*
+lean_mcts/synth/selfplay_*/round_*/runs/
+lean_mcts/synth/selfplay_*/round_*/*.jsonl
+lean_mcts/synth/enum_stats.json
+
+# Generated GHC Core corpora and sequences (re-creatable via make extract-hackage / make corpus)
+sprint/extract/.dep_cache.json
+sprint/extract/corpus_all.json
+sprint/extract/corpus_hackage.json
+sprint/corpus/sequences.json
+sprint/corpus/sequences_aug.json
+
+# Debug candidate dumps
+sprint/benchmark/dump*/
+sprint/benchmark/candidates_dump.json
+
+# Phase B retrieval index (rebuilt automatically by phase_b.py when missing)
+sprint/benchmark/results/phase_b_index.npz

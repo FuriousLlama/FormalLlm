@@ -1,0 +1,42 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact List.rec 0 (fun h _ acc => acc + h * h) xs"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 48,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 32,
+      "n_oracle_calls": 32,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0767,
+      "t_oracle_s": 3.5175,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 3.5942,
+      "ms_per_step": 1.6,
+      "ms_per_oracle": 109.9,
+      "pct_step": 2.1,
+      "pct_policy": 0.0,
+      "pct_oracle": 97.9,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "dot_product_self",
+    "category": "diag_a",
+    "ghc_equivalent": "dot_product_self",
+    "wall_time_s": 3.6
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: Server not running.",
+    "task": "map_square",
+    "category": "map_fold",
+    "ghc_equivalent": "map_square",
+    "wall_time_s": 0.0
+  }
+]

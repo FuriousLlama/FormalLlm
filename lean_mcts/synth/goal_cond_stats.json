@@ -1,0 +1,30 @@
+{
+  "total_raw": 9980,
+  "total_unique": 8587,
+  "n_train": 6869,
+  "n_val": 1718,
+  "sources": {
+    "reference": 1435,
+    "hand_crafted": 136,
+    "synthetic": 230,
+    "multistep": 694
+  },
+  "return_types": {
+    "Nat": 465,
+    "List Int": 1191,
+    "Option Int": 2,
+    "List Nat": 119,
+    "Int": 640,
+    "List Int \u00d7 List Int": 26,
+    "List (List Int)": 8,
+    "Int \u00d7 Int": 15,
+    "List (Int \u00d7 Nat)": 3,
+    "Nat \u00d7 Nat": 9,
+    "Nat \u00d7 Int": 8,
+    "Int \u00d7 Nat": 9
+  },
+  "n_hand_crafted": 136,
+  "n_synthetic": 230,
+  "n_augmented": 7485,
+  "elapsed_seconds": 80.1
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "sum_count_max",
+    "category": "deep_multistep",
+    "ghc_equivalent": "sum_count_max",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "stats_triple",
+    "category": "deep_multistep",
+    "ghc_equivalent": "stats_triple",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "partition_lengths",
+    "category": "deep_multistep",
+    "ghc_equivalent": "partition_lengths",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "fold_and_length",
+    "category": "deep_multistep",
+    "ghc_equivalent": "fold_and_length",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "filter_both_ways",
+    "category": "deep_multistep",
+    "ghc_equivalent": "filter_both_ways",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "recurrence_and_sum",
+    "category": "deep_multistep",
+    "ghc_equivalent": "recurrence_and_sum",
+    "wall_time_s": 0.0
+  }
+]

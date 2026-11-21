@@ -1,0 +1,40 @@
+[
+  {
+    "solved": false,
+    "tactics": [
+      "norm_num",
+      "norm_num",
+      "norm_num",
+      "norm_num",
+      "norm_num"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 6081,
+    "stats": {
+      "n_expand_calls": 200,
+      "n_tactic_steps": 82200,
+      "n_tactic_valid": 360,
+      "n_tactic_solved": 5880,
+      "n_oracle_calls": 5880,
+      "n_oracle_passed": 0,
+      "n_simulate_calls": 200,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.313,
+      "t_step_s": 30.408,
+      "t_oracle_s": 1848.6258,
+      "t_simulate_s": 1304.8766,
+      "t_select_s": 0.0121,
+      "t_total_s": 3187.2356,
+      "ms_per_step": 0.37,
+      "ms_per_oracle": 314.4,
+      "pct_step": 1.0,
+      "pct_policy": 0.1,
+      "pct_oracle": 58.0,
+      "pct_simulate": 40.9
+    },
+    "task": "first_n_squares",
+    "category": "v2_algorithmic",
+    "ghc_equivalent": "first_n_squares",
+    "wall_time_s": 3189.06
+  }
+]

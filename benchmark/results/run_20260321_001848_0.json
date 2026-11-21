@@ -1,0 +1,52 @@
+[
+  {
+    "solved": false,
+    "tactics": [
+      "constructor",
+      "constructor",
+      "exact (xs.map (fun x => x + 1)).foldl (fun a b => a + b) 0",
+      "exact (xs.map (fun x => x + 1)).foldl (fun a b => a * b) 1",
+      "norm_num",
+      "norm_num"
+    ],
+    "rollouts_used": 500,
+    "tree_size": 734,
+    "stats": {
+      "n_expand_calls": 500,
+      "n_tactic_steps": 11328,
+      "n_tactic_valid": 1055,
+      "n_tactic_solved": 268,
+      "n_oracle_calls": 476,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 12,
+      "n_oracle_batches": 12,
+      "n_simulate_calls": 500,
+      "n_repl_crashes": 0,
+      "t_policy_s": 6.3423,
+      "t_step_s": 27.5019,
+      "t_oracle_s": 27.4148,
+      "t_simulate_s": 35.9494,
+      "t_select_s": 0.0088,
+      "t_total_s": 97.2172,
+      "ms_per_step": 2.43,
+      "ms_per_oracle": 57.6,
+      "pct_step": 28.3,
+      "pct_policy": 6.5,
+      "pct_oracle": 28.2,
+      "pct_simulate": 37.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 129,
+      "4": 358,
+      "5": 84,
+      "6": 160
+    },
+    "task": "stats_triple",
+    "category": "deep_multistep",
+    "ghc_equivalent": "stats_triple",
+    "wall_time_s": 97.24
+  }
+]

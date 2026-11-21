@@ -1,0 +1,35 @@
+{
+  "comment": "S30 Phase A generic few-shot set. 5 hand-curated library pairs covering let_rec, match_list, foldl with accumulator, method_chain, and two-list filter. Same set is reused for all 12 held_out_12 tasks and all 3 Phase A models (Qwen-1.5B, Qwen-7B, Claude Opus 4.6). Deliberately generic and not task-specific — Phase A measures a lower bound on base-model capability. If Phase A + B-3 oracle retrieval both miss, the plan reads the gate as 'not solvable by current-gen model scale'. Frozen before any run.",
+  "pairs": [
+    {
+      "name": "List.partition",
+      "kind": "let_rec",
+      "state": "p : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124",
+      "tactic": "exact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])"
+    },
+    {
+      "name": "List.tail",
+      "kind": "match_list",
+      "state": "x_arg : List \u2124\n\u22a2 List \u2124",
+      "tactic": "exact match x_arg with | [] => [] | _::as => as"
+    },
+    {
+      "name": "List.toArrayMap",
+      "kind": "foldl_accumulator",
+      "state": "l : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124",
+      "tactic": "exact l.foldl (init := #[]) fun acc x => acc.push (f x)"
+    },
+    {
+      "name": "List.dropLastTR",
+      "kind": "method_chain",
+      "state": "l : List \u2124\n\u22a2 List \u2124",
+      "tactic": "exact l.toArray.pop.toList"
+    },
+    {
+      "name": "List.removeAll",
+      "kind": "two_list_filter",
+      "state": "xs : List \u2124\nys : List \u2124\n\u22a2 List \u2124",
+      "tactic": "exact xs.filter (fun x => !ys.elem x)"
+    }
+  ]
+}

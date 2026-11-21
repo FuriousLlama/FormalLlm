@@ -1,0 +1,642 @@
+{
+ "note": "Supplementary adversarial tests; expected values produced by #eval of the reference implementations (TasksDiagnostic.lean *_ref; docstring refs of held_out_hard_tasks.py for the 6 S29 hard tasks). Frozen tests untouched.",
+ "tests": {
+  "eval_stack": [
+   {
+    "input": "[0]",
+    "expected": "0"
+   },
+   {
+    "input": "[3, 0]",
+    "expected": "3"
+   },
+   {
+    "input": "[1, 2, 0]",
+    "expected": "3"
+   },
+   {
+    "input": "[1, 2, 0, 3, 0]",
+    "expected": "6"
+   },
+   {
+    "input": "[0, 0]",
+    "expected": "0"
+   },
+   {
+    "input": "[1, 2, 3, 0, 0]",
+    "expected": "6"
+   },
+   {
+    "input": "[-1, 2, 0]",
+    "expected": "1"
+   },
+   {
+    "input": "[5, -3, 0, 4]",
+    "expected": "4"
+   },
+   {
+    "input": "[1, 2, 3]",
+    "expected": "3"
+   },
+   {
+    "input": "[4, 0, 6]",
+    "expected": "6"
+   },
+   {
+    "input": "[-2, -3]",
+    "expected": "-3"
+   }
+  ],
+  "majority_element": [
+   {
+    "input": "[]",
+    "expected": "0"
+   },
+   {
+    "input": "[0]",
+    "expected": "0"
+   },
+   {
+    "input": "[-3]",
+    "expected": "-3"
+   },
+   {
+    "input": "[7]",
+    "expected": "7"
+   },
+   {
+    "input": "[2, 2]",
+    "expected": "2"
+   },
+   {
+    "input": "[-1, -1, -1]",
+    "expected": "-1"
+   },
+   {
+    "input": "[3, -1, 3]",
+    "expected": "3"
+   },
+   {
+    "input": "[1, 2, 2, 3]",
+    "expected": "2"
+   },
+   {
+    "input": "[-5, 4, -3, 2]",
+    "expected": "-3"
+   },
+   {
+    "input": "[1, 2, 1]",
+    "expected": "1"
+   },
+   {
+    "input": "[2, 2, 1, 1, 2]",
+    "expected": "2"
+   },
+   {
+    "input": "[3, 3, 4]",
+    "expected": "3"
+   },
+   {
+    "input": "[-1, 5, -1]",
+    "expected": "-1"
+   }
+  ],
+  "map_with_index": [
+   {
+    "input": "[]",
+    "expected": "[]"
+   },
+   {
+    "input": "[0]",
+    "expected": "[0]"
+   },
+   {
+    "input": "[-3]",
+    "expected": "[-3]"
+   },
+   {
+    "input": "[7]",
+    "expected": "[7]"
+   },
+   {
+    "input": "[2, 2]",
+    "expected": "[2, 4]"
+   },
+   {
+    "input": "[-1, -1, -1]",
+    "expected": "[-1, -2, -3]"
+   },
+   {
+    "input": "[3, -1, 3]",
+    "expected": "[3, -2, 9]"
+   },
+   {
+    "input": "[1, 2, 2, 3]",
+    "expected": "[1, 4, 6, 12]"
+   },
+   {
+    "input": "[-5, 4, -3, 2]",
+    "expected": "[-5, 8, -9, 8]"
+   },
+   {
+    "input": "[1, 1, 1, 1]",
+    "expected": "[1, 2, 3, 4]"
+   },
+   {
+    "input": "[-2, 0, 2]",
+    "expected": "[-2, 0, 6]"
+   }
+  ],
+  "max_subarray_sum": [
+   {
+    "input": "[-1, 3]",
+    "expected": "3"
+   },
+   {
+    "input": "[3, -1]",
+    "expected": "3"
+   },
+   {
+    "input": "[-2, 1, -3, 4, -1, 2, 1, -5, 4]",
+    "expected": "6"
+   },
+   {
+    "input": "[-3, 5, -1, 2]",
+    "expected": "6"
+   },
+   {
+    "input": "[1, -5, 2]",
+    "expected": "2"
+   },
+   {
+    "input": "[]",
+    "expected": "0"
+   },
+   {
+    "input": "[0]",
+    "expected": "0"
+   },
+   {
+    "input": "[-3]",
+    "expected": "0"
+   },
+   {
+    "input": "[7]",
+    "expected": "7"
+   },
+   {
+    "input": "[2, 2]",
+    "expected": "4"
+   },
+   {
+    "input": "[-1, -1, -1]",
+    "expected": "0"
+   },
+   {
+    "input": "[3, -1, 3]",
+    "expected": "5"
+   },
+   {
+    "input": "[1, 2, 2, 3]",
+    "expected": "8"
+   },
+   {
+    "input": "[-5, 4, -3, 2]",
+    "expected": "4"
+   }
+  ],
+  "prefix_while_increasing": [
+   {
+    "input": "[1, 1, 2]",
+    "expected": "[1]"
+   },
+   {
+    "input": "[1, 2, 2, 3]",
+    "expected": "[1, 2]"
+   },
+   {
+    "input": "[3, 3]",
+    "expected": "[3]"
+   },
+   {
+    "input": "[1, 2, 3, 3, 4]",
+    "expected": "[1, 2, 3]"
+   },
+   {
+    "input": "[5, 6, 6]",
+    "expected": "[5, 6]"
+   },
+   {
+    "input": "[]",
+    "expected": "[]"
+   },
+   {
+    "input": "[0]",
+    "expected": "[0]"
+   },
+   {
+    "input": "[-3]",
+    "expected": "[-3]"
+   },
+   {
+    "input": "[7]",
+    "expected": "[7]"
+   },
+   {
+    "input": "[2, 2]",
+    "expected": "[2]"
+   },
+   {
+    "input": "[-1, -1, -1]",
+    "expected": "[-1]"
+   },
+   {
+    "input": "[3, -1, 3]",
+    "expected": "[3]"
+   },
+   {
+    "input": "[1, 2, 2, 3]",
+    "expected": "[1, 2]"
+   },
+   {
+    "input": "[-5, 4, -3, 2]",
+    "expected": "[-5, 4]"
+   }
+  ],
+  "unfold_n": [
+   {
+    "input": "1",
+    "input2": "(fun x : Int => x + 1)",
+    "input3": "9",
+    "expected": "[9]"
+   },
+   {
+    "input": "2",
+    "input2": "(fun x : Int => -x)",
+    "input3": "3",
+    "expected": "[3, -3]"
+   },
+   {
+    "input": "5",
+    "input2": "(fun x : Int => x * 2)",
+    "input3": "(-1)",
+    "expected": "[-1, -2, -4, -8, -16]"
+   },
+   {
+    "input": "3",
+    "input2": "(fun x : Int => x - 5)",
+    "input3": "0",
+    "expected": "[0, -5, -10]"
+   },
+   {
+    "input": "0",
+    "input2": "(fun x : Int => x * 3)",
+    "input3": "(-4)",
+    "expected": "[]"
+   },
+   {
+    "input": "4",
+    "input2": "(fun x : Int => x * x)",
+    "input3": "2",
+    "expected": "[2, 4, 16, 256]"
+   },
+   {
+    "input": "6",
+    "input2": "(fun x : Int => 0)",
+    "input3": "7",
+    "expected": "[7, 0, 0, 0, 0, 0]"
+   },
+   {
+    "input": "2",
+    "input2": "(fun x : Int => x + 1)",
+    "input3": "(-1)",
+    "expected": "[-1, 0]"
+   }
+  ],
+  "sum_at_odd_indices": [
+   {
+    "input": "[]",
+    "expected": "0"
+   },
+   {
+    "input": "[0]",
+    "expected": "0"
+   },
+   {
+    "input": "[-3]",
+    "expected": "0"
+   },
+   {
+    "input": "[7]",
+    "expected": "0"
+   },
+   {
+    "input": "[2, 2]",
+    "expected": "2"
+   },
+   {
+    "input": "[-1, -1, -1]",
+    "expected": "-1"
+   },
+   {
+    "input": "[3, -1, 3]",
+    "expected": "-1"
+   },
+   {
+    "input": "[1, 2, 2, 3]",
+    "expected": "5"
+   },
+   {
+    "input": "[-5, 4, -3, 2]",
+    "expected": "6"
+   },
+   {
+    "input": "[1, 2, 3, 4, 5, 6]",
+    "expected": "12"
+   },
+   {
+    "input": "[0, -9]",
+    "expected": "-9"
+   }
+  ],
+  "zip_diff": [
+   {
+    "input": "[]",
+    "expected": "[]"
+   },
+   {
+    "input": "[0]",
+    "expected": "[]"
+   },
+   {
+    "input": "[-3]",
+    "expected": "[]"
+   },
+   {
+    "input": "[7]",
+    "expected": "[]"
+   },
+   {
+    "input": "[2, 2]",
+    "expected": "[0]"
+   },
+   {
+    "input": "[-1, -1, -1]",
+    "expected": "[0, 0]"
+   },
+   {
+    "input": "[3, -1, 3]",
+    "expected": "[-4, 4]"
+   },
+   {
+    "input": "[1, 2, 2, 3]",
+    "expected": "[1, 0, 1]"
+   },
+   {
+    "input": "[-5, 4, -3, 2]",
+    "expected": "[9, -7, 5]"
+   },
+   {
+    "input": "[1, 2, 3, 4, 5, 6]",
+    "expected": "[1, 1, 1, 1, 1]"
+   },
+   {
+    "input": "[-4, 4]",
+    "expected": "[8]"
+   }
+  ],
+  "longest_increasing_run": [
+   {
+    "input": "[]",
+    "expected": "0"
+   },
+   {
+    "input": "[0]",
+    "expected": "1"
+   },
+   {
+    "input": "[-3]",
+    "expected": "1"
+   },
+   {
+    "input": "[7]",
+    "expected": "1"
+   },
+   {
+    "input": "[2, 2]",
+    "expected": "1"
+   },
+   {
+    "input": "[-1, -1, -1]",
+    "expected": "1"
+   },
+   {
+    "input": "[3, -1, 3]",
+    "expected": "2"
+   },
+   {
+    "input": "[1, 2, 2, 3]",
+    "expected": "2"
+   },
+   {
+    "input": "[-5, 4, -3, 2]",
+    "expected": "2"
+   },
+   {
+    "input": "[1, 2, 1, 2, 3]",
+    "expected": "3"
+   },
+   {
+    "input": "[1, 1, 2, 3]",
+    "expected": "3"
+   },
+   {
+    "input": "[3, 2, 3]",
+    "expected": "2"
+   },
+   {
+    "input": "[-3, -2, -1, -1]",
+    "expected": "3"
+   }
+  ],
+  "max_subarray_product": [
+   {
+    "input": "[-3]",
+    "expected": "-3"
+   },
+   {
+    "input": "[-2, 3]",
+    "expected": "3"
+   },
+   {
+    "input": "[3, -2]",
+    "expected": "3"
+   },
+   {
+    "input": "[-1, -2, -3]",
+    "expected": "6"
+   },
+   {
+    "input": "[0, -2]",
+    "expected": "0"
+   },
+   {
+    "input": "[2, -1, 2]",
+    "expected": "2"
+   },
+   {
+    "input": "[-2, -3, 0, 4]",
+    "expected": "6"
+   },
+   {
+    "input": "[-1, 0]",
+    "expected": "0"
+   },
+   {
+    "input": "[]",
+    "expected": "0"
+   },
+   {
+    "input": "[0]",
+    "expected": "0"
+   },
+   {
+    "input": "[-3]",
+    "expected": "-3"
+   },
+   {
+    "input": "[7]",
+    "expected": "7"
+   },
+   {
+    "input": "[2, 2]",
+    "expected": "4"
+   },
+   {
+    "input": "[-1, -1, -1]",
+    "expected": "1"
+   },
+   {
+    "input": "[3, -1, 3]",
+    "expected": "3"
+   },
+   {
+    "input": "[1, 2, 2, 3]",
+    "expected": "12"
+   },
+   {
+    "input": "[-5, 4, -3, 2]",
+    "expected": "120"
+   }
+  ],
+  "merge_sorted_desc": [
+   {
+    "input": "[5, 4]",
+    "input2": "[3]",
+    "expected": "[5, 4, 3]"
+   },
+   {
+    "input": "[3]",
+    "input2": "[5, 4]",
+    "expected": "[5, 4, 3]"
+   },
+   {
+    "input": "[5, 1]",
+    "input2": "[4, 2]",
+    "expected": "[5, 4, 2, 1]"
+   },
+   {
+    "input": "[9, 7, 5]",
+    "input2": "[8, 6]",
+    "expected": "[9, 8, 7, 6, 5]"
+   },
+   {
+    "input": "[2, 2]",
+    "input2": "[2]",
+    "expected": "[2, 2, 2]"
+   },
+   {
+    "input": "[-1, -3]",
+    "input2": "[-2]",
+    "expected": "[-1, -2, -3]"
+   },
+   {
+    "input": "[]",
+    "input2": "[0]",
+    "expected": "[0]"
+   },
+   {
+    "input": "[0]",
+    "input2": "[]",
+    "expected": "[0]"
+   },
+   {
+    "input": "[1]",
+    "input2": "[1]",
+    "expected": "[1, 1]"
+   },
+   {
+    "input": "[10]",
+    "input2": "[9, 8, 7]",
+    "expected": "[10, 9, 8, 7]"
+   },
+   {
+    "input": "[6, 5, 4]",
+    "input2": "[3, 2, 1]",
+    "expected": "[6, 5, 4, 3, 2, 1]"
+   }
+  ],
+  "window_sums": [
+   {
+    "input": "0",
+    "input2": "[1, 2]",
+    "expected": "[]"
+   },
+   {
+    "input": "1",
+    "input2": "[]",
+    "expected": "[]"
+   },
+   {
+    "input": "2",
+    "input2": "[-1, 1]",
+    "expected": "[0]"
+   },
+   {
+    "input": "3",
+    "input2": "[1, 2, 3]",
+    "expected": "[6]"
+   },
+   {
+    "input": "4",
+    "input2": "[1, 2, 3]",
+    "expected": "[]"
+   },
+   {
+    "input": "2",
+    "input2": "[5, 5, 5]",
+    "expected": "[10, 10]"
+   },
+   {
+    "input": "1",
+    "input2": "[-3]",
+    "expected": "[-3]"
+   },
+   {
+    "input": "2",
+    "input2": "[1, -1, 1, -1]",
+    "expected": "[0, 0, 0]"
+   },
+   {
+    "input": "0",
+    "input2": "[]",
+    "expected": "[]"
+   },
+   {
+    "input": "3",
+    "input2": "[-2, 0, 2, 4]",
+    "expected": "[0, 6]"
+   }
+  ]
+ }
+}

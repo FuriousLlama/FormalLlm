@@ -1,0 +1,258 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact ((List.range n).foldl (fun (a, b) _ => (b, a + b)) (0, 1)).1"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 80,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 785,
+      "n_tactic_valid": 2,
+      "n_tactic_solved": 95,
+      "n_oracle_calls": 66,
+      "n_oracle_passed": 4,
+      "n_oracle_prefiltered": 4,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.4508,
+      "t_step_s": 0.4501,
+      "t_oracle_s": 3.85,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 7.7509,
+      "ms_per_step": 0.57,
+      "ms_per_oracle": 58.3,
+      "pct_step": 5.8,
+      "pct_policy": 44.5,
+      "pct_oracle": 49.7,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 79
+    },
+    "task": "fibonacci",
+    "category": "recurrence",
+    "ghc_equivalent": "fibonacci",
+    "wall_time_s": 7.75,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact ((List.range n).foldl (fun (acc, ab) _ => (acc ++ [ab.1], (ab.2, ab.1 + ab.2))) ([], (0, 1))).1"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 63,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 765,
+      "n_tactic_valid": 3,
+      "n_tactic_solved": 62,
+      "n_oracle_calls": 61,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.0444,
+      "t_step_s": 1.2545,
+      "t_oracle_s": 3.6904,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 7.9893,
+      "ms_per_step": 1.64,
+      "ms_per_oracle": 60.5,
+      "pct_step": 15.7,
+      "pct_policy": 38.1,
+      "pct_oracle": 46.2,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 62
+    },
+    "task": "fib_list",
+    "category": "recurrence",
+    "ghc_equivalent": "fib_list",
+    "wall_time_s": 7.99,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact Nat.rec 1 (fun k acc => acc * (k + 1)) n"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 16,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 16,
+      "n_oracle_calls": 16,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0232,
+      "t_oracle_s": 0.8217,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 0.8448,
+      "ms_per_step": 1.45,
+      "ms_per_oracle": 51.4,
+      "pct_step": 2.7,
+      "pct_policy": 0.0,
+      "pct_oracle": 97.3,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "factorial",
+    "category": "recurrence",
+    "ghc_equivalent": "factorial",
+    "wall_time_s": 0.85,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (List.range n).map (fun i => (List.range (i + 1)).foldl (\u00b7 + \u00b7) 0)"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 63,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 765,
+      "n_tactic_valid": 3,
+      "n_tactic_solved": 62,
+      "n_oracle_calls": 50,
+      "n_oracle_passed": 3,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0037,
+      "t_step_s": 1.2658,
+      "t_oracle_s": 2.6803,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 3.9499,
+      "ms_per_step": 1.65,
+      "ms_per_oracle": 53.6,
+      "pct_step": 32.0,
+      "pct_policy": 0.1,
+      "pct_oracle": 67.9,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 62
+    },
+    "task": "triangular_numbers",
+    "category": "recurrence",
+    "ghc_equivalent": "triangular_numbers",
+    "wall_time_s": 3.95,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "constructor",
+      "exact xs.foldl (\u00b7 + \u00b7) 0",
+      "exact xs.length"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 4,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 340,
+      "n_tactic_valid": 124,
+      "n_tactic_solved": 38,
+      "n_oracle_calls": 50,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 6.0139,
+      "t_step_s": 0.7688,
+      "t_oracle_s": 2.9089,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 9.6915,
+      "ms_per_step": 2.26,
+      "ms_per_oracle": 58.2,
+      "pct_step": 7.9,
+      "pct_policy": 62.1,
+      "pct_oracle": 30.0,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1
+    },
+    "task": "running_parts",
+    "category": "recurrence",
+    "ghc_equivalent": "running_parts",
+    "wall_time_s": 9.69,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (List.range n).map (fun i => (List.range i).foldl (fun a _ => a * 2) 1)"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 63,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 765,
+      "n_tactic_valid": 3,
+      "n_tactic_solved": 62,
+      "n_oracle_calls": 50,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0021,
+      "t_step_s": 1.1805,
+      "t_oracle_s": 2.7527,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 3.9352,
+      "ms_per_step": 1.54,
+      "ms_per_oracle": 55.1,
+      "pct_step": 30.0,
+      "pct_policy": 0.1,
+      "pct_oracle": 69.9,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 62
+    },
+    "task": "powers_of_2",
+    "category": "recurrence",
+    "ghc_equivalent": "powers_of_2",
+    "wall_time_s": 3.94,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  }
+]

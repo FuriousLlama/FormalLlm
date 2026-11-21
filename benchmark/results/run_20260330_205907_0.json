@@ -1,0 +1,42 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact List.mergeSort xs"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 464,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 800,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 536,
+      "n_oracle_calls": 123,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 4,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.1158,
+      "t_oracle_s": 8.7885,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 10.9043,
+      "ms_per_step": 2.64,
+      "ms_per_oracle": 71.5,
+      "pct_step": 19.4,
+      "pct_policy": 0.0,
+      "pct_oracle": 80.6,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 463
+    },
+    "task": "diag_insertion_sort",
+    "category": "diag_d",
+    "ghc_equivalent": "diag_insertion_sort",
+    "wall_time_s": 10.91
+  }
+]

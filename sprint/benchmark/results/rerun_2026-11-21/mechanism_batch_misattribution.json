@@ -1,0 +1,48 @@
+{
+ "task": "count_pos_neg",
+ "n_tests": 4,
+ "canary_start": {
+  "correct": true,
+  "constant": false,
+  "wrong_fn": false,
+  "noncompiling": false,
+  "ref_correct": true,
+  "ref_wrong": false,
+  "ok": true
+ },
+ "standalone_fail": false,
+ "standalone_good": true,
+ "batches": [
+  {
+   "layout": "1xFAIL + GOOD@1 + 4xFAIL",
+   "n_messages": 29,
+   "passed_indices": [],
+   "good_index": 1
+  },
+  {
+   "layout": "4xFAIL + GOOD@4 + 4xFAIL",
+   "n_messages": 44,
+   "passed_indices": [
+    5
+   ],
+   "good_index": 4
+  },
+  {
+   "layout": "8xFAIL + GOOD@8 + 4xFAIL",
+   "n_messages": 64,
+   "passed_indices": [
+    10
+   ],
+   "good_index": 8
+  }
+ ],
+ "canary_end": {
+  "correct": true,
+  "constant": false,
+  "wrong_fn": false,
+  "noncompiling": false,
+  "ref_correct": true,
+  "ref_wrong": false,
+  "ok": true
+ }
+}

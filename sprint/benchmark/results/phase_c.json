@@ -1,0 +1,1146 @@
+{
+  "1.5B_bare": {
+    "label": "1.5B_bare",
+    "n_prompts": 20,
+    "n_unique_total": 160,
+    "n_letrec": 125,
+    "letrec_rate": 0.781,
+    "wall": 30.0,
+    "per_prompt": [
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to sum all element",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "```lean\ntactic `let rec sum_list l := \n  match l with\n  | nil => 0\n  | cons x xs => x + sum_list xs\n",
+          "```\nexact\n    let rec sum_list (list: list Int) : Int := \n        match list with\n        | nil => 0",
+          "`tactic : let rec sum (xs : list int) : int :=\n  match xs with\n  | nil => 0\n  | h :: t => h + sum t\n",
+          "`exact (let rec acc [] = 0, acc (x :: xs) = x + acc xs)`"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the len",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "```lean\ntactic_definition length_list : tactic (nat \u2192 list nat \u2192 nat) :=\n  let rec length_list_helpe",
+          "Let's define a tactic `compute_length` that takes a list `xs` as input and returns its length. Here'",
+          "`let rec length (xs : list a) : nat := match xs with | [] => 0 | _ :: xs' => 1 + length xs' end.`",
+          "```lean\nlet rec length l :=\n  match l with\n  | nil => 0\n  | cons h t => 1 + length t\n  end\n```"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to reverse a List ",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "```\ntactic: `let rec`\ntactic: `List.reverse` `x`\ntactic: `exact`\n```",
+          "```\ntactic: let rec rev (x:List Int) (res:List Int) := \n    match x with \n    | [] => exact res\n    ",
+          "exact `let rec reverse = fun (lst: List Int) => match lst with nil => nil | cons h t => cons t h end",
+          "`let rec reverseList (xs : list Int) : list Int \u225d match xs with\n  | nil => nil\n  | cons x xs' => rev"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the last",
+        "n_unique": 8,
+        "n_letrec": 4,
+        "tactics_head": [
+          "```lean\ninductive List (A : Type) : Type :=\n| Nil : List A\n| Cons : A \u2192 List A \u2192 List A",
+          "`exact (rec (fun (h : list Int) (r : Int) (f : Int) => h) [] 0)`",
+          "`exact lastElement (let rec)`",
+          "`exact { let rec _l = l in l = _l}`"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to multiply all el",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "`let rec` tactic body",
+          "`let rec` `mulList` `L` `=` `if` `L` `=` `[]` `then` `1` `else` `L` `[0]` `*` `mulList` `(drop` `1` ",
+          "`let rec mul (l : list int) : int := match l with\n| [] => 1\n| h :: t => h * mul t end.`",
+          "```lean\nimport data.list.basic"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to find the maximu",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "```\nlet rec max_list = fun lst => match lst with\n  | [] => 0\n  | x :: xs => if x > (max_list xs) the",
+          "```\nlet rec max_list (l : list Int) : Int :=\n  match l with\n  | [] => 0\n  | h :: t => let m := max_l",
+          "`let rec max l = match l with\n    | [] => 0\n    | x :: xs => if x > max xs then x else max xs`",
+          "(let rec max_list : List Int -> Int := fun l =>\nmatch l with\n| [] => 0\n| x :: xs => max x (max_list "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the list",
+        "n_unique": 8,
+        "n_letrec": 4,
+        "tactics_head": [
+          "`tactic exact (let rec partialSums = list.map (+ 0) partialSums in partialSums)`",
+          "```lean\nimport data.list.basic",
+          "Let `x : List Int` be a given list of Int.",
+          "`exact` (let rec (sums l) = if l is empty then [] else let (h::t) = l in h::(sums t)`"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count elements ",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "```lean\ntactic `count_pos_in_list` : tactic := do\n  let list \u2190 newlist\n  let n \u2190 of_int 0\n  let rec ",
+          "`exact (let rec count_0 (xs : List Int) (c : Nat) : Nat :=\n  match xs with\n  | nil => c\n  | x :: xs'",
+          "`let rec count_greater_than_0 (l : List Int) : nat :=\n  match l with\n  | [] => 0\n  | h::t => if h > ",
+          "`let rec count_greater_than_zero xs = if empty xs then 0 else let y = head xs in if y > 0 then 1 + c"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to merge two sorte",
+        "n_unique": 8,
+        "n_letrec": 6,
+        "tactics_head": [
+          "```lean\ntactic_definition merge_with_letrec : tactic (list Int) \u2192 tactic (list Int) := \u03bb xs, do\n  le",
+          "Let rec mergeLists (l1 : list int) (l2 : list int) : list int := \n  match l1 with\n  | [] => l2\n  | h",
+          "```lean\nlocal open Lean.Tactic.Util",
+          "`let rec merge (a: list (list int)) (b: list (list int)) : list (list int) := match a with\n| [] => b"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to repeat an Int v",
+        "n_unique": 8,
+        "n_letrec": 5,
+        "tactics_head": [
+          "```\ninductive Times (n : Nat) (x : Int) : List Int\n  | nil : Times 0 x\n  | cons : Times (S k) x \u2192 Ti",
+          "```\ngoal : List Int := [1, 2, 3, 4]\nby\n    let rec l : List Int := if true then l else []\n    exact ",
+          "`exact (let rec = \u03bb n. (if n < 1 then [] else (n - 1) :: (let rec n n)) n; let rec n 1)`",
+          "```lean\ninductive ntimes : nat \u2192 nat \u2192 Prop\n| zero : ntimes 0 k\n| suc (h : ntimes n l) : ntimes (n +"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to apply a functio",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "`exact (let rec (f : Int \u2192 Int n times f (f (f (f seed)))) in f)`",
+          "`let rec f (n : nat) (x : Int) : Int := match n with\n  | 0 => x\n  | n => f (n - 1) (f n x)\nend`",
+          "`let rec` `n` `:=` `0` `in` `exact` `f` `n` `seed`",
+          "(let rec f n seed := match n with\n  | 0 => seed\n  | n => f (n-1) (f seed))\nexact f"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the firs",
+        "n_unique": 8,
+        "n_letrec": 6,
+        "tactics_head": [
+          "`exact (let rec (x :: xs) = List.init n (fun _ => x) ++ xs)`",
+          "`let rec first_n_elements : List Int \u2192 Nat \u2192 List Int \u225d fun l n \u21d2\n  if n = 0 then []\n  else if List.",
+          "```\nlet rec n_elements (n : nat) (xs : list Int) : list Int := \n    if (n = 0) then nil \n    else if",
+          "Let rec (first n L) = (if length L < n then L else first (n - 1) (tail L))."
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to drop the first ",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "let rec drop n (l: List Int) := \n  match l with\n    | Cons h t => t\n    | nil => nil\n  end;;",
+          "```\nlet rec drop n = if n = 0 then [] else if n = 1 then drop (n-1) else n::drop (n-1)\n```\n`exact dr",
+          "`drop_front n xs = let rec drop_front_aux (n' : Int) (xs' : List Int) = match xs' with\n| [] => []\n| ",
+          "`exact (let rec drop n = if n = 0 then [] else drop (n - 1) (tl lst))`"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to zip two List In",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "`let rec zippable_pairs (xs:List Int) (ys:List Int):List (Int \u00d7 Int) :=`\n  `match xs with`\n  `| [] =",
+          "```lean\nnamespace Lean",
+          "`let rec zip (l : List Int) (r : List Int) : List (Int \u00d7 Int) :=\n  match l, r with\n  | [], [] => []\n",
+          "Define a function `zipWithRec` that takes two lists of Ints and returns a list of pairs of Ints. Use"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to fold f : Int \u2192 ",
+        "n_unique": 8,
+        "n_letrec": 6,
+        "tactics_head": [
+          "exact (List.fold_right f 0 (to_list xs))",
+          "`let rec sum := fold (\u03bb a b, a + b) sum 0 in sum`\nExplanation: The tactic `let rec sum := ...` defin",
+          "```\ngoal \u2190 exact \n  let rec fold f a [] = a \n  let rec fold f a (x::xs) = fold f (f a x) xs \n  fold ",
+          "```lean\nunfold foldr; intro h; exact (0 : Int); unfold foldr; intro h; let rec _ := (f, h) in exact "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the Fib",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "`exact fib_rec n`\nExplanation: This tactic uses the `let rec` command to define a recursive function",
+          "exact (let rec fib n = if n = 0 then 0 else if n = 1 then 1 else fib (n - 1) + fib (n - 2); fib n);",
+          "`let rec fib = \u03bb n, if n = 0 then 0 else if n = 1 then 1 else fib n - 1 with exact fib.`",
+          "```\ngoal: { let rec fib = \u03bb n : Nat, if nat.zero_dec n then nat.one else fib (nat.succ (nat.pred n))"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count occurrenc",
+        "n_unique": 8,
+        "n_letrec": 6,
+        "tactics_head": [
+          "```lean4\ntactic_definition count_occurrences : tactic Int := do\n  let rec count (xs : List Int) (x :",
+          "```lean\nimport data.list.basic",
+          "`let rec` is a loop that allows us to iterate over a collection. In this case, we will use it to ite",
+          "`let rec count_occurrences = fun x : Int \u2192 List Int \u2192 Int`\n    `let rec helper = fun xs : List Int \u2192"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to build the list ",
+        "n_unique": 8,
+        "n_letrec": 6,
+        "tactics_head": [
+          "Let's write the tactic body using `let rec` to build the list [0, 1, 2, ..., n-1] for n : Nat. We'll",
+          "Let's define the tactic `build_list`:",
+          "`exact (let rec List [] = 0; List (x::xs) = x + 1 + List xs) 0`",
+          "`exact (let rec l = [] in l ++ [n - 1] with n)`"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to take elements o",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "exact (let rec (list: list Int) := (match list with\n    | [] => []\n    | n :: rest => if n > 0 then ",
+          "```lean\ntactic_definition takeWhilePos := \n  let rec takeWhilePos' (lst : list Int) (acc : list Int)",
+          "`let rec list_length = foldr (\u03bb x l => if x > 0 then 1 + l else l) 0`",
+          "`let rec positiveListTactic (l : list Int) : tactic {p : list Int | p = l} :=\n    let rec positiveLi"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count the parit",
+        "n_unique": 8,
+        "n_letrec": 5,
+        "tactics_head": [
+          "```\nlet rec countParityFlips (xs : list int) : nat :=\n  match xs with\n  | nil => 0\n  | cons h t => i",
+          "```\ntactic_goal:\n  let rec parity_flips = \n    match xs with\n    | [] => 0\n    | x :: xs' => if x mo",
+          "`let rec flipCount (xs:List Int) : nat := match xs with\n| [] => 0\n| x::xs => if even x then 0 else 1",
+          "`exact flip_count_rec (0 :: [])`"
+        ]
+      }
+    ]
+  },
+  "1.5B_fewshot": {
+    "label": "1.5B_fewshot",
+    "n_prompts": 20,
+    "n_unique_total": 150,
+    "n_letrec": 149,
+    "letrec_rate": 0.993,
+    "wall": 27.2,
+    "per_prompt": [
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to sum all element",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "exact let rec sum : List Int \u2192 Int | [], acc => acc | a::as, acc => sum as (acc + a)",
+          "exact let rec sum : List Int \u2192 Int | [], bs => 0 | a::as, bs => a + sum as bs; sum xs",
+          "let rec sum : List Int \u2192 Int | [], acc => acc | h::t, acc => sum t (h + acc)",
+          "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => loop as (acc + a)"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the len",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec length : List Int \u2192 Int | [], _ => 0 | a::as, _ => 1 + length as; length (as, [])",
+          "exact let rec len : List \u2124 \u2192 \u2115 | [] => 0 | _::as => 1 + len as",
+          "exact let rec len : List Int \u2192 Int := fun xs => match xs with | [] => 0 | _::xs => 1 + len xs; len; ",
+          "exact let rec len : List Int \u2192 Int | [], => 0 | x::xs => 1 + len xs"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to reverse a List ",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "let rec loop : List Int \u2192 List Int \u2192 List Int | [], bs => bs | a::as, bs => loop as (a::bs) | [], []",
+          "let rec rev : List Int \u2192 List Int | [], bs => bs | a::as, bs => rev as (a::bs)",
+          "exact let rec reverse : List Int \u2192 List Int | [], [] => [] | a::as, bs => reverse as ++ a :: bs",
+          "let rec reverseList (l : List Int) : List Int := match l with\n| [] => []\n| x :: xs => reverseList xs"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the last",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec last' : List Int \u2192 Int | [x] => x | _::xs => last' xs",
+          "exact let rec last : List Int \u2192 Int | [], _ => default 0 | x::[], _ => x | x::xs, _ => last xs",
+          "exact let rec last (xs : List Int) : Int := match xs with | [] => default 0 | _::xs => last xs; last",
+          "exact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs, cs."
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to multiply all el",
+        "n_unique": 6,
+        "n_letrec": 6,
+        "tactics_head": [
+          "let rec loop : List Int \u2192 Int \u2192 Int | [], n => 1 | a::as, n => n * a * loop as n",
+          "exact let rec loop : List Int \u2192 Int \u2192 Int | [], n => 1 | a::as, n => a * loop as n",
+          "exact let rec mul : List Int \u2192 Int | [], bs => 1 | a::as, bs => a * mul as bs",
+          "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => loop as (a * acc)"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to find the maximu",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec max' : List Int \u2192 Int | [], _ => 0 | a::as => max' as max_val = max max_val a",
+          "let rec max_int : List Int \u2192 Int | [] => 0 | a::as => max_int as max (if a > max then a else max)",
+          "exact match xs with\n| [] => 0\n| x::xs => let rec max = fun xs' => match xs' with | [] => x | x::xs =",
+          "exact let rec max : List Int \u2192 Int | [], _ => 0 | a::as => let m := max as in m.max a"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the list",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], as => [] | a::as, acc => match acc with | ",
+          "exact let rec partialSums : List Int \u2192 List Int | [], sumList => [] | a::as, sumList => a::(sumList.",
+          "let rec compute_partial_sums : List Int \u2192 List Int | [], _ => [] | a::as => a :: compute_partial_sum",
+          "exact let rec partialSums : List Int \u2192 List Int | [] => #[] | a::as => match partialSums as with | ["
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count elements ",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "let rec count_nonzero : List Int \u2192 Int | [], => 0 | x::xs => if x > 0 then 1 + count_nonzero xs else",
+          "exact match xs with\n| [] => 0\n| a::as => if a > 0 then 1 + match as with\n| [] => 0\n| b::bs => let re",
+          "let rec count_ge0 (lst : List Int) : Int := match lst with\n| [] => 0\n| x::xs => if x > 0 then 1 + co",
+          "let rec count : List Int \u2192 Int \u2192 Int | [], _ => 0 | a::as, cnt => match a with | 0 => count as cnt |"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to merge two sorte",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "Let rec mergeSort (xs : List Int) (ys : List Int) : List Int := \n    match xs, ys with\n    | [], [] ",
+          "exact let rec merge : List Int \u2192 List Int \u2192 List Int | [], ys => ys | xs, [] => xs | x::xs, y::ys =>",
+          "let rec loop : List Int \u2192 List Int \u2192 List Int | [], bs => bs | as, [] => as | a::as, b::bs => match ",
+          "exact let rec merge : List Int \u2192 List Int \u2192 List Int | [], ys => ys | xs, [] => xs | a::as, b::bs =>"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to repeat an Int v",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "let rec loop : Int \u2192 List Int \u2192 List Int | 0 => [] | n => n::loop (n - 1) n",
+          "let rec loop : Int \u2192 List Int \u2192 List Int | 0 => [] | n => n::loop (n-1)",
+          "exact let rec loop : Int \u2192 List Int \u2192 List Int | 0, _ => [] | n, xs => loop (n-1) (xs ++ [n])",
+          "exact let rec loop : Int \u2192 List Int \u2192 List Int | 0, l => l | n, l => loop (n-1) (l ++ [n])"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to apply a functio",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 Int | 0, s, _ => s | _::as, s, acc => loop (fst (as.match fun",
+          "exact let rec loop : Int \u2192 Int \u2192 Int | n, seed => f (n+1) seed | n, _ => seed",
+          "let rec loop : Int \u2192 Int \u2192 Int | 0 => f | n => loop (n - 1) (f \u2218 loop (n - 1))",
+          "exact let rec loop : Int \u2192 Int \u2192 Int | 0, x => x | n, x => loop (n - 1) (f x)"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the firs",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "let rec take : nat \u2192 List Int \u2192 List Int | 0, _ => [] | n, [] => [] | n, (a::as) => a::take (n-1) as",
+          "let rec first n xs = if n <= 0 then [] else let x = xs.head in x :: first (n-1) xs.tail",
+          "exact let rec loop : List Int \u2192 Int \u2192 List Int | [], n => [] | a::as, n => if n > 0 then a::(loop as",
+          "Let n be the length of xs, and let r be the result of your `let rec` expression. If n <= 0, return ["
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to drop the first ",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec drop (n : \u2115) (xs : List Int) : List Int | n = 0 => xs | n > 0 => drop (n - 1) (tail xs",
+          "exact let rec drop (n : \u2115) (l : List Int) : List Int := match l with | [] => [] | _::xs => drop (n.p",
+          "exact let rec drop : List Int \u2192 Int \u2192 List Int | [], _ => [] | (h::t), n => if n < 0 then t else let",
+          "exact let rec dropN : List Int \u2192 Int \u2192 List Int | [], _ => [] | (a::as), n => match n with | 0 => a:"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to zip two List In",
+        "n_unique": 6,
+        "n_letrec": 6,
+        "tactics_head": [
+          "let rec loop : List Int \u2192 List Int \u2192 List (Int \u00d7 Int) | [], ys => ys | xs, [] => [] | x::xs, y::ys =",
+          "exact let rec zipped_list : List (Int \u00d7 Int) := match xs, ys with | [], [] => [] | x::xs, y::ys => (",
+          "exact let rec zip_with : List Int \u2192 List Int \u2192 List (Int \u00d7 Int) | [], _ => [] | _, [] => [] | a::as,",
+          "let rec zip_int_list xs ys :=\n    match xs, ys with\n    | [], _ => []\n    | _, [] => []\n    | x::xs,"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to fold f : Int \u2192 ",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec f : List Int \u2192 Int \u2192 Int | [], s => s | a::as, s => f as (f a s)",
+          "exact let rec loop : List Int \u2192 Int \u2192 Int | [], n => n | a::as => loop as (f a n)",
+          "exact let rec foldl : (f : Int \u2192 Int \u2192 Int) \u2192 Int \u2192 List Int \u2192 Int | [], y => y | x::xs, y => foldl ",
+          "exact let rec fold : List Int \u2192 Int \u2192 Int \u2192 Int | [], acc, init => init | a::as, acc => fold as (f a"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the Fib",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "let rec fib : Nat \u2192 Nat in\nif n = 0 then 0\nelse if n = 1 then 1\nelse fib (n - 1) + fib (n - 2)\nend l",
+          "exact let rec fib n : \u2115 := match n with | 0 => 0 | 1 => 1 | _ => fib (n - 1) + fib (n - 2) end",
+          "exact let rec fib : Nat \u2192 \u2115 | n => match n with | 0 => 0 | 1 => 1 | n => fib (n - 1) + fib (n - 2)",
+          "exact let rec fib : Nat \u2192 Nat | n => match n with | 0 => 0 | 1 => 1 | _ => fib (n-1) + fib (n-2) end"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count occurrenc",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "exact let rec count_occurrences : List Int \u2192 Int \u2192 Int \u2192 Int \u2192 Int | [], n, x, acc => acc | a::as, n",
+          "let rec countOccurrences : Int \u2192 List Int \u2192 Int | x, [] => 0 | x, y::ys => if x = y then 1 + countOc",
+          "let rec count_occurrences : Int \u2192 List Int \u2192 Int | 0, _ => 0 | x, [] => 0 | x, _::as => (match as wi",
+          "exact let rec count : Int \u2192 List Int \u2192 Int \u2192 Int | x, [], y => y | x, a::as, y => count x as (y + if"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to build the list ",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec loop : Nat \u2192 List \u2124 | 0 => [0] | s with d => let ds := loop (s - 1) in d::ds",
+          "exact let rec build_list : List Nat => match n with | zero => [] | succ n => n::(build_list n)",
+          "let rec range (n : \u2115) : List \u2115 | n = 0 => [0] | n := succ n => 0::range n",
+          "exact let rec loop : Nat \u2192 List Nat | 0 => [] | n => n::loop (n-1); loop n"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to take elements o",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "exact let rec loop : List Int \u2192 List Int | [], acc => acc | a::as, acc => if a > 0 then loop as ((a:",
+          "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], bs => bs | a::as, bs => if a > 0 then loop",
+          "let rec loop : List Int \u2192 List Int \u2192 List Int | [], bs => bs | a::as, bs => if a > 0 then loop as (a",
+          "let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, c"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count the parit",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "exact let rec countParityFlips : List Int \u2192 Int | [], bs => 0 | a::bs, cs => match (a, cs.head) with",
+          "let rec parity_count : List Int \u2192 \u2115 := \nfun xs => match xs with\n| [] => 0\n| _::as => let n := parity",
+          "let rec count_flips : List Int \u2192 \u2115 | [], _ => 0 | a::as => if a > 0 then 1 + count_flips as else 0",
+          "let rec count_flips : List Int \u2192 Int | [], _ => 0 | a::as, (b, c) => if a = b then count_flips as (b"
+        ]
+      }
+    ]
+  },
+  "1.5B_letrec_k1": {
+    "label": "1.5B_letrec_k1",
+    "n_prompts": 20,
+    "n_unique_total": 118,
+    "n_letrec": 115,
+    "letrec_rate": 0.975,
+    "wall": 23.3,
+    "per_prompt": [
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to sum all element",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "exact let rec loop : List Int \u2192 List Int | nil => nil | (i :: tail) => i + loop tail; loop n []",
+          "let rec sum_list : List Int \u2192 Int | [], acc => acc | (n :: ns), acc => sum_list ns (n + acc); sum_li",
+          "exact let rec sum_list : List Int \u2192 Int | [], acc => acc | x::xs => sum_list xs (x + acc)"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the len",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec len : List Int \u2192 Nat | [], acc => 0 | (n :: ns), acc => 1 + len ns; len (n :: [])",
+          "exact let rec length : List Int \u2192 Nat | [], acc => 0 | (n :: lst), acc => length lst (n + acc); leng",
+          "exact let rec loop : Nat \u2192 List Int \u2192 Nat | 0, _ => 0 | n+1, _ => succ(loop n ()); loop n [];",
+          "exact let rec len : List Int \u2192 Nat | nil => 0 | (h :: t) => suc (len t); len ls"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to reverse a List ",
+        "n_unique": 6,
+        "n_letrec": 5,
+        "tactics_head": [
+          "let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: acc); lo",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "exact let rec reverse (list : List Int) (acc : List Int) : List Int := match list with | [] => acc |",
+          "exact let rec reverse : List Int \u2192 List Int | [], acc => acc | x :: xs => reverse xs (x :: acc); rev"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the last",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "`exact let rec last : List Int \u2192 Int | [], acc => default 0 | x::xs, acc => last xs (x : Int)`",
+          "let rec loop : List Int \u2192 Nat | nil => 0 | (hd :: tl) => 1 + loop tl;",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "exact let rec last (l : List Int) : Int | [], _ => default 0 | x :: y, _ => last y"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to multiply all el",
+        "n_unique": 7,
+        "n_letrec": 6,
+        "tactics_head": [
+          "let rec multiply_list : List Int \u2192 Int | [], acc => 1 | i::l, acc => acc * i * multiply_list l acc; ",
+          "let rec product_of_list : List Int \u2192 Int | [], acc => 1 | x :: xs => x * product_of_list xs in produ",
+          "exact let rec loop : List Int \u2192 List Int \u2192 Int | [], [] => 1 | l0 :: l1, acc => (l0 * acc) * (loop l",
+          "exact let rec mult : List Int \u2192 Nat | [] => 1 | x :: xs => x * mult xs; mult lst"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to find the maximu",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "let rec max (l:List Int) : Int | [] => 0 | x::y => max y x max l",
+          "let rec loop : List Int \u2192 Nat \u2192 Nat | [], acc => 0 | (h :: t), acc => if h > acc then loop t h else ",
+          "(use let rec to define a loop function that iterates over the list, comparing each element with the ",
+          "exact let rec max_list : List Int \u2192 Int | [], max => max | x :: xs => if x > max then x else max_lis"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the list",
+        "n_unique": 3,
+        "n_letrec": 3,
+        "tactics_head": [
+          "`exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: a",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "```\nexact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count elements ",
+        "n_unique": 7,
+        "n_letrec": 6,
+        "tactics_head": [
+          "let rec count_greater_than_0 : List Int \u2192 Nat | [], n => 0 | (x :: xs), n => if x > 0 then count_gre",
+          "let rec countPositives : List Int \u2192 Nat in\nbegin\n  match countPositives [] with\n  | 0 => exact (leng",
+          "```lean\ngoal : List Int \u2192 Nat\n\u22a2 List Int\ngoal : List Int \u2192 List Int\n\u22a2 List Int\n\u22a2 List Int\n\u22a2 List Int",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to merge two sorte",
+        "n_unique": 4,
+        "n_letrec": 4,
+        "tactics_head": [
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "exact let rec merge (xs : List Int) (ys : List Int) : List Int | [], [] => [] | x :: xs, [] => x :: ",
+          "let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: acc); lo",
+          "exact let rec mergeSort (n : Nat) (acc : List Int) (l : List Int) (r : List Int) | n = 1 => acc | n,"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to repeat an Int v",
+        "n_unique": 5,
+        "n_letrec": 5,
+        "tactics_head": [
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "`exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: a",
+          "```\nlet rec loop n := \n  let rec aux x := \n    match x with\n      | 0 => []\n      | n => n :: (aux ("
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to apply a functio",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "let rec applyTimes (f : Int \u2192 Int) (n : Nat) (x : Int) : Int | 0 => x | S n => f (applyTimes f n x)",
+          "exact let rec loop : Nat \u2192 Int \u2192 List Int | 0 => [] | n+1 => let x := loop n (f (n : Int)); x :: loo",
+          "exact let rec loop : Nat \u2192 Int \u2192 Int | 0 => seed | n+1 => f (loop n seed); loop 0 f seed",
+          "let rec f : Int \u2192 Int = f' in exact let rec f : Int \u2192 Int = f' in exact f"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the firs",
+        "n_unique": 1,
+        "n_letrec": 1,
+        "tactics_head": [
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to drop the first ",
+        "n_unique": 4,
+        "n_letrec": 4,
+        "tactics_head": [
+          "exact let rec drop_first n (acc : List Int) : List Int = match n with \n      | 0 => acc \n      | _ =",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: acc); ex",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to zip two List In",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec zip (l : List Int) (r : List Int) : List (Int \u00d7 Int) | [], [] => [] | l, r => [(head l",
+          "exact let rec loop : List Int \u00d7 List Int \u2192 List (Int \u00d7 Int) | [], [] => [] | (x :: xs), (y :: ys) =>",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List (Int \u00d7 Int) | 0, acc => [] | n+1, acc => (n, n) :: loop n",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List (Int \u00d7 Int) | 0, acc => acc | n+1, acc => loop n ((n, (n "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to fold f : Int \u2192 ",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "exact let rec fold : Int \u2192 (Int \u2192 Int \u2192 Int) \u2192 List Int \u2192 List Int | 0, f, acc => acc | n, f, acc =>",
+          "exact let rec fold f : Int \u2192 Int \u2192 Int \u2192 Int | 0, acc => acc | n+1, acc => f n acc (fold f n (f n ac",
+          "exact let rec fold (f : Int \u2192 Int \u2192 Int) (acc : Int) (xs : List Int) : List Int := \n  match xs with ",
+          "Let's write a Lean 4 tactic to accomplish this task. The tactic will use `let rec` to define a recur"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the Fib",
+        "n_unique": 6,
+        "n_letrec": 6,
+        "tactics_head": [
+          "exact let rec fib : Nat \u2192 Nat | 0 => 0 | 1 => 1 | n+1 => fib (n-1) + fib (n-2); fib n",
+          "let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: acc); lo",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "let rec fib : Nat \u2192 Int | 0 => 0 | 1 => 1 | n+2 => fib (n - 1) + fib (n - 2) in\nexact fib n"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count occurrenc",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec count_occurrences : Int \u2192 List Int \u2192 Int | x, [] => 0 | x, [y \u2237 ys] => (if y = x then ",
+          "`exact let rec countOcc x : Int \u2192 List Int \u2192 Nat | nil => 0 | (x :: xs) => (if (x =?= x) then 1 else",
+          "exact let rec countOccurrences : Int \u2192 List Int \u2192 Int | x, [] => 0 | x, (y :: ys) => if x = y then 1",
+          "exact let rec count :: Int \u2192 List Int \u2192 Int | [], acc => 0 | x :: xs, acc => (if x =! xs then count "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to build the list ",
+        "n_unique": 5,
+        "n_letrec": 5,
+        "tactics_head": [
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: acc); lo",
+          "let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: acc); ex",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to take elements o",
+        "n_unique": 2,
+        "n_letrec": 2,
+        "tactics_head": [
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: ac",
+          "let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: acc); lo"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count the parit",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "let rec count_parity_flips : List Int \u2192 Nat | [], _ => 0 | (x :: xs), 0 => 1 + count_parity_flips xs",
+          "exact let rec count_flips (xs : List Int) : Int := \n  match xs with \n  | [] => 0 \n  | x :: xs' => if",
+          "`exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => loop n ((n : Int) :: a",
+          "exact let rec parityFlips : List Int \u2192 Int | [] => 0 | (x :: xs) => if x > 0 then parityFlips xs + 1"
+        ]
+      }
+    ]
+  },
+  "7B_bare": {
+    "label": "7B_bare",
+    "n_prompts": 20,
+    "n_unique_total": 154,
+    "n_letrec": 68,
+    "letrec_rate": 0.442,
+    "wall": 51.1,
+    "per_prompt": [
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to sum all element",
+        "n_unique": 8,
+        "n_letrec": 4,
+        "tactics_head": [
+          "Sum all elements of a List Int\n```lean\nlet rec sum (l : List Int) :=\n  match l with\n  | [] => 0\n  | ",
+          "`letrec_sum`\n```lean\nletrec_sum : tactic\nletrec_sum := do\n  [t] \u2190 get_local_names,\n  let t' := t ++ ",
+          "`sum`",
+          "`sum_list`\nTo write a Lean 4 tactic that sums all elements of a `List Int`, we can use a recursive f"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the len",
+        "n_unique": 6,
+        "n_letrec": 2,
+        "tactics_head": [
+          "`length`",
+          "`list_length`\n```lean\nexact (let rec go : Nat \u2192 List \u03b1 \u2192 Nat | 0 [] := 0 | (n + 1) (hd :: tl) := 1 +",
+          "`list_length`",
+          "`list_length`\nThe `list_length` tactic computes the length of a list using `let rec`."
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to reverse a List ",
+        "n_unique": 8,
+        "n_letrec": 6,
+        "tactics_head": [
+          "`reverse`",
+          "`reverse` A tactic that reverses a List Int.\nTo create a Lean 4 tactic that reverses a List Int usin",
+          "`reverse_list_int`",
+          "`let rec` **Reverse a List Int using `let rec` in Lean 4**"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the last",
+        "n_unique": 8,
+        "n_letrec": 5,
+        "tactics_head": [
+          "`def last : List Int \u2192 Nat`",
+          "`last` The tactic `last` uses `let rec` to recursively iterate through a list, starting from the hea",
+          "`lastOfList`",
+          "`last` To write a Lean 4 tactic that uses `let rec` to return the last element of a List Int, you ca"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to multiply all el",
+        "n_unique": 8,
+        "n_letrec": 7,
+        "tactics_head": [
+          "`let rec` for induction",
+          "`let rec`\n```lean\nexact \u03bb l, l.foldl (\u03bb a b, a * b) 1\n```",
+          "`let rec mul : List Int \u2192 Int`\n```lean\nmul [] := 1\n| [x] := x\n| (x::xs) := x * mul xs\n```",
+          "`tactic.div`\nTo write a Lean 4 tactic that multiplies all elements of a List Int using `let rec`, yo"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to find the maximu",
+        "n_unique": 8,
+        "n_letrec": 4,
+        "tactics_head": [
+          "`max`",
+          "`maximum_of_list`\nInput: `let rec maximum_of_list : List Int \u2192 Int :=`\nOutput: `fun | [] => 0 | (x :",
+          "find_max",
+          "`let rec`"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the list",
+        "n_unique": 5,
+        "n_letrec": 2,
+        "tactics_head": [
+          "`partial_sums`",
+          "`partial_sum` \u2014 takes a List Int `xs` and returns a List Int `ys`, such that ys[0] = xs[0] and for n",
+          "partial_sum",
+          "`let rec` tactic\nHere is the output of the Lean 4 tactic body using `let rec` to return the list of "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count elements ",
+        "n_unique": 8,
+        "n_letrec": 4,
+        "tactics_head": [
+          "Given a list of integers, count the number of elements that are greater than 0.\n```\nexact (let rec c",
+          "`count_gt_zero`\nHere is the Lean 4 tactic that uses `let rec` to count elements greater than 0 in a ",
+          "`count_positives` To count the number of positive integers in a `List Int` using a recursive tactic ",
+          "`list_count_pos`\nCertainly! Here's the tactic body using `let rec` to count elements greater than 0 "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to merge two sorte",
+        "n_unique": 8,
+        "n_letrec": 1,
+        "tactics_head": [
+          "`merge`\n```lean\nmerge : List Int \u2192 List Int \u2192 List Int\n| [] y => y\n| x [] => x\n| (x :: xs) (y :: ys)",
+          "merge_lists\nInput:",
+          "merge",
+          "`merge : list Int \u2192 list Int \u2192 list Int`"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to repeat an Int v",
+        "n_unique": 8,
+        "n_letrec": 4,
+        "tactics_head": [
+          "`replicate n x` for example, `replicate 3 1` = `[1, 1, 1]`. Here is a Lean 4 tactic body that accomp",
+          "`repeat`",
+          "`repeat` takes a number and an `expr` and returns a list of that expr repeated that many times. `rep",
+          "`repeat n` Let's break down the task and create a tactic that uses `let rec` to repeat an integer va"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to apply a functio",
+        "n_unique": 8,
+        "n_letrec": 0,
+        "tactics_head": [
+          "`apply_n_times`\nHere's the Lean 4 tactic body for `apply_n_times`:",
+          "Given a natural number `n : Nat` and a function `f : Int \u2192 Int`, the tactic `apply_n_times f n` shou",
+          "nfold",
+          "`apply_n_times f seed n`\nHere's the output:"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the firs",
+        "n_unique": 8,
+        "n_letrec": 3,
+        "tactics_head": [
+          "`firstN : Int \u2192 List Int \u2192 List Int`",
+          "The tactic should use `let rec` to define a recursive function that returns a list of length n from ",
+          "`def first_n : List Int \u2192 Nat \u2192 List Int`",
+          "`first_n` Given a `List Int` and a natural number `n`, return the first `n` elements of the list."
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to drop the first ",
+        "n_unique": 8,
+        "n_letrec": 4,
+        "tactics_head": [
+          "`drop`",
+          "The tactic should be named `drop_first_n` and should take a natural number `n` and a list `ls : List",
+          "dropList",
+          "`drop_first_n`"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to zip two List In",
+        "n_unique": 8,
+        "n_letrec": 5,
+        "tactics_head": [
+          "`zip` -- Input: `(List Int) (List Int)` Output: `(List (Int \u00d7 Int))`",
+          "`zip` Given: `(xs : List Int)` and `(ys : List Int)` Expected: `xs.zip(ys) = [(x, y) | x \u2190 xs, y \u2190 y",
+          "Given two lists of integers `xs` and `ys`, return a list of pairs `(x, y)` where `x` is an element o",
+          "`let rec`"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to fold f : Int \u2192 ",
+        "n_unique": 8,
+        "n_letrec": 2,
+        "tactics_head": [
+          "`foldl'`\n```lean\nexact foldl'\n```",
+          "```lean\nlet rec fold_f (f : Int \u2192 Int \u2192 Int) (l : List Int) (acc : Int) : Int :=\n  match l with\n  | ",
+          "`fold`",
+          "`foldl`\n```lean\nexact \u03bb l, let rec fold : List Int \u2192 Int \u2192 Int \u2192 Int := \n  \u03bb ls acc n, match ls with"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the Fib",
+        "n_unique": 8,
+        "n_letrec": 5,
+        "tactics_head": [
+          "```lean\nexact (let rec fib_aux : Nat \u2192 Nat \u2192 Nat \u2192 Nat\n  | 0, a, _ => a\n  | 1, _, b => b\n  | n + 2, ",
+          "`fib`\n```lean\nlet rec fib n := if n < 2 then 1 else fib (n - 1) + fib (n - 2)\n```",
+          "fib_tac n := ... exact fib_tac_aux n",
+          "`fib : Nat \u2192 Nat`\n```\nexact let rec fib n := if n == 0 then 0 else if n == 1 then 1 else fib (n-1) +"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count occurrenc",
+        "n_unique": 8,
+        "n_letrec": 3,
+        "tactics_head": [
+          "```\nexact (let rec count_occurrences (l : List Int) : Nat :=\nmatch l with\n| [] => 0\n| x'::xs => if x",
+          "`count` Usage: `count x l`",
+          "count_occurrences",
+          "count_occurrences_of_x_in_list"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to build the list ",
+        "n_unique": 8,
+        "n_letrec": 4,
+        "tactics_head": [
+          "`nat_list`",
+          "`natList`",
+          "`build_range`\nCertainly! Here's the Lean 4 tactic body using `let rec` to build the list `[0, 1, 2, ",
+          "`build_list`\n```lean\nbuild_list n :=\n  let rec aux (i : Nat) : List Nat :=\n    if i < n then\n      i"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to take elements o",
+        "n_unique": 7,
+        "n_letrec": 2,
+        "tactics_head": [
+          "`take_positive`\n```lean\nexact (take_while (\u03bb x, x > 0) [3, -2, 5, -1, 0])\n```",
+          "`take_while_pos` Take elements of a List Int while they are positive.",
+          "`let rec take_positive`",
+          "`take_while` To achieve the task of writing a Lean 4 tactic that uses `let rec` to take elements of "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count the parit",
+        "n_unique": 8,
+        "n_letrec": 1,
+        "tactics_head": [
+          "countParityFlips\n```lean\nlet rec countParityFlips : List Int \u2192 Nat\n  | [] => 0\n  | x::xs => if x % 2",
+          "`count_parity_flips : \u2200 (l : List Int), { n : \u2115 // n = count_parity_flips l }`",
+          "`parityFlipCount`",
+          "The tactic should be able to take a list of Int, and output the number of times the parity flips in "
+        ]
+      }
+    ]
+  },
+  "7B_fewshot": {
+    "label": "7B_fewshot",
+    "n_prompts": 20,
+    "n_unique_total": 158,
+    "n_letrec": 158,
+    "letrec_rate": 1.0,
+    "wall": 42.8,
+    "per_prompt": [
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to sum all element",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec loop : List Int \u2192 Int \u2192 Int | [], s => s | a::as, s => loop as (s + a); loop as 0",
+          "exact let rec sum : List Int \u2192 Int | [] => 0 | x::xs => x + sum xs; sum l",
+          "exact let rec sumList : List Int \u2192 Int | [] => 0 | x::xs => x + sumList xs",
+          "exact let rec sum : List Int \u2192 Int | [] => 0 | a::as => a + sum as; sum as"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the len",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec loop : Nat \u2192 List \u2124 \u2192 Nat | 0, [] => 0 | n, _::_ => loop (n-1) | n, [] => n; loop l.le",
+          "exact let rec len : List Int \u2192 Nat | [] => 0 | _::as => 1 + len as; len xs",
+          "exact let rec loop : Nat \u2192 List Int \u2192 Nat | 0, [] => 0 | n+1, x::xs => loop n xs; loop (0:Nat) xs",
+          "exact let rec loop : Nat \u2192 List \u2124 \u2192 Nat | 0, [] => 0 | n, [] => n | n, _::xs => loop (n - 1) xs; loo"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to reverse a List ",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], reversed => reversed | a::as, reversed => ",
+          "exact let rec loop : List Int \u2192 List Int => loop' ([], xs) with loop' : List Int \u00d7 List Int \u2192 List I",
+          "exact let rec loop : List Int \u2192 List Int := fun xs => match xs with | [] => [] | a::as => loop as ++",
+          "exact let rec reverse : List Int \u2192 List Int | [] => [] | a::as => reverse as ++ [a]"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the last",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec last : List Int \u2192 Int := fun l => match l with | [] => default | x::_ => x; last l",
+          "exact let rec loop : List Int \u2192 Int | [] => 0 | _::as => loop as; loop xs",
+          "exact let rec loop : List Int \u2192 Option Int | [], _ => none | a::as, i => if i == 0 then some a else ",
+          "exact let rec loop : List Int \u2192 Int | [] => 0 | _::as => as.headD; loop"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to multiply all el",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec loop : List Int \u2192 Int | [] => 1 | a::as => a * loop as; loop",
+          "exact let rec mult : List Int \u2192 Int | [], acc => acc | a::as, acc => mult as (acc * a); mult l 1",
+          "exact let rec mulLoop : List Int \u2192 Int \u2192 Int | [], acc => acc | x::xs, acc => mulLoop xs (acc * x); ",
+          "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => loop as (acc * a); loop x"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to find the maximu",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec loop : List Int \u2192 Int | [], m => m | a::as, m => loop as (max m a); loop as 0",
+          "```lean\nexact let rec loop : List Int \u2192 Int | [], max => max | a::as, max => loop as (max.max a);\n``",
+          "exact let rec max_list (l: List \u2124) (acc: \u2124): \u2124 := \n  match l with \n    | [] => acc \n    | (x :: xs) ",
+          "exact let rec loop (xs : List Int) (acc : Int) : Int :=\n  match xs with\n  | [] => acc\n  | x::xs' => "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the list",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec partialSum : List Int \u2192 List Int \u2192 List Int | [], sums => sums.reverse | a::as, sums =",
+          "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], res => res | a::as, res => loop as (res ++",
+          "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => loop as (a::acc",
+          "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => loop as (acc + "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count elements ",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "let rec countPositive : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => if a > 0 then countPos",
+          "exact let rec count_greater_than_zero : List Int \u2192 Nat | [] => 0 | a::as => if a > 0 then 1 + count_",
+          "exact let rec count_gt_zero : List Int \u2192 Nat | [] => 0 | a::as => if a > 0 then count_gt_zero as + 1",
+          "exact let rec count_greater_than_zero : List Int \u2192 Int | [] => 0 | (x :: xs) => if x > 0 then 1 + co"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to merge two sorte",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec merge : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], ys => ys | xs, [] => xs | ",
+          "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | a::as, [] => a::as | [], b::bs ",
+          "exact let rec merge : List Int \u2192 List Int \u2192 List Int | [], bs => bs | as, [] => as | a::as, b::bs =>",
+          "exact let rec merge : List Int \u2192 List Int \u2192 List Int | [], bs => bs | as, [] => as | a::as, b::bs =>"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to repeat an Int v",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec repeat : Int \u2192 Int \u2192 List Int | 0, _ => [] | n, x => x :: repeat (n - 1) x; repeat n",
+          "exact let rec loop : Int \u2192 Int \u2192 List Int | 0, _ => [] | n, x => x::loop (n-1) x; loop n x",
+          "exact let rec loop : Int \u2192 List Int \u2192 List Int | 0, xs => xs | n, xs => loop (n - 1) (0::xs); loop n",
+          "let rec repeat : Int \u2192 Int \u2192 List Int | 0, _ => [] | n, x => x::repeat (n-1) x"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to apply a functio",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "let rec loop : Int \u2192 Int \u2192 Int | 0 => init | n => loop (n - 1) (f init); loop n init",
+          "exact let rec loop : Int \u2192 Int \u2192 Int | 0, x => x | n + 1, x => loop n (f x); loop n seed",
+          "exact let rec applyFunction (n : Nat) (f : Int \u2192 Int) (seed : Int) : Int := \n    if n == 0 then seed",
+          "exact let rec apply_n_times : Int \u2192 Int \u2192 Int | 0, x => x | n + 1, x => apply_n_times n (f x); apply"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to return the firs",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reve",
+          "exact let rec loop (acc : List Int) (n : Nat) (xs : List Int) : List Int := match n, xs with | 0, _ ",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, _ => [] | n, [] => [] | n, a::as => a :: loop (n",
+          "exact let rec loop : Nat \u2192 List Int \u2192 List Int | 0, as => [] | n + 1, [] => [] | n + 1, a::as => a::"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to drop the first ",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec drop : List Int \u2192 Nat \u2192 List Int | [], n => [] | x::xs, 0 => x::xs | x::xs, n+1 => dro",
+          "exact let rec drop : List Int \u2192 Int \u2192 List Int | [], _ => [] | a::as, n => match n with | 0 => a::as",
+          "exact let rec drop : List Int \u2192 Nat \u2192 List Int | [], _ => [] | a::as, 0 => a::as | a::as, n+1 => dro",
+          "exact let rec drop_n : List Int \u2192 Nat \u2192 List Int | [], _ => [] | a::as, 0 => a::as | a::as, n => dro"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to zip two List In",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "`exact let rec zip : List Int \u2192 List Int \u2192 List (Int \u00d7 Int) | [], [] => [] | a::as, b::bs => (a, b):",
+          "exact let rec zipWith : List Int \u2192 List Int \u2192 List (Int \u00d7 Int) | [], [] => [] | [], _ | _, [] => [] ",
+          "exact let rec loop : List Int \u2192 List Int \u2192 List (Int \u00d7 Int) \u2192 List (Int \u00d7 Int) | [], [], zs => zs.re",
+          "let rec loop : List Int \u2192 List Int \u2192 List (Int \u00d7 Int) | [], [] => [] | a::as, b::bs => (a, b) :: loo"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to fold f : Int \u2192 ",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec fold : List Int \u2192 Int \u2192 Int | [], seed => seed | a::as, seed => fold as (f a seed); fo",
+          "exact let rec loop : List Int \u2192 Int \u2192 Int | [], x => x | a::as, x => loop as (f a x); loop xs 0",
+          "exact let rec loop : List Int \u2192 Int \u2192 Int | [], a => a | b::bs, a => loop bs (f b a); loop as 0",
+          "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => loop as (f a acc); loop l"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to compute the Fib",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "exact let rec fib (n : Nat) : Nat := match n with | 0 => 0 | 1 => 1 | n+2 => fib n + fib (n+1); fib ",
+          "exact let rec fib : Nat \u2192 Nat | 0 => 1 | 1 => 1 | n => fib (n - 1) + fib (n - 2) in fib n",
+          "exact let rec fib : Nat \u2192 Nat | 0 => 0 | 1 => 1 | n => fib (n - 1) + fib (n - 2)",
+          "let rec fib : Nat \u2192 Nat | 0 => 0 | 1 => 1 | n => fib (n - 1) + fib (n - 2); fib n"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count occurrenc",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec count_x : List Int \u2192 Int \u2192 Int | [], x => 0 | a::as, x => match a == x with | true => ",
+          "exact let rec count : List Int \u2192 Int \u2192 Int | [], _ => 0 | x::xs, y => if x = y then 1 + count xs y e",
+          "exact let rec loop : List Int \u2192 Int \u2192 Nat | [], _ => 0 | a::as, x => match a with | x => loop as x +",
+          "exact let rec count : List Int \u2192 Int \u2192 Int | [], x => 0 | a::as, x => if a == x then 1 + count as x "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to build the list ",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec build_list : Nat \u2192 List Nat \u2192 List Nat | 0, acc => acc | n+1, acc => build_list n (n::",
+          "exact let rec loop : Nat \u2192 List Nat \u2192 List Nat | 0, acc => acc.reverse | n+1, acc => loop n (n :: ac",
+          "exact let rec loop : Nat \u2192 List Nat \u2192 List Nat | 0, as => as.reverse | n, as => loop (n - 1) (n :: a",
+          "exact let rec loop (n : Nat) : List Nat := if n == 0 then [] else (loop (n-1)) ++ [n-1]; loop n"
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to take elements o",
+        "n_unique": 7,
+        "n_letrec": 7,
+        "tactics_head": [
+          "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], result => result.reverse | a::as, result =",
+          "exact let rec loop : List Int \u2192 List Int | [] => [] | a::as => if a > 0 then loop as else a::as; loo",
+          "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], bs => bs | a::as, bs => if a > 0 then loop",
+          "let rec loop : List Int \u2192 List Int | [], [] => [] | a::as, [] => a::loop as [] | a::as, b::bs => if "
+        ]
+      },
+      {
+        "task": "Write a Lean 4 tactic that uses `let rec` to count the parit",
+        "n_unique": 8,
+        "n_letrec": 8,
+        "tactics_head": [
+          "exact let rec count_parity_flips : List Int \u2192 Nat | [] => 0 | a::as => match as with | [] => 0 | b::",
+          "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], _, _ => 0 | a::as, p, c => if p = a % 2 then l",
+          "exact let rec countParityFlips : List Int \u2192 Int | [] => 0 | [_] => 0 | (x::y::rest) => (if x % 2 = y",
+          "exact let rec count_flips (xs: List Int) (prev: Bool) (count: Nat) : Nat := \n  match xs with\n  | [] "
+        ]
+      }
+    ]
+  }
+}

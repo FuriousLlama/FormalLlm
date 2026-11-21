@@ -1,0 +1,676 @@
+{
+  "config": {
+    "config": "B2",
+    "tier": "held_out_12",
+    "base_model": "Qwen/Qwen2.5-Coder-1.5B",
+    "n": 8,
+    "temperature": 0.2,
+    "k": 5,
+    "index_path": "sprint/benchmark/results/phase_b_index.npz",
+    "wall_generate": 24.9,
+    "wall_verify": 16.7
+  },
+  "summary": {
+    "solved": 0,
+    "total": 12,
+    "solve_rate": 0.0,
+    "solved_tasks": []
+  },
+  "per_task": [
+    {
+      "name": "eval_stack",
+      "theorem_name": "evalStack",
+      "solved": false,
+      "n_candidates": 1,
+      "retrieved": [
+        {
+          "name": "or",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.any id"
+        },
+        {
+          "name": "and",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.all id"
+        },
+        {
+          "name": "prod",
+          "kind": "SIMPLE",
+          "state": "xs : List \u2124\n\u22a2 \u2124",
+          "tactic": "exact xs.foldr (\u00b7 * \u00b7) 1"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (a == \u00b7)"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (\u00b7 == a)"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs.foldr (\u00b7 + \u00b7) 0",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 6,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "majority_element",
+      "theorem_name": "majorityElement",
+      "solved": false,
+      "n_candidates": 1,
+      "retrieved": [
+        {
+          "name": "or",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.any id"
+        },
+        {
+          "name": "and",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.all id"
+        },
+        {
+          "name": "prod",
+          "kind": "SIMPLE",
+          "state": "xs : List \u2124\n\u22a2 \u2124",
+          "tactic": "exact xs.foldr (\u00b7 * \u00b7) 1"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (a == \u00b7)"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (\u00b7 == a)"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs.foldr (\u00b7 + \u00b7) 0",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "map_with_index",
+      "theorem_name": "mapWithIndex",
+      "solved": false,
+      "n_candidates": 2,
+      "retrieved": [
+        {
+          "name": "partialSums",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact l.scanl (\u00b7 + \u00b7) 0"
+        },
+        {
+          "name": "dropLastTR",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact l.toArray.pop.toList"
+        },
+        {
+          "name": "partialProds",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact l.scanl (\u00b7 * \u00b7) 1"
+        },
+        {
+          "name": "Poly.insertSorted",
+          "kind": "SIMPLE",
+          "state": "x : \u2124\nxs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact match p with\n  | [] => [(k, Id)]\n  | (k', Id') :: p => bif Id < Id' then (k, Id) :: (k', Id') :: p else (k', Id') "
+        },
+        {
+          "name": "insert",
+          "kind": "SIMPLE",
+          "state": "a : \u2124\nl : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact if l.contains a then l else a :: l"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 4,
+          "error": null
+        },
+        {
+          "tactic": "exact xs.toArray.toList",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "max_subarray_sum",
+      "theorem_name": "maxSubarraySum",
+      "solved": false,
+      "n_candidates": 1,
+      "retrieved": [
+        {
+          "name": "or",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.any id"
+        },
+        {
+          "name": "and",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.all id"
+        },
+        {
+          "name": "prod",
+          "kind": "SIMPLE",
+          "state": "xs : List \u2124\n\u22a2 \u2124",
+          "tactic": "exact xs.foldr (\u00b7 * \u00b7) 1"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (a == \u00b7)"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (\u00b7 == a)"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs.foldr (\u00b7 + \u00b7) 0",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "prefix_while_increasing",
+      "theorem_name": "prefixWhileIncreasing",
+      "solved": false,
+      "n_candidates": 2,
+      "retrieved": [
+        {
+          "name": "partialSums",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact l.scanl (\u00b7 + \u00b7) 0"
+        },
+        {
+          "name": "dropLastTR",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact l.toArray.pop.toList"
+        },
+        {
+          "name": "partialProds",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact l.scanl (\u00b7 * \u00b7) 1"
+        },
+        {
+          "name": "Poly.insertSorted",
+          "kind": "SIMPLE",
+          "state": "x : \u2124\nxs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact match p with\n  | [] => [(k, Id)]\n  | (k', Id') :: p => bif Id < Id' then (k, Id) :: (k', Id') :: p else (k', Id') "
+        },
+        {
+          "name": "insert",
+          "kind": "SIMPLE",
+          "state": "a : \u2124\nl : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact if l.contains a then l else a :: l"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs",
+          "passed": false,
+          "n_passed": 3,
+          "n_total": 4,
+          "error": null
+        },
+        {
+          "tactic": "exact xs.reverse",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "unfold_n",
+      "theorem_name": "unfoldN",
+      "solved": false,
+      "n_candidates": 6,
+      "retrieved": [
+        {
+          "name": "takeD",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : \u2115\nx_arg1 : List \u2124\nx_arg2 : \u2124\n\u22a2 List \u2124",
+          "tactic": "exact match x_arg0, x_arg1, x_arg2 with | 0, _, _ => [] | n+1, l, x => l.headD x :: List.takeD n l.tail x"
+        },
+        {
+          "name": "take",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : \u2115\nx_arg1 : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact match x_arg0, x_arg1 with | 0,   _ => [] | _+1, [] => [] | n+1, a::as => a :: List.take n as"
+        },
+        {
+          "name": "drop",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : \u2115\nx_arg1 : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact match x_arg0, x_arg1 with | 0,   as => as | _+1, [] => [] | n+1, _::as => List.drop n as"
+        },
+        {
+          "name": "replaceFTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124\nl : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 Array Int \u2192 List Int | [], acc => acc.toList | x :: xs, acc => match f x with | none => go"
+        },
+        {
+          "name": "filterMapTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124\nl : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 Array Int \u2192 List Int | [], acc => acc.toList | a::as, acc => match f a with | none => go a"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact let rec go : Int \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, a::as => go n (a::as) (f a :: go n as)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; Invalid pattern(s): `n` is an explicit pattern variable, but it only occurs in positions that are inaccessible to pattern matching:\n  .(match n, 1 with\n    | Int.ofNat m, Int.ofNat n => Int.ofNat (m + n)\n    | Int.ofNat m, Int.negSucc n => Int.subNatNat m n.succ\n    | Int.negSucc m, Int.ofNat n => Int.subNatNat n m.succ\n    | Int.negSucc m, Int.negSucc n => Int.negSucc (m + n).succ)\n  \n  a :: as; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact let rec go : Int \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, acc => go n (acc.push (f seed))",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; Invalid pattern(s): `n` is an explicit pattern variable, but it only occurs in positions that are inaccessible to pattern matching:\n  .(match n, 1 with\n    | Int.ofNat m, Int.ofNat n => Int.ofNat (m + n)\n    | Int.ofNat m, Int.negSucc n => Int.subNatNat m n.succ\n    | Int.negSucc m, Int.ofNat n => Int.subNatNat n m.succ\n    | Int.negSucc m, Int.negSucc n => Int.negSucc (m + n).succ)\n  \n  acc; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact let rec go : Int \u2192 Int \u2192 List Int | 0, _ => [] | n, seed => match n with | 0 => [] | n+1 => seed :: go (n-1) (f seed)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; Invalid pattern(s): `n` is an explicit pattern variable, but it only occurs in positions that are inaccessible to pattern matching:\n  .(match n, 1 with\n    | Int.ofNat m, Int.ofNat n => Int.ofNat (m + n)\n    | Int.ofNat m, Int.negSucc n => Int.subNatNat m n.succ\n    | Int.negSucc m, Int.ofNat n => Int.subNatNat n m.succ\n    | Int.negSucc m, Int.negSucc n => Int.negSucc (m + n).succ); aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact let rec go : Int \u2192 List Int \u2192 List Int | 0, l => l | n+1, l => go n (l ++ [f seed])",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; Invalid pattern(s): `n` is an explicit pattern variable, but it only occurs in positions that are inaccessible to pattern matching:\n  .(match n, 1 with\n    | Int.ofNat m, Int.ofNat n => Int.ofNat (m + n)\n    | Int.ofNat m, Int.negSucc n => Int.subNatNat m n.succ\n    | Int.negSucc m, Int.ofNat n => Int.subNatNat n m.succ\n    | Int.negSucc m, Int.negSucc n => Int.negSucc (m + n).succ)\n  \n  l; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact let rec go : Int \u2192 List Int \u2192 List Int | 0, acc => acc | n+1, a::as => go (n+1) (a::as)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; Invalid pattern(s): `n` is an explicit pattern variable, but it only occurs in positions that are inaccessible to pattern matching:\n  .(match n, 1 with\n    | Int.ofNat m, Int.ofNat n => Int.ofNat (m + n)\n    | Int.ofNat m, Int.negSucc n => Int.subNatNat m n.succ\n    | Int.negSucc m, Int.ofNat n => Int.subNatNat n m.succ\n    | Int.negSucc m, Int.negSucc n => Int.negSucc (m + n).succ)\n  \n  a :: as; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact let rec go : Int \u2192 List Int \u2192 List Int | n, acc => if n = 0 then acc else go (n - 1) (seed :: acc) | n, acc => go n acc",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "unexpected token '#eval'; expected term; Redundant alternative: Any expression matching\n  n, acc\nwill match one of the preceding alternatives; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        }
+      ]
+    },
+    {
+      "name": "sum_at_odd_indices",
+      "theorem_name": "sumAtOddIndices",
+      "solved": false,
+      "n_candidates": 1,
+      "retrieved": [
+        {
+          "name": "or",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.any id"
+        },
+        {
+          "name": "and",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.all id"
+        },
+        {
+          "name": "prod",
+          "kind": "SIMPLE",
+          "state": "xs : List \u2124\n\u22a2 \u2124",
+          "tactic": "exact xs.foldr (\u00b7 * \u00b7) 1"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (a == \u00b7)"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (\u00b7 == a)"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs.foldr (\u00b7 + \u00b7) 0",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "zip_diff",
+      "theorem_name": "zipDiff",
+      "solved": false,
+      "n_candidates": 2,
+      "retrieved": [
+        {
+          "name": "partialSums",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact l.scanl (\u00b7 + \u00b7) 0"
+        },
+        {
+          "name": "dropLastTR",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact l.toArray.pop.toList"
+        },
+        {
+          "name": "partialProds",
+          "kind": "SIMPLE",
+          "state": "l : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact l.scanl (\u00b7 * \u00b7) 1"
+        },
+        {
+          "name": "Poly.insertSorted",
+          "kind": "SIMPLE",
+          "state": "x : \u2124\nxs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact match p with\n  | [] => [(k, Id)]\n  | (k', Id') :: p => bif Id < Id' then (k, Id) :: (k', Id') :: p else (k', Id') "
+        },
+        {
+          "name": "insert",
+          "kind": "SIMPLE",
+          "state": "a : \u2124\nl : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact if l.contains a then l else a :: l"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null
+        },
+        {
+          "tactic": "exact xs.reverse",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "longest_increasing_run",
+      "theorem_name": "longestIncreasingRun",
+      "solved": false,
+      "n_candidates": 5,
+      "retrieved": [
+        {
+          "name": "or",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.any id"
+        },
+        {
+          "name": "and",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.all id"
+        },
+        {
+          "name": "all",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : List \u2124\nx_arg1 : \u2124 \u2192 Bool\n\u22a2 Bool",
+          "tactic": "exact match x_arg0, x_arg1 with | [], _ => true | h :: t, p => p h && List.all t p"
+        },
+        {
+          "name": "any",
+          "kind": "EQCOMP",
+          "state": "x_arg0 : List \u2124\nx_arg1 : \u2124 \u2192 Bool\n\u22a2 Bool",
+          "tactic": "exact match x_arg0, x_arg1 with | [], _ => false | h :: t, p => p h || List.any t p"
+        },
+        {
+          "name": "isEmpty",
+          "kind": "EQCOMP",
+          "state": "x_arg : List \u2115\n\u22a2 Bool",
+          "tactic": "exact match x_arg with | [] => true | _ :: _ => false"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact match xs with | [] => 0 | _ :: _ => 1 + List.length xs",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 7,
+          "error": null
+        },
+        {
+          "tactic": "exact match xs with | [] => 0 | h :: t => 1 + List.sum t",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Type mismatch\n  1 + t.sum\nhas type\n  \u2124\nbut is expected to have type\n  \u2115; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact match xs with | [] => 0 | _ :: _ => succ (List.sum xs)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown identifier `succ`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact match xs with | [] => 0 | h :: t => succ (List.sum t)",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown identifier `succ`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        },
+        {
+          "tactic": "exact match xs with | [] => 0 | _ :: _ => 1 + List.sum xs",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Type mismatch\n  1 + xs.sum\nhas type\n  \u2124\nbut is expected to have type\n  \u2115; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        }
+      ]
+    },
+    {
+      "name": "max_subarray_product",
+      "theorem_name": "maxSubarrayProduct",
+      "solved": false,
+      "n_candidates": 1,
+      "retrieved": [
+        {
+          "name": "or",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.any id"
+        },
+        {
+          "name": "and",
+          "kind": "SIMPLE",
+          "state": "bs : List Bool\n\u22a2 Bool",
+          "tactic": "exact bs.all id"
+        },
+        {
+          "name": "prod",
+          "kind": "SIMPLE",
+          "state": "xs : List \u2124\n\u22a2 \u2124",
+          "tactic": "exact xs.foldr (\u00b7 * \u00b7) 1"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (a == \u00b7)"
+        },
+        {
+          "name": "contains",
+          "kind": "SIMPLE",
+          "state": "as : Array \u2124\na : \u2124\n\u22a2 Bool",
+          "tactic": "exact as.any (\u00b7 == a)"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs.foldr (\u00b7 + \u00b7) 0",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 7,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "merge_sorted_desc",
+      "theorem_name": "mergeSortedDesc",
+      "solved": false,
+      "n_candidates": 1,
+      "retrieved": [
+        {
+          "name": "removeAll",
+          "kind": "SIMPLE",
+          "state": "xs : List \u2124\nys : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact xs.filter (fun x => !ys.elem x)"
+        },
+        {
+          "name": "removeAll",
+          "kind": "SIMPLE",
+          "state": "xs : List \u2115\nys : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact xs.filter (fun x => !ys.elem x)"
+        },
+        {
+          "name": "replaceFTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124\nl : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 Array Int \u2192 List Int | [], acc => acc.toList | x :: xs, acc => match f x with | none => go"
+        },
+        {
+          "name": "lookmap",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124\nl : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 Array Int \u2192 List Int | [], acc => acc.toList | a :: l, acc => match f a with | some b => a"
+        },
+        {
+          "name": "filterMapTR",
+          "kind": "WHERE",
+          "state": "f : \u2124 \u2192 Option \u2124\nl : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 Array Int \u2192 List Int | [], acc => acc.toList | a::as, acc => match f a with | none => go a"
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact xs.filter (fun x => !ys.elem x)",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 7,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "window_sums",
+      "theorem_name": "windowSums",
+      "solved": false,
+      "n_candidates": 2,
+      "retrieved": [
+        {
+          "name": "Poly.insertSorted",
+          "kind": "SIMPLE",
+          "state": "x : \u2124\nxs : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact match p with\n  | [] => [(k, Id)]\n  | (k', Id') :: p => bif Id < Id' then (k, Id) :: (k', Id') :: p else (k', Id') "
+        },
+        {
+          "name": "eraseTR",
+          "kind": "WHERE",
+          "state": "l : List \u2124\na : \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 Array Int \u2192 List Int | [], _ => l | x::xs, acc => bif x == a then acc.toListAppend xs else"
+        },
+        {
+          "name": "erasePTR",
+          "kind": "WHERE",
+          "state": "p : \u2115 \u2192 Bool\nl : List \u2115\n\u22a2 List \u2115",
+          "tactic": "exact let rec go : List Nat \u2192 Array Nat \u2192 List Nat | [], _ => l | a :: l, acc => bif p a then acc.toListAppend l else go"
+        },
+        {
+          "name": "replaceTR",
+          "kind": "WHERE",
+          "state": "l : List \u2124\nb : \u2124\nc : \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 Array Int \u2192 List Int | [], _ => l | a::as, acc => bif b == a then acc.toListAppend (c::as)"
+        },
+        {
+          "name": "takeTR",
+          "kind": "WHERE",
+          "state": "n : \u2115\nl : List \u2124\n\u22a2 List \u2124",
+          "tactic": "exact let rec go : List Int \u2192 Nat \u2192 Array Int \u2192 List Int | [], _, _ => l | _::_, 0, acc => acc.toList | a::as, n+1, acc "
+        }
+      ],
+      "candidates": [
+        {
+          "tactic": "exact match p with | [] => [(k, Id)] | (k', Id') :: p => bif Id < Id' then (k, Id) :: (k', Id') :: p else (k', Id') :: insertSorted k Id p",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Unknown identifier `p`; Unknown identifier `p`; Application type mismatch: The argument\n  (k, Id)\nhas type\n  \u2115 \u00d7 (Type ?u.40 \u2192 Type ?u.40)\nof sort `Type (max 0 (?u.40 + 1))` but is expected to have type\n  \u2124\nof sort `Type` in the application\n  List.cons (k, Id)"
+        },
+        {
+          "tactic": "exact match k with\n  | 0 => []\n  | S k' => insertSorted k xs",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Invalid pattern: Expected a constructor or constant marked with `[match_pattern]`\n\nHint: Using `Std.Time.Modifier.S` would be valid:\n  [apply] `Std.Time.Modifier.S`; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command."
+        }
+      ]
+    }
+  ]
+}

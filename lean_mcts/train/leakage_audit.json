@@ -1,0 +1,35 @@
+{
+  "n_gram_size": 5,
+  "jaccard_threshold": 0.2,
+  "heldout_tasks": [
+    "eval_stack",
+    "majority_element",
+    "map_with_index",
+    "max_subarray_sum",
+    "prefix_while_increasing",
+    "unfold_n",
+    "sum_at_odd_indices",
+    "zip_diff",
+    "longest_increasing_run",
+    "max_subarray_product",
+    "merge_sorted_desc",
+    "window_sums"
+  ],
+  "total_pairs": 404,
+  "flagged_count": 0,
+  "per_task_hits": {
+    "eval_stack": 0,
+    "majority_element": 0,
+    "map_with_index": 0,
+    "max_subarray_sum": 0,
+    "prefix_while_increasing": 0,
+    "unfold_n": 0,
+    "sum_at_odd_indices": 0,
+    "zip_diff": 0,
+    "longest_increasing_run": 0,
+    "max_subarray_product": 0,
+    "merge_sorted_desc": 0,
+    "window_sums": 0
+  },
+  "flagged": []
+}

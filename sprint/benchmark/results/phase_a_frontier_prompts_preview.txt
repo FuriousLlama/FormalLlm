@@ -1,0 +1,819 @@
+======================================================================
+eval_stack  (2600 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: eval_stack
+Description: Stack evaluator (push positive, 0 = pop two and add)
+Theorem name: evalStack
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+⊢ Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[3, 4, 0]  expected=7
+  input=[]  expected=0
+  input=[5]  expected=5
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+majority_element  (2604 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: majority_element
+Description: Boyer-Moore majority vote
+Theorem name: majorityElement
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+⊢ Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[3, 3, 4, 2, 3, 3, 5]  expected=3
+  input=[1]  expected=1
+  input=[1, 2, 1]  expected=1
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+map_with_index  (2614 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: map_with_index
+Description: Multiply each element by its 1-based index
+Theorem name: mapWithIndex
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+⊢ List Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[2, 3, 4]  expected=[2, 6, 12]
+  input=[]  expected=[]
+  input=[5]  expected=[5]
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+max_subarray_sum  (2625 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: max_subarray_sum
+Description: Maximum contiguous subarray sum (Kadane's algorithm)
+Theorem name: maxSubarraySum
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+⊢ Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[2, -1, 3, -2]  expected=4
+  input=[]  expected=0
+  input=[-1, -2, -3]  expected=0
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+prefix_while_increasing  (2626 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: prefix_while_increasing
+Description: Take prefix while strictly increasing
+Theorem name: prefixWhileIncreasing
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+⊢ List Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[1, 3, 2, 4]  expected=[1, 3]
+  input=[]  expected=[]
+  input=[5]  expected=[5]
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+unfold_n  (2623 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: unfold_n
+Description: Generate list by repeated function application
+Theorem name: unfoldN
+
+Goal state (after all parameters intro-ed as hypotheses):
+n : Nat
+f : Int → Int
+seed : Int
+⊢ List Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=4  expected=[0, 1, 2, 3]
+  input=0  expected=[]
+  input=3  expected=[1, 2, 4]
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+sum_at_odd_indices  (2632 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: sum_at_odd_indices
+Description: Sum of elements at 0-indexed odd positions (index-tracking fold)
+Theorem name: sumAtOddIndices
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+⊢ Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[1, 2, 3, 4, 5]  expected=6
+  input=[]  expected=0
+  input=[7]  expected=0
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+zip_diff  (2641 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: zip_diff
+Description: Pairwise differences between consecutive elements (b-a for each adjacent pair)
+Theorem name: zipDiff
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+⊢ List Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[1, 5, 3, 8]  expected=[4, -2, 5]
+  input=[]  expected=[]
+  input=[7]  expected=[]
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+longest_increasing_run  (2643 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: longest_increasing_run
+Description: Length of longest strictly-increasing contiguous subsequence
+Theorem name: longestIncreasingRun
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+⊢ Nat
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[1, 2, 3, 1, 2, 3, 4]  expected=4
+  input=[]  expected=0
+  input=[5]  expected=1
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+max_subarray_product  (2679 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: max_subarray_product
+Description: Maximum product of any contiguous subarray (dual tuple accumulator, signs interact)
+Theorem name: maxSubarrayProduct
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+⊢ Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[2, 3, -2, 4]  expected=6
+  input=[-2, 0, -1]  expected=0
+  input=[2, -5, -2, -4, 3]  expected=24
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+merge_sorted_desc  (2681 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: merge_sorted_desc
+Description: Merge two descending-sorted lists into a descending-sorted result
+Theorem name: mergeSortedDesc
+
+Goal state (after all parameters intro-ed as hypotheses):
+xs : List Int
+ys : List Int
+⊢ List Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=[5, 3, 1]  expected=[5, 4, 3, 2, 1]
+  input=[]  expected=[3, 2, 1]
+  input=[3, 2, 1]  expected=[3, 2, 1]
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+
+
+======================================================================
+window_sums  (2630 chars)
+======================================================================
+You are an expert Lean 4 programmer working on a synthesis benchmark. Your job: produce 8 different candidate tactic bodies for a Lean 4 goal. Each candidate must be a complete Lean 4 tactic body starting with `exact` followed by a complete term.
+
+Here are 5 example pairs showing the format (distinct structural patterns):
+
+Example 1 (let_rec, from List.partition):
+Goal state:
+p : ℤ → Bool
+as : List ℤ
+⊢ List ℤ × List ℤ
+Tactic: exact let rec loop : List Int → List Int × List Int → List Int × List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])
+
+Example 2 (match_list, from List.tail):
+Goal state:
+x_arg : List ℤ
+⊢ List ℤ
+Tactic: exact match x_arg with | [] => [] | _::as => as
+
+Example 3 (foldl_accumulator, from List.toArrayMap):
+Goal state:
+l : List ℤ
+f : ℤ → ℤ
+⊢ Array ℤ
+Tactic: exact l.foldl (init := #[]) fun acc x => acc.push (f x)
+
+Example 4 (method_chain, from List.dropLastTR):
+Goal state:
+l : List ℤ
+⊢ List ℤ
+Tactic: exact l.toArray.pop.toList
+
+Example 5 (two_list_filter, from List.removeAll):
+Goal state:
+xs : List ℤ
+ys : List ℤ
+⊢ List ℤ
+Tactic: exact xs.filter (fun x => !ys.elem x)
+
+Now produce 8 candidate tactic bodies for THIS target task:
+
+TARGET TASK: window_sums
+Description: Sum of every contiguous k-element window ([] when k=0 or k>length)
+Theorem name: windowSums
+
+Goal state (after all parameters intro-ed as hypotheses):
+k : Nat
+xs : List Int
+⊢ List Int
+
+Test cases the tactic must satisfy (first 3 of 3 shown):
+  input=3  expected=[6, 9, 12]
+  input=2  expected=[]
+  input=1  expected=[5]
+
+Requirements:
+1. Each candidate must start with `exact` and be a complete Lean 4 term.
+2. Strive for STRUCTURAL diversity across the 8 candidates: try recursion (`let rec`), pattern matching (`match ... with`), folds (`foldl`/`foldr`), multi-step proofs (`have ... ; exact`), method chains, etc. Do not just reword the same approach 8 times.
+3. Each candidate must genuinely attempt to solve the task — no placeholders, no `sorry`, no `admit`.
+4. Use Lean 4 syntax (not Lean 3).
+5. Prefer short, readable terms when possible.
+6. If the task needs a recursive helper, use `let rec name : T := ... ; name args` form.
+7. Do NOT use any tools. Do NOT read files. Do NOT search the web. Think purely from the prompt.
+
+OUTPUT FORMAT: a single JSON array of exactly 8 strings. No markdown code fences, no commentary, no surrounding text — just the raw JSON array as your ENTIRE response. Example:
+["exact xs.sum", "exact xs.foldl (· + ·) 0", "exact match xs with | [] => 0 | h :: t => h + t.sum", ...]
+

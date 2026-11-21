@@ -1,0 +1,1056 @@
+[
+  {
+    "name": "identity",
+    "prompt": "DEF fId TY Int -> Int USES",
+    "func_name": "fId",
+    "type_sig": "Int -> Int",
+    "tier": 1,
+    "novel": false,
+    "few_shot_funcs": [
+      "fFst",
+      "fSnd"
+    ],
+    "tests": [
+      {
+        "input": "5",
+        "expected": "5"
+      },
+      {
+        "input": "0",
+        "expected": "0"
+      },
+      {
+        "input": "42",
+        "expected": "42"
+      }
+    ],
+    "context_type": "Int -> Int"
+  },
+  {
+    "name": "double",
+    "prompt": "DEF fDouble TY Int -> Int USES",
+    "func_name": "fDouble",
+    "type_sig": "Int -> Int",
+    "tier": 1,
+    "novel": false,
+    "few_shot_funcs": [
+      "fSucc",
+      "fSquare"
+    ],
+    "tests": [
+      {
+        "input": "3",
+        "expected": "6"
+      },
+      {
+        "input": "0",
+        "expected": "0"
+      },
+      {
+        "input": "5",
+        "expected": "10"
+      }
+    ],
+    "context_type": "Int -> Int"
+  },
+  {
+    "name": "successor",
+    "prompt": "DEF fSucc TY Int -> Int USES",
+    "func_name": "fSucc",
+    "type_sig": "Int -> Int",
+    "tier": 1,
+    "novel": false,
+    "few_shot_funcs": [
+      "fDouble",
+      "fPred"
+    ],
+    "tests": [
+      {
+        "input": "5",
+        "expected": "6"
+      },
+      {
+        "input": "0",
+        "expected": "1"
+      },
+      {
+        "input": "9",
+        "expected": "10"
+      }
+    ],
+    "context_type": "Int -> Int"
+  },
+  {
+    "name": "not",
+    "prompt": "DEF fNot TY Bool -> Bool USES",
+    "func_name": "fNot",
+    "type_sig": "Bool -> Bool",
+    "tier": 1,
+    "novel": false,
+    "few_shot_funcs": [
+      "fAnd",
+      "fOr"
+    ],
+    "tests": [
+      {
+        "input": "True",
+        "expected": "False"
+      },
+      {
+        "input": "False",
+        "expected": "True"
+      }
+    ],
+    "context_type": "Bool -> Bool"
+  },
+  {
+    "name": "null",
+    "prompt": "DEF fNull TY [ Int ] -> Bool USES",
+    "func_name": "fNull",
+    "type_sig": "[Int] -> Bool",
+    "tier": 1,
+    "novel": false,
+    "few_shot_funcs": [
+      "fHead",
+      "fLength"
+    ],
+    "tests": [
+      {
+        "input": "[]",
+        "expected": "True"
+      },
+      {
+        "input": "[1]",
+        "expected": "False"
+      },
+      {
+        "input": "[1,2]",
+        "expected": "False"
+      }
+    ],
+    "context_type": "[ Int ] -> Bool"
+  },
+  {
+    "name": "sum",
+    "prompt": "DEF fSum TY [ Int ] -> Int USES",
+    "func_name": "fSum",
+    "type_sig": "[Int] -> Int",
+    "tier": 1,
+    "novel": false,
+    "few_shot_funcs": [
+      "fProduct",
+      "fLength"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "6"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[5]",
+        "expected": "5"
+      }
+    ],
+    "context_type": "[ Int ] -> Int"
+  },
+  {
+    "name": "length",
+    "prompt": "DEF fLength TY [ Int ] -> Int USES",
+    "func_name": "fLength",
+    "type_sig": "[Int] -> Int",
+    "tier": 1,
+    "novel": false,
+    "few_shot_funcs": [
+      "fSum",
+      "fProduct"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "3"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[42]",
+        "expected": "1"
+      }
+    ],
+    "context_type": "[ Int ] -> Int"
+  },
+  {
+    "name": "tail",
+    "prompt": "DEF fTail TY [ Int ] -> [ Int ] USES",
+    "func_name": "fTail",
+    "type_sig": "[Int] -> [Int]",
+    "tier": 1,
+    "novel": false,
+    "few_shot_funcs": [
+      "fHead",
+      "fInit"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "[2,3]"
+      },
+      {
+        "input": "[1]",
+        "expected": "[]"
+      }
+    ],
+    "context_type": "[ Int ] -> [ Int ]"
+  },
+  {
+    "name": "map_double",
+    "prompt": "DEF fMap TY ( Int -> Int ) -> [ Int ] -> [ Int ] USES",
+    "func_name": "fMap",
+    "type_sig": "(Int -> Int) -> [Int] -> [Int]",
+    "tier": 1,
+    "novel": false,
+    "call_prefix": "f (\\x -> x + x)",
+    "few_shot_funcs": [
+      "fFilter",
+      "fFoldr"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "[2,4,6]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      }
+    ],
+    "context_type": "( Int -> Int ) -> [ Int ] -> [ Int ]"
+  },
+  {
+    "name": "filter_positive",
+    "prompt": "DEF fFilter TY ( Int -> Bool ) -> [ Int ] -> [ Int ] USES",
+    "func_name": "fFilter",
+    "type_sig": "(Int -> Bool) -> [Int] -> [Int]",
+    "tier": 1,
+    "novel": false,
+    "call_prefix": "f (\\x -> x > 0)",
+    "few_shot_funcs": [
+      "fMap",
+      "fFoldr"
+    ],
+    "tests": [
+      {
+        "input": "[1,-2,3,-4]",
+        "expected": "[1,3]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      }
+    ],
+    "context_type": "( Int -> Bool ) -> [ Int ] -> [ Int ]"
+  },
+  {
+    "name": "triple",
+    "prompt": "DEF fTriple TY Int -> Int USES",
+    "func_name": "fTriple",
+    "type_sig": "Int -> Int",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fDouble",
+      "fSucc"
+    ],
+    "tests": [
+      {
+        "input": "3",
+        "expected": "9"
+      },
+      {
+        "input": "0",
+        "expected": "0"
+      },
+      {
+        "input": "4",
+        "expected": "12"
+      }
+    ],
+    "context_type": "Int -> Int"
+  },
+  {
+    "name": "is_zero",
+    "prompt": "DEF fIsZero TY Int -> Bool USES",
+    "func_name": "fIsZero",
+    "type_sig": "Int -> Bool",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fIsPositive",
+      "fIsNegative"
+    ],
+    "tests": [
+      {
+        "input": "0",
+        "expected": "True"
+      },
+      {
+        "input": "1",
+        "expected": "False"
+      },
+      {
+        "input": "-1",
+        "expected": "False"
+      }
+    ],
+    "context_type": "Int -> Bool"
+  },
+  {
+    "name": "negate",
+    "prompt": "DEF fNegate TY Int -> Int USES",
+    "func_name": "fNegate",
+    "type_sig": "Int -> Int",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fAbs",
+      "fDouble"
+    ],
+    "tests": [
+      {
+        "input": "5",
+        "expected": "-5"
+      },
+      {
+        "input": "0",
+        "expected": "0"
+      },
+      {
+        "input": "-3",
+        "expected": "3"
+      }
+    ],
+    "context_type": "Int -> Int"
+  },
+  {
+    "name": "head_or_zero",
+    "prompt": "DEF fHeadOrZero TY [ Int ] -> Int USES",
+    "func_name": "fHeadOrZero",
+    "type_sig": "[Int] -> Int",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fHeadOrDefault",
+      "fNull"
+    ],
+    "tests": [
+      {
+        "input": "[5,2,3]",
+        "expected": "5"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[42]",
+        "expected": "42"
+      }
+    ],
+    "context_type": "[ Int ] -> Int"
+  },
+  {
+    "name": "count_true",
+    "prompt": "DEF fCountTrue TY [ Bool ] -> Int USES",
+    "func_name": "fCountTrue",
+    "type_sig": "[Bool] -> Int",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fCount",
+      "fLength"
+    ],
+    "tests": [
+      {
+        "input": "[True,False,True]",
+        "expected": "2"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[True]",
+        "expected": "1"
+      }
+    ],
+    "context_type": "[ Bool ] -> Int"
+  },
+  {
+    "name": "any_positive",
+    "prompt": "DEF fAny TY ( Int -> Bool ) -> [ Int ] -> Bool USES",
+    "func_name": "fAny",
+    "type_sig": "(Int -> Bool) -> [Int] -> Bool",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "call_prefix": "f (\\x -> x > 0)",
+    "few_shot_funcs": [
+      "fAll",
+      "fNull"
+    ],
+    "tests": [
+      {
+        "input": "[1,-2,3]",
+        "expected": "True"
+      },
+      {
+        "input": "[-1,-2]",
+        "expected": "False"
+      },
+      {
+        "input": "[]",
+        "expected": "False"
+      }
+    ],
+    "context_type": "( Int -> Bool ) -> [ Int ] -> Bool"
+  },
+  {
+    "name": "all_positive",
+    "prompt": "DEF fAll TY ( Int -> Bool ) -> [ Int ] -> Bool USES",
+    "func_name": "fAll",
+    "type_sig": "(Int -> Bool) -> [Int] -> Bool",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "call_prefix": "f (\\x -> x > 0)",
+    "few_shot_funcs": [
+      "fAny",
+      "fNull"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "True"
+      },
+      {
+        "input": "[1,-2,3]",
+        "expected": "False"
+      },
+      {
+        "input": "[]",
+        "expected": "True"
+      }
+    ],
+    "context_type": "( Int -> Bool ) -> [ Int ] -> Bool"
+  },
+  {
+    "name": "sum_of_squares",
+    "prompt": "DEF fSumSquares TY [ Int ] -> Int USES",
+    "func_name": "fSumSquares",
+    "type_sig": "[Int] -> Int",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fSum",
+      "fSquare"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "14"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[3]",
+        "expected": "9"
+      }
+    ],
+    "context_type": "[ Int ] -> Int"
+  },
+  {
+    "name": "zip_with_add",
+    "prompt": "DEF fZipWithAdd TY [ Int ] -> [ Int ] -> [ Int ] USES",
+    "func_name": "fZipWithAdd",
+    "type_sig": "[Int] -> [Int] -> [Int]",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fZipWith",
+      "fZip"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3] [4,5,6]",
+        "expected": "[5,7,9]"
+      },
+      {
+        "input": "[] []",
+        "expected": "[]"
+      },
+      {
+        "input": "[1] [2]",
+        "expected": "[3]"
+      }
+    ],
+    "context_type": "[ Int ] -> [ Int ] -> [ Int ]"
+  },
+  {
+    "name": "sum_positive",
+    "prompt": "DEF fSumPositive TY [ Int ] -> Int USES",
+    "func_name": "fSumPositive",
+    "type_sig": "[Int] -> Int",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fSum",
+      "fFilter",
+      "fIsPositive"
+    ],
+    "tests": [
+      {
+        "input": "[1,-2,3,-4]",
+        "expected": "4"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[-1,-2]",
+        "expected": "0"
+      }
+    ],
+    "context_type": "[ Int ] -> Int"
+  },
+  {
+    "name": "double_all",
+    "prompt": "DEF fDoubleAll TY [ Int ] -> [ Int ] USES",
+    "func_name": "fDoubleAll",
+    "type_sig": "[Int] -> [Int]",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fMap",
+      "fDouble"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "[2,4,6]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[5]",
+        "expected": "[10]"
+      }
+    ],
+    "context_type": "[ Int ] -> [ Int ]"
+  },
+  {
+    "name": "negate_all",
+    "prompt": "DEF fNegate2 TY [ Int ] -> [ Int ] USES",
+    "func_name": "fNegate2",
+    "type_sig": "[Int] -> [Int]",
+    "tier": 1,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fMap",
+      "fNegate"
+    ],
+    "tests": [
+      {
+        "input": "[1,-2,3]",
+        "expected": "[-1,2,-3]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[0]",
+        "expected": "[0]"
+      }
+    ],
+    "context_type": "[ Int ] -> [ Int ]"
+  },
+  {
+    "name": "count_positive",
+    "prompt": "DEF fCountPositive TY [ Int ] -> Int USES",
+    "func_name": "fCountPositive",
+    "type_sig": "[Int] -> Int",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fLength",
+      "fFilter",
+      "fIsPositive"
+    ],
+    "tests": [
+      {
+        "input": "[1,-2,3,-4]",
+        "expected": "2"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[-1]",
+        "expected": "0"
+      }
+    ],
+    "context_type": "[ Int ] -> Int"
+  },
+  {
+    "name": "map_square",
+    "prompt": "DEF fMapSquare TY [ Int ] -> [ Int ] USES",
+    "func_name": "fMapSquare",
+    "type_sig": "[Int] -> [Int]",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fMap",
+      "fSquare"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "[1,4,9]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[0,3]",
+        "expected": "[0,9]"
+      }
+    ],
+    "context_type": "[ Int ] -> [ Int ]"
+  },
+  {
+    "name": "sort_desc",
+    "prompt": "DEF fSortDesc TY [ Int ] -> [ Int ] USES",
+    "func_name": "fSortDesc",
+    "type_sig": "[Int] -> [Int]",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fSort",
+      "fReverse"
+    ],
+    "tests": [
+      {
+        "input": "[3,1,2]",
+        "expected": "[3,2,1]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[1]",
+        "expected": "[1]"
+      }
+    ],
+    "context_type": "[ Int ] -> [ Int ]"
+  },
+  {
+    "name": "sum_doubles",
+    "prompt": "DEF fSumDoubles TY [ Int ] -> Int USES",
+    "func_name": "fSumDoubles",
+    "type_sig": "[Int] -> Int",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fSum",
+      "fMap",
+      "fDouble"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "12"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[5]",
+        "expected": "10"
+      }
+    ],
+    "context_type": "[ Int ] -> Int"
+  },
+  {
+    "name": "max_abs",
+    "prompt": "DEF fMaxAbs TY [ Int ] -> Int USES",
+    "func_name": "fMaxAbs",
+    "type_sig": "[Int] -> Int",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fMaximum",
+      "fMap",
+      "fAbs"
+    ],
+    "tests": [
+      {
+        "input": "[-3,1,2]",
+        "expected": "3"
+      },
+      {
+        "input": "[5]",
+        "expected": "5"
+      },
+      {
+        "input": "[-1,-4]",
+        "expected": "4"
+      }
+    ],
+    "context_type": "[ Int ] -> Int"
+  },
+  {
+    "name": "take_positives",
+    "prompt": "DEF fTakePositives TY [ Int ] -> [ Int ] USES",
+    "func_name": "fTakePositives",
+    "type_sig": "[Int] -> [Int]",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fTakeWhile",
+      "fIsPositive"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,-1,3]",
+        "expected": "[1,2]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[-1,2]",
+        "expected": "[]"
+      }
+    ],
+    "context_type": "[ Int ] -> [ Int ]"
+  },
+  {
+    "name": "nub_sort",
+    "prompt": "DEF fNubSort TY [ Int ] -> [ Int ] USES",
+    "func_name": "fNubSort",
+    "type_sig": "[Int] -> [Int]",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fSort",
+      "fNubInt"
+    ],
+    "tests": [
+      {
+        "input": "[3,1,2,1,3]",
+        "expected": "[1,2,3]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[1]",
+        "expected": "[1]"
+      }
+    ],
+    "context_type": "[ Int ] -> [ Int ]"
+  },
+  {
+    "name": "drop_negatives",
+    "prompt": "DEF fDropNeg TY [ Int ] -> [ Int ] USES",
+    "func_name": "fDropNeg",
+    "type_sig": "[Int] -> [Int]",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fDropWhile",
+      "fIsNegative"
+    ],
+    "tests": [
+      {
+        "input": "[-1,-2,3,4]",
+        "expected": "[3,4]"
+      },
+      {
+        "input": "[1,2,3]",
+        "expected": "[1,2,3]"
+      },
+      {
+        "input": "[-1]",
+        "expected": "[]"
+      }
+    ],
+    "context_type": "[ Int ] -> [ Int ]"
+  },
+  {
+    "name": "accum_sum",
+    "prompt": "DEF fAccumSum TY Int -> [ Int ] -> Int USES",
+    "func_name": "fAccumSum",
+    "type_sig": "Int -> [Int] -> Int",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "call_prefix": "f 0",
+    "few_shot_funcs": [
+      "fFoldl",
+      "fSum"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3]",
+        "expected": "6"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[5]",
+        "expected": "5"
+      }
+    ],
+    "context_type": "Int -> [ Int ] -> Int"
+  },
+  {
+    "name": "count_even",
+    "prompt": "DEF fCountEven TY [ Int ] -> Int USES",
+    "func_name": "fCountEven",
+    "type_sig": "[Int] -> Int",
+    "tier": 2,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fLength",
+      "fFilter",
+      "fEven"
+    ],
+    "tests": [
+      {
+        "input": "[1,2,3,4]",
+        "expected": "2"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[1,3]",
+        "expected": "0"
+      }
+    ],
+    "context_type": "[ Int ] -> Int"
+  },
+  {
+    "name": "maybe_map",
+    "prompt": "DEF fMaybeMap TY ( Int -> Int ) -> Maybe Int -> Maybe Int USES",
+    "func_name": "fMaybeMap",
+    "type_sig": "(Int -> Int) -> Maybe Int -> Maybe Int",
+    "tier": 3,
+    "novel": true,
+    "deps": [],
+    "call_prefix": "f (\\x -> x + 1)",
+    "few_shot_funcs": [
+      "fMaybe",
+      "fFromMaybe"
+    ],
+    "tests": [
+      {
+        "input": "(Just 5)",
+        "expected": "Just 6"
+      },
+      {
+        "input": "Nothing",
+        "expected": "Nothing"
+      },
+      {
+        "input": "(Just 0)",
+        "expected": "Just 1"
+      }
+    ],
+    "context_type": "( Int -> Int ) -> Maybe Int -> Maybe Int"
+  },
+  {
+    "name": "swap_pair",
+    "prompt": "DEF fSwap TY ( Int, Int ) -> ( Int, Int ) USES",
+    "func_name": "fSwap",
+    "type_sig": "(Int, Int) -> (Int, Int)",
+    "tier": 3,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fFst",
+      "fSnd"
+    ],
+    "tests": [
+      {
+        "input": "(1,2)",
+        "expected": "(2,1)"
+      },
+      {
+        "input": "(0,5)",
+        "expected": "(5,0)"
+      },
+      {
+        "input": "(3,3)",
+        "expected": "(3,3)"
+      }
+    ],
+    "context_type": "( Int, Int ) -> ( Int, Int )"
+  },
+  {
+    "name": "apply_twice",
+    "prompt": "DEF fApplyTwice TY ( Int -> Int ) -> Int -> Int USES",
+    "func_name": "fApplyTwice",
+    "type_sig": "(Int -> Int) -> Int -> Int",
+    "tier": 3,
+    "novel": true,
+    "deps": [],
+    "call_prefix": "f (\\x -> x + 1)",
+    "few_shot_funcs": [
+      "fComp",
+      "fDouble"
+    ],
+    "tests": [
+      {
+        "input": "5",
+        "expected": "7"
+      },
+      {
+        "input": "0",
+        "expected": "2"
+      },
+      {
+        "input": "3",
+        "expected": "5"
+      }
+    ],
+    "context_type": "( Int -> Int ) -> Int -> Int"
+  },
+  {
+    "name": "map_pair",
+    "prompt": "DEF fMapPair TY ( Int -> Int ) -> ( Int, Int ) -> ( Int, Int ) USES",
+    "func_name": "fMapPair",
+    "type_sig": "(Int -> Int) -> (Int, Int) -> (Int, Int)",
+    "tier": 3,
+    "novel": true,
+    "deps": [],
+    "call_prefix": "f (\\x -> x + x)",
+    "few_shot_funcs": [
+      "fFst",
+      "fSnd",
+      "fDouble"
+    ],
+    "tests": [
+      {
+        "input": "(1,2)",
+        "expected": "(2,4)"
+      },
+      {
+        "input": "(0,5)",
+        "expected": "(0,10)"
+      },
+      {
+        "input": "(3,3)",
+        "expected": "(6,6)"
+      }
+    ],
+    "context_type": "( Int -> Int ) -> ( Int, Int ) -> ( Int, Int )"
+  },
+  {
+    "name": "maybe_with_default",
+    "prompt": "DEF fMaybeDefault TY Int -> [ Maybe Int ] -> [ Int ] USES",
+    "func_name": "fMaybeDefault",
+    "type_sig": "Int -> [Maybe Int] -> [Int]",
+    "tier": 3,
+    "novel": true,
+    "deps": [],
+    "call_prefix": "f 0",
+    "few_shot_funcs": [
+      "fMap",
+      "fFromMaybe"
+    ],
+    "tests": [
+      {
+        "input": "[Just 1, Nothing, Just 3]",
+        "expected": "[1,0,3]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[Nothing]",
+        "expected": "[0]"
+      }
+    ],
+    "context_type": "Int -> [ Maybe Int ] -> [ Int ]"
+  },
+  {
+    "name": "uncurry_add",
+    "prompt": "DEF fUncurryAdd TY ( Int, Int ) -> Int USES",
+    "func_name": "fUncurryAdd",
+    "type_sig": "(Int, Int) -> Int",
+    "tier": 3,
+    "novel": true,
+    "deps": [],
+    "few_shot_funcs": [
+      "fUncurry",
+      "fFst",
+      "fSnd"
+    ],
+    "tests": [
+      {
+        "input": "(1,2)",
+        "expected": "3"
+      },
+      {
+        "input": "(0,5)",
+        "expected": "5"
+      },
+      {
+        "input": "(3,3)",
+        "expected": "6"
+      }
+    ],
+    "context_type": "( Int, Int ) -> Int"
+  }
+]

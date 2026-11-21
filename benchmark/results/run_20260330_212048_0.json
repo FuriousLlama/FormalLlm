@@ -1,0 +1,730 @@
+[
+  {
+    "solved": false,
+    "tactics": [
+      "exact 0"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 128,
+    "stats": {
+      "n_expand_calls": 6,
+      "n_tactic_steps": 823,
+      "n_tactic_valid": 6,
+      "n_tactic_solved": 182,
+      "n_oracle_calls": 181,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 6,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.9196,
+      "t_oracle_s": 12.2773,
+      "t_simulate_s": 0.5078,
+      "t_select_s": 0.0028,
+      "t_total_s": 14.7075,
+      "ms_per_step": 2.33,
+      "ms_per_oracle": 67.8,
+      "pct_step": 13.1,
+      "pct_policy": 0.0,
+      "pct_oracle": 83.5,
+      "pct_simulate": 3.5
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 127
+    },
+    "task": "second_smallest",
+    "category": "diag_a",
+    "ghc_equivalent": "second_smallest",
+    "wall_time_s": 14.71
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "trivial"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 468,
+    "stats": {
+      "n_expand_calls": 4,
+      "n_tactic_steps": 812,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 536,
+      "n_oracle_calls": 529,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 13,
+      "n_simulate_calls": 4,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.202,
+      "t_oracle_s": 39.8305,
+      "t_simulate_s": 5.2293,
+      "t_select_s": 0.0115,
+      "t_total_s": 47.2734,
+      "ms_per_step": 2.71,
+      "ms_per_oracle": 75.3,
+      "pct_step": 4.7,
+      "pct_policy": 0.0,
+      "pct_oracle": 84.3,
+      "pct_simulate": 11.1
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 467
+    },
+    "task": "map_with_index",
+    "category": "diag_a",
+    "ghc_equivalent": "map_with_index",
+    "wall_time_s": 47.28
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "trivial"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 468,
+    "stats": {
+      "n_expand_calls": 4,
+      "n_tactic_steps": 812,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 536,
+      "n_oracle_calls": 529,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 13,
+      "n_simulate_calls": 4,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.0717,
+      "t_oracle_s": 38.7015,
+      "t_simulate_s": 3.1688,
+      "t_select_s": 0.0079,
+      "t_total_s": 43.9499,
+      "ms_per_step": 2.55,
+      "ms_per_oracle": 73.2,
+      "pct_step": 4.7,
+      "pct_policy": 0.0,
+      "pct_oracle": 88.1,
+      "pct_simulate": 7.2
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 467
+    },
+    "task": "prefix_while_increasing",
+    "category": "diag_a",
+    "ghc_equivalent": "prefix_while_increasing",
+    "wall_time_s": 43.97
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "trivial"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 468,
+    "stats": {
+      "n_expand_calls": 4,
+      "n_tactic_steps": 812,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 536,
+      "n_oracle_calls": 529,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 13,
+      "n_simulate_calls": 4,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.1119,
+      "t_oracle_s": 39.1345,
+      "t_simulate_s": 4.6656,
+      "t_select_s": 0.008,
+      "t_total_s": 45.92,
+      "ms_per_step": 2.6,
+      "ms_per_oracle": 74.0,
+      "pct_step": 4.6,
+      "pct_policy": 0.0,
+      "pct_oracle": 85.2,
+      "pct_simulate": 10.2
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 467
+    },
+    "task": "remove_duplicates_keep_last",
+    "category": "diag_a",
+    "ghc_equivalent": "remove_duplicates_keep_last",
+    "wall_time_s": 45.95
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact List.rec 0 (fun h _ acc => acc + h * h) xs"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 48,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 32,
+      "n_oracle_calls": 32,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0861,
+      "t_oracle_s": 1.8682,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 1.9542,
+      "ms_per_step": 1.79,
+      "ms_per_oracle": 58.4,
+      "pct_step": 4.4,
+      "pct_policy": 0.0,
+      "pct_oracle": 95.6,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "dot_product_self",
+    "category": "diag_a",
+    "ghc_equivalent": "dot_product_self",
+    "wall_time_s": 1.97
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "exact 0"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 128,
+    "stats": {
+      "n_expand_calls": 6,
+      "n_tactic_steps": 825,
+      "n_tactic_valid": 6,
+      "n_tactic_solved": 182,
+      "n_oracle_calls": 181,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 6,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.8836,
+      "t_oracle_s": 11.4717,
+      "t_simulate_s": 1.4176,
+      "t_select_s": 0.0027,
+      "t_total_s": 14.7756,
+      "ms_per_step": 2.28,
+      "ms_per_oracle": 63.4,
+      "pct_step": 12.7,
+      "pct_policy": 0.0,
+      "pct_oracle": 77.6,
+      "pct_simulate": 9.6
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 127
+    },
+    "task": "max_subarray_sum",
+    "category": "diag_b",
+    "ghc_equivalent": "max_subarray_sum",
+    "wall_time_s": 14.78
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "constructor"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 251,
+    "stats": {
+      "n_expand_calls": 20,
+      "n_tactic_steps": 4524,
+      "n_tactic_valid": 30,
+      "n_tactic_solved": 332,
+      "n_oracle_calls": 320,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 12,
+      "n_oracle_batches": 18,
+      "n_simulate_calls": 20,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0001,
+      "t_step_s": 15.0309,
+      "t_oracle_s": 22.4888,
+      "t_simulate_s": 0.2511,
+      "t_select_s": 0.0013,
+      "t_total_s": 37.7721,
+      "ms_per_step": 3.32,
+      "ms_per_oracle": 70.3,
+      "pct_step": 39.8,
+      "pct_policy": 0.0,
+      "pct_oracle": 59.5,
+      "pct_simulate": 0.7
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 43,
+      "2": 207
+    },
+    "task": "longest_plateau",
+    "category": "diag_b",
+    "ghc_equivalent": "longest_plateau",
+    "wall_time_s": 37.79
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "trivial"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 468,
+    "stats": {
+      "n_expand_calls": 4,
+      "n_tactic_steps": 739,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 463,
+      "n_oracle_calls": 456,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 10,
+      "n_simulate_calls": 4,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.0235,
+      "t_oracle_s": 35.9476,
+      "t_simulate_s": 4.7559,
+      "t_select_s": 0.0091,
+      "t_total_s": 42.736,
+      "ms_per_step": 2.74,
+      "ms_per_oracle": 78.8,
+      "pct_step": 4.7,
+      "pct_policy": 0.0,
+      "pct_oracle": 84.1,
+      "pct_simulate": 11.1
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 467
+    },
+    "task": "dutch_flag",
+    "category": "diag_b",
+    "ghc_equivalent": "dutch_flag",
+    "wall_time_s": 42.75
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "exact 0"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 128,
+    "stats": {
+      "n_expand_calls": 6,
+      "n_tactic_steps": 825,
+      "n_tactic_valid": 6,
+      "n_tactic_solved": 182,
+      "n_oracle_calls": 181,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 6,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.8522,
+      "t_oracle_s": 17.0134,
+      "t_simulate_s": 2.0784,
+      "t_select_s": 0.0028,
+      "t_total_s": 20.9468,
+      "ms_per_step": 2.25,
+      "ms_per_oracle": 94.0,
+      "pct_step": 8.8,
+      "pct_policy": 0.0,
+      "pct_oracle": 81.2,
+      "pct_simulate": 9.9
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 127
+    },
+    "task": "majority_element",
+    "category": "diag_b",
+    "ghc_equivalent": "majority_element",
+    "wall_time_s": 20.96
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "exact 0"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 128,
+    "stats": {
+      "n_expand_calls": 6,
+      "n_tactic_steps": 823,
+      "n_tactic_valid": 6,
+      "n_tactic_solved": 182,
+      "n_oracle_calls": 181,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 6,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.8954,
+      "t_oracle_s": 11.2219,
+      "t_simulate_s": 2.2887,
+      "t_select_s": 0.005,
+      "t_total_s": 15.4111,
+      "ms_per_step": 2.3,
+      "ms_per_oracle": 62.0,
+      "pct_step": 12.3,
+      "pct_policy": 0.0,
+      "pct_oracle": 72.8,
+      "pct_simulate": 14.9
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 127
+    },
+    "task": "equilibrium_index",
+    "category": "diag_b",
+    "ghc_equivalent": "equilibrium_index",
+    "wall_time_s": 15.42
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "exact []"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 165,
+    "stats": {
+      "n_expand_calls": 102,
+      "n_tactic_steps": 22856,
+      "n_tactic_valid": 155,
+      "n_tactic_solved": 62,
+      "n_oracle_calls": 31,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 31,
+      "n_oracle_batches": 31,
+      "n_simulate_calls": 102,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0002,
+      "t_step_s": 225.4559,
+      "t_oracle_s": 16.0628,
+      "t_simulate_s": 3.1894,
+      "t_select_s": 0.0019,
+      "t_total_s": 244.7102,
+      "ms_per_step": 9.86,
+      "ms_per_oracle": 518.2,
+      "pct_step": 92.1,
+      "pct_policy": 0.0,
+      "pct_oracle": 6.6,
+      "pct_simulate": 1.3
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 7,
+      "2": 35,
+      "3": 122
+    },
+    "task": "chunks_of",
+    "category": "diag_c",
+    "ghc_equivalent": "chunks_of",
+    "wall_time_s": 244.75
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "trivial"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 60,
+    "stats": {
+      "n_expand_calls": 10,
+      "n_tactic_steps": 5119,
+      "n_tactic_valid": 14,
+      "n_tactic_solved": 49,
+      "n_oracle_calls": 0,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 49,
+      "n_oracle_batches": 0,
+      "n_simulate_calls": 10,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.4447,
+      "t_oracle_s": 0.0,
+      "t_simulate_s": 0.0081,
+      "t_select_s": 0.0005,
+      "t_total_s": 1.4533,
+      "ms_per_step": 0.28,
+      "ms_per_oracle": 0,
+      "pct_step": 99.4,
+      "pct_policy": 0.0,
+      "pct_oracle": 0.0,
+      "pct_simulate": 0.6
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 9,
+      "2": 18,
+      "3": 32
+    },
+    "task": "diag_transpose",
+    "category": "diag_c",
+    "ghc_equivalent": "diag_transpose",
+    "wall_time_s": 1.46
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "trivial"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 468,
+    "stats": {
+      "n_expand_calls": 4,
+      "n_tactic_steps": 739,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 463,
+      "n_oracle_calls": 457,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 6,
+      "n_oracle_batches": 10,
+      "n_simulate_calls": 4,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.8851,
+      "t_oracle_s": 33.8589,
+      "t_simulate_s": 4.1754,
+      "t_select_s": 0.008,
+      "t_total_s": 39.9275,
+      "ms_per_step": 2.55,
+      "ms_per_oracle": 74.1,
+      "pct_step": 4.7,
+      "pct_policy": 0.0,
+      "pct_oracle": 84.8,
+      "pct_simulate": 10.5
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 467
+    },
+    "task": "insert_sorted",
+    "category": "diag_c",
+    "ghc_equivalent": "insert_sorted",
+    "wall_time_s": 39.93
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "exact []"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 113,
+    "stats": {
+      "n_expand_calls": 12,
+      "n_tactic_steps": 2944,
+      "n_tactic_valid": 12,
+      "n_tactic_solved": 100,
+      "n_oracle_calls": 96,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 4,
+      "n_oracle_batches": 4,
+      "n_simulate_calls": 12,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 3.0526,
+      "t_oracle_s": 6.5472,
+      "t_simulate_s": 0.5716,
+      "t_select_s": 0.0009,
+      "t_total_s": 10.1722,
+      "ms_per_step": 1.04,
+      "ms_per_oracle": 68.2,
+      "pct_step": 30.0,
+      "pct_policy": 0.0,
+      "pct_oracle": 64.4,
+      "pct_simulate": 5.6
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 28,
+      "2": 84
+    },
+    "task": "unfold_n",
+    "category": "diag_c",
+    "ghc_equivalent": "unfold_n",
+    "wall_time_s": 10.19
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "trivial"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 471,
+    "stats": {
+      "n_expand_calls": 4,
+      "n_tactic_steps": 812,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 539,
+      "n_oracle_calls": 532,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 13,
+      "n_simulate_calls": 4,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.1082,
+      "t_oracle_s": 38.6712,
+      "t_simulate_s": 5.71,
+      "t_select_s": 0.0079,
+      "t_total_s": 46.4973,
+      "ms_per_step": 2.6,
+      "ms_per_oracle": 72.7,
+      "pct_step": 4.5,
+      "pct_policy": 0.0,
+      "pct_oracle": 83.2,
+      "pct_simulate": 12.3
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 470
+    },
+    "task": "interleave_zip",
+    "category": "diag_c",
+    "ghc_equivalent": "interleave_zip",
+    "wall_time_s": 46.5
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact List.mergeSort xs"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 464,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 800,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 536,
+      "n_oracle_calls": 123,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 4,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.0808,
+      "t_oracle_s": 8.4505,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 10.5314,
+      "ms_per_step": 2.6,
+      "ms_per_oracle": 68.7,
+      "pct_step": 19.8,
+      "pct_policy": 0.0,
+      "pct_oracle": 80.2,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 463
+    },
+    "task": "diag_insertion_sort",
+    "category": "diag_d",
+    "ghc_equivalent": "diag_insertion_sort",
+    "wall_time_s": 10.56
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "exact 0"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 128,
+    "stats": {
+      "n_expand_calls": 6,
+      "n_tactic_steps": 823,
+      "n_tactic_valid": 6,
+      "n_tactic_solved": 182,
+      "n_oracle_calls": 181,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 6,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.8226,
+      "t_oracle_s": 16.162,
+      "t_simulate_s": 1.385,
+      "t_select_s": 0.003,
+      "t_total_s": 19.3726,
+      "ms_per_step": 2.21,
+      "ms_per_oracle": 89.3,
+      "pct_step": 9.4,
+      "pct_policy": 0.0,
+      "pct_oracle": 83.4,
+      "pct_simulate": 7.1
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 127
+    },
+    "task": "eval_stack",
+    "category": "diag_d",
+    "ghc_equivalent": "eval_stack",
+    "wall_time_s": 19.39
+  },
+  {
+    "solved": false,
+    "tactics": [
+      "constructor"
+    ],
+    "rollouts_used": 200,
+    "tree_size": 165,
+    "stats": {
+      "n_expand_calls": 102,
+      "n_tactic_steps": 22847,
+      "n_tactic_valid": 155,
+      "n_tactic_solved": 62,
+      "n_oracle_calls": 0,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 62,
+      "n_oracle_batches": 0,
+      "n_simulate_calls": 102,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0002,
+      "t_step_s": 190.6219,
+      "t_oracle_s": 0.0,
+      "t_simulate_s": 2.5986,
+      "t_select_s": 0.0016,
+      "t_total_s": 193.2223,
+      "ms_per_step": 8.34,
+      "ms_per_oracle": 0,
+      "pct_step": 98.7,
+      "pct_policy": 0.0,
+      "pct_oracle": 0.0,
+      "pct_simulate": 1.3
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 7,
+      "2": 35,
+      "3": 122
+    },
+    "task": "all_sublists",
+    "category": "diag_d",
+    "ghc_equivalent": "all_sublists",
+    "wall_time_s": 193.26
+  }
+]

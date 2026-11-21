@@ -1,0 +1,38 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact xs.map (fun x => x * x)"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 454,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 616,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 453,
+      "n_oracle_calls": 50,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.6997,
+      "t_oracle_s": 19.1725,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 20.8722,
+      "ms_per_step": 2.76,
+      "ms_per_oracle": 383.4,
+      "pct_step": 8.1,
+      "pct_policy": 0.0,
+      "pct_oracle": 91.9,
+      "pct_simulate": 0.0
+    },
+    "task": "map_square",
+    "category": "map_fold",
+    "ghc_equivalent": "map_square",
+    "wall_time_s": 20.89
+  }
+]

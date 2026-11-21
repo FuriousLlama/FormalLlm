@@ -1,0 +1,402 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.filter (fun x => decide (x > 0))).length"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 1,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 1,
+      "n_oracle_calls": 1,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0019,
+      "t_oracle_s": 0.504,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 0.5059,
+      "ms_per_step": 1.89,
+      "ms_per_oracle": 504.0,
+      "pct_step": 0.4,
+      "pct_policy": 0.0,
+      "pct_oracle": 99.6,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "count_positive",
+    "category": "filter_fold",
+    "ghc_equivalent": "count_positive",
+    "wall_time_s": 0.51
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact xs.map (fun x => x * x)"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 13,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 12,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 12,
+      "n_oracle_calls": 12,
+      "n_oracle_passed": 12,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0153,
+      "t_oracle_s": 0.9413,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 0.9567,
+      "ms_per_step": 1.28,
+      "ms_per_oracle": 78.4,
+      "pct_step": 1.6,
+      "pct_policy": 0.0,
+      "pct_oracle": 98.4,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 12
+    },
+    "task": "map_square",
+    "category": "map_fold",
+    "ghc_equivalent": "map_square",
+    "wall_time_s": 0.96
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (List.mergeSort xs).reverse"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 1,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 1,
+      "n_oracle_calls": 1,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0011,
+      "t_oracle_s": 0.4045,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 0.4056,
+      "ms_per_step": 1.06,
+      "ms_per_oracle": 404.5,
+      "pct_step": 0.3,
+      "pct_policy": 0.0,
+      "pct_oracle": 99.7,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "sort_desc",
+    "category": "pipeline",
+    "ghc_equivalent": "sort_desc",
+    "wall_time_s": 0.41
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.map (fun x => x * 2)).foldl (fun a b => a + b) 0"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 1,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 1,
+      "n_oracle_calls": 1,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0017,
+      "t_oracle_s": 0.3466,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 0.3483,
+      "ms_per_step": 1.71,
+      "ms_per_oracle": 346.6,
+      "pct_step": 0.5,
+      "pct_policy": 0.0,
+      "pct_oracle": 99.5,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "sum_doubles",
+    "category": "map_fold",
+    "ghc_equivalent": "sum_doubles",
+    "wall_time_s": 0.35
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.map (fun x => x.natAbs)).foldl max 0"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 1,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 1,
+      "n_oracle_calls": 1,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0012,
+      "t_oracle_s": 0.3333,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 0.3345,
+      "ms_per_step": 1.23,
+      "ms_per_oracle": 333.3,
+      "pct_step": 0.4,
+      "pct_policy": 0.0,
+      "pct_oracle": 99.6,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "max_abs",
+    "category": "map_fold",
+    "ghc_equivalent": "max_abs",
+    "wall_time_s": 0.34
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact xs.takeWhile (fun x => decide (x > 0))"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 16,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 15,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 15,
+      "n_oracle_calls": 15,
+      "n_oracle_passed": 15,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0283,
+      "t_oracle_s": 1.345,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 1.3734,
+      "ms_per_step": 1.89,
+      "ms_per_oracle": 89.7,
+      "pct_step": 2.1,
+      "pct_policy": 0.0,
+      "pct_oracle": 97.9,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 15
+    },
+    "task": "take_positives",
+    "category": "pipeline",
+    "ghc_equivalent": "take_positives",
+    "wall_time_s": 1.38
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.reverse).eraseDups"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 6,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 5,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 5,
+      "n_oracle_calls": 5,
+      "n_oracle_passed": 5,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0048,
+      "t_oracle_s": 0.4451,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 0.45,
+      "ms_per_step": 0.97,
+      "ms_per_oracle": 89.0,
+      "pct_step": 1.1,
+      "pct_policy": 0.0,
+      "pct_oracle": 98.9,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 5
+    },
+    "task": "nub_sort",
+    "category": "pipeline",
+    "ghc_equivalent": "nub_sort",
+    "wall_time_s": 0.45
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact xs.dropWhile (fun x => decide (x < 0))"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 14,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 13,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 13,
+      "n_oracle_calls": 13,
+      "n_oracle_passed": 13,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0259,
+      "t_oracle_s": 1.3228,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 1.3488,
+      "ms_per_step": 1.99,
+      "ms_per_oracle": 101.8,
+      "pct_step": 1.9,
+      "pct_policy": 0.0,
+      "pct_oracle": 98.1,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 13
+    },
+    "task": "drop_negatives",
+    "category": "pipeline",
+    "ghc_equivalent": "drop_negatives",
+    "wall_time_s": 1.35
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.filter (fun x => decide (x % 2 = 0))).length"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 1,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 1,
+      "n_oracle_calls": 1,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0035,
+      "t_oracle_s": 0.4485,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 0.4519,
+      "ms_per_step": 3.45,
+      "ms_per_oracle": 448.5,
+      "pct_step": 0.8,
+      "pct_policy": 0.0,
+      "pct_oracle": 99.2,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "count_even",
+    "category": "filter_fold",
+    "ghc_equivalent": "count_even",
+    "wall_time_s": 0.45
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (List.scanl (fun a b => a + b) 0 xs).drop 1"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 25,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 24,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 24,
+      "n_oracle_calls": 24,
+      "n_oracle_passed": 24,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0512,
+      "t_oracle_s": 1.6154,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 1.6666,
+      "ms_per_step": 2.13,
+      "ms_per_oracle": 67.3,
+      "pct_step": 3.1,
+      "pct_policy": 0.0,
+      "pct_oracle": 96.9,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 24
+    },
+    "task": "accum_sum",
+    "category": "accumulator",
+    "ghc_equivalent": "accum_sum",
+    "wall_time_s": 1.67
+  }
+]

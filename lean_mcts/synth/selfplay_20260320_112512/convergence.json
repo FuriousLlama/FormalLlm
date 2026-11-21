@@ -1,0 +1,43 @@
+[
+  {
+    "round": 1,
+    "new_pairs": 14,
+    "rollouts": 200,
+    "seed": 789,
+    "tiers": [
+      "all+v2+recurrence"
+    ],
+    "status": "completed",
+    "n_train": 17584,
+    "n_val": 4397,
+    "val_loss_before": 0.3159867095947266,
+    "val_loss_after": 0.3147587538361549,
+    "elapsed_min": 60.5
+  },
+  {
+    "round": 2,
+    "new_pairs": 13,
+    "rollouts": 200,
+    "seed": 789,
+    "tiers": [
+      "all+v2+recurrence"
+    ],
+    "status": "completed",
+    "n_train": 17592,
+    "n_val": 4398,
+    "val_loss_before": 0.3147587538361549,
+    "val_loss_after": 0.32158684077858923,
+    "elapsed_min": 81.4
+  },
+  {
+    "round": 3,
+    "new_pairs": 0,
+    "rollouts": 200,
+    "seed": 789,
+    "tiers": [
+      "all+v2+recurrence"
+    ],
+    "status": "converged",
+    "elapsed_min": 0.1
+  }
+]

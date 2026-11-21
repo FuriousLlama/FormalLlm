@@ -1,0 +1,3748 @@
+[
+  {
+    "idx": 0,
+    "name": "headD",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : ℤ\n⊢ ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],   fallback => fallback | a::_, _ => a"
+  },
+  {
+    "idx": 1,
+    "name": "getLastD",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "α : Type\nxs : List α\nx : α\n⊢ α",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],   a₀ => a₀ | a::as, _ => getLast (a::as) (fun h => List.noConfusion rfl (heq_of_eq"
+  },
+  {
+    "idx": 2,
+    "name": "dropSliceTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec",
+      "nat_rec"
+    ],
+    "state": "α : Type_1\nx : ℕ\nx_1 : ℕ\nxs : List α\n⊢ List α",
+    "tactic_head": "exact let rec go : List Nat → Nat → Array Nat → List Nat | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+  },
+  {
+    "idx": 3,
+    "name": "merge",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\nf : (α → α → Bool)\narr : Array α\narr_1 : Array α\n⊢ Array α",
+    "tactic_head": "exact let rec go : Array Nat := if hi : i ≥ xs.size then\n      acc ++ ys[j:]\n    else if hj : j ≥ ys.size then\n      acc"
+  },
+  {
+    "idx": 4,
+    "name": "foldrTR",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "f : ℕ → ℕ → ℕ\ninit : ℕ\nl : List ℕ\n⊢ ℕ",
+    "tactic_head": "exact l.toArray.foldr f init"
+  },
+  {
+    "idx": 5,
+    "name": "initsTR",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "l : List ℤ\n⊢ List (List ℤ)",
+    "tactic_head": "exact l.foldr (fun a arrs => (arrs.map fun t => a :: t).push []) #[[]] |>.toListRev"
+  },
+  {
+    "idx": 6,
+    "name": "prod",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "xs : List ℕ\n⊢ ℕ",
+    "tactic_head": "exact xs.foldr (· * ·) 1"
+  },
+  {
+    "idx": 7,
+    "name": "attach",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Option ℤ\n⊢ Option { x // xs = some x }",
+    "tactic_head": "exact xs.attachWith _ fun _ => id"
+  },
+  {
+    "idx": 8,
+    "name": "join",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : Option (Option ℤ)\n⊢ Option ℤ",
+    "tactic_head": "exact x.bind id"
+  },
+  {
+    "idx": 9,
+    "name": "contains",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℕ\na : ℕ\n⊢ Bool",
+    "tactic_head": "exact as.any (· == a)"
+  },
+  {
+    "idx": 10,
+    "name": "foldM",
+    "kind": "SIMPLE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "n : ℕ\nf : (i : ℕ) → i < n → ℕ → Id ℕ\ninit : ℕ\n⊢ Id ℕ",
+    "tactic_head": "exact let rec @[specialize] loop : ∀ i, i ≤ n → Nat → Id Nat\n    | 0,   h, a => pure a\n    | i+1, h, a => f (n-i-1) (by "
+  },
+  {
+    "idx": 11,
+    "name": "zipIdxLE",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "le : ℕ → ℕ → Bool\na : ℕ × ℕ\nb : ℕ × ℕ\n⊢ Bool",
+    "tactic_head": "exact if le a.1 b.1 then if le b.1 a.1 then a.2 ≤ b.2 else true else false"
+  },
+  {
+    "idx": 12,
+    "name": "partialSums",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact l.scanl (· + ·) 0"
+  },
+  {
+    "idx": 13,
+    "name": "dropSliceTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec",
+      "nat_rec"
+    ],
+    "state": "α : Type_1\nx : ℕ\nx_1 : ℕ\nxs : List α\n⊢ List α",
+    "tactic_head": "exact let rec go : List Int → Nat → Array Int → List Int | [],    _,   _ => l | _::xs, 0,   acc => acc.toListAppend (xs."
+  },
+  {
+    "idx": 14,
+    "name": "partition",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "p : ℕ → Bool\nas : Array ℕ\n⊢ Array ℕ × Array ℕ",
+    "tactic_head": "exact Id.run do\n  let mut bs := #[]\n  let mut cs := #[]\n  for a in as do\n    if p a then\n      bs := bs.push a\n    else\n"
+  },
+  {
+    "idx": 15,
+    "name": "SortedLT",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℤ\n⊢ Prop",
+    "tactic_head": "exact StrictMono l.get"
+  },
+  {
+    "idx": 16,
+    "name": "blt'",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℤ\nb : ℤ\n⊢ Bool",
+    "tactic_head": "exact Int.rec (fun a => Int.rec (fun b => Nat.blt a b) (fun _ => false) b) (fun a => Int.rec (fun _ => true) (fun b => N"
+  },
+  {
+    "idx": 17,
+    "name": "takeD",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : ℕ\nx_arg1 : List ℕ\nx_arg2 : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | 0, _, _ => [] | n+1, l, x => l.headD x :: List.takeD n l.tail x"
+  },
+  {
+    "idx": 18,
+    "name": "isNone",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option ℤ\n⊢ Bool",
+    "tactic_head": "exact match x_arg with | some _ => false | none => true"
+  },
+  {
+    "idx": 19,
+    "name": "choose",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\np : α → Prop\ninst : DecidablePred p\nl : List α\nx : (∃ a ∈ l, p a)\n⊢ α",
+    "tactic_head": "exact chooseX p l hp"
+  },
+  {
+    "idx": 20,
+    "name": "unattach",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\np : α → Prop\nopt : Option { x // p x }\n⊢ Option α",
+    "tactic_head": "exact o.map (·.val)"
+  },
+  {
+    "idx": 21,
+    "name": "mapWithPrefixSuffix",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\nβ : Type_2\nf : (List α → α → List α → β)\nxs : List α\n⊢ List β",
+    "tactic_head": "exact mapWithPrefixSuffixAux f [] l"
+  },
+  {
+    "idx": 22,
+    "name": "leftpad",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nx : ℕ\nx_1 : α\narr : Array α\n⊢ Array α",
+    "tactic_head": "exact List.replicate (n - xs.size) a ++ xs"
+  },
+  {
+    "idx": 23,
+    "name": "sections",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List (List ℤ)\n⊢ List (List ℤ)",
+    "tactic_head": "exact match x_arg with | [] => [[]] | l :: L => (List.sections L).flatMap fun s => l.map fun a => a :: s"
+  },
+  {
+    "idx": 24,
+    "name": "partialSums",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact l.scanl (· + ·) 0"
+  },
+  {
+    "idx": 25,
+    "name": "sub",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℤ\nx_1 : ℤ\n⊢ ℤ",
+    "tactic_head": "exact Id + (- n)"
+  },
+  {
+    "idx": 26,
+    "name": "SortedGE",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℕ\n⊢ Prop",
+    "tactic_head": "exact Antitone l.get"
+  },
+  {
+    "idx": 27,
+    "name": "zipWithRight'",
+    "kind": "SIMPLE",
+    "patterns": [
+      "zip"
+    ],
+    "state": "α : Type_1\nβ : Type_2\nγ : Type_3\nf : (Option α → β → γ)\nxs : List α\nxs_1 : List ",
+    "tactic_head": "exact zipWithLeft' (flip f) bs as"
+  },
+  {
+    "idx": 28,
+    "name": "toList",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg with | none => .nil | some a => .cons a .nil"
+  },
+  {
+    "idx": 29,
+    "name": "eraseTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℕ\na : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], _ => l | x::xs, acc => bif x == a then acc.toListAppend xs else"
+  },
+  {
+    "idx": 30,
+    "name": "firstM",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "β : Type\nα : Type\nm : Type → Type\ninst : Alternative m\nf : (α → m β)\narr : Array",
+    "tactic_head": "exact let rec go : Id Int := if hlt : i < as.size then\n      f as[i] <|> go (i+1)\n    else\n      failure; go 0"
+  },
+  {
+    "idx": 31,
+    "name": "bagInter",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => [] | _, [] => [] | a :: l₁, l₂ => if l₂.elem a then a :: List.bagInter l₁ (l₂"
+  },
+  {
+    "idx": 32,
+    "name": "drop",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg",
+      "nat_rec"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | 0,   as => as | _+1, [] => [] | n+1, _::as => List.drop n as"
+  },
+  {
+    "idx": 33,
+    "name": "setTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℕ\nn : ℕ\na : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Nat → Array Nat → List Nat | [], _, _ => l | _::xs, 0, acc => acc.toListAppend (a::xs) | x"
+  },
+  {
+    "idx": 34,
+    "name": "Array.mapMono",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℤ\nf : ℤ → ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact Id.run <| as.mapMonoM (pure <| f ·)"
+  },
+  {
+    "idx": 35,
+    "name": "subNatNat",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℕ\nx_1 : ℕ\n⊢ ℤ",
+    "tactic_head": "exact match (n - Id : Nat) with\n  | 0        => ofNat (Id - n)  -- Id ≥ n\n  | (succ k) => negSucc k"
+  },
+  {
+    "idx": 36,
+    "name": "appendList",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "as : Array ℕ\nbs : List ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact bs.foldl (init := as) fun xs v => xs.push v"
+  },
+  {
+    "idx": 37,
+    "name": "zipWithRight",
+    "kind": "SIMPLE",
+    "patterns": [
+      "zip"
+    ],
+    "state": "α : Type_1\nβ : Type_2\nγ : Type_3\nf : (Option α → β → γ)\nxs : List α\nxs_1 : List ",
+    "tactic_head": "exact zipWithLeft (flip f) bs as"
+  },
+  {
+    "idx": 38,
+    "name": "isPrefixOf",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List ℤ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],    _ => true | _,     [] => false | a::as, b::bs => a == b && List.isPrefixOf as b"
+  },
+  {
+    "idx": 39,
+    "name": "mapFinIdx",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "as : List ℤ\nf : (i : ℕ) → ℤ → i < as.length → ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : (bs : List Int) → (acc : Array Int) → bs.length + acc.size = as.length → List Int | [], acc, h => acc"
+  },
+  {
+    "idx": 40,
+    "name": "dropLast",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg with | [] => [] | [_] => [] | a::as => a :: List.dropLast as"
+  },
+  {
+    "idx": 41,
+    "name": "pbind",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℤ\nx_arg1 : (a : ℤ) → x_arg0 = some a → Option ℤ\n⊢ Option ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | none, _ => none | some a, f => f a rfl"
+  },
+  {
+    "idx": 42,
+    "name": "pelim",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "o : Option ℕ\nb : ℕ\nf : (a : ℕ) → o = some a → ℕ\n⊢ ℕ",
+    "tactic_head": "exact match o with\n  | none => b\n  | some a => f a rfl"
+  },
+  {
+    "idx": 43,
+    "name": "SortedGT",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℤ\n⊢ Prop",
+    "tactic_head": "exact StrictAnti l.get"
+  },
+  {
+    "idx": 44,
+    "name": "modify",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\narr : Array α\nx : ℕ\nf : (α → α)\n⊢ Array α",
+    "tactic_head": "exact Id.run <| modifyM xs i (pure <| f ·)"
+  },
+  {
+    "idx": 45,
+    "name": "gcd",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℤ\nx_1 : ℤ\n⊢ ℕ",
+    "tactic_head": "exact Id.natAbs.gcd n.natAbs"
+  },
+  {
+    "idx": 46,
+    "name": "unzip",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "tuple_accumulator"
+    ],
+    "state": "as : Array (ℤ × ℤ)\n⊢ Array ℤ × Array ℤ",
+    "tactic_head": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+  },
+  {
+    "idx": 47,
+    "name": "head",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : x_arg0 ≠ []\n⊢ ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | a::_, _ => a"
+  },
+  {
+    "idx": 48,
+    "name": "nextOr",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : List ℤ\nx_arg1 : ℤ\nx_arg2 : ℤ\n⊢ ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | [], _, default => default | [_], _, default => default | y :: z :: xs, x, defa"
+  },
+  {
+    "idx": 49,
+    "name": "sublists",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "l : List ℕ\n⊢ List (List ℕ)",
+    "tactic_head": "exact l.foldr (fun a acc => acc.flatMap fun x => [x, a :: x]) [[]]"
+  },
+  {
+    "idx": 50,
+    "name": "isEqv",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List ℕ\nx_arg2 : ℕ → ℕ → Bool\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | [],    [],    _ => true | a::as, b::bs, eqv => eqv a b && List.isEqv as bs eqv"
+  },
+  {
+    "idx": 51,
+    "name": "tailD",
+    "kind": "SIMPLE",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "l : List ℤ\nfallback : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match l with | [] => fallback | _ :: tl => tl"
+  },
+  {
+    "idx": 52,
+    "name": "attachWith",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\nl : List α\nP : α → Prop\nx : (∀ x ∈ l, P x)\n⊢ List { x // P x }",
+    "tactic_head": "exact pmap Subtype.mk l H"
+  },
+  {
+    "idx": 53,
+    "name": "takeD",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : ℕ\nx_arg1 : List ℤ\nx_arg2 : ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | 0, _, _ => [] | n+1, l, x => l.headD x :: List.takeD n l.tail x"
+  },
+  {
+    "idx": 54,
+    "name": "Option.tryCatch",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : Option ℤ\nhandle : Unit → Option ℤ\n⊢ Option ℤ",
+    "tactic_head": "exact match x with\n  | some _ => x\n  | none => handle ()"
+  },
+  {
+    "idx": 55,
+    "name": "revzip",
+    "kind": "SIMPLE",
+    "patterns": [
+      "zip"
+    ],
+    "state": "l : List ℤ\n⊢ List (ℤ × ℤ)",
+    "tactic_head": "exact List.zip l l.reverse"
+  },
+  {
+    "idx": 56,
+    "name": "all",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : ℕ → Bool\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => true | h :: t, p => p h && List.all t p"
+  },
+  {
+    "idx": 57,
+    "name": "rotate",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℕ\nn : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let (l₁, l₂) := List.splitAt (n % l.length) l\n  l₂ ++ l₁"
+  },
+  {
+    "idx": 58,
+    "name": "isSublist",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List ℤ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => true | _, [] => false | l₁@(hd₁::tl₁), hd₂::tl₂ => if hd₁ == hd₂ then tl₁.isS"
+  },
+  {
+    "idx": 59,
+    "name": "and",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "bs : List Bool\n⊢ Bool",
+    "tactic_head": "exact bs.all id"
+  },
+  {
+    "idx": 60,
+    "name": "takeWhile₂TR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "R : ℕ → ℕ → Bool\nas : List ℕ\nbs : List ℕ\n⊢ List ℕ × List ℕ",
+    "tactic_head": "exact let rec go : List Nat → List Nat → List Nat → List Nat → List Nat × List Nat | a::as, b::bs, acca, accb => bif R a"
+  },
+  {
+    "idx": 61,
+    "name": "attach",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℤ\n⊢ Array { x // x ∈ xs }",
+    "tactic_head": "exact xs.attachWith _ fun _ => id"
+  },
+  {
+    "idx": 62,
+    "name": "shiftLeft",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : ℤ\nx_arg1 : ℕ\n⊢ ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | Int.ofNat n, s => Int.ofNat (n <<< s) | Int.negSucc n, s => Int.negSucc (((n + 1) <<< "
+  },
+  {
+    "idx": 63,
+    "name": "pbind",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℕ\nx_arg1 : (a : ℕ) → x_arg0 = some a → Option ℕ\n⊢ Option ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | none, _ => none | some a, f => f a rfl"
+  },
+  {
+    "idx": 64,
+    "name": "idxOf",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\ninst : BEq α\nx : α\nxs : List α\n⊢ ℕ",
+    "tactic_head": "exact findIdx (· == a)"
+  },
+  {
+    "idx": 65,
+    "name": "qsortOrd",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact xs.qsort fun x y => compare x y |>.isLT"
+  },
+  {
+    "idx": 66,
+    "name": "isSome",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option ℕ\n⊢ Bool",
+    "tactic_head": "exact match x_arg with | some _ => true | none => false"
+  },
+  {
+    "idx": 67,
+    "name": "sequence",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option (Id ℤ)\n⊢ Id (Option ℤ)",
+    "tactic_head": "exact match x_arg with | none => pure none | some f => some <$> f"
+  },
+  {
+    "idx": 68,
+    "name": "argmax",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "α : Type_1\nβ : Type_2\ninst : inst : Preorder β\ninst_1 : DecidableLT β\nf : (α → β",
+    "tactic_head": "exact l.foldl (argAux fun b c => f c < f b) none"
+  },
+  {
+    "idx": 69,
+    "name": "unattach",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\np : α → Prop\narr : Array { x // p x }\n⊢ Array α",
+    "tactic_head": "exact xs.map (·.val)"
+  },
+  {
+    "idx": 70,
+    "name": "le",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℤ\nx_1 : ℤ\n⊢ Prop",
+    "tactic_head": "exact NonNeg (b - a)"
+  },
+  {
+    "idx": 71,
+    "name": "Mem",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nx : α\nxs : List α\n⊢ Prop",
+    "tactic_head": "exact Quot.liftOn s (fun l => a ∈ l) fun _ _ e => propext <| e.mem_iff"
+  },
+  {
+    "idx": 72,
+    "name": "isEqv",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List ℤ\nx_arg2 : ℤ → ℤ → Bool\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | [],    [],    _ => true | a::as, b::bs, eqv => eqv a b && List.isEqv as bs eqv"
+  },
+  {
+    "idx": 73,
+    "name": "dropLastTR",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact l.toArray.pop.toList"
+  },
+  {
+    "idx": 74,
+    "name": "or",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℤ\nx_arg1 : Option ℤ\n⊢ Option ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some a, _ => some a | none,   b => b"
+  },
+  {
+    "idx": 75,
+    "name": "mapIdxMAux'",
+    "kind": "EQCOMP",
+    "patterns": [
+      "index_aware",
+      "match_2arg"
+    ],
+    "state": "m : Type → Type\ninst : Monad m\nα : Type_7\nf : (ℕ → α → m PUnit.{v + 1})\nx : ℕ\nxs",
+    "tactic_head": "exact match x_arg0, x_arg1 with | _, [] => pure ⟨⟩ | i, a :: as => f i a *> mapIdxMAux' f (i + 1) as"
+  },
+  {
+    "idx": 76,
+    "name": "replaceTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℕ\nb : ℕ\nc : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], _ => l | a::as, acc => bif b == a then acc.toListAppend (c::as)"
+  },
+  {
+    "idx": 77,
+    "name": "findIdx",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℕ → Bool\nl : List ℕ\n⊢ ℕ",
+    "tactic_head": "exact let rec go : List Nat → Nat → Nat | [], n => n | a :: l, n => bif p a then n else go l (n + 1); go l 0"
+  },
+  {
+    "idx": 78,
+    "name": "abs",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\ninst : Lattice α\ninst_1 : AddGroup α\nx : α\n⊢ α",
+    "tactic_head": "exact Int.ofNat x.natAbs"
+  },
+  {
+    "idx": 79,
+    "name": "zipIdxLE",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "le : ℤ → ℤ → Bool\na : ℤ × ℕ\nb : ℤ × ℕ\n⊢ Bool",
+    "tactic_head": "exact if le a.1 b.1 then if le b.1 a.1 then a.2 ≤ b.2 else true else false"
+  },
+  {
+    "idx": 80,
+    "name": "min",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℕ\nx_arg1 : Option ℕ\n⊢ Option ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some x, some y => some (Min.min x y) | some _, none => none | none, some _ => none | n"
+  },
+  {
+    "idx": 81,
+    "name": "attach",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\nl : List α\n⊢ List { x // x ∈ l }",
+    "tactic_head": "exact attachWith l _ fun _ => id"
+  },
+  {
+    "idx": 82,
+    "name": "or",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "bs : List Bool\n⊢ Bool",
+    "tactic_head": "exact bs.any id"
+  },
+  {
+    "idx": 83,
+    "name": "getLastI",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℤ\n⊢ ℤ",
+    "tactic_head": "exact match x_arg with | [] => default | [a] => a | [_, b] => b | _ :: _ :: l => List.getLastI l"
+  },
+  {
+    "idx": 84,
+    "name": "eraseIdx",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],    _ => [] | _::as, 0 => as | a::as, n+1 => a :: List.eraseIdx as n"
+  },
+  {
+    "idx": 85,
+    "name": "append",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "as : Array ℤ\nbs : Array ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact bs.foldl (init := as) fun xs v => xs.push v"
+  },
+  {
+    "idx": 86,
+    "name": "lookup",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : List (ℕ × ℕ)\n⊢ Option ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | _, [] => none | a, (k, b) :: as => match a == k with | true => some b | false => List."
+  },
+  {
+    "idx": 87,
+    "name": "prev",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "α : Type_1\ninst : DecidableEq α\nl : List α\nx : α\nx : x ∈ l\n⊢ α",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | [], _, h => by simp at h | [y], _, _ => y | y :: z :: xs, x, h => if hx : x = "
+  },
+  {
+    "idx": 88,
+    "name": "orElse",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℕ\nx_arg1 : Unit → Option ℕ\n⊢ Option ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some a, _ => some a | none,   b => b ()"
+  },
+  {
+    "idx": 89,
+    "name": "isSome",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option ℤ\n⊢ Bool",
+    "tactic_head": "exact match x_arg with | some _ => true | none => false"
+  },
+  {
+    "idx": 90,
+    "name": "eraseIdxTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℕ\nn : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Nat → Array Nat → List Nat | [], _, _ => l | _::as, 0, acc => acc.toListAppend as | a::as,"
+  },
+  {
+    "idx": 91,
+    "name": "tailD",
+    "kind": "SIMPLE",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "l : List ℕ\nfallback : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match l with | [] => fallback | _ :: tl => tl"
+  },
+  {
+    "idx": 92,
+    "name": "map",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "f : ℕ → ℕ\nas : Array ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact Id.run <| as.mapM (pure <| f ·)"
+  },
+  {
+    "idx": 93,
+    "name": "splitOnP",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "P : ℕ → Bool\nl : List ℕ\n⊢ List (List ℕ)",
+    "tactic_head": "exact let rec go : List Nat → List Nat → List (List Nat) | [], acc => [acc.reverse] | a :: t, acc => if P a then acc.rev"
+  },
+  {
+    "idx": 94,
+    "name": "dropLastTR",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact l.toArray.pop.toList"
+  },
+  {
+    "idx": 95,
+    "name": "replaceIf",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List Bool\nx_arg2 : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | l, _, [] => l | [], _, _ => [] | l, [], _ => l | n :: ns, tf :: bs, e@(c :: cs"
+  },
+  {
+    "idx": 96,
+    "name": "sublists'",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "foldr"
+    ],
+    "state": "l : List ℤ\n⊢ List (List ℤ)",
+    "tactic_head": "exact let f a arr := arr.foldl (init := arr) fun r l => r.push (a :: l)\n  (l.foldr f #[[]]).toList"
+  },
+  {
+    "idx": 97,
+    "name": "extractP",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℤ → Bool\nl : List ℤ\n⊢ Option ℤ × List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → Option Int × List Int | [], _ => (none, l) | a :: l, acc => bif p a then (some"
+  },
+  {
+    "idx": 98,
+    "name": "gcd",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "m : ℤ\nn : ℤ\n⊢ ℕ",
+    "tactic_head": "exact m.natAbs.gcd n.natAbs"
+  },
+  {
+    "idx": 99,
+    "name": "elem",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℤ\nas : Array ℤ\n⊢ Bool",
+    "tactic_head": "exact as.contains a; -- This function is exported to C, where it is called by `Array.toList`; -- (the projection) to imp"
+  },
+  {
+    "idx": 100,
+    "name": "forRevM",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nm : Type → Type\ninst : Monad m\nf : (α → m PUnit.{v + 1})\nas : Array α\nx",
+    "tactic_head": "exact as.array.forRevM f (start := as.stop) (stop := as.start)\n@[inline]"
+  },
+  {
+    "idx": 101,
+    "name": "foldrTR",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "f : ℤ → ℤ → ℤ\ninit : ℤ\nl : List ℤ\n⊢ ℤ",
+    "tactic_head": "exact l.toArray.foldr f init"
+  },
+  {
+    "idx": 102,
+    "name": "eraseP",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℕ\np : ℕ → Bool\n⊢ Array ℕ",
+    "tactic_head": "exact match as.findFinIdx? p with\n  | none   => as\n  | some i => as.eraseIdx i"
+  },
+  {
+    "idx": 103,
+    "name": "revzip",
+    "kind": "SIMPLE",
+    "patterns": [
+      "zip"
+    ],
+    "state": "l : List ℕ\n⊢ List (ℕ × ℕ)",
+    "tactic_head": "exact List.zip l l.reverse"
+  },
+  {
+    "idx": 104,
+    "name": "headI",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℕ\n⊢ ℕ",
+    "tactic_head": "exact match x_arg with | [] => default | (a :: _) => a"
+  },
+  {
+    "idx": 105,
+    "name": "replace",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : List ℕ\nx_arg1 : ℕ\nx_arg2 : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | [],    _, _ => [] | a::as, b, c => match b == a with | true => c::as | false ="
+  },
+  {
+    "idx": 106,
+    "name": "setTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℤ\nn : ℕ\na : ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Nat → Array Int → List Int | [], _, _ => l | _::xs, 0, acc => acc.toListAppend (a::xs) | x"
+  },
+  {
+    "idx": 107,
+    "name": "take",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg",
+      "nat_rec"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | 0,   _ => [] | _+1, [] => [] | n+1, a::as => a :: List.take n as"
+  },
+  {
+    "idx": 108,
+    "name": "eraseTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℤ\na : ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], _ => l | x::xs, acc => bif x == a then acc.toListAppend xs else"
+  },
+  {
+    "idx": 109,
+    "name": "filterTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℤ → Bool\nas : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec loop : List Int → List Int → List Int | [],    acc => acc.reverse | a::as, acc => match p a with | true =>"
+  },
+  {
+    "idx": 110,
+    "name": "unzip",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List (ℕ × ℕ)\n⊢ List ℕ × List ℕ",
+    "tactic_head": "exact match x_arg with | [] => ([], []) | (a, b) :: t => match List.unzip t with | (as, bs) => (a::as, b::bs)"
+  },
+  {
+    "idx": 111,
+    "name": "mapIdxM'",
+    "kind": "SIMPLE",
+    "patterns": [
+      "index_aware"
+    ],
+    "state": "m : Type → Type\ninst : Monad m\nα : Type_7\nf : (ℕ → α → m PUnit.{v + 1})\nxs : Lis",
+    "tactic_head": "exact mapIdxMAux' f 0 as"
+  },
+  {
+    "idx": 112,
+    "name": "fillNones",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List (Option ℕ)\nx_arg1 : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => [] | some a :: as, as' => a :: List.fillNones as as' | none :: as, [] => as.r"
+  },
+  {
+    "idx": 113,
+    "name": "modify",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "σ : Type\nm : Type → Type\ninst : MonadState σ m\nf : (σ → σ)\n⊢ m PUnit.{u + 1}",
+    "tactic_head": "exact ⟨self.inner.modify a (f a)⟩"
+  },
+  {
+    "idx": 114,
+    "name": "back",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nxs : Array α\nx : autoParam (0 < xs.size) Array.back._auto_1\n⊢ α",
+    "tactic_head": "exact xs[xs.size - 1]?"
+  },
+  {
+    "idx": 115,
+    "name": "liftOption",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "m : Type_1 → Type_2\nα : Type_1\ninst : Alternative m\nopt : Option α\n⊢ m α",
+    "tactic_head": "exact match x_arg with | some a => pure a | none => failure"
+  },
+  {
+    "idx": 116,
+    "name": "zipWith",
+    "kind": "SIMPLE",
+    "patterns": [
+      "zip"
+    ],
+    "state": "α : Type\nβ : Type_1\nγ : Type_2\nf : (α → β → γ)\narr : Array α\narr_1 : Array β\n⊢ A",
+    "tactic_head": "exact Id.run (zipWithMAux as bs (pure <| f · ·) 0 #[])"
+  },
+  {
+    "idx": 117,
+    "name": "SortedGE",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℤ\n⊢ Prop",
+    "tactic_head": "exact Antitone l.get"
+  },
+  {
+    "idx": 118,
+    "name": "orElse",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℤ\nx_arg1 : Unit → Option ℤ\n⊢ Option ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some a, _ => some a | none,   b => b ()"
+  },
+  {
+    "idx": 119,
+    "name": "getD",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : List ℤ\ni : ℕ\nfallback : ℤ\n⊢ ℤ",
+    "tactic_head": "exact as[i]?.getD fallback"
+  },
+  {
+    "idx": 120,
+    "name": "erase",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℤ\na : ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact match as.finIdxOf? a with\n  | none   => as\n  | some i => as.eraseIdx i"
+  },
+  {
+    "idx": 121,
+    "name": "sectionsTR",
+    "kind": "WHERE",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "foldr",
+      "let_rec"
+    ],
+    "state": "α : Type_1\nxs : List (List α)\n⊢ List (List α)",
+    "tactic_head": "exact let rec go := acc.foldl (init := #[]) fun acc' l' =>\n      l.foldl (init := acc') fun acc' a =>\n        acc'.push "
+  },
+  {
+    "idx": 122,
+    "name": "foldM",
+    "kind": "SIMPLE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "n : ℕ\nf : (i : ℕ) → i < n → ℤ → Id ℤ\ninit : ℤ\n⊢ Id ℤ",
+    "tactic_head": "exact let rec @[specialize] loop : ∀ i, i ≤ n → Int → Id Int\n    | 0,   h, a => pure a\n    | i+1, h, a => f (n-i-1) (by "
+  },
+  {
+    "idx": 123,
+    "name": "eraseDupsBy",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "r : ℤ → ℤ → Bool\nas : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec loop : List Int → List Int → List Int | [],    bs => bs.reverse | a::as, bs => match bs.any (r a) with | t"
+  },
+  {
+    "idx": 124,
+    "name": "forA",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "m : Type → Type\ninst : Applicative m\nα : Type\nxs : List α\nf : (α → m PUnit.{u + ",
+    "tactic_head": "exact match as with\n  | []      => pure ⟨⟩\n  | a :: as => f a *> forA as f\n@[inline, expose]"
+  },
+  {
+    "idx": 125,
+    "name": "appendList",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "as : Array ℤ\nbs : List ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact bs.foldl (init := as) fun xs v => xs.push v"
+  },
+  {
+    "idx": 126,
+    "name": "isPrefixOf",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List ℕ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],    _ => true | _,     [] => false | a::as, b::bs => a == b && List.isPrefixOf as b"
+  },
+  {
+    "idx": 127,
+    "name": "SortedLT",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℕ\n⊢ Prop",
+    "tactic_head": "exact StrictMono l.get"
+  },
+  {
+    "idx": 128,
+    "name": "takeWhile",
+    "kind": "SIMPLE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℕ → Bool\nas : Array ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact let rec go (i : Nat) (acc : Array Nat) : Array Nat :=\n    if h : i < as.size then\n      let a := as[i]\n      if p "
+  },
+  {
+    "idx": 129,
+    "name": "replicate",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg",
+      "nat_rec"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | 0,   _ => [] | n+1, a => a :: List.replicate n a"
+  },
+  {
+    "idx": 130,
+    "name": "firstM",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "β : Type\nα : Type\nm : Type → Type\ninst : Alternative m\nf : (α → m β)\narr : Array",
+    "tactic_head": "exact let rec go : Id Nat := if hlt : i < as.size then\n      f as[i] <|> go (i+1)\n    else\n      failure; go 0"
+  },
+  {
+    "idx": 131,
+    "name": "splitOn",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℕ\nas : List ℕ\n⊢ List (List ℕ)",
+    "tactic_head": "exact as.splitOnP (· == a)"
+  },
+  {
+    "idx": 132,
+    "name": "insert",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℤ\nl : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact if l.contains a then l else a :: l"
+  },
+  {
+    "idx": 133,
+    "name": "mapMonoM",
+    "kind": "SIMPLE",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "m : Type_1 → Type_2\nα : Type_1\ninst : Monad m\nxs : List α\nf : (α → m α)\n⊢ m (Lis",
+    "tactic_head": "exact match as with\n  | [] => return []\n  | a :: as => return (← f a) :: (← mapMonoM as f)"
+  },
+  {
+    "idx": 134,
+    "name": "mergeDedupWith",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\ninst : ord : Ord α\narr : Array α\narr_1 : Array α\nf : (α → α → α)\n⊢ Ar",
+    "tactic_head": "exact let rec go : Array Nat | .lt => go (acc.push x) (i + 1) j | .gt => go (acc.push y) i (j + 1) | .eq => go (acc.push"
+  },
+  {
+    "idx": 135,
+    "name": "append",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "as : Array ℕ\nbs : Array ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact bs.foldl (init := as) fun xs v => xs.push v"
+  },
+  {
+    "idx": 136,
+    "name": "getRest",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List ℤ\n⊢ Option (List ℤ)",
+    "tactic_head": "exact match x_arg0, x_arg1 with | l, [] => some l | [], _ => none | x :: l, y :: l₁ => if x = y then List.getRest l l₁ e"
+  },
+  {
+    "idx": 137,
+    "name": "mapWithComplement",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\nβ : Type_2\nf : (α → List α → β)\nxs : List α\n⊢ List β",
+    "tactic_head": "exact mapWithPrefixSuffix fun pref a suff => f a (pref ++ suff)"
+  },
+  {
+    "idx": 138,
+    "name": "modifyLast",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℤ → ℤ\nl : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], _ => [] | [x], acc => acc.toListAppend [f x] | x :: xs, acc => "
+  },
+  {
+    "idx": 139,
+    "name": "rotate'",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "α : Type_1\nxs : List α\nx : ℕ\n⊢ List α",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => [] | l, 0 => l | a :: l, n+1 => rotate' (l ++ [a]) n"
+  },
+  {
+    "idx": 140,
+    "name": "eraseIdxTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℤ\nn : ℕ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Nat → Array Int → List Int | [], _, _ => l | _::as, 0, acc => acc.toListAppend as | a::as,"
+  },
+  {
+    "idx": 141,
+    "name": "join",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : Option (Option ℕ)\n⊢ Option ℕ",
+    "tactic_head": "exact x.bind id"
+  },
+  {
+    "idx": 142,
+    "name": "splitOn",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℤ\nas : List ℤ\n⊢ List (List ℤ)",
+    "tactic_head": "exact as.splitOnP (· == a)"
+  },
+  {
+    "idx": 143,
+    "name": "isPerm",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List ℕ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], l₂ => l₂.isEmpty | a :: l₁, l₂ => l₂.contains a && l₁.isPerm (l₂.erase a)"
+  },
+  {
+    "idx": 144,
+    "name": "shiftRight",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : ℤ\nx_arg1 : ℕ\n⊢ ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | Int.ofNat n, s => Int.ofNat (n >>> s) | Int.negSucc n, s => Int.negSucc (n >>> s)"
+  },
+  {
+    "idx": 145,
+    "name": "equalSet",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℕ\nys : Array ℕ\n⊢ Bool",
+    "tactic_head": "exact xs.all (ys.contains ·) && ys.all (xs.contains ·)"
+  },
+  {
+    "idx": 146,
+    "name": "not",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : ℤ\n⊢ ℤ",
+    "tactic_head": "exact match x_arg with | Int.ofNat n => Int.negSucc n | Int.negSucc n => Int.ofNat n"
+  },
+  {
+    "idx": 147,
+    "name": "toListLitAux",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "α : Type_1\nxs : Array α\nn : ℕ\nx : xs.size = n\ni : ℕ\nx_1 : i ≤ xs.size\nxs : List ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | 0,     _,  acc => acc | (i+1), hi, acc => Array.toListLitAux xs n hsz i (Nat.l"
+  },
+  {
+    "idx": 148,
+    "name": "zip",
+    "kind": "SIMPLE",
+    "patterns": [
+      "zip"
+    ],
+    "state": "α : Type\nβ : Type_1\narr : Array α\narr_1 : Array β\n⊢ Array (α × β)",
+    "tactic_head": "exact List.zipWith Prod.mk as bs"
+  },
+  {
+    "idx": 149,
+    "name": "unzipTR",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr",
+      "tuple_accumulator"
+    ],
+    "state": "l : List (ℕ × ℕ)\n⊢ List ℕ × List ℕ",
+    "tactic_head": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+  },
+  {
+    "idx": 150,
+    "name": "lookmap",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℤ → Option ℤ\nl : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], acc => acc.toList | a :: l, acc => match f a with | some b => a"
+  },
+  {
+    "idx": 151,
+    "name": "SortedLE",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℤ\n⊢ Prop",
+    "tactic_head": "exact Monotone l.get"
+  },
+  {
+    "idx": 152,
+    "name": "lt",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℤ\nb : ℤ\n⊢ Prop",
+    "tactic_head": "exact (a + 1) ≤ b"
+  },
+  {
+    "idx": 153,
+    "name": "mapA",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "f : ℤ → Id ℤ\n⊢ Option ℤ → Id (Option ℤ)",
+    "tactic_head": "exact Option.mapM f"
+  },
+  {
+    "idx": 154,
+    "name": "sublists'",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "foldr"
+    ],
+    "state": "l : List ℕ\n⊢ List (List ℕ)",
+    "tactic_head": "exact let f a arr := arr.foldl (init := arr) fun r l => r.push (a :: l)\n  (l.foldr f #[[]]).toList"
+  },
+  {
+    "idx": 155,
+    "name": "SortedGT",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℕ\n⊢ Prop",
+    "tactic_head": "exact StrictAnti l.get"
+  },
+  {
+    "idx": 156,
+    "name": "nextPowerOfTwo",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "x : ℕ\n⊢ ℕ",
+    "tactic_head": "exact let rec go : Nat := if power < n then\n      go (power * 2) (Nat.mul_pos h (by decide))\n    else\n      power; go 1 "
+  },
+  {
+    "idx": 157,
+    "name": "splitAtD",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\nx : ℕ\nxs : List α\nx_1 : α\n⊢ List α × List α",
+    "tactic_head": "exact let rec go : Nat → List Int → List Int → List Int × List Int | n+1, x :: xs, acc => go n xs (x :: acc) | 0, xs, ac"
+  },
+  {
+    "idx": 158,
+    "name": "erasePTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℤ → Bool\nl : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], _ => l | a :: l, acc => bif p a then acc.toListAppend l else go"
+  },
+  {
+    "idx": 159,
+    "name": "leftpadTR",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nx : ℕ\nx_1 : α\nxs : List α\n⊢ List α",
+    "tactic_head": "exact replicateTR.loop a (n - List.length l) l"
+  },
+  {
+    "idx": 160,
+    "name": "dropSlice",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : ℕ\nx_arg2 : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | _, _, [] => [] | 0, m, xs => xs.drop m | n+1, m, x :: xs => x :: List.dropSlic"
+  },
+  {
+    "idx": 161,
+    "name": "eraseP",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℤ\np : ℤ → Bool\n⊢ Array ℤ",
+    "tactic_head": "exact match as.findFinIdx? p with\n  | none   => as\n  | some i => as.eraseIdx i"
+  },
+  {
+    "idx": 162,
+    "name": "bagInter",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => [] | _, [] => [] | a :: l₁, l₂ => if l₂.elem a then a :: List.bagInter l₁ (l₂"
+  },
+  {
+    "idx": 163,
+    "name": "tail",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg with | [] => panic! \"empty list\" | _::as => as"
+  },
+  {
+    "idx": 164,
+    "name": "findAllInfix",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\ninst : BEq α\nxs : List α\nxs_1 : List α\n⊢ Array (ℕ × ℕ)",
+    "tactic_head": "exact (Matcher.ofList pattern).findAll l"
+  },
+  {
+    "idx": 165,
+    "name": "insertIdxTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℤ\nn : ℕ\na : ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : Nat → List Int → Array Int → List Int | 0, l, acc => acc.toListAppend (a :: l) | _, [], acc => acc.to"
+  },
+  {
+    "idx": 166,
+    "name": "qsortOrd",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact xs.qsort fun x y => compare x y |>.isLT"
+  },
+  {
+    "idx": 167,
+    "name": "dropSlice",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : ℕ\nx_arg2 : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | _, _, [] => [] | 0, Id, xs => xs.drop Id | n+1, Id, x :: xs => x :: List.dropS"
+  },
+  {
+    "idx": 168,
+    "name": "nextOr",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : List ℕ\nx_arg1 : ℕ\nx_arg2 : ℕ\n⊢ ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | [], _, default => default | [_], _, default => default | y :: z :: xs, x, defa"
+  },
+  {
+    "idx": 169,
+    "name": "isEmpty",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℕ\n⊢ Bool",
+    "tactic_head": "exact match x_arg with | [] => true | _ :: _ => false"
+  },
+  {
+    "idx": 170,
+    "name": "range",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact ofFn fun (i : Fin n) => i"
+  },
+  {
+    "idx": 171,
+    "name": "pwFilter",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "α : Type_1\nR : α → α → Prop\ninst : DecidableRel R\nxs : List α\n⊢ List α",
+    "tactic_head": "exact l.foldr (fun x IH => if ∀ y ∈ IH, R x y then x :: IH else IH) []"
+  },
+  {
+    "idx": 172,
+    "name": "iterateTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\nf : (α → α)\nx : α\nx_1 : ℕ\n⊢ List α",
+    "tactic_head": "exact let rec loop : List Nat | 0 => reverse l | n + 1 => loop (f a) n (a :: l); loop a n []"
+  },
+  {
+    "idx": 173,
+    "name": "forRevM",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "α : Type\nm : Type → Type\ninst : Monad m\nf : (α → m PUnit.{v + 1})\nas : Array α\nx",
+    "tactic_head": "exact as.size) (stop := 0) : Id PUnit :=\n  as.foldrM (fun a _ => f a) ⟨⟩ start stop\n@[inline, expose]"
+  },
+  {
+    "idx": 174,
+    "name": "getLast",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "α : Type\nas : List α\nx : as ≠ []\n⊢ α",
+    "tactic_head": "exact match x_arg with | [] => panic! \"empty list\" | a::as => List.getLast (a::as) (fun h => List.noConfusion rfl (heq_o"
+  },
+  {
+    "idx": 175,
+    "name": "splitOnPTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "P : ℕ → Bool\nl : List ℕ\n⊢ List (List ℕ)",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → Array (List Nat) → List (List Nat) | [], acc, r => r.toListAppend [acc.toList]"
+  },
+  {
+    "idx": 176,
+    "name": "modifyTailIdx",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec",
+      "nat_rec"
+    ],
+    "state": "l : List ℕ\ni : ℕ\nf : List ℕ → List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : Nat → List Nat → List Nat | 0, l => f l | _+1, [] => [] | i+1, a :: l => a :: go i l; go i l"
+  },
+  {
+    "idx": 177,
+    "name": "dropSlice",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : ℕ\nx_arg2 : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | _, _, [] => [] | 0, m, xs => xs.drop m | n+1, m, x :: xs => x :: List.dropSlic"
+  },
+  {
+    "idx": 178,
+    "name": "erasePTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℕ → Bool\nl : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], _ => l | a :: l, acc => bif p a then acc.toListAppend l else go"
+  },
+  {
+    "idx": 179,
+    "name": "map₂Right",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\nβ : Type_2\nγ : Type_3\nf : (Option α → β → γ)\nxs : List α\nxs_1 : List ",
+    "tactic_head": "exact map₂Left (flip f) bs as\n-- TODO: naming is awkward..."
+  },
+  {
+    "idx": 180,
+    "name": "dropLast",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg with | [] => [] | [_] => [] | a::as => a :: List.dropLast as"
+  },
+  {
+    "idx": 181,
+    "name": "flattenTR",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List (List ℕ)\n⊢ List ℕ",
+    "tactic_head": "exact l.flatMapTR id"
+  },
+  {
+    "idx": 182,
+    "name": "filterMapTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℤ → Option ℤ\nl : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], acc => acc.toList | a::as, acc => match f a with | none => go a"
+  },
+  {
+    "idx": 183,
+    "name": "extractP",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℕ → Bool\nl : List ℕ\n⊢ Option ℕ × List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → Option Nat × List Nat | [], _ => (none, l) | a :: l, acc => bif p a then (some"
+  },
+  {
+    "idx": 184,
+    "name": "attach",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Option ℕ\n⊢ Option { x // xs = some x }",
+    "tactic_head": "exact xs.attachWith _ fun _ => id"
+  },
+  {
+    "idx": 185,
+    "name": "getLast",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : x_arg0 ≠ []\n⊢ ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],       h => absurd rfl h | [a],      _ => a | _::b::as, _ => List.getLast (b::as) ("
+  },
+  {
+    "idx": 186,
+    "name": "containsInfix",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\ninst : BEq α\nxs : List α\nxs_1 : List α\n⊢ Bool",
+    "tactic_head": "exact findInfix? l pattern |>.isSome"
+  },
+  {
+    "idx": 187,
+    "name": "List.toArrayImpl",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : List ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact xs.toArrayAux (Array.mkEmpty xs.length)"
+  },
+  {
+    "idx": 188,
+    "name": "Option.tryCatch",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : Option ℕ\nhandle : Unit → Option ℕ\n⊢ Option ℕ",
+    "tactic_head": "exact match x with\n  | some _ => x\n  | none => handle ()"
+  },
+  {
+    "idx": 189,
+    "name": "ble'",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℤ\nb : ℤ\n⊢ Bool",
+    "tactic_head": "exact Int.rec\n    (fun a => Int.rec (fun b => Nat.ble a b) (fun _ => false) b)\n    (fun a => Int.rec (fun _ => true) (fu"
+  },
+  {
+    "idx": 190,
+    "name": "toArray",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact match x_arg with | none => List.toArray .nil | some a => List.toArray (.cons a .nil)"
+  },
+  {
+    "idx": 191,
+    "name": "getLastI",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℕ\n⊢ ℕ",
+    "tactic_head": "exact match x_arg with | [] => default | [a] => a | [_, b] => b | _ :: _ :: l => List.getLastI l"
+  },
+  {
+    "idx": 192,
+    "name": "elimOffset",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Sort\nx : (a b k : ℕ)\nx_1 : a + k = b + k\nf : (a = b → α)\n⊢ α",
+    "tactic_head": "exact h₂ (Nat.add_right_cancel h₁)"
+  },
+  {
+    "idx": 193,
+    "name": "flatMap",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "α : Type\nβ : Type_1\nf : (α → Array β)\narr : Array α\n⊢ Array β",
+    "tactic_head": "exact as.foldl (init := empty) fun bs a => bs ++ f a"
+  },
+  {
+    "idx": 194,
+    "name": "rightpad",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "n : ℕ\na : ℤ\nxs : Array ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact xs ++ List.replicate (n - xs.size) a\n/- ### List.reduceOption -/"
+  },
+  {
+    "idx": 195,
+    "name": "zipWithLeftTR",
+    "kind": "WHERE",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "let_rec"
+    ],
+    "state": "f : ℕ → Option ℕ → ℕ\nas : List ℕ\nbs : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → List Nat → Array Nat → List Nat | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+  },
+  {
+    "idx": 196,
+    "name": "permutations'",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "α : Type_1\nxs : List α\n⊢ List (List α)",
+    "tactic_head": "exact match x_arg with | [] => [[]] | t :: ts => (permutations' ts).flatMap <| List.permutations'Aux t"
+  },
+  {
+    "idx": 197,
+    "name": "blt'",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℤ\nb : ℤ\n⊢ Bool",
+    "tactic_head": "exact Int.rec\n    (fun a => Int.rec (fun b => Nat.blt a b) (fun _ => false) b)\n    (fun a => Int.rec (fun _ => true) (fu"
+  },
+  {
+    "idx": 198,
+    "name": "range",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec",
+      "nat_rec"
+    ],
+    "state": "n : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec loop : Nat → List Nat → List Nat | 0,   acc => acc | n+1, acc => loop n (n::acc); loop n []"
+  },
+  {
+    "idx": 199,
+    "name": "headD",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : ℕ\n⊢ ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],   fallback => fallback | a::_, _ => a"
+  },
+  {
+    "idx": 200,
+    "name": "finRange",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "n : ℕ\n⊢ Array (Fin n)",
+    "tactic_head": "exact ofFn fun i => i"
+  },
+  {
+    "idx": 201,
+    "name": "foldRevM",
+    "kind": "SIMPLE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "n : ℕ\nf : (i : ℕ) → i < n → ℤ → Id ℤ\ninit : ℤ\n⊢ Id ℤ",
+    "tactic_head": "exact let rec @[specialize] loop : ∀ i, i ≤ n → Int → Id Int\n    | 0,   h, a => pure a\n    | i+1, h, a => f i (by omega)"
+  },
+  {
+    "idx": 202,
+    "name": "contains",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℕ\na : ℕ\n⊢ Bool",
+    "tactic_head": "exact as.any (a == ·)"
+  },
+  {
+    "idx": 203,
+    "name": "sub",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "m : ℤ\nn : ℤ\n⊢ ℤ",
+    "tactic_head": "exact m + (- n)"
+  },
+  {
+    "idx": 204,
+    "name": "modifyTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℤ\ni : ℕ\nf : ℤ → ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Nat → Array Int → List Int | [], _, acc => acc.toList | a :: l, 0, acc => acc.toListAppend"
+  },
+  {
+    "idx": 205,
+    "name": "diff",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | l, [] => l | l₁, a :: l₂ => if l₁.elem a then List.diff (l₁.erase a) l₂ else List.diff"
+  },
+  {
+    "idx": 206,
+    "name": "all",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : ℤ → Bool\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => true | h :: t, p => p h && List.all t p"
+  },
+  {
+    "idx": 207,
+    "name": "lcm",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℕ\nx_1 : ℕ\n⊢ ℕ",
+    "tactic_head": "exact Id * n / gcd Id n"
+  },
+  {
+    "idx": 208,
+    "name": "takeDTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\nx : ℕ\nxs : List α\nx_1 : α\n⊢ List α",
+    "tactic_head": "exact let rec go : Nat → List Nat → Array Nat → List Nat | n+1, x :: xs, acc => go n xs (acc.push x) | 0, _, acc => acc."
+  },
+  {
+    "idx": 209,
+    "name": "forM",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "α : Type\nm : Type → Type\ninst : Monad m\nf : (α → m PUnit.{v + 1})\nas : Array α\nx",
+    "tactic_head": "exact 0) (stop := as.size) : Id PUnit :=\n  as.foldlM (fun _ => f) ⟨⟩ start stop"
+  },
+  {
+    "idx": 210,
+    "name": "toArrayMap",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "l : List ℕ\nf : ℕ → ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact l.foldl (init := #[]) fun acc x => acc.push (f x) -- Future: a toArrayMapM version could be useful (e.g. in mathli"
+  },
+  {
+    "idx": 211,
+    "name": "countP",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℤ → Bool\nl : List ℤ\n⊢ ℕ",
+    "tactic_head": "exact let rec go : List Int → Nat → Nat | [], acc => acc | x :: xs, acc => bif p x then go xs (acc + 1) else go xs acc; "
+  },
+  {
+    "idx": 212,
+    "name": "mergeDedup",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\ninst : ord : Ord α\narr : Array α\narr_1 : Array α\n⊢ Array α",
+    "tactic_head": "exact mergeDedupWith (ord := ord) xs ys fun x _ => x"
+  },
+  {
+    "idx": 213,
+    "name": "findIdx",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "p : ℤ → Bool\nas : Array ℤ\n⊢ ℕ",
+    "tactic_head": "exact (as.findIdx? p).getD as.size"
+  },
+  {
+    "idx": 214,
+    "name": "zipWithTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℤ → ℤ → ℤ\nas : List ℤ\nbs : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → List Int → Array Int → List Int | a::as, b::bs, acc => go as bs (acc.push (f a b)) | _, _,"
+  },
+  {
+    "idx": 215,
+    "name": "removeAll",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : List ℤ\nys : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact xs.filter (fun x => !ys.elem x)"
+  },
+  {
+    "idx": 216,
+    "name": "eraseDupsBy",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "r : ℕ → ℕ → Bool\nas : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec loop : List Nat → List Nat → List Nat | [],    bs => bs.reverse | a::as, bs => match bs.any (r a) with | t"
+  },
+  {
+    "idx": 217,
+    "name": "guard",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "p : ℕ → Bool\na : ℕ\n⊢ Option ℕ",
+    "tactic_head": "exact if p a then some a else none"
+  },
+  {
+    "idx": 218,
+    "name": "head",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : x_arg0 ≠ []\n⊢ ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | a::_, _ => a"
+  },
+  {
+    "idx": 219,
+    "name": "beq'",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℤ\nb : ℤ\n⊢ Bool",
+    "tactic_head": "exact Int.rec\n    (fun a => Int.rec (fun b => Nat.beq a b) (fun _ => false) b)\n    (fun a => Int.rec (fun _ => false) (f"
+  },
+  {
+    "idx": 220,
+    "name": "replaceFTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℕ → Option ℕ\nl : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], acc => acc.toList | x :: xs, acc => match f x with | none => go"
+  },
+  {
+    "idx": 221,
+    "name": "Array.set",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\nxs : Array α\ni : ℕ\nx : α\nx_1 : autoParam (i < xs.size) Array.set._aut",
+    "tactic_head": "exact Array.setIfInBounds xs i v"
+  },
+  {
+    "idx": 222,
+    "name": "contains",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℤ\na : ℤ\n⊢ Bool",
+    "tactic_head": "exact as.any (a == ·)"
+  },
+  {
+    "idx": 223,
+    "name": "isEqSome",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℕ\nx_arg1 : ℕ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some a, b => a == b | none,   _ => false"
+  },
+  {
+    "idx": 224,
+    "name": "filterTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℕ → Bool\nas : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec loop : List Nat → List Nat → List Nat | [],    acc => acc.reverse | a::as, acc => match p a with | true =>"
+  },
+  {
+    "idx": 225,
+    "name": "headI",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℤ\n⊢ ℤ",
+    "tactic_head": "exact match x_arg with | [] => default | (a :: _) => a"
+  },
+  {
+    "idx": 226,
+    "name": "gcd",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℤ\nx_1 : ℤ\n⊢ ℕ",
+    "tactic_head": "exact Int.ofNat <| Int.gcd a b"
+  },
+  {
+    "idx": 227,
+    "name": "take",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg",
+      "nat_rec"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | 0,   _ => [] | _+1, [] => [] | n+1, a::as => a :: List.take n as"
+  },
+  {
+    "idx": 228,
+    "name": "toArray",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact match x_arg with | none => List.toArray .nil | some a => List.toArray (.cons a .nil)"
+  },
+  {
+    "idx": 229,
+    "name": "lcm",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "m : ℤ\nn : ℤ\n⊢ ℕ",
+    "tactic_head": "exact m.natAbs.lcm n.natAbs"
+  },
+  {
+    "idx": 230,
+    "name": "pfilter",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "o : Option ℤ\np : (a : ℤ) → o = some a → Bool\n⊢ Option ℤ",
+    "tactic_head": "exact match o with\n  | none => none\n  | some a => bif p a rfl then o else none"
+  },
+  {
+    "idx": 231,
+    "name": "zipWithTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℕ → ℕ → ℕ\nas : List ℕ\nbs : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → List Nat → Array Nat → List Nat | a::as, b::bs, acc => go as bs (acc.push (f a b)) | _, _,"
+  },
+  {
+    "idx": 232,
+    "name": "modify",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "σ : Type\nm : Type → Type\ninst : MonadState σ m\nf : (σ → σ)\n⊢ m PUnit.{u + 1}",
+    "tactic_head": "exact match zoom cut t with\n  | (nil, _) => t -- TODO: profile whether it would be better to use `path.fill nil` here\n  "
+  },
+  {
+    "idx": 233,
+    "name": "unzip",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "tuple_accumulator"
+    ],
+    "state": "as : Array (ℕ × ℕ)\n⊢ Array ℕ × Array ℕ",
+    "tactic_head": "exact as.foldl (init := (#[], #[])) fun (as, bs) (a, b) => (as.push a, bs.push b)"
+  },
+  {
+    "idx": 234,
+    "name": "Coprime",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "m : ℕ\nn : ℕ\n⊢ Prop",
+    "tactic_head": "exact gcd m n = 1 -- if we don't inline this, then the compiler computes the GCD even if it already has it"
+  },
+  {
+    "idx": 235,
+    "name": "unattach",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\np : α → Prop\nxs : List { x // p x }\n⊢ List α",
+    "tactic_head": "exact l.map (·.val)"
+  },
+  {
+    "idx": 236,
+    "name": "modify",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "σ : Type\nm : Type → Type\ninst : MonadState σ m\nf : (σ → σ)\n⊢ m PUnit.{u + 1}",
+    "tactic_head": "exact @RBSet.modifyP _ _ t (cmp k ·.1) (fun (a, b) => (a, f b))\n    (.of_eq fun _ => ⟨Std.ReflCmp.compare_self (cmp := O"
+  },
+  {
+    "idx": 237,
+    "name": "replaceTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℤ\nb : ℤ\nc : ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], _ => l | a::as, acc => bif b == a then acc.toListAppend (c::as)"
+  },
+  {
+    "idx": 238,
+    "name": "tail",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg with | [] => [] | _::as => as"
+  },
+  {
+    "idx": 239,
+    "name": "toListRev",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "xs : Array ℤ\n⊢ List ℤ",
+    "tactic_head": "exact xs.foldl (fun l t => t :: l) []"
+  },
+  {
+    "idx": 240,
+    "name": "findIdx",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℤ → Bool\nl : List ℤ\n⊢ ℕ",
+    "tactic_head": "exact let rec go : List Int → Nat → Nat | [], n => n | a :: l, n => bif p a then n else go l (n + 1); go l 0"
+  },
+  {
+    "idx": 241,
+    "name": "max",
+    "kind": "EQCOMP",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "match_2arg"
+    ],
+    "state": "α : Type\ninst : Max α\nl : List α\nx : l ≠ []\n⊢ α",
+    "tactic_head": "exact match x_arg0, x_arg1 with | a::as, _ => as.foldl List.max a"
+  },
+  {
+    "idx": 242,
+    "name": "takeDTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\nx : ℕ\nxs : List α\nx_1 : α\n⊢ List α",
+    "tactic_head": "exact let rec go : Nat → List Int → Array Int → List Int | n+1, x :: xs, acc => go n xs (acc.push x) | 0, _, acc => acc."
+  },
+  {
+    "idx": 243,
+    "name": "isEmpty",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℤ\n⊢ Bool",
+    "tactic_head": "exact match x_arg with | [] => true | _ :: _ => false"
+  },
+  {
+    "idx": 244,
+    "name": "log2",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "n : ℕ\n⊢ ℕ",
+    "tactic_head": "exact -- Lean \"assembly\"\n  n.rec (fun _ => nat_lit 0) (fun _ ih n =>\n    ((nat_lit 2).ble n).rec (nat_lit 0) ((ih (n.div"
+  },
+  {
+    "idx": 245,
+    "name": "getI",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\ninst : Inhabited α\nxs : List α\nx : ℕ\n⊢ α",
+    "tactic_head": "exact getD l n default"
+  },
+  {
+    "idx": 246,
+    "name": "zipWithLeftTR",
+    "kind": "WHERE",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "let_rec"
+    ],
+    "state": "f : ℤ → Option ℤ → ℤ\nas : List ℤ\nbs : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → List Int → Array Int → List Int | [], _, acc => acc.toList | as, [], acc => as.foldl (fun "
+  },
+  {
+    "idx": 247,
+    "name": "sequence",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option (Id ℕ)\n⊢ Id (Option ℕ)",
+    "tactic_head": "exact match x_arg with | none => pure none | some f => some <$> f"
+  },
+  {
+    "idx": 248,
+    "name": "Coprime",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℕ\nx_1 : ℕ\n⊢ Prop",
+    "tactic_head": "exact gcd Id n = 1\n-- if we don't inline this, then the compiler computes the GCD even if it already has it"
+  },
+  {
+    "idx": 249,
+    "name": "attachWith",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Option ℤ\nP : ℤ → Prop\nH : ∀ (x : ℤ), xs = some x → P x\n⊢ Option { x // P x ",
+    "tactic_head": "exact match xs with\n  | none => none\n  | some x => some ⟨x, H x rfl⟩"
+  },
+  {
+    "idx": 250,
+    "name": "SortedLE",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℕ\n⊢ Prop",
+    "tactic_head": "exact Monotone l.get"
+  },
+  {
+    "idx": 251,
+    "name": "min",
+    "kind": "EQCOMP",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "match_2arg"
+    ],
+    "state": "α : Type\ninst : Min α\nl : List α\nx : l ≠ []\n⊢ α",
+    "tactic_head": "exact match x_arg0, x_arg1 with | a::as, _ => as.foldl List.min a"
+  },
+  {
+    "idx": 252,
+    "name": "toArrayLit",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\nxs : Array α\nn : ℕ\nx : xs.size = n\n⊢ Array α",
+    "tactic_head": "exact List.toArray <| toListLitAux xs n hsz n (hsz ▸ Nat.le_refl _) []"
+  },
+  {
+    "idx": 253,
+    "name": "mapFinIdx",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "as : List ℕ\nf : (i : ℕ) → ℕ → i < as.length → ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : (bs : List Nat) → (acc : Array Nat) → bs.length + acc.size = as.length → List Nat | [], acc, h => acc"
+  },
+  {
+    "idx": 254,
+    "name": "eraseIdx",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : ℕ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],    _ => [] | _::as, 0 => as | a::as, n+1 => a :: List.eraseIdx as n"
+  },
+  {
+    "idx": 255,
+    "name": "attachWith",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℕ\nP : ℕ → Prop\nH : ∀ x ∈ xs, P x\n⊢ Array { x // P x }",
+    "tactic_head": "exact ⟨xs.toList.attachWith P fun x h => H x (Array.Mem.mk h)⟩"
+  },
+  {
+    "idx": 256,
+    "name": "takeTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "n : ℕ\nl : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Nat → Array Int → List Int | [], _, _ => l | _::_, 0, acc => acc.toList | a::as, n+1, acc "
+  },
+  {
+    "idx": 257,
+    "name": "takeWhileTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℕ → Bool\nl : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], _ => l | a::as, acc => bif p a then go as (acc.push a) else acc"
+  },
+  {
+    "idx": 258,
+    "name": "pelim",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "o : Option ℤ\nb : ℤ\nf : (a : ℤ) → o = some a → ℤ\n⊢ ℤ",
+    "tactic_head": "exact match o with\n  | none => b\n  | some a => f a rfl"
+  },
+  {
+    "idx": 259,
+    "name": "insertIdxTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℕ\nn : ℕ\na : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : Nat → List Nat → Array Nat → List Nat | 0, l, acc => acc.toListAppend (a :: l) | _, [], acc => acc.to"
+  },
+  {
+    "idx": 260,
+    "name": "sublists",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "l : List ℤ\n⊢ List (List ℤ)",
+    "tactic_head": "exact l.foldr (fun a acc => acc.flatMap fun x => [x, a :: x]) [[]]"
+  },
+  {
+    "idx": 261,
+    "name": "beq",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List ℤ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],    [] => true | a::as, b::bs => a == b && List.beq as bs | _,     _ => false"
+  },
+  {
+    "idx": 262,
+    "name": "tail",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg with | [] => panic! \"empty list\" | _::as => as"
+  },
+  {
+    "idx": 263,
+    "name": "unzipTR",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr",
+      "tuple_accumulator"
+    ],
+    "state": "l : List (ℤ × ℤ)\n⊢ List ℤ × List ℤ",
+    "tactic_head": "exact l.foldr (fun (a, b) (as, bs) => (a::as, b::bs)) ([], [])"
+  },
+  {
+    "idx": 264,
+    "name": "mapIdx",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℕ → ℕ → ℕ\nas : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], acc => acc.toList | a :: as, acc => go as (acc.push (f acc.size"
+  },
+  {
+    "idx": 265,
+    "name": "modifyLast",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℕ → ℕ\nl : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], _ => [] | [x], acc => acc.toListAppend [f x] | x :: xs, acc => "
+  },
+  {
+    "idx": 266,
+    "name": "lookmap",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℕ → Option ℕ\nl : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], acc => acc.toList | a :: l, acc => match f a with | some b => a"
+  },
+  {
+    "idx": 267,
+    "name": "splitAtD",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\nx : ℕ\nxs : List α\nx_1 : α\n⊢ List α × List α",
+    "tactic_head": "exact let rec go : Nat → List Nat → List Nat → List Nat × List Nat | n+1, x :: xs, acc => go n xs (x :: acc) | 0, xs, ac"
+  },
+  {
+    "idx": 268,
+    "name": "getRest",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List ℕ\n⊢ Option (List ℕ)",
+    "tactic_head": "exact match x_arg0, x_arg1 with | l, [] => some l | [], _ => none | x :: l, y :: l₁ => if x = y then List.getRest l l₁ e"
+  },
+  {
+    "idx": 269,
+    "name": "idxOf",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\ninst : BEq α\nx : α\narr : Array α\n⊢ ℕ",
+    "tactic_head": "exact findIdx (· == a)"
+  },
+  {
+    "idx": 270,
+    "name": "tailD",
+    "kind": "SIMPLE",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "l : List ℕ\nfallback : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match l with\n  | [] => fallback\n  | _ :: tl => tl"
+  },
+  {
+    "idx": 271,
+    "name": "contains",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℤ\na : ℤ\n⊢ Bool",
+    "tactic_head": "exact as.any (· == a)"
+  },
+  {
+    "idx": 272,
+    "name": "isPowerOfTwo",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "n : ℕ\n⊢ Prop",
+    "tactic_head": "exact ∃ k, n = 2 ^ k"
+  },
+  {
+    "idx": 273,
+    "name": "mapTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℤ → ℤ\nas : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec loop : List Int → List Int → List Int | [],    bs => bs.reverse | a::as, bs => loop as (f a :: bs); loop a"
+  },
+  {
+    "idx": 274,
+    "name": "rightpad",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "n : ℕ\na : ℕ\nxs : Array ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact xs ++ List.replicate (n - xs.size) a\n/- ### List.reduceOption -/"
+  },
+  {
+    "idx": 275,
+    "name": "dedupSorted",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\ninst : eq : BEq α\narr : Array α\n⊢ Array α",
+    "tactic_head": "exact xs.mergeAdjacentDups (eq := eq) fun x _ => x"
+  },
+  {
+    "idx": 276,
+    "name": "insertIdxIfInBounds",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\narr : Array α\nx : ℕ\nx_1 : α\n⊢ Array α",
+    "tactic_head": "exact if h : i ≤ as.size then\n    insertIdx as i a\n  else\n    as"
+  },
+  {
+    "idx": 277,
+    "name": "map",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "f : ℤ → ℤ\nas : Array ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact Id.run <| as.mapM (pure <| f ·)"
+  },
+  {
+    "idx": 278,
+    "name": "Array.mapMonoM",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℤ\nf : ℤ → Id ℤ\n⊢ Id (Array ℤ)",
+    "tactic_head": "exact as.mapM f"
+  },
+  {
+    "idx": 279,
+    "name": "erase",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℕ\na : ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact match as.finIdxOf? a with\n  | none   => as\n  | some i => as.eraseIdx i"
+  },
+  {
+    "idx": 280,
+    "name": "eraseIdxIfInBounds",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℕ\ni : ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact if h : i < xs.size then xs.eraseIdx i h else xs"
+  },
+  {
+    "idx": 281,
+    "name": "elim",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "f : ℤ → ℤ\ng : ℤ → ℤ\n⊢ ℤ ⊕ ℤ → ℤ",
+    "tactic_head": "exact fun x => Sum.casesOn x f g"
+  },
+  {
+    "idx": 282,
+    "name": "inits",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "α : Type_1\nxs : List α\n⊢ List (List α)",
+    "tactic_head": "exact match x_arg with | [] => [[]] | a :: l => [] :: map (fun t => a :: t) (List.inits l)"
+  },
+  {
+    "idx": 283,
+    "name": "flattenTR",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List (List ℤ)\n⊢ List ℤ",
+    "tactic_head": "exact l.flatMapTR id"
+  },
+  {
+    "idx": 284,
+    "name": "isNone",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option ℕ\n⊢ Bool",
+    "tactic_head": "exact match x_arg with | some _ => false | none => true"
+  },
+  {
+    "idx": 285,
+    "name": "replicate",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg",
+      "nat_rec"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | 0,   _ => [] | n+1, a => a :: List.replicate n a"
+  },
+  {
+    "idx": 286,
+    "name": "next",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\ninst : DecidableEq α\nl : List α\nx : α\nx : x ∈ l\n⊢ α",
+    "tactic_head": "exact nextOr l x (l.get ⟨0, length_pos_of_mem h⟩)"
+  },
+  {
+    "idx": 287,
+    "name": "filterMapTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℕ → Option ℕ\nl : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], acc => acc.toList | a::as, acc => match f a with | none => go a"
+  },
+  {
+    "idx": 288,
+    "name": "toArrayMap",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "l : List ℤ\nf : ℤ → ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact l.foldl (init := #[]) fun acc x => acc.push (f x)\n-- Future: a toArrayMapM version could be useful (e.g. in mathli"
+  },
+  {
+    "idx": 289,
+    "name": "getDM",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : Option ℕ\ny : Id ℕ\n⊢ Id ℕ",
+    "tactic_head": "exact match x with\n  | some a => pure a\n  | none => y"
+  },
+  {
+    "idx": 290,
+    "name": "elim",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : Option ℕ\nx_arg1 : ℕ\nx_arg2 : ℕ → ℕ\n⊢ ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | some x, _, f => f x | none, y, _ => y"
+  },
+  {
+    "idx": 291,
+    "name": "isEqSome",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℤ\nx_arg1 : ℤ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some a, b => a == b | none,   _ => false"
+  },
+  {
+    "idx": 292,
+    "name": "findM",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nm : Type → Type\ninst : Alternative m\nf : (α → m PUnit.{u + 1})\nxs : Lis",
+    "tactic_head": "exact List.firstM fun a => (tac a) $> a"
+  },
+  {
+    "idx": 293,
+    "name": "any",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : ℕ → Bool\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => false | h :: t, p => p h || List.any t p"
+  },
+  {
+    "idx": 294,
+    "name": "forM",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "m : Type_1 → Type_2\nα : Type_3\ninst : Pure m\nopt : Option α\nf : (α → m PUnit.{u_",
+    "tactic_head": "exact match x_arg0, x_arg1 with | none  , _ => pure ⟨⟩ | some a, f => f a"
+  },
+  {
+    "idx": 295,
+    "name": "prod",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "xs : List ℤ\n⊢ ℤ",
+    "tactic_head": "exact xs.foldr (· * ·) 1"
+  },
+  {
+    "idx": 296,
+    "name": "sections",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List (List ℕ)\n⊢ List (List ℕ)",
+    "tactic_head": "exact match x_arg with | [] => [[]] | l :: L => (List.sections L).flatMap fun s => l.map fun a => a :: s"
+  },
+  {
+    "idx": 297,
+    "name": "maximum",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\ninst : inst : Preorder α\ninst_1 : DecidableLT α\nxs : List α\n⊢ WithBot",
+    "tactic_head": "exact argmax id l"
+  },
+  {
+    "idx": 298,
+    "name": "splitOnPTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "P : ℤ → Bool\nl : List ℤ\n⊢ List (List ℤ)",
+    "tactic_head": "exact let rec go : List Int → Array Int → Array (List Int) → List (List Int) | [], acc, r => r.toListAppend [acc.toList]"
+  },
+  {
+    "idx": 299,
+    "name": "isEqv",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\narr : Array α\narr_1 : Array α\nf : (α → α → Bool)\n⊢ Bool",
+    "tactic_head": "exact if h : xs.size = ys.size then\n    isEqvAux xs ys h p xs.size (Nat.le_refl xs.size)\n  else\n    false"
+  },
+  {
+    "idx": 300,
+    "name": "getM",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "m : Type_1 → Type_2\nα : Type_1\ninst : Alternative m\nopt : Option α\n⊢ m α",
+    "tactic_head": "exact match x_arg with | none => failure | some a => pure a"
+  },
+  {
+    "idx": 301,
+    "name": "eraseIdxIfInBounds",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℤ\ni : ℕ\n⊢ Array ℤ",
+    "tactic_head": "exact if h : i < xs.size then xs.eraseIdx i h else xs"
+  },
+  {
+    "idx": 302,
+    "name": "elim",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "f : ℕ → ℕ\ng : ℕ → ℕ\n⊢ ℕ ⊕ ℕ → ℕ",
+    "tactic_head": "exact fun x => Sum.casesOn x f g"
+  },
+  {
+    "idx": 303,
+    "name": "blt",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℕ\nx_1 : ℕ\n⊢ Bool",
+    "tactic_head": "exact ble a.succ b"
+  },
+  {
+    "idx": 304,
+    "name": "replace",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : List ℤ\nx_arg1 : ℤ\nx_arg2 : ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | [],    _, _ => [] | a::as, b, c => match b == a with | true => c::as | false ="
+  },
+  {
+    "idx": 305,
+    "name": "tailD",
+    "kind": "SIMPLE",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "l : List ℤ\nfallback : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match l with\n  | [] => fallback\n  | _ :: tl => tl"
+  },
+  {
+    "idx": 306,
+    "name": "removeAll",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : List ℕ\nys : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact xs.filter (fun x => !ys.elem x)"
+  },
+  {
+    "idx": 307,
+    "name": "tail",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg with | [] => [] | _::as => as"
+  },
+  {
+    "idx": 308,
+    "name": "max",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℕ\nx_arg1 : Option ℕ\n⊢ Option ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some x, some y => some (Max.max x y) | some x, none => some x | none, some y => some y"
+  },
+  {
+    "idx": 309,
+    "name": "takeI",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\ninst : Inhabited α\nx : ℕ\nxs : List α\n⊢ List α",
+    "tactic_head": "exact takeD n l default"
+  },
+  {
+    "idx": 310,
+    "name": "erase",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],    _ => [] | a::as, b => match a == b with | true => as | false => a :: List.erase"
+  },
+  {
+    "idx": 311,
+    "name": "modifyTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "l : List ℕ\ni : ℕ\nf : ℕ → ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Nat → Array Nat → List Nat | [], _, acc => acc.toList | a :: l, 0, acc => acc.toListAppend"
+  },
+  {
+    "idx": 312,
+    "name": "partition",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℤ → Bool\nas : List ℤ\n⊢ List ℤ × List ℤ",
+    "tactic_head": "exact let rec loop : List Int → List Int × List Int → List Int × List Int | [],    (bs, cs) => (bs.reverse, cs.reverse) "
+  },
+  {
+    "idx": 313,
+    "name": "abs",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℤ\n⊢ ℤ",
+    "tactic_head": "exact Int.ofNat x.natAbs"
+  },
+  {
+    "idx": 314,
+    "name": "toList",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg : Option ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg with | none => .nil | some a => .cons a .nil"
+  },
+  {
+    "idx": 315,
+    "name": "zipWithLeft'TR",
+    "kind": "WHERE",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "let_rec"
+    ],
+    "state": "f : ℤ → Option ℤ → ℤ\nas : List ℤ\nbs : List ℤ\n⊢ List ℤ × List ℤ",
+    "tactic_head": "exact let rec go : List Int → List Int → Array Int → List Int × List Int | [], bs, acc => (acc.toList, bs) | as, [], acc"
+  },
+  {
+    "idx": 316,
+    "name": "max",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℤ\nx_arg1 : Option ℤ\n⊢ Option ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some x, some y => some (Max.max x y) | some x, none => some x | none, some y => some y"
+  },
+  {
+    "idx": 317,
+    "name": "bind",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℕ\nx_arg1 : ℕ → Option ℕ\n⊢ Option ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | none,   _ => none | some a, f => f a"
+  },
+  {
+    "idx": 318,
+    "name": "min",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℤ\nx_arg1 : Option ℤ\n⊢ Option ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some x, some y => some (Min.min x y) | some _, none => none | none, some _ => none | n"
+  },
+  {
+    "idx": 319,
+    "name": "reverseAux",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],   r => r | a::l, r => List.reverseAux l (a::r)"
+  },
+  {
+    "idx": 320,
+    "name": "flatMapTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℕ → List ℕ\nas : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Array Nat → List Nat | [], acc => acc.toList | x::xs, acc => go xs (acc ++ f x); go as #[]"
+  },
+  {
+    "idx": 321,
+    "name": "le",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : List ℤ\nbs : List ℤ\n⊢ Prop",
+    "tactic_head": "exact ¬ bs < as"
+  },
+  {
+    "idx": 322,
+    "name": "mergeDedupWith",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\ninst : ord : Ord α\narr : Array α\narr_1 : Array α\nf : (α → α → α)\n⊢ Ar",
+    "tactic_head": "exact let rec go : Array Int | .lt => go (acc.push x) (i + 1) j | .gt => go (acc.push y) i (j + 1) | .eq => go (acc.push"
+  },
+  {
+    "idx": 323,
+    "name": "elem",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℕ\nas : Array ℕ\n⊢ Bool",
+    "tactic_head": "exact as.contains a; -- This function is exported to C, where it is called by `Array.toList`; -- (the projection) to imp"
+  },
+  {
+    "idx": 324,
+    "name": "splitOnP",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "P : ℤ → Bool\nl : List ℤ\n⊢ List (List ℤ)",
+    "tactic_head": "exact let rec go : List Int → List Int → List (List Int) | [], acc => [acc.reverse] | a :: t, acc => if P a then acc.rev"
+  },
+  {
+    "idx": 325,
+    "name": "elim",
+    "kind": "EQCOMP",
+    "patterns": [],
+    "state": "x_arg0 : Option ℤ\nx_arg1 : ℤ\nx_arg2 : ℤ → ℤ\n⊢ ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | some x, _, f => f x | none, y, _ => y"
+  },
+  {
+    "idx": 326,
+    "name": "takeWhile₂TR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "R : ℤ → ℤ → Bool\nas : List ℤ\nbs : List ℤ\n⊢ List ℤ × List ℤ",
+    "tactic_head": "exact let rec go : List Int → List Int → List Int → List Int → List Int × List Int | a::as, b::bs, acca, accb => bif R a"
+  },
+  {
+    "idx": 327,
+    "name": "findIdx",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "p : ℕ → Bool\nas : Array ℕ\n⊢ ℕ",
+    "tactic_head": "exact (as.findIdx? p).getD as.size"
+  },
+  {
+    "idx": 328,
+    "name": "replaceIf",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List Bool\nx_arg2 : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | l, _, [] => l | [], _, _ => [] | l, [], _ => l | n :: ns, tf :: bs, e@(c :: cs"
+  },
+  {
+    "idx": 329,
+    "name": "equalSet",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℤ\nys : Array ℤ\n⊢ Bool",
+    "tactic_head": "exact xs.all (ys.contains ·) && ys.all (xs.contains ·)"
+  },
+  {
+    "idx": 330,
+    "name": "partition",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "p : ℤ → Bool\nas : Array ℤ\n⊢ Array ℤ × Array ℤ",
+    "tactic_head": "exact Id.run do\n  let mut bs := #[]\n  let mut cs := #[]\n  for a in as do\n    if p a then\n      bs := bs.push a\n    else\n"
+  },
+  {
+    "idx": 331,
+    "name": "attach",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℕ\n⊢ Array { x // x ∈ xs }",
+    "tactic_head": "exact xs.attachWith _ fun _ => id"
+  },
+  {
+    "idx": 332,
+    "name": "le",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : List ℕ\nbs : List ℕ\n⊢ Prop",
+    "tactic_head": "exact ¬ bs < as"
+  },
+  {
+    "idx": 333,
+    "name": "merge",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\nf : (α → α → Bool)\narr : Array α\narr_1 : Array α\n⊢ Array α",
+    "tactic_head": "exact let rec go : Array Int := if hi : i ≥ xs.size then\n      acc ++ ys[j:]\n    else if hj : j ≥ ys.size then\n      acc"
+  },
+  {
+    "idx": 334,
+    "name": "replicateTR",
+    "kind": "SIMPLE",
+    "patterns": [
+      "let_rec",
+      "nat_rec"
+    ],
+    "state": "n : ℕ\na : ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec loop : Nat → List Int → List Int\n    | 0, as => as\n    | n+1, as => loop n (a::as)\n  loop n []"
+  },
+  {
+    "idx": 335,
+    "name": "dropSlice",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : ℕ\nx_arg2 : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1, x_arg2 with | _, _, [] => [] | 0, Id, xs => xs.drop Id | n+1, Id, x :: xs => x :: List.dropS"
+  },
+  {
+    "idx": 336,
+    "name": "bind",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℤ\nx_arg1 : ℤ → Option ℤ\n⊢ Option ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | none,   _ => none | some a, f => f a"
+  },
+  {
+    "idx": 337,
+    "name": "iterateTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "α : Type_1\nf : (α → α)\nx : α\nx_1 : ℕ\n⊢ List α",
+    "tactic_head": "exact let rec loop : List Int | 0 => reverse l | n + 1 => loop (f a) n (a :: l); loop a n []"
+  },
+  {
+    "idx": 338,
+    "name": "getDM",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : Option ℤ\ny : Id ℤ\n⊢ Id ℤ",
+    "tactic_head": "exact match x with\n  | some a => pure a\n  | none => y"
+  },
+  {
+    "idx": 339,
+    "name": "Poly.insertSorted",
+    "kind": "SIMPLE",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x : ℤ\nxs : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match p with\n  | [] => [(k, Id)]\n  | (k', Id') :: p => bif Id < Id' then (k, Id) :: (k', Id') :: p else (k', Id') "
+  },
+  {
+    "idx": 340,
+    "name": "toListRev",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "xs : Array ℕ\n⊢ List ℕ",
+    "tactic_head": "exact xs.foldl (fun l t => t :: l) []"
+  },
+  {
+    "idx": 341,
+    "name": "partialProds",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact l.scanl (· * ·) 1"
+  },
+  {
+    "idx": 342,
+    "name": "scanr",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "f : ℤ → ℤ → ℤ\ninit : ℤ\nas : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact Id.run <| as.scanrM (pure <| f · ·) init"
+  },
+  {
+    "idx": 343,
+    "name": "lookup",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : ℤ\nx_arg1 : List (ℤ × ℤ)\n⊢ Option ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | _, [] => none | a, (k, b) :: as => match a == k with | true => some b | false => List."
+  },
+  {
+    "idx": 344,
+    "name": "isPrefixOf",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "α : Type\ninst : BEq α\nxs : List α\nxs_1 : List α\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], l₂ => some l₂ | _, [] => none | (x₁ :: l₁), (x₂ :: l₂) => if x₁ == x₂ then List.is"
+  },
+  {
+    "idx": 345,
+    "name": "guard",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "p : ℤ → Bool\na : ℤ\n⊢ Option ℤ",
+    "tactic_head": "exact if p a then some a else none"
+  },
+  {
+    "idx": 346,
+    "name": "unzip",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List (ℤ × ℤ)\n⊢ List ℤ × List ℤ",
+    "tactic_head": "exact match x_arg with | [] => ([], []) | (a, b) :: t => match List.unzip t with | (as, bs) => (a::as, b::bs)"
+  },
+  {
+    "idx": 347,
+    "name": "erase",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],    _ => [] | a::as, b => match a == b with | true => as | false => a :: List.erase"
+  },
+  {
+    "idx": 348,
+    "name": "appendTR",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nxs : List α\nxs_1 : List α\n⊢ List α",
+    "tactic_head": "exact reverseAux as.reverse bs"
+  },
+  {
+    "idx": 349,
+    "name": "mapA",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "f : ℕ → Id ℕ\n⊢ Option ℕ → Id (Option ℕ)",
+    "tactic_head": "exact Option.mapM f"
+  },
+  {
+    "idx": 350,
+    "name": "fillNones",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List (Option ℤ)\nx_arg1 : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => [] | some a :: as, as' => a :: List.fillNones as as' | none :: as, [] => as.r"
+  },
+  {
+    "idx": 351,
+    "name": "get",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℤ\nx_arg1 : x_arg0.isSome = true\n⊢ ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some x, _ => x"
+  },
+  {
+    "idx": 352,
+    "name": "replicateTR",
+    "kind": "SIMPLE",
+    "patterns": [
+      "let_rec",
+      "nat_rec"
+    ],
+    "state": "n : ℕ\na : ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec loop : Nat → List Nat → List Nat\n    | 0, as => as\n    | n+1, as => loop n (a::as)\n  loop n []"
+  },
+  {
+    "idx": 353,
+    "name": "cyclicPermutations",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list",
+      "zip"
+    ],
+    "state": "α : Type\nxs : List α\n⊢ List (List α)",
+    "tactic_head": "exact match x_arg with | [] => [[]] | l@(_ :: _) => dropLast (zipWith (· ++ ·) (tails l) (inits l))"
+  },
+  {
+    "idx": 354,
+    "name": "takeWhileTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℤ → Bool\nl : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], _ => l | a::as, acc => bif p a then go as (acc.push a) else acc"
+  },
+  {
+    "idx": 355,
+    "name": "mapTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℕ → ℕ\nas : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec loop : List Nat → List Nat → List Nat | [],    bs => bs.reverse | a::as, bs => loop as (f a :: bs); loop a"
+  },
+  {
+    "idx": 356,
+    "name": "flatMapTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℤ → List ℤ\nas : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], acc => acc.toList | x::xs, acc => go xs (acc ++ f x); go as #[]"
+  },
+  {
+    "idx": 357,
+    "name": "mapIdx",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℕ → ℤ → ℤ\nas : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], acc => acc.toList | a :: as, acc => go as (acc.push (f acc.size"
+  },
+  {
+    "idx": 358,
+    "name": "lcm",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "m : ℕ\nn : ℕ\n⊢ ℕ",
+    "tactic_head": "exact m * n / gcd m n"
+  },
+  {
+    "idx": 359,
+    "name": "foldRevM",
+    "kind": "SIMPLE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "n : ℕ\nf : (i : ℕ) → i < n → ℕ → Id ℕ\ninit : ℕ\n⊢ Id ℕ",
+    "tactic_head": "exact let rec @[specialize] loop : ∀ i, i ≤ n → Nat → Id Nat\n    | 0,   h, a => pure a\n    | i+1, h, a => f i (by omega)"
+  },
+  {
+    "idx": 360,
+    "name": "toArrayMap",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "l : List ℤ\nf : ℤ → ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact l.foldl (init := #[]) fun acc x => acc.push (f x) -- Future: a toArrayMapM version could be useful (e.g. in mathli"
+  },
+  {
+    "idx": 361,
+    "name": "takeWhile",
+    "kind": "SIMPLE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℤ → Bool\nas : Array ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact let rec go (i : Nat) (acc : Array Int) : Array Int :=\n    if h : i < as.size then\n      let a := as[i]\n      if p "
+  },
+  {
+    "idx": 362,
+    "name": "partition",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℕ → Bool\nas : List ℕ\n⊢ List ℕ × List ℕ",
+    "tactic_head": "exact let rec loop : List Nat → List Nat × List Nat → List Nat × List Nat | [],    (bs, cs) => (bs.reverse, cs.reverse) "
+  },
+  {
+    "idx": 363,
+    "name": "tails",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℤ\n⊢ List (List ℤ)",
+    "tactic_head": "exact match x_arg with | [] => [[]] | a :: l => (a :: l) :: List.tails l"
+  },
+  {
+    "idx": 364,
+    "name": "eraseIdx",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nxs : Array α\ni : ℕ\nx : autoParam (i < xs.size) Array.eraseIdx._auto_1\n⊢",
+    "tactic_head": "exact if h : i < xs.size then xs.eraseIdx i h else panic! \"invalid index\""
+  },
+  {
+    "idx": 365,
+    "name": "finRange",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "n : ℕ\n⊢ List (Fin n)",
+    "tactic_head": "exact ofFn fun i => i"
+  },
+  {
+    "idx": 366,
+    "name": "diff",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | l, [] => l | l₁, a :: l₂ => if l₁.elem a then List.diff (l₁.erase a) l₂ else List.diff"
+  },
+  {
+    "idx": 367,
+    "name": "span",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℤ → Bool\nas : List ℤ\n⊢ List ℤ × List ℤ",
+    "tactic_head": "exact let rec loop : List Int → List Int → List Int × List Int | [],    acc => (acc.reverse, []) | a::as, acc => match p"
+  },
+  {
+    "idx": 368,
+    "name": "modifyTailIdx",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec",
+      "nat_rec"
+    ],
+    "state": "l : List ℤ\ni : ℕ\nf : List ℤ → List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : Nat → List Int → List Int | 0, l => f l | _+1, [] => [] | i+1, a :: l => a :: go i l; go i l"
+  },
+  {
+    "idx": 369,
+    "name": "Pairwise",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\nf : (α → α → Prop)\n⊢ Prop",
+    "tactic_head": "exact as.toList.Pairwise R"
+  },
+  {
+    "idx": 370,
+    "name": "getD",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : List ℕ\ni : ℕ\nfallback : ℕ\n⊢ ℕ",
+    "tactic_head": "exact as[i]?.getD fallback"
+  },
+  {
+    "idx": 371,
+    "name": "scanr",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "f : ℕ → ℕ → ℕ\ninit : ℕ\nas : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact Id.run <| as.scanrM (pure <| f · ·) init"
+  },
+  {
+    "idx": 372,
+    "name": "forM",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nm : Type → Type\ninst : Monad m\nf : (α → m PUnit.{v + 1})\nas : Array α\nx",
+    "tactic_head": "exact as.array.forM f (start := as.start) (stop := as.stop)\n@[inline]"
+  },
+  {
+    "idx": 373,
+    "name": "binInsert",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type\nf : (α → α → Bool)\narr : Array α\nx : α\n⊢ Array α",
+    "tactic_head": "exact Id.run <| binInsertM lt (fun _ => pure k) (fun _ => pure k) as k"
+  },
+  {
+    "idx": 374,
+    "name": "isEqvAux",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg",
+      "nat_rec"
+    ],
+    "state": "α : Type\nx : (xs ys : Array α)\nx_1 : xs.size = ys.size\nf : (α → α → Bool)\ni : ℕ\n",
+    "tactic_head": "exact match x_arg0, x_arg1 with | 0, _ => true | i+1, h => p xs[i] (ys[i]'(hsz ▸ h)) && Array.isEqvAux xs ys hsz p i (Na"
+  },
+  {
+    "idx": 375,
+    "name": "takeTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "n : ℕ\nl : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact let rec go : List Nat → Nat → Array Nat → List Nat | [], _, _ => l | _::_, 0, acc => acc.toList | a::as, n+1, acc "
+  },
+  {
+    "idx": 376,
+    "name": "rotate",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℤ\nn : ℕ\n⊢ List ℤ",
+    "tactic_head": "exact let (l₁, l₂) := List.splitAt (n % l.length) l\n  l₂ ++ l₁"
+  },
+  {
+    "idx": 377,
+    "name": "attachWith",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Array ℤ\nP : ℤ → Prop\nH : ∀ x ∈ xs, P x\n⊢ Array { x // P x }",
+    "tactic_head": "exact ⟨xs.toList.attachWith P fun x h => H x (Array.Mem.mk h)⟩"
+  },
+  {
+    "idx": 378,
+    "name": "Array.mapMono",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℕ\nf : ℕ → ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact Id.run <| as.mapMonoM (pure <| f ·)"
+  },
+  {
+    "idx": 379,
+    "name": "or",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℕ\nx_arg1 : Option ℕ\n⊢ Option ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some a, _ => some a | none,   b => b"
+  },
+  {
+    "idx": 380,
+    "name": "beq",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List ℕ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],    [] => true | a::as, b::bs => a == b && List.beq as bs | _,     _ => false"
+  },
+  {
+    "idx": 381,
+    "name": "lcm",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "x : ℤ\nx_1 : ℤ\n⊢ ℕ",
+    "tactic_head": "exact Id.natAbs.lcm n.natAbs"
+  },
+  {
+    "idx": 382,
+    "name": "zipWithM",
+    "kind": "SIMPLE",
+    "patterns": [
+      "zip"
+    ],
+    "state": "α : Type\nβ : Type_1\nγ : Type\nm : Type → Type\ninst : Monad m\nf : (α → β → m γ)\nar",
+    "tactic_head": "exact zipWithMAux as bs f 0 #[]"
+  },
+  {
+    "idx": 383,
+    "name": "drop",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg",
+      "nat_rec"
+    ],
+    "state": "x_arg0 : ℕ\nx_arg1 : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | 0,   as => as | _+1, [] => [] | n+1, _::as => List.drop n as"
+  },
+  {
+    "idx": 384,
+    "name": "isSublist",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List ℕ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => true | _, [] => false | l₁@(hd₁::tl₁), hd₂::tl₂ => if hd₁ == hd₂ then tl₁.isS"
+  },
+  {
+    "idx": 385,
+    "name": "attachWith",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : Option ℕ\nP : ℕ → Prop\nH : ∀ (x : ℕ), xs = some x → P x\n⊢ Option { x // P x ",
+    "tactic_head": "exact match xs with\n  | none => none\n  | some x => some ⟨x, H x rfl⟩"
+  },
+  {
+    "idx": 386,
+    "name": "List.toArrayImpl",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "xs : List ℤ\n⊢ Array ℤ",
+    "tactic_head": "exact xs.toArrayAux (Array.mkEmpty xs.length)"
+  },
+  {
+    "idx": 387,
+    "name": "Array.mapMonoM",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "as : Array ℕ\nf : ℕ → Id ℕ\n⊢ Id (Array ℕ)",
+    "tactic_head": "exact as.mapM f"
+  },
+  {
+    "idx": 388,
+    "name": "isPerm",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : List ℤ\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], l₂ => l₂.isEmpty | a :: l₁, l₂ => l₂.contains a && l₁.isPerm (l₂.erase a)"
+  },
+  {
+    "idx": 389,
+    "name": "tails",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_list"
+    ],
+    "state": "x_arg : List ℕ\n⊢ List (List ℕ)",
+    "tactic_head": "exact match x_arg with | [] => [[]] | a :: l => (a :: l) :: List.tails l"
+  },
+  {
+    "idx": 390,
+    "name": "initsTR",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldr"
+    ],
+    "state": "l : List ℕ\n⊢ List (List ℕ)",
+    "tactic_head": "exact l.foldr (fun a arrs => (arrs.map fun t => a :: t).push []) #[[]] |>.toListRev"
+  },
+  {
+    "idx": 391,
+    "name": "countP",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℕ → Bool\nl : List ℕ\n⊢ ℕ",
+    "tactic_head": "exact let rec go : List Nat → Nat → Nat | [], acc => acc | x :: xs, acc => bif p x then go xs (acc + 1) else go xs acc; "
+  },
+  {
+    "idx": 392,
+    "name": "toArrayMap",
+    "kind": "SIMPLE",
+    "patterns": [
+      "fold_method",
+      "foldl"
+    ],
+    "state": "l : List ℕ\nf : ℕ → ℕ\n⊢ Array ℕ",
+    "tactic_head": "exact l.foldl (init := #[]) fun acc x => acc.push (f x)\n-- Future: a toArrayMapM version could be useful (e.g. in mathli"
+  },
+  {
+    "idx": 393,
+    "name": "get",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : Option ℕ\nx_arg1 : x_arg0.isSome = true\n⊢ ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | some x, _ => x"
+  },
+  {
+    "idx": 394,
+    "name": "map",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "α : Type_1\nx : {α' : Type_2}\nβ : Type_3\nx_1 : {β' : Type_4}\nf : (α → α')\nf_1 : (",
+    "tactic_head": "exact Sum.elim (inl ∘ f) (inr ∘ g)"
+  },
+  {
+    "idx": 395,
+    "name": "pfilter",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "o : Option ℕ\np : (a : ℕ) → o = some a → Bool\n⊢ Option ℕ",
+    "tactic_head": "exact match o with\n  | none => none\n  | some a => bif p a rfl then o else none"
+  },
+  {
+    "idx": 396,
+    "name": "insert",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "a : ℕ\nl : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact if l.contains a then l else a :: l"
+  },
+  {
+    "idx": 397,
+    "name": "span",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "p : ℕ → Bool\nas : List ℕ\n⊢ List ℕ × List ℕ",
+    "tactic_head": "exact let rec loop : List Nat → List Nat → List Nat × List Nat | [],    acc => (acc.reverse, []) | a::as, acc => match p"
+  },
+  {
+    "idx": 398,
+    "name": "zipWithLeft'TR",
+    "kind": "WHERE",
+    "patterns": [
+      "fold_method",
+      "foldl",
+      "let_rec"
+    ],
+    "state": "f : ℕ → Option ℕ → ℕ\nas : List ℕ\nbs : List ℕ\n⊢ List ℕ × List ℕ",
+    "tactic_head": "exact let rec go : List Nat → List Nat → Array Nat → List Nat × List Nat | [], bs, acc => (acc.toList, bs) | as, [], acc"
+  },
+  {
+    "idx": 399,
+    "name": "any",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℤ\nx_arg1 : ℤ → Bool\n⊢ Bool",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [], _ => false | h :: t, p => p h || List.any t p"
+  },
+  {
+    "idx": 400,
+    "name": "replaceFTR",
+    "kind": "WHERE",
+    "patterns": [
+      "let_rec"
+    ],
+    "state": "f : ℤ → Option ℤ\nl : List ℤ\n⊢ List ℤ",
+    "tactic_head": "exact let rec go : List Int → Array Int → List Int | [], acc => acc.toList | x :: xs, acc => match f x with | none => go"
+  },
+  {
+    "idx": 401,
+    "name": "reverseAux",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],   r => r | a::l, r => List.reverseAux l (a::r)"
+  },
+  {
+    "idx": 402,
+    "name": "partialProds",
+    "kind": "SIMPLE",
+    "patterns": [],
+    "state": "l : List ℕ\n⊢ List ℕ",
+    "tactic_head": "exact l.scanl (· * ·) 1"
+  },
+  {
+    "idx": 403,
+    "name": "getLast",
+    "kind": "EQCOMP",
+    "patterns": [
+      "match_2arg"
+    ],
+    "state": "x_arg0 : List ℕ\nx_arg1 : x_arg0 ≠ []\n⊢ ℕ",
+    "tactic_head": "exact match x_arg0, x_arg1 with | [],       h => absurd rfl h | [a],      _ => a | _::b::as, _ => List.getLast (b::as) ("
+  }
+]

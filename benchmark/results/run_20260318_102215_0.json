@@ -1,0 +1,120 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 1,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 704,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 0,
+      "n_oracle_calls": 0,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 0,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 5.6983,
+      "t_step_s": 0.0099,
+      "t_oracle_s": 0.0,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 5.7083,
+      "ms_per_step": 0.01,
+      "ms_per_oracle": 0,
+      "pct_step": 0.2,
+      "pct_policy": 99.8,
+      "pct_oracle": 0.0,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1
+    },
+    "task": "fibonacci",
+    "category": "recurrence",
+    "ghc_equivalent": "fibonacci",
+    "wall_time_s": 5.71
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 1,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 703,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 0,
+      "n_oracle_calls": 0,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 0,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.9738,
+      "t_step_s": 0.0312,
+      "t_oracle_s": 0.0,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0001,
+      "t_total_s": 3.005,
+      "ms_per_step": 0.04,
+      "ms_per_oracle": 0,
+      "pct_step": 1.0,
+      "pct_policy": 99.0,
+      "pct_oracle": 0.0,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1
+    },
+    "task": "fib_list",
+    "category": "recurrence",
+    "ghc_equivalent": "fib_list",
+    "wall_time_s": 3.01
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "factorial",
+    "category": "recurrence",
+    "ghc_equivalent": "factorial",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "triangular_numbers",
+    "category": "recurrence",
+    "ghc_equivalent": "triangular_numbers",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "running_parts",
+    "category": "recurrence",
+    "ghc_equivalent": "running_parts",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "powers_of_2",
+    "category": "recurrence",
+    "ghc_equivalent": "powers_of_2",
+    "wall_time_s": 0.0
+  }
+]

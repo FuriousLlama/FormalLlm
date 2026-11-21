@@ -1,0 +1,338 @@
+[
+  {
+    "solved": true,
+    "tactics": [
+      "exact List.rec 0 (fun h _ acc => acc + h * h) xs"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 33,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 22,
+      "n_oracle_calls": 22,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0505,
+      "t_oracle_s": 1.3311,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 1.3816,
+      "ms_per_step": 1.53,
+      "ms_per_oracle": 60.5,
+      "pct_step": 3.7,
+      "pct_policy": 0.0,
+      "pct_oracle": 96.3,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "sum_of_squares_comp",
+    "category": "compositional",
+    "ghc_equivalent": "sum_of_squares_comp",
+    "wall_time_s": 1.38,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (List.range n).foldl (fun acc i => acc + i) 0"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 64,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 743,
+      "n_tactic_valid": 2,
+      "n_tactic_solved": 79,
+      "n_oracle_calls": 66,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 4,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.3657,
+      "t_oracle_s": 3.5561,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 3.9219,
+      "ms_per_step": 0.49,
+      "ms_per_oracle": 53.9,
+      "pct_step": 9.3,
+      "pct_policy": 0.0,
+      "pct_oracle": 90.7,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 63
+    },
+    "task": "range_sum",
+    "category": "compositional",
+    "ghc_equivalent": "range_sum",
+    "wall_time_s": 3.93,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.filter (fun x => decide (x > 0)) |>.eraseDups).length"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 39,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 739,
+      "n_tactic_valid": 5,
+      "n_tactic_solved": 50,
+      "n_oracle_calls": 48,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 2,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.4395,
+      "t_oracle_s": 3.082,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 5.5215,
+      "ms_per_step": 3.3,
+      "ms_per_oracle": 64.2,
+      "pct_step": 44.2,
+      "pct_policy": 0.0,
+      "pct_oracle": 55.8,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 38
+    },
+    "task": "count_unique",
+    "category": "compositional",
+    "ghc_equivalent": "count_unique",
+    "wall_time_s": 5.52,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.filter (fun x => decide (x > 0))).reverse"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 464,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 738,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 474,
+      "n_oracle_calls": 311,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 7,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.9137,
+      "t_oracle_s": 22.2205,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 24.1342,
+      "ms_per_step": 2.59,
+      "ms_per_oracle": 71.4,
+      "pct_step": 7.9,
+      "pct_policy": 0.0,
+      "pct_oracle": 92.1,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 463
+    },
+    "task": "reverse_filter",
+    "category": "compositional",
+    "ghc_equivalent": "reverse_filter",
+    "wall_time_s": 24.14,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact ((xs.filter (fun x => decide (x > 0))).map (fun x => x * x)).foldl (fun a b => a + b) 0"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 122,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 760,
+      "n_tactic_valid": 6,
+      "n_tactic_solved": 143,
+      "n_oracle_calls": 72,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 1,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.6503,
+      "t_oracle_s": 3.9273,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 5.5776,
+      "ms_per_step": 2.17,
+      "ms_per_oracle": 54.5,
+      "pct_step": 29.6,
+      "pct_policy": 0.0,
+      "pct_oracle": 70.4,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 121
+    },
+    "task": "sum_positives_squared",
+    "category": "compositional",
+    "ghc_equivalent": "sum_positives_squared",
+    "wall_time_s": 5.58,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (xs.map (fun x => x.natAbs)).foldl max 0"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 39,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 739,
+      "n_tactic_valid": 5,
+      "n_tactic_solved": 50,
+      "n_oracle_calls": 48,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 2,
+      "n_oracle_batches": 2,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 2.3047,
+      "t_oracle_s": 3.0104,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 5.3151,
+      "ms_per_step": 3.12,
+      "ms_per_oracle": 62.7,
+      "pct_step": 43.4,
+      "pct_policy": 0.0,
+      "pct_oracle": 56.6,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 38
+    },
+    "task": "max_abs_comp",
+    "category": "compositional",
+    "ghc_equivalent": "max_abs_comp",
+    "wall_time_s": 5.32,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact (List.mergeSort xs).filter (fun x => decide (x > 0))"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 464,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 738,
+      "n_tactic_valid": 4,
+      "n_tactic_solved": 474,
+      "n_oracle_calls": 211,
+      "n_oracle_passed": 2,
+      "n_oracle_prefiltered": 7,
+      "n_oracle_batches": 5,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 1.8977,
+      "t_oracle_s": 14.876,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 16.7737,
+      "ms_per_step": 2.57,
+      "ms_per_oracle": 70.5,
+      "pct_step": 11.3,
+      "pct_policy": 0.0,
+      "pct_oracle": 88.7,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 463
+    },
+    "task": "sorted_positives",
+    "category": "compositional",
+    "ghc_equivalent": "sorted_positives",
+    "wall_time_s": 16.78,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  },
+  {
+    "solved": true,
+    "tactics": [
+      "exact List.rec 0 (fun h _ acc => if decide (h % 2 = 0) then acc + 1 else acc) xs"
+    ],
+    "rollouts_used": 1,
+    "tree_size": 2,
+    "stats": {
+      "n_expand_calls": 1,
+      "n_tactic_steps": 12,
+      "n_tactic_valid": 0,
+      "n_tactic_solved": 12,
+      "n_oracle_calls": 12,
+      "n_oracle_passed": 1,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 1,
+      "n_simulate_calls": 0,
+      "n_repl_crashes": 0,
+      "t_policy_s": 0.0,
+      "t_step_s": 0.0265,
+      "t_oracle_s": 0.8499,
+      "t_simulate_s": 0.0,
+      "t_select_s": 0.0,
+      "t_total_s": 0.8764,
+      "ms_per_step": 2.21,
+      "ms_per_oracle": 70.8,
+      "pct_step": 3.0,
+      "pct_policy": 0.0,
+      "pct_oracle": 97.0,
+      "pct_simulate": 0.0
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1
+    },
+    "task": "length_evens",
+    "category": "compositional",
+    "ghc_equivalent": "length_evens",
+    "wall_time_s": 0.88,
+    "tier_budget": 50,
+    "total_rollouts_tiered": 1
+  }
+]

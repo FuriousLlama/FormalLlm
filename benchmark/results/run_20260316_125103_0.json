@@ -1,0 +1,39 @@
+[
+  {
+    "solved": false,
+    "tactics": [
+      "norm_num",
+      "norm_num"
+    ],
+    "rollouts_used": 5,
+    "tree_size": 126,
+    "stats": {
+      "n_expand_calls": 5,
+      "n_tactic_steps": 2001,
+      "n_tactic_valid": 6,
+      "n_tactic_solved": 120,
+      "n_oracle_calls": 108,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 12,
+      "n_oracle_batches": 3,
+      "n_simulate_calls": 5,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.3571,
+      "t_step_s": 0.7777,
+      "t_oracle_s": 43.973,
+      "t_simulate_s": 6.5817,
+      "t_select_s": 0.0001,
+      "t_total_s": 54.6897,
+      "ms_per_step": 0.39,
+      "ms_per_oracle": 407.2,
+      "pct_step": 1.4,
+      "pct_policy": 6.1,
+      "pct_oracle": 80.4,
+      "pct_simulate": 12.0
+    },
+    "task": "fibonacci",
+    "category": "recurrence",
+    "ghc_equivalent": "fibonacci",
+    "wall_time_s": 54.71
+  }
+]

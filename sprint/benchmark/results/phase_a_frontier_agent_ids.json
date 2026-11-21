@@ -1,0 +1,17 @@
+{
+  "comment": "Maps held_out_12 task names to the agentId (= output file basename without .output) for each Phase A frontier agent. Used by the collection script to assemble phase_a_frontier_tactics.json without re-reading anything into the main session's context.",
+  "tasks": {
+    "eval_stack":              "a81b184e165b9ebb5",
+    "majority_element":        "acc30cb03a9662fad",
+    "map_with_index":          "a79040b35cd51bd77",
+    "max_subarray_sum":        "a4e8df5efa8b834b2",
+    "prefix_while_increasing": "ae6fee85fe759af01",
+    "unfold_n":                "abb5154990270a9a7",
+    "sum_at_odd_indices":      "a599a7cf18757ca7d",
+    "zip_diff":                "a60e24f8e08921bfd",
+    "longest_increasing_run":  "a612d3b0aa7c17e61",
+    "max_subarray_product":    "a306920c21243a675",
+    "merge_sorted_desc":       "a95bc90c31f458089",
+    "window_sums":             "a12676b7b8df3c09d"
+  }
+}

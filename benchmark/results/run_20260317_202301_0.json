@@ -1,0 +1,68 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "fibonacci",
+    "category": "recurrence",
+    "ghc_equivalent": "fibonacci",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "fib_list",
+    "category": "recurrence",
+    "ghc_equivalent": "fib_list",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "factorial",
+    "category": "recurrence",
+    "ghc_equivalent": "factorial",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "triangular_numbers",
+    "category": "recurrence",
+    "ghc_equivalent": "triangular_numbers",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "running_parts",
+    "category": "recurrence",
+    "ghc_equivalent": "running_parts",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 50,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "powers_of_2",
+    "category": "recurrence",
+    "ghc_equivalent": "powers_of_2",
+    "wall_time_s": 0.0
+  }
+]

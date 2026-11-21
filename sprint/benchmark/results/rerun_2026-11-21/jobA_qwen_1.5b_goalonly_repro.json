@@ -1,0 +1,719 @@
+{
+  "config": {
+    "tier": "held_out_12",
+    "model": "Qwen/Qwen2.5-Coder-1.5B",
+    "prompt_style": "goal_only",
+    "fewshot": "sprint/benchmark/results/phase_a_fewshot.json",
+    "n": 8,
+    "temperature": 0.2,
+    "top_p": 0.95,
+    "max_new_tokens": 256,
+    "format": "completion",
+    "extra_tests": "sprint/benchmark/results/rerun_2026-11-21/held_out_12_extra_tests.json",
+    "generations_file": "sprint/benchmark/results/rerun_2026-11-21/jobA_qwen_1.5b_goalonly_repro.generations.json",
+    "wall_generate": 342.6,
+    "wall_verify": 7.0
+  },
+  "summary": {
+    "solved": 0,
+    "total": 12,
+    "solve_rate": 0.0,
+    "solved_tasks": [],
+    "verdict_totals": {
+      "pass": 0,
+      "compile_fail": 2,
+      "wrong_output": 11,
+      "infra_error": 0
+    },
+    "unique_per_task": {
+      "eval_stack": 1,
+      "majority_element": 1,
+      "map_with_index": 1,
+      "max_subarray_sum": 1,
+      "prefix_while_increasing": 2,
+      "unfold_n": 1,
+      "sum_at_odd_indices": 1,
+      "zip_diff": 1,
+      "longest_increasing_run": 2,
+      "max_subarray_product": 1,
+      "merge_sorted_desc": 1,
+      "window_sums": 0
+    },
+    "solved_with_extra": 0,
+    "solved_with_extra_tasks": []
+  },
+  "per_task": [
+    {
+      "name": "eval_stack",
+      "theorem_name": "evalStack",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 3,
+      "n_hit_max_tokens": 5,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc x => acc + x",
+          "passed": false,
+          "n_passed": 4,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "7",
+              "expected": "7",
+              "passed": true
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "6",
+              "expected": "6",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "16",
+              "expected": "1",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "majority_element",
+      "theorem_name": "majorityElement",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 2,
+      "n_hit_max_tokens": 6,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc x => acc + x",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "23",
+              "expected": "3",
+              "passed": false
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "4",
+              "expected": "1",
+              "passed": false
+            },
+            {
+              "actual": "8",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "8",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "22",
+              "expected": "3",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "map_with_index",
+      "theorem_name": "mapWithIndex",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 3,
+      "n_hit_max_tokens": 5,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.map (fun x => x + 1)",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "[3, 4, 5]",
+              "expected": "[2, 6, 12]",
+              "passed": false
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[6]",
+              "expected": "[5]",
+              "passed": false
+            },
+            {
+              "actual": "[2, 2, 2, 2]",
+              "expected": "[1, 2, 3, 4]",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "max_subarray_sum",
+      "theorem_name": "maxSubarraySum",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 1,
+      "n_hit_max_tokens": 7,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc x => acc + x",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "2",
+              "expected": "4",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "-6",
+              "expected": "0",
+              "passed": false
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "prefix_while_increasing",
+      "theorem_name": "prefixWhileIncreasing",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 5,
+      "n_hit_max_tokens": 3,
+      "n_candidates": 2,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 2,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.filter (fun x => x > 0)",
+          "passed": false,
+          "n_passed": 3,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "[1, 3, 2, 4]",
+              "expected": "[1, 3]",
+              "passed": false
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[5]",
+              "expected": "[5]",
+              "passed": true
+            },
+            {
+              "actual": "[1, 2, 3, 4]",
+              "expected": "[1, 2, 3, 4]",
+              "passed": true
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact xs.map (fun x => x + 1)",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 4,
+          "error": null,
+          "details": [
+            {
+              "actual": "[2, 4, 3, 5]",
+              "expected": "[1, 3]",
+              "passed": false
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[6]",
+              "expected": "[5]",
+              "passed": false
+            },
+            {
+              "actual": "[2, 3, 4, 5]",
+              "expected": "[1, 2, 3, 4]",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "unfold_n",
+      "theorem_name": "unfoldN",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 7,
+      "n_hit_max_tokens": 1,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 1,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact [seed, f, n]",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 4,
+          "error": "Application type mismatch: The argument\n  f\nhas type\n  \u2124 \u2192 \u2124\nbut is expected to have type\n  \u2124\nin the application\n  List.cons f; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "sum_at_odd_indices",
+      "theorem_name": "sumAtOddIndices",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 2,
+      "n_hit_max_tokens": 6,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc x => acc + x",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "15",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "7",
+              "expected": "0",
+              "passed": false
+            },
+            {
+              "actual": "3",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "100",
+              "expected": "60",
+              "passed": false
+            },
+            {
+              "actual": "-10",
+              "expected": "-6",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "zip_diff",
+      "theorem_name": "zipDiff",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 1,
+      "n_hit_max_tokens": 7,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.map (fun x => x + 1)",
+          "passed": false,
+          "n_passed": 1,
+          "n_total": 6,
+          "error": null,
+          "details": [
+            {
+              "actual": "[2, 6, 4, 9]",
+              "expected": "[4, -2, 5]",
+              "passed": false
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[8]",
+              "expected": "[]",
+              "passed": false
+            },
+            {
+              "actual": "[2, 3]",
+              "expected": "[1]",
+              "passed": false
+            },
+            {
+              "actual": "[6, 6, 6]",
+              "expected": "[0, 0]",
+              "passed": false
+            },
+            {
+              "actual": "[11, 2, -2]",
+              "expected": "[-9, -4]",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "longest_increasing_run",
+      "theorem_name": "longestIncreasingRun",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 3,
+      "n_hit_max_tokens": 5,
+      "n_candidates": 2,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 1,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.length",
+          "passed": false,
+          "n_passed": 3,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "7",
+              "expected": "4",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "1",
+              "expected": "1",
+              "passed": true
+            },
+            {
+              "actual": "3",
+              "expected": "1",
+              "passed": false
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "1",
+              "passed": false
+            },
+            {
+              "actual": "8",
+              "expected": "3",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        },
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc x => acc + x",
+          "passed": false,
+          "n_passed": 0,
+          "n_total": 7,
+          "error": "Application type mismatch: The argument\n  xs\nhas type\n  List \u2124\nbut is expected to have type\n  List \u2115\nin the application\n  List.foldl (fun acc x => acc + x) 0 xs; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.; aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.",
+          "details": [],
+          "verdict": "compile_fail"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "max_subarray_product",
+      "theorem_name": "maxSubarrayProduct",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 2,
+      "n_hit_max_tokens": 6,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.foldl (init := 0) fun acc x => acc + x",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "7",
+              "expected": "6",
+              "passed": false
+            },
+            {
+              "actual": "-3",
+              "expected": "0",
+              "passed": false
+            },
+            {
+              "actual": "-6",
+              "expected": "24",
+              "passed": false
+            },
+            {
+              "actual": "0",
+              "expected": "0",
+              "passed": true
+            },
+            {
+              "actual": "5",
+              "expected": "5",
+              "passed": true
+            },
+            {
+              "actual": "-3",
+              "expected": "2",
+              "passed": false
+            },
+            {
+              "actual": "-3",
+              "expected": "24",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "merge_sorted_desc",
+      "theorem_name": "mergeSortedDesc",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 4,
+      "n_hit_max_tokens": 4,
+      "n_candidates": 1,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 1,
+        "infra_error": 0
+      },
+      "candidates": [
+        {
+          "tactic": "exact xs.filter (fun x => !ys.elem x)",
+          "passed": false,
+          "n_passed": 2,
+          "n_total": 7,
+          "error": null,
+          "details": [
+            {
+              "actual": "[5, 3, 1]",
+              "expected": "[5, 4, 3, 2, 1]",
+              "passed": false
+            },
+            {
+              "actual": "[]",
+              "expected": "[3, 2, 1]",
+              "passed": false
+            },
+            {
+              "actual": "[3, 2, 1]",
+              "expected": "[3, 2, 1]",
+              "passed": true
+            },
+            {
+              "actual": "[]",
+              "expected": "[]",
+              "passed": true
+            },
+            {
+              "actual": "[5]",
+              "expected": "[5, 3]",
+              "passed": false
+            },
+            {
+              "actual": "[]",
+              "expected": "[5, 5, 5]",
+              "passed": false
+            },
+            {
+              "actual": "[10, 5]",
+              "expected": "[10, 8, 5, 3]",
+              "passed": false
+            }
+          ],
+          "verdict": "wrong_output"
+        }
+      ],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    },
+    {
+      "name": "window_sums",
+      "theorem_name": "windowSums",
+      "solved": false,
+      "n_samples": 8,
+      "n_empty_extracted": 8,
+      "n_hit_max_tokens": 0,
+      "n_candidates": 0,
+      "verdict_counts": {
+        "pass": 0,
+        "compile_fail": 0,
+        "wrong_output": 0,
+        "infra_error": 0
+      },
+      "candidates": [],
+      "n_extra_tests": 0,
+      "solved_with_extra": false,
+      "extra_results": []
+    }
+  ]
+}

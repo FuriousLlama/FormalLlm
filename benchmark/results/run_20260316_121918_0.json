@@ -1,0 +1,42 @@
+[
+  {
+    "solved": false,
+    "tactics": [
+      "have h := xs.foldl (\u00b7 ++ \u00b7) []",
+      "norm_num",
+      "norm_num",
+      "norm_num",
+      "norm_num"
+    ],
+    "rollouts_used": 50,
+    "tree_size": 831,
+    "stats": {
+      "n_expand_calls": 50,
+      "n_tactic_steps": 12867,
+      "n_tactic_valid": 60,
+      "n_tactic_solved": 780,
+      "n_oracle_calls": 652,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 128,
+      "n_oracle_batches": 19,
+      "n_simulate_calls": 50,
+      "n_repl_crashes": 0,
+      "t_policy_s": 2.3339,
+      "t_step_s": 112.3981,
+      "t_oracle_s": 233.4152,
+      "t_simulate_s": 50.512,
+      "t_select_s": 0.0019,
+      "t_total_s": 398.6611,
+      "ms_per_step": 8.74,
+      "ms_per_oracle": 358.0,
+      "pct_step": 28.2,
+      "pct_policy": 0.6,
+      "pct_oracle": 58.5,
+      "pct_simulate": 12.7
+    },
+    "task": "flatten",
+    "category": "multi_type",
+    "ghc_equivalent": "flatten",
+    "wall_time_s": 398.69
+  }
+]

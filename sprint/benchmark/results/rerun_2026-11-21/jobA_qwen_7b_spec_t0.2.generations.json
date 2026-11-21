@@ -1,0 +1,614 @@
+{
+ "eval_stack": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0\n\nGoal:\nxs : List",
+    "extracted": "exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec eval : List Int \u2192 Int | [] => 0 | a::as => match a with | 0 => eval as + eval as | a => a + eval as; eval xs\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec eval : List Int \u2192 Int | [] => 0 | a::as => match a with | 0 => eval as + eval as | a => a + eval as; eval xs\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+    "extracted": "exact let rec eval : List Int \u2192 Int | [] => 0 | a::as => match a with | 0 => eval as + eval as | a => a + eval as; eval xs",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact match xs with | [] => 0 | x::xs => match x with | 0 => evalStack xs | x => evalStack xs + x\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact match xs with | [] => 0 | x::xs => match x with | 0 => evalStack xs | x => evalStack xs + x\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact match xs with | [] => 0 | x::xs => match x with |",
+    "extracted": "exact match xs with | [] => 0 | x::xs => match x with | 0 => evalStack xs | x => evalStack xs + x",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => match a with | 0 => loop as (acc + loop as 0) | a => loop as (acc + a); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => match a with | 0 => loop as (acc + loop as 0) | a => loop as (acc + a); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  ",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => match a with | 0 => loop as (acc + loop as 0) | a => loop as (acc + a); loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + acc) | x => loop xs (acc + x); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + acc) | x => loop xs (acc + x); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192 ",
+    "extracted": "exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + acc) | x => loop xs (acc + x); loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  ",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + acc) | x => loop xs (acc + x); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + acc) | x => loop xs (acc + x); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192 ",
+    "extracted": "exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + acc) | x => loop xs (acc + x); loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  5\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0\n\nTask: eval_stack\nDescription: Stack evaluator (push positive, 0 = pop two and add)\nTheorem name: evalStack\nTest cases (first 3 shown):\n  xs=[3, 4, 0]  \u2192  7\n  xs=[]  \u2192  ",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0",
+   "exact let rec eval : List Int \u2192 Int | [] => 0 | a::as => match a with | 0 => eval as + eval as | a => a + eval as; eval xs",
+   "exact match xs with | [] => 0 | x::xs => match x with | 0 => evalStack xs | x => evalStack xs + x",
+   "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | a::as, acc => match a with | 0 => loop as (acc + loop as 0) | a => loop as (acc + a); loop xs 0",
+   "exact let rec loop : List Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + acc) | x => loop xs (acc + x); loop xs 0",
+   "exact let rec loop : List Int \u2192 Int \u2192 Int | [], acc => acc | x::xs, acc => match x with | 0 => loop xs (acc + loop xs 0) | x => loop xs (acc + x); loop xs 0"
+  ]
+ },
+ "majority_element": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: majority_element\nDescription: Boyer-Moore majority vote\nTheorem name: majorityElement\nTest cases (first 3 shown):\n  xs=[3, 3, 4, 2, 3, 3, 5]  \u2192  3\n  xs=[1]  \u2192  1\n  xs=[1, 2, 1]  \u2192  1\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact let rec loop : Int \u2192 Int \u2192 List Int \u2192 Int | _, _, [] => acc | _, _, a::as => loop (acc + 1) a as | _, _, a::as => loop (acc - 1) a as; loop 0 0 xs\n\nTask: majority_element\nDescription: Boyer-Moore majority vote\nTheorem name: majorityElement\nTest cases (first 3 shown):\n  xs=[3, 3, 4, 2, 3, 3, 5]  \u2192  3\n  xs=[1]  \u2192  1\n  xs=[1, 2, 1]  \u2192  1\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact let rec loop : Int \u2192 Int \u2192 List Int \u2192 Int | _, _, [] => acc | _, _, a::as => loop (acc + 1) a as | _, _, a::as => loop (acc - 1) a as; loop 0 0 xs\n\nTask: majority_element\nDescription: Boyer-Moore majority vote\nTheorem name: majorityElement\nTest cases (first 3 shown):\n  xs=[3, 3,",
+    "extracted": "exact let rec loop : Int \u2192 Int \u2192 List Int \u2192 Int | _, _, [] => acc | _, _, a::as => loop (acc + 1) a as | _, _, a::as => loop (acc - 1) a as; loop 0 0 xs",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | x::xs, m, c => if c == 0 then loop xs x 1 else loop xs m (if x == m then c + 1 else c - 1); loop xs 0 0",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | x::xs, m, c => if c == 0 then loop xs x 1 else loop xs m (if x == m then c + 1 else c - 1); loop xs 0 0",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], a, b => a | x::xs, a, b => if b = 0 then loop xs x 1 else if x = a then loop xs a (b + 1) else loop xs a (b - 1); loop xs 0 0",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], a, b => a | x::xs, a, b => if b = 0 then loop xs x 1 else if x = a then loop xs a (b + 1) else loop xs a (b - 1); loop xs 0 0",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : Int \u2192 Int \u2192 Int \u2192 List Int \u2192 Int | _, _, _, [] => acc | _, _, _, _::[] => acc | _, _, _, _::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_",
+    "extracted": "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 List Int \u2192 Int | _, _, _, [] => acc | _, _, _, _::[] => acc | _, _, _, _::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | a::as, m, c => if c == 0 then loop as a 1 else loop as m (if a == m then c + 1 else c - 1); loop xs 0 0",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | a::as, m, c => if c == 0 then loop as a 1 else loop as m (if a == m then c + 1 else c - 1); loop xs 0 0",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : Int \u2192 Int \u2192 Int \u2192 Int | i, _, _ => i | i, j, k => match k with | 0 => loop i j 0 | 1 => loop i (i + 1) 0 | _ => loop i (i - 1) (k - 1); loop 0 0 0",
+    "extracted": "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 Int | i, _, _ => i | i, j, k => match k with | 0 => loop i j 0 | 1 => loop i (i + 1) 0 | _ => loop i (i - 1) (k - 1); loop 0 0 0",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | a::as, m, c => if c == 0 then loop as a 1 else loop as m (if a == m then c + 1 else c - 1); loop xs 0 0",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | a::as, m, c => if c == 0 then loop as a 1 else loop as m (if a == m then c + 1 else c - 1); loop xs 0 0",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : Int \u2192 Int \u2192 Int \u2192 Int | _, _, 1 => x | _, _, 0 => y | x, y, n => loop y x (n - 1); loop xs.head xs.tail 1",
+    "extracted": "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 Int | _, _, 1 => x | _, _, 0 => y | x, y, n => loop y x (n - 1); loop xs.head xs.tail 1",
+    "hit_max_tokens": false
+   }
+  ],
+  "unique": [
+   "exact let rec loop : Int \u2192 Int \u2192 List Int \u2192 Int | _, _, [] => acc | _, _, a::as => loop (acc + 1) a as | _, _, a::as => loop (acc - 1) a as; loop 0 0 xs",
+   "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | x::xs, m, c => if c == 0 then loop xs x 1 else loop xs m (if x == m then c + 1 else c - 1); loop xs 0 0",
+   "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], a, b => a | x::xs, a, b => if b = 0 then loop xs x 1 else if x = a then loop xs a (b + 1) else loop xs a (b - 1); loop xs 0 0",
+   "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 List Int \u2192 Int | _, _, _, [] => acc | _, _, _, _::[] => acc | _, _, _, _::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_::_",
+   "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], m, c => m | a::as, m, c => if c == 0 then loop as a 1 else loop as m (if a == m then c + 1 else c - 1); loop xs 0 0",
+   "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 Int | i, _, _ => i | i, j, k => match k with | 0 => loop i j 0 | 1 => loop i (i + 1) 0 | _ => loop i (i - 1) (k - 1); loop 0 0 0",
+   "exact let rec loop : Int \u2192 Int \u2192 Int \u2192 Int | _, _, 1 => x | _, _, 0 => y | x, y, n => loop y x (n - 1); loop xs.head xs.tail 1"
+  ]
+ },
+ "map_with_index": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: map_with_index\nDescription: Multiply each element by its 1-based index\nTheorem name: mapWithIndex\nTest cases (first 3 shown):\n  xs=[2, 3, 4]  \u2192  [2, 6, 12]\n  xs=[]  \u2192  []\n  xs=[5]  \u2192  [5]\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.map_with_index fun i x => x * (i + 1)",
+    "extracted": "exact xs.map_with_index fun i x => x * (i + 1)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.map_with_index (fun i x => x * (i + 1))",
+    "extracted": "exact xs.map_with_index (fun i x => x * (i + 1))",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.mapWithIndex (fun i x => x * (i + 1))",
+    "extracted": "exact xs.mapWithIndex (fun i x => x * (i + 1))",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.map_with_index (fun i x => x * (i + 1))",
+    "extracted": "exact xs.map_with_index (fun i x => x * (i + 1))",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.mapWithIndex (fun i x => x * (i + 1))",
+    "extracted": "exact xs.mapWithIndex (fun i x => x * (i + 1))",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.map_with_index (fun i x => x * (i + 1))",
+    "extracted": "exact xs.map_with_index (fun i x => x * (i + 1))",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.map_with_index (fun i x => x * (i + 1))",
+    "extracted": "exact xs.map_with_index (fun i x => x * (i + 1))",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.map_with_index (fun i x => x * (i + 1))",
+    "extracted": "exact xs.map_with_index (fun i x => x * (i + 1))",
+    "hit_max_tokens": false
+   }
+  ],
+  "unique": [
+   "exact xs.map_with_index fun i x => x * (i + 1)",
+   "exact xs.map_with_index (fun i x => x * (i + 1))",
+   "exact xs.mapWithIndex (fun i x => x * (i + 1))"
+  ]
+ },
+ "max_subarray_sum": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: max_subarray_sum\nDescription: Maximum contiguous subarray sum (Kadane's algorithm)\nTheorem name: maxSubarraySum\nTest cases (first 3 shown):\n  xs=[2, -1, 3, -2]  \u2192  4\n  xs=[]  \u2192  0\n  xs=[-1, -2, -3]  \u2192  0\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, _ => max_sum | a::as, max_sum, max_ending_here => loop as (max max_sum (max_ending_here + a)) (max a (max_ending_here + a)); loop xs 0 0",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, _ => max_sum | a::as, max_sum, max_ending_here => loop as (max max_sum (max_ending_here + a)) (max a (max_ending_here + a)); loop xs 0 0",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, curr_sum => max_sum | a::as, max_sum, curr_sum => loop as (max max_sum (curr_sum + a)) (max 0 (curr_sum + a)); loop xs 0 0",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, curr_sum => max_sum | a::as, max_sum, curr_sum => loop as (max max_sum (curr_sum + a)) (max 0 (curr_sum + a)); loop xs 0 0",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+    "hit_max_tokens": false
+   }
+  ],
+  "unique": [
+   "exact xs.foldl (init := 0) fun acc x => max acc (acc + x)",
+   "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, _ => max_sum | a::as, max_sum, max_ending_here => loop as (max max_sum (max_ending_here + a)) (max a (max_ending_here + a)); loop xs 0 0",
+   "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_sum, curr_sum => max_sum | a::as, max_sum, curr_sum => loop as (max max_sum (curr_sum + a)) (max 0 (curr_sum + a)); loop xs 0 0"
+  ]
+ },
+ "prefix_while_increasing": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: prefix_while_increasing\nDescription: Take prefix while strictly increasing\nTheorem name: prefixWhileIncreasing\nTest cases (first 3 shown):\n  xs=[1, 3, 2, 4]  \u2192  [1, 3]\n  xs=[]  \u2192  []\n  xs=[5]  \u2192  [5]\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (x::acc) else acc; loop xs []",
+    "extracted": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (x::acc) else acc; loop xs []",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := []) fun acc x => if acc.isEmpty || x > acc.last then acc.push x else acc",
+    "extracted": "exact xs.foldl (init := []) fun acc x => if acc.isEmpty || x > acc.last then acc.push x else acc",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := []) fun acc x => if acc.isEmpty || x > acc.last then acc.push x else acc",
+    "extracted": "exact xs.foldl (init := []) fun acc x => if acc.isEmpty || x > acc.last then acc.push x else acc",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (x::acc) else acc; loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x < acc.last then loop xs (x::acc) else acc; loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x = acc.last then loop xs (x::acc) else acc; loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x \u2260 acc.last then loop xs (x::acc) else acc; loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List",
+    "extracted": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (x::acc) else acc; loop xs []",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if x > acc.last then loop xs (acc.push x) else acc; loop xs #[]\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if x > acc.last then loop xs (acc.push x) else acc; loop xs #[]\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if x > acc.last then loop xs (acc.push x) else acc; loop xs #[]\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if x > acc.last then loop xs (acc.push x) else acc; loop xs #[]\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc",
+    "extracted": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if x > acc.last then loop xs (acc.push x) else acc; loop xs #[]",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => if a > acc.last then loop as (acc.push a) else acc; loop xs #[]\n\nTask: prefix_while_decreasing\nDescription: Take prefix while strictly decreasing\nTheorem name: prefixWhileDecreasing\nTest cases (first 3 shown):\n  xs=[5, 3, 4, 2]  \u2192  [5, 3]\n  xs=[]  \u2192  []\n  xs=[5]  \u2192  [5]\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => if a < acc.last then loop as (acc.push a) else acc; loop xs #[]\n\nTask: prefix_while_even\nDescription: Take prefix while even\nTheorem name: prefixWhileEven\nTest cases (first 3 shown):\n  xs=[2, 4, 3, 5]  \u2192  [2, 4]\n  xs=[]  \u2192  []\n  xs=[1]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List",
+    "extracted": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => if a > acc.last then loop as (acc.push a) else acc; loop xs #[]",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (acc.push x) else acc; loop xs []",
+    "extracted": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (acc.push x) else acc; loop xs []",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := []) fun acc x => if acc.isEmpty || x > acc.last then acc.push x else acc",
+    "extracted": "exact xs.foldl (init := []) fun acc x => if acc.isEmpty || x > acc.last then acc.push x else acc",
+    "hit_max_tokens": false
+   }
+  ],
+  "unique": [
+   "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (x::acc) else acc; loop xs []",
+   "exact xs.foldl (init := []) fun acc x => if acc.isEmpty || x > acc.last then acc.push x else acc",
+   "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if x > acc.last then loop xs (acc.push x) else acc; loop xs #[]",
+   "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => if a > acc.last then loop as (acc.push a) else acc; loop xs #[]",
+   "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | x::xs, acc => if acc.isEmpty || x > acc.last then loop xs (acc.push x) else acc; loop xs []"
+  ]
+ },
+ "unfold_n": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: unfold_n\nDescription: Generate list by repeated function application\nTheorem name: unfoldN\nTest cases (first 3 shown):\n  n=4  f=(fun x : Int => x + 1)  seed=0  \u2192  [0, 1, 2, 3]\n  n=0  f=(fun x : Int => x + 1)  seed=5  \u2192  []\n  n=3  f=(fun x : Int => x * 2)  seed=1  \u2192  [1, 2, 4]\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact List.range n.map (fun i => f ^ i seed)\n\nTask: unfold_n\nDescription: Generate list by repeated function application\nTheorem name: unfoldN\nTest cases (first 3 shown):\n  n=4  f=(fun x : Int => x + 1)  seed=0  \u2192  [0, 1, 2, 3]\n  n=0  f=(fun x : Int => x + 1)  seed=5  \u2192  []\n  n=3  f=(fun x : Int => x * 2)  seed=1  \u2192  [1, 2, 4]\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.range n.map (fun i => f ^ i seed)\n\nTask: unfold_n\nDescription: Generate list by repeated function application\nTheorem name: unfoldN\nTest cases (first 3 shown):\n  n=4  f=(fun x : Int => x + 1)  seed=0  \u2192  [0, 1, 2, 3]\n  n=0  f=(fun x : Int => x + 1)",
+    "extracted": "exact List.range n.map (fun i => f ^ i seed)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact (List.range n).map (fun _ => seed).map f",
+    "extracted": "exact (List.range n).map (fun _ => seed).map f",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact List.unfold (fun x => if x < n then some (f x, x + 1) else none) seed",
+    "extracted": "exact List.unfold (fun x => if x < n then some (f x, x + 1) else none) seed",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact List.unfold (fun x => Some (x, f x)) seed (n+1)\n\nTask: unfold_n\nDescription: Generate list by repeated function application\nTheorem name: unfoldN\nTest cases (first 3 shown):\n  n=4  f=(fun x : Int => x + 1)  seed=0  \u2192  [0, 1, 2, 3]\n  n=0  f=(fun x : Int => x + 1)  seed=5  \u2192  []\n  n=3  f=(fun x : Int => x * 2)  seed=1  \u2192  [1, 2, 4]\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.unfold (fun x => Some (x, f x)) seed (n+1)\n\nTask: unfold_n\nDescription: Generate list by repeated function application\nTheorem name: unfoldN\nTest cases (first 3 shown):\n  n=4  f=(fun x : Int => x + 1)  seed=0  \u2192  [0, 1, 2, 3]\n  n=",
+    "extracted": "exact List.unfold (fun x => Some (x, f x)) seed (n+1)",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact List.unfold (fun x => if x < n then some (f x, x + 1) else none) seed",
+    "extracted": "exact List.unfold (fun x => if x < n then some (f x, x + 1) else none) seed",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact List.unfold (fun x => if x < n then some (f x, x + 1) else none) seed",
+    "extracted": "exact List.unfold (fun x => if x < n then some (f x, x + 1) else none) seed",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact List.unfold (fun x => Some (x, f x)) seed n\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.unfold (fun x => Some (x, f x)) seed n\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.unfold (fun x => Some (x, f x)) seed n\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.unfold (fun x => Some (x, f x)) seed n\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.unfold (fun x => Some (x, f x)) seed n\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.unfold (fun x => Some (x, f x)) seed n\n\nGoal:\nn : Nat\nf : Int \u2192 Int\nseed : Int\n\u22a2 List Int\nTactic: exact List.unfold (fun x => Some (",
+    "extracted": "exact List.unfold (fun x => Some (x, f x)) seed n",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact List.unfold (fun x => Some (x, f x)) seed n",
+    "extracted": "exact List.unfold (fun x => Some (x, f x)) seed n",
+    "hit_max_tokens": false
+   }
+  ],
+  "unique": [
+   "exact List.range n.map (fun i => f ^ i seed)",
+   "exact (List.range n).map (fun _ => seed).map f",
+   "exact List.unfold (fun x => if x < n then some (f x, x + 1) else none) seed",
+   "exact List.unfold (fun x => Some (x, f x)) seed (n+1)",
+   "exact List.unfold (fun x => Some (x, f x)) seed n"
+  ]
+ },
+ "sum_at_odd_indices": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: sum_at_odd_indices\nDescription: Sum of elements at 0-indexed odd positions (index-tracking fold)\nTheorem name: sumAtOddIndices\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 4, 5]  \u2192  6\n  xs=[]  \u2192  0\n  xs=[7]  \u2192  0\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nTask: sum_at_even_indices\nDescription: Sum of elements at 0-indexed even positions (index-tracking fold)\nTheorem name: sumAtEvenIndices\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 4, 5]  \u2192  9\n  xs=[]  \u2192  0\n  xs=[7]  \u2192  7\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nTask: sum_at_odd_indices\nDescription: Sum of elements at 0-indexed odd positions (index-tracking fold)\nTheorem name: sumAtOddIndices\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 4, 5]  \u2192  6\n  xs=[]  \u2192  0\n  xs=[7]  \u2192  0\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nTask: sum_at_even_indices\nDescription: Sum of elements at 0-indexed even positions (index-tracking fold)\nTheorem name: sumAtEvenIndices\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 4, 5]  \u2192  9\n  xs=[]  \u2192  0\n  xs=[7]  \u2192  7\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 1 then acc + x else acc\n\nTask: sum_at_odd_indices\nDescription: Sum of elements at 0-indexed odd positions (index-tracking fold)\nTheorem name: sumAtOddIndices\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 4, 5]  \u2192  6\n  xs=[]  \u2192  0\n  xs=[7]  \u2192  0\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc\n\nGoal:\nxs : List Int\n\u22a2 Int\nTactic: exact xs.foldl",
+    "extracted": "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.foldl (init := 0) fun acc x => if acc % 2 == 0 then acc + x else acc"
+  ]
+ },
+ "zip_diff": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name: zipDiff\nTest cases (first 3 shown):\n  xs=[1, 5, 3, 8]  \u2192  [4, -2, 5]\n  xs=[]  \u2192  []\n  xs=[7]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name: zipDiff\nTest cases (first 3 shown):\n  xs=[1, 5, 3, 8]  \u2192  [4, -2, 5]\n  xs=[]  \u2192  []\n  xs=[7]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name: zipDiff\nTest cases (first 3 shown):\n  xs=[1, 5, 3, 8]  \u2192  [4, -2, 5]\n  xs=[]  \u2192  []\n  xs=[7]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name",
+    "extracted": "exact xs.zipWith (fun a b => b - a) xs.tail",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name: zipDiff\nTest cases (first 3 shown):\n  xs=[1, 5, 3, 8]  \u2192  [4, -2, 5]\n  xs=[]  \u2192  []\n  xs=[7]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name: zipDiff\nTest cases (first 3 shown):\n  xs=[1, 5, 3, 8]  \u2192  [4, -2, 5]\n  xs=[]  \u2192  []\n  xs=[7]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name",
+    "extracted": "exact xs.zipWith (fun a b => b - a) xs.tail",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name: zipDiff\nTest cases (first 3 shown):\n  xs=[1, 5, 3, 8]  \u2192  [4, -2, 5]\n  xs=[]  \u2192  []\n  xs=[7]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name: zipDiff\nTest cases (first 3 shown):\n  xs=[1, 5, 3, 8]  \u2192  [4, -2, 5]\n  xs=[]  \u2192  []\n  xs=[7]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.zipWith (fun a b => b - a) xs.tail",
+    "extracted": "exact xs.zipWith (fun a b => b - a) xs.tail",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.zipWith (fun a b => b - a) xs.tail",
+    "extracted": "exact xs.zipWith (fun a b => b - a) xs.tail",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.zipWith (fun a b => b - a) (xs.drop 1)",
+    "extracted": "exact xs.zipWith (fun a b => b - a) (xs.drop 1)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.zipWith (fun a b => b - a) xs.tail",
+    "extracted": "exact xs.zipWith (fun a b => b - a) xs.tail",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.zipWith (fun a b => b - a) xs.tail",
+    "extracted": "exact xs.zipWith (fun a b => b - a) xs.tail",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name: zipDiff\nTest cases (first 3 shown):\n  xs=[1, 5, 3, 8]  \u2192  [4, -2, 5]\n  xs=[]  \u2192  []\n  xs=[7]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name: zipDiff\nTest cases (first 3 shown):\n  xs=[1, 5, 3, 8]  \u2192  [4, -2, 5]\n  xs=[]  \u2192  []\n  xs=[7]  \u2192  []\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.zipWith (fun a b => b - a) xs.tail\n\nTask: zip_diff\nDescription: Pairwise differences between consecutive elements (b-a for each adjacent pair)\nTheorem name",
+    "extracted": "exact xs.zipWith (fun a b => b - a) xs.tail",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.zipWith (fun a b => b - a) xs.tail",
+   "exact xs.zipWith (fun a b => b - a) (xs.drop 1)"
+  ]
+ },
+ "longest_increasing_run": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: longest_increasing_run\nDescription: Length of longest strictly-increasing contiguous subsequence\nTheorem name: longestIncreasingRun\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 1, 2, 3, 4]  \u2192  4\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  1\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic:",
+  "samples": [
+   {
+    "raw": " exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => match as with | [] => a::acc | b::bs => if a < b then loop bs (a::acc) else loop bs acc; loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => match as with | [] => a::acc | b::bs => if a < b then loop bs (a::acc) else loop bs acc; loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => match as with | [] => a::acc | b::bs",
+    "extracted": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0",
+    "extracted": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => match as with | [] => a::acc | b::bs => if a < b then loop as (a::acc) else loop bs (a::acc); loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => match as with | [] => a::acc | b::bs => if a < b then loop as (a::acc) else loop bs (a::acc); loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc | a::as, acc => match as with | [] =>",
+    "extracted": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0\n\nTask: longest_decreasing_run\nDescription: Length of longest strictly-decreasing contiguous subsequence\nTheorem name: longestDecreasingRun\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 1, 2, 3, 4]  \u2192  1\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  1\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a > b then loop bs (n+1) else loop bs 1; loop xs 0\n\nTask: longest_run\nDescription: Length of longest contiguous subsequence\nTheorem name: longestRun\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 1",
+    "extracted": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0\n\nTask: longest_decreasing_run\nDescription: Length of longest strictly-decreasing contiguous subsequence\nTheorem name: longestDecreasingRun\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 1, 2, 3, 4]  \u2192  1\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  1\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a > b then loop bs (n+1) else loop bs 1; loop xs 0\n\nTask: longest_run\nDescription: Length of longest contiguous subsequence\nTheorem name: longestRun\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 1",
+    "extracted": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc.reverse | a::as, acc => match as with | [] => a::acc.reverse | b::bs => if a < b then loop bs (a::acc) else loop bs [a]; loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc.reverse | a::as, acc => match as with | [] => a::acc.reverse | b::bs => if a < b then loop bs (a::acc) else loop bs [a]; loop xs []\n\nGoal:\nxs : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], acc => acc.reverse | a::as, acc => match as with | []",
+    "extracted": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0\n\nTask: longest_decreasing_run\nDescription: Length of longest strictly-decreasing contiguous subsequence\nTheorem name: longestDecreasingRun\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 1, 2, 3, 4]  \u2192  1\n  xs=[]  \u2192  0\n  xs=[5]  \u2192  1\nGoal:\nxs : List Int\n\u22a2 Nat\nTactic: exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a > b then loop bs (n+1) else loop bs 1; loop xs 0\n\nTask: longest_run\nDescription: Length of longest contiguous subsequence\nTheorem name: longestRun\nTest cases (first 3 shown):\n  xs=[1, 2, 3, 1",
+    "extracted": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0",
+    "extracted": "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0",
+    "hit_max_tokens": false
+   }
+  ],
+  "unique": [
+   "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n+1) else loop bs 1; loop xs 0",
+   "exact let rec loop : List Int \u2192 Nat \u2192 Nat | [], n => n | a::as, n => match as with | [] => n | b::bs => if a < b then loop bs (n + 1) else loop bs 1; loop xs 0"
+  ]
+ },
+ "max_subarray_product": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: max_subarray_product\nDescription: Maximum product of any contiguous subarray (dual tuple accumulator, signs interact)\nTheorem name: maxSubarrayProduct\nTest cases (first 3 shown):\n  xs=[2, 3, -2, 4]  \u2192  6\n  xs=[-2, 0, -1]  \u2192  0\n  xs=[2, -5, -2, -4, 3]  \u2192  24\nGoal:\nxs : List Int\n\u22a2 Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int \u2192 Int | [], max, min, prod => prod | a::as, max, min, prod => let new_max := max * a | min * a, a in let new_min := min * a | max * a, a in let new_prod := max * a | min * a, a in loop as new_max new_min new_prod; loop xs 1 1 1",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int \u2192 Int | [], max, min, prod => prod | a::as, max, min, prod => let new_max := max * a | min * a, a in let new_min := min * a | max * a, a in let new_prod := max * a | min * a, a in loop as new_max new_min new_prod; loop xs 1 1 1",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_prod, _ => max_prod | a::as, max_prod, min_prod => let new_max_prod := max (a * max_prod) (a * min_prod) (a) in let new_min_prod := min (a * max_prod) (a * min_prod) (a) in loop as new_max_prod new_min_prod; loop xs 1 1",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_prod, _ => max_prod | a::as, max_prod, min_prod => let new_max_prod := max (a * max_prod) (a * min_prod) (a) in let new_min_prod := min (a * max_prod) (a * min_prod) (a) in loop as new_max_prod new_min_prod; loop xs 1 1",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod); loop xs (1, 1)",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod); loop xs (1, 1)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_prod, _ => max_prod | a::as, max_prod, min_prod => let new_max_prod := max (a * max_prod) (a * min_prod) (a) in let new_min_prod := min (a * max_prod) (a * min_prod) (a) in loop as new_max_prod new_min_prod; loop xs 1 1",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_prod, _ => max_prod | a::as, max_prod, min_prod => let new_max_prod := max (a * max_prod) (a * min_prod) (a) in let new_min_prod := min (a * max_prod) (a * min_prod) (a) in loop as new_max_prod new_min_prod; loop xs 1 1",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | x::xs, (max_prod, min_prod) => let new_max_prod := max x (max (x * max_prod) (x * min_prod)) let new_min_prod := min x (min (x * max_prod) (x * min_prod)) loop xs (new_max_prod, new_min_prod); loop xs (1, 1)",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | x::xs, (max_prod, min_prod) => let new_max_prod := max x (max (x * max_prod) (x * min_prod)) let new_min_prod := min x (min (x * max_prod) (x * min_prod)) loop xs (new_max_prod, new_min_prod); loop xs (1, 1)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | x::xs, (max_prod, min_prod) => let new_max_prod := max x (max (max_prod * x) (min_prod * x)) let new_min_prod := min x (min (max_prod * x) (min_prod * x)) loop xs (new_max_prod, new_min_prod); loop xs (1, 1)",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | x::xs, (max_prod, min_prod) => let new_max_prod := max x (max (max_prod * x) (min_prod * x)) let new_min_prod := min x (min (max_prod * x) (min_prod * x)) loop xs (new_max_prod, new_min_prod); loop xs (1, 1)",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod); loop xs (1, 1).fst",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod); loop xs (1, 1).fst",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod) loop xs (1, 1)",
+    "extracted": "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod) loop xs (1, 1)",
+    "hit_max_tokens": false
+   }
+  ],
+  "unique": [
+   "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int \u2192 Int | [], max, min, prod => prod | a::as, max, min, prod => let new_max := max * a | min * a, a in let new_min := min * a | max * a, a in let new_prod := max * a | min * a, a in loop as new_max new_min new_prod; loop xs 1 1 1",
+   "exact let rec loop : List Int \u2192 Int \u2192 Int \u2192 Int | [], max_prod, _ => max_prod | a::as, max_prod, min_prod => let new_max_prod := max (a * max_prod) (a * min_prod) (a) in let new_min_prod := min (a * max_prod) (a * min_prod) (a) in loop as new_max_prod new_min_prod; loop xs 1 1",
+   "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod); loop xs (1, 1)",
+   "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | x::xs, (max_prod, min_prod) => let new_max_prod := max x (max (x * max_prod) (x * min_prod)) let new_min_prod := min x (min (x * max_prod) (x * min_prod)) loop xs (new_max_prod, new_min_prod); loop xs (1, 1)",
+   "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | x::xs, (max_prod, min_prod) => let new_max_prod := max x (max (max_prod * x) (min_prod * x)) let new_min_prod := min x (min (max_prod * x) (min_prod * x)) loop xs (new_max_prod, new_min_prod); loop xs (1, 1)",
+   "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod); loop xs (1, 1).fst",
+   "exact let rec loop : List Int \u2192 Int \u00d7 Int \u2192 Int \u00d7 Int | [], (max_prod, min_prod) => (max_prod, min_prod) | a::as, (max_prod, min_prod) => let new_max_prod := max (a * max_prod) (a * min_prod) (a) let new_min_prod := min (a * max_prod) (a * min_prod) (a) loop as (new_max_prod, new_min_prod) loop xs (1, 1)"
+  ]
+ },
+ "merge_sorted_desc": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: merge_sorted_desc\nDescription: Merge two descending-sorted lists into a descending-sorted result\nTheorem name: mergeSortedDesc\nTest cases (first 3 shown):\n  xs=[5, 3, 1]  ys=[4, 2]  \u2192  [5, 4, 3, 2, 1]\n  xs=[]  ys=[3, 2, 1]  \u2192  [3, 2, 1]\n  xs=[3, 2, 1]  ys=[]  \u2192  [3, 2, 1]\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact mergeSortedDesc xs ys\n\nTask: merge_sorted_asc\nDescription: Merge two ascending-sorted lists into an ascending-sorted result\nTheorem name: mergeSortedAsc\nTest cases (first 3 shown):\n  xs=[1, 3, 5]  ys=[2, 4]  \u2192  [1, 2, 3, 4, 5]\n  xs=[]  ys=[1, 2, 3]  \u2192  [1, 2, 3]\n  xs=[1, 2, 3]  ys=[]  \u2192  [1, 2, 3]\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact mergeSortedAsc xs ys\n\nTask: merge_sorted_desc\nDescription: Merge two descending-sorted lists into a descending-sorted result\nTheorem name: mergeSortedDesc\nTest cases (first 3 shown):\n  xs=[5, 3, 1]  ys=[4, 2]  \u2192  [5, 4, 3, 2, 1]\n  xs=[]  ys=[3, 2, 1]  \u2192  [3, 2,",
+    "extracted": "exact mergeSortedDesc xs ys",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec mergeSortedDesc : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::mergeSortedDesc xs (y::ys) else y::mergeSortedDesc (x::xs) ys; mergeSortedDesc xs ys",
+    "extracted": "exact let rec mergeSortedDesc : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::mergeSortedDesc xs (y::ys) else y::mergeSortedDesc (x::xs) ys; mergeSortedDesc xs ys",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x > y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+    "extracted": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x > y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact mergeSortedDesc xs ys\n\nTask: merge_sorted_desc\nDescription: Merge two descending-sorted lists into a descending-sorted result\nTheorem name: mergeSortedDesc\nTest cases (first 3 shown):\n  xs=[5, 3, 1]  ys=[4, 2]  \u2192  [5, 4, 3, 2, 1]\n  xs=[]  ys=[3, 2, 1]  \u2192  [3, 2, 1]\n  xs=[3, 2, 1]  ys=[]  \u2192  [3, 2, 1]\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact mergeSortedDesc xs ys\n\nTask: merge_sorted_desc\nDescription: Merge two descending-sorted lists into a descending-sorted result\nTheorem name: mergeSortedDesc\nTest cases (first 3 shown):\n  xs=[5, 3, 1]  ys=[4, 2]  \u2192  [5, 4, 3, 2, 1]\n  xs=[]  ys=[3, 2, 1]  \u2192  [3, 2,",
+    "extracted": "exact mergeSortedDesc xs ys",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::loop xs (y::ys) else y::loop (x::xs",
+    "extracted": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+    "extracted": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec mergeSortedDesc : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::mergeSortedDesc xs (y::ys) else y::mergeSortedDesc (x::xs) ys; mergeSortedDesc xs ys",
+    "extracted": "exact let rec mergeSortedDesc : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::mergeSortedDesc xs (y::ys) else y::mergeSortedDesc (x::xs) ys; mergeSortedDesc xs ys",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x > y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+    "extracted": "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x > y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+    "hit_max_tokens": false
+   }
+  ],
+  "unique": [
+   "exact mergeSortedDesc xs ys",
+   "exact let rec mergeSortedDesc : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::mergeSortedDesc xs (y::ys) else y::mergeSortedDesc (x::xs) ys; mergeSortedDesc xs ys",
+   "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x > y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys",
+   "exact let rec loop : List Int \u2192 List Int \u2192 List Int | [], [] => [] | [], y::ys => y::ys | x::xs, [] => x::xs | x::xs, y::ys => if x \u2265 y then x::loop xs (y::ys) else y::loop (x::xs) ys; loop xs ys"
+  ]
+ },
+ "window_sums": {
+  "prompt": "You are an expert Lean 4 programmer. Given a task description, example test cases and a tactic goal state, produce a single tactic body that solves it. Use `exact` with a complete term. Only output the tactic \u2014 no commentary, no surrounding `by` block.\n\nGoal:\np : \u2124 \u2192 Bool\nas : List \u2124\n\u22a2 List \u2124 \u00d7 List \u2124\nTactic:\nexact let rec loop : List Int \u2192 List Int \u00d7 List Int \u2192 List Int \u00d7 List Int | [], (bs, cs) => (bs.reverse, cs.reverse) | a::as, (bs, cs) => match p a with | true => loop as (a::bs, cs) | false => loop as (bs, a::cs); loop as ([], [])\n\nGoal:\nx_arg : List \u2124\n\u22a2 List \u2124\nTactic:\nexact match x_arg with | [] => [] | _::as => as\n\nGoal:\nl : List \u2124\nf : \u2124 \u2192 \u2124\n\u22a2 Array \u2124\nTactic:\nexact l.foldl (init := #[]) fun acc x => acc.push (f x)\n\nGoal:\nl : List \u2124\n\u22a2 List \u2124\nTactic:\nexact l.toArray.pop.toList\n\nGoal:\nxs : List \u2124\nys : List \u2124\n\u22a2 List \u2124\nTactic:\nexact xs.filter (fun x => !ys.elem x)\n\nTask: window_sums\nDescription: Sum of every contiguous k-element window ([] when k=0 or k>length)\nTheorem name: windowSums\nTest cases (first 3 shown):\n  k=3  xs=[1, 2, 3, 4, 5]  \u2192  [6, 9, 12]\n  k=2  xs=[]  \u2192  []\n  k=1  xs=[5]  \u2192  [5]\nGoal:\nk : Nat\nxs : List Int\n\u22a2 List Int\nTactic:",
+  "samples": [
+   {
+    "raw": " exact xs.foldl (init := #[]) fun acc x => match acc with | [] => [x] | _::as => (x + as.head!)::as\n\nTask: window_sums\nDescription: Sum of every contiguous k-element window ([] when k=0 or k>length)\nTheorem name: windowSums\nTest cases (first 3 shown):\n  k=3  xs=[1, 2, 3, 4, 5]  \u2192  [6, 9, 12]\n  k=2  xs=[]  \u2192  []\n  k=1  xs=[5]  \u2192  [5]\nGoal:\nk : Nat\nxs : List Int\n\u22a2 List Int\nTactic: exact xs.foldl (init := #[]) fun acc x => match acc with | [] => [x] | _::as => (x + as.head!)::as\n\nTask: window_sums\nDescription: Sum of every contiguous k-element window ([] when k=0 or k>length)\nTheorem name: windowSums\nTest cases (first 3 shown):\n  k=3  xs=[1, 2, 3, 4, 5]  \u2192 ",
+    "extracted": "exact xs.foldl (init := #[]) fun acc x => match acc with | [] => [x] | _::as => (x + as.head!)::as",
+    "hit_max_tokens": true
+   },
+   {
+    "raw": " exact xs.windowSums k",
+    "extracted": "exact xs.windowSums k",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.windowSums k",
+    "extracted": "exact xs.windowSums k",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.windowSums k",
+    "extracted": "exact xs.windowSums k",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.windowSums k",
+    "extracted": "exact xs.windowSums k",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.windowSums k",
+    "extracted": "exact xs.windowSums k",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.windowSums k",
+    "extracted": "exact xs.windowSums k",
+    "hit_max_tokens": false
+   },
+   {
+    "raw": " exact xs.foldl (init := #[]) fun acc x => if acc.length < k then acc else acc.drop 1.push (acc.sum + x - acc.head!)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs : List Int\nys : List Int\n\u22a2 List Int\nTactic: exact xs.filter (fun x => !ys.elem x)\n\nGoal:\nxs :",
+    "extracted": "exact xs.foldl (init := #[]) fun acc x => if acc.length < k then acc else acc.drop 1.push (acc.sum + x - acc.head!)",
+    "hit_max_tokens": true
+   }
+  ],
+  "unique": [
+   "exact xs.foldl (init := #[]) fun acc x => match acc with | [] => [x] | _::as => (x + as.head!)::as",
+   "exact xs.windowSums k",
+   "exact xs.foldl (init := #[]) fun acc x => if acc.length < k then acc else acc.drop 1.push (acc.sum + x - acc.head!)"
+  ]
+ }
+}

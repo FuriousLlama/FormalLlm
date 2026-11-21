@@ -1,0 +1,24 @@
+{
+  "total_raw": 7068,
+  "total_unique": 6320,
+  "n_train": 5056,
+  "n_val": 1264,
+  "sources": {
+    "reference": 1435,
+    "multistep": 332
+  },
+  "return_types": {
+    "Nat": 206,
+    "List Int": 1037,
+    "Option Int": 2,
+    "List Nat": 72,
+    "Int": 427,
+    "List Int \u00d7 List Int": 8,
+    "List (List Int)": 8,
+    "Nat \u00d7 Nat": 3,
+    "Nat \u00d7 Int": 2,
+    "Int \u00d7 Int": 2
+  },
+  "n_augmented": 5301,
+  "elapsed_seconds": 0.0
+}

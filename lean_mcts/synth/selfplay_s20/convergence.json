@@ -1,0 +1,59 @@
+[
+  {
+    "round": 1,
+    "new_pairs": 21,
+    "rollouts": 50,
+    "seed": 1337,
+    "tiers": [
+      "v2",
+      "hard",
+      "recurrence",
+      "fundamentals",
+      "multistep"
+    ],
+    "status": "completed",
+    "n_train": 6554,
+    "n_val": 1639,
+    "val_loss_before": 0.26687720039995705,
+    "val_loss_after": 0.278878050461048,
+    "elapsed_min": 67.4
+  },
+  {
+    "round": 2,
+    "new_pairs": 23,
+    "rollouts": 50,
+    "seed": 1337,
+    "tiers": [
+      "v2",
+      "hard",
+      "recurrence",
+      "fundamentals",
+      "multistep"
+    ],
+    "status": "completed",
+    "n_train": 6567,
+    "n_val": 1642,
+    "val_loss_before": 0.278878050461048,
+    "val_loss_after": 0.28265630605730035,
+    "elapsed_min": 58.1
+  },
+  {
+    "round": 3,
+    "new_pairs": 15,
+    "rollouts": 50,
+    "seed": 1337,
+    "tiers": [
+      "v2",
+      "hard",
+      "recurrence",
+      "fundamentals",
+      "multistep"
+    ],
+    "status": "completed",
+    "n_train": 6576,
+    "n_val": 1645,
+    "val_loss_before": 0.28265630605730035,
+    "val_loss_after": 0.2778316195873381,
+    "elapsed_min": 67.5
+  }
+]

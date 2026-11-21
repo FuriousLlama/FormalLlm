@@ -1,0 +1,167 @@
+[
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "sum_positive",
+    "category": "recursive_r1",
+    "ghc_equivalent": "sum_positive",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'countNegative': missing 'type' in []",
+    "task": "count_negative",
+    "category": "recursive_r1",
+    "ghc_equivalent": "count_negative",
+    "wall_time_s": 2.23
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'firstOrZero': missing 'type' in []",
+    "task": "first_or_zero",
+    "category": "recursive_r1",
+    "ghc_equivalent": "first_or_zero",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "goal_start failed: 'stateId'",
+    "task": "product_abs",
+    "category": "recursive_r1",
+    "ghc_equivalent": "product_abs",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'maxOrZero': missing 'type' in []",
+    "task": "max_or_zero",
+    "category": "recursive_r1",
+    "ghc_equivalent": "max_or_zero",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "keep_positive",
+    "category": "recursive_r2",
+    "ghc_equivalent": "keep_positive",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "stutter_rec",
+    "category": "recursive_r2",
+    "ghc_equivalent": "stutter_rec",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "negate_all",
+    "category": "recursive_r2",
+    "ghc_equivalent": "negate_all",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "square_all",
+    "category": "recursive_r2",
+    "ghc_equivalent": "square_all",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "keep_even",
+    "category": "recursive_r2",
+    "ghc_equivalent": "keep_even",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "factorial_rec",
+    "category": "recursive_r3",
+    "ghc_equivalent": "factorial_rec",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "goal_start failed: readuntil() called while another coroutine is already waiting for incoming data",
+    "task": "triangular_rec",
+    "category": "recursive_r3",
+    "ghc_equivalent": "triangular_rec",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'powerOfTwo': missing 'type' in ['root', 'stateId']",
+    "task": "power_of_two",
+    "category": "recursive_r3",
+    "ghc_equivalent": "power_of_two",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "goal_start failed: 'stateId'",
+    "task": "square_nat",
+    "category": "recursive_r3",
+    "ghc_equivalent": "square_nat",
+    "wall_time_s": 0.0
+  },
+  {
+    "solved": false,
+    "tactics": [],
+    "rollouts_used": 200,
+    "tree_size": 0,
+    "error": "env_inspect returned malformed result for 'countDownSum': missing 'type' in ['root', 'stateId']",
+    "task": "count_down_sum",
+    "category": "recursive_r3",
+    "ghc_equivalent": "count_down_sum",
+    "wall_time_s": 0.0
+  }
+]

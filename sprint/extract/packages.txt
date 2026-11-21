@@ -1,0 +1,248 @@
+# ── Tier 1: Pure utility functions (minimal deps, high yield) ──────────────
+safe
+split
+data-ordlist
+utility-ht
+composition
+extra
+dlist
+list-extras
+monad-loops
+string-extra
+unicode-transforms
+case-insensitive
+transformers-compat
+base-compat-batteries
+
+# ── Tier 2: Core data structure packages ────────────────────────────────────
+containers
+unordered-containers
+array
+vector
+sequence
+psqueue
+heaps
+fingertree
+pqueue
+pairing-heap
+skew-heap
+leftist-heaps
+data-stacks
+data-deque
+data-sequence
+dlist-instances
+
+# ── Tier 3: Functional programming patterns ─────────────────────────────────
+profunctors
+distributive
+contravariant
+comonad
+bifunctors
+semigroupoids
+semigroups
+tagged
+void
+these
+data-fix
+data-default
+adjunctions
+kan-extensions
+free
+recursion-schemes
+foldl
+either
+errors
+transformers
+mtl
+
+# ── Tier 4: Math and numeric utilities ──────────────────────────────────────
+integer-logarithms
+numeric-extras
+arithmoi
+primes
+mod
+digits
+number
+natural-number
+intervals
+finite-field
+fixed
+fp-ieee
+math-functions
+
+# ── Tier 5: Text and string processing ──────────────────────────────────────
+text
+bytestring
+string-conversions
+utf8-string
+text-manipulate
+text-short
+neat-interpolation
+data-textual
+string-interpolate
+
+# ── Tier 6: Additional data structure packages ───────────────────────────────
+multiset
+multimap
+bimap
+interval
+range-set-list
+pointed-list
+nonempty-vector
+non-empty
+mono-traversable
+keys
+zip
+zip-stream
+
+# ── Tier 7: Type-level and typeclass utilities ────────────────────────────────
+reflection
+constraints
+type-equality
+singletons-base
+generic-lens-core
+one-liner
+generics-sop
+first-class-families
+type-natural
+
+# ── Tier 8: Algorithms ───────────────────────────────────────────────────────
+edit-distance
+diff
+vector-algorithms
+combinatorial
+counting
+permutation
+combinations
+sorted-list
+
+# ── Tier 9: Serialization / encoding ─────────────────────────────────────────
+hashable
+binary
+cereal
+hex
+base16-bytestring
+base64-bytestring
+bytes
+
+# ── Tier 10: Lens and optics ──────────────────────────────────────────────────
+microlens
+microlens-mtl
+lens-family-core
+lens-family-th
+optics-core
+
+# ── Tier 11: Random and statistics ────────────────────────────────────────────
+random
+mwc-random
+statistics
+statistics-linreg
+sample-frame
+
+# ── Tier 12: Time and date ────────────────────────────────────────────────────
+time
+old-time
+clock
+chronos
+thyme
+
+# ── Tier 13: Data validation and conversion ───────────────────────────────────
+validation
+validation-selective
+refined
+newtype-generics
+data-has
+simple-reflect
+convertible
+
+# ── Tier 14: Control structures ───────────────────────────────────────────────
+control-monad-loop
+monad-control
+lifted-base
+mmorph
+pipes-core
+logict
+ListT
+
+# ── Tier 15: Graph algorithms ────────────────────────────────────────────────
+fgl
+alga
+algebraic-graphs
+
+# ── Tier 16: Parser combinators ───────────────────────────────────────────────
+parsec
+attoparsec
+megaparsec
+trifecta
+
+# ── Tier 17: Streaming ────────────────────────────────────────────────────────
+streaming
+streaming-utils
+conduit-extra
+pipes
+
+# ── Tier 18: Memoization ──────────────────────────────────────────────────────
+MemoTrie
+data-memocombinators
+memoize
+stable-memo
+
+# ── Tier 19: Additional utilities ────────────────────────────────────────────
+filepath
+deepseq
+directory
+process
+system-filepath
+path
+path-io
+temporary
+
+# ── Tier 20: More functional patterns ────────────────────────────────────────
+witherable
+selective
+validation-class
+generic-arbitrary
+quickcheck-arbitrary-template
+hedgehog
+tasty
+tasty-hunit
+
+# ── Tier 21: Numeric/science ──────────────────────────────────────────────────
+polynomial
+polynomial-roots
+exact-pi
+cyclotomic
+continued-fractions
+farey
+
+# ── Tier 22: Extra data types ──────────────────────────────────────────────────
+data-default-class
+data-default-instances-base
+default
+newtype
+tagged-transformer
+proxy-kindness
+
+# ── Tier 23: Pure IO-free utilities ───────────────────────────────────────────
+base-orphans
+base-compat
+strict
+assoc
+swap
+fmap-utils
+function-field
+strict-data
+
+# ── Tier 24: Additional Hackage packages ──────────────────────────────────────
+bool-extras
+groupBy
+group-by-key
+sorting
+sortedkey
+order-maintenance
+data-clist
+circular
+circular-buffer
+ring-buffer
+dequeue
+double-ended-queue

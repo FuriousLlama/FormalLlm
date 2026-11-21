@@ -1,0 +1,44 @@
+[
+  {
+    "solved": false,
+    "tactics": [
+      "constructor",
+      "exact xs.filter (fun x => decide (x > 0))"
+    ],
+    "rollouts_used": 500,
+    "tree_size": 501,
+    "stats": {
+      "n_expand_calls": 500,
+      "n_tactic_steps": 3319,
+      "n_tactic_valid": 952,
+      "n_tactic_solved": 444,
+      "n_oracle_calls": 256,
+      "n_oracle_passed": 0,
+      "n_oracle_prefiltered": 0,
+      "n_oracle_batches": 6,
+      "n_simulate_calls": 500,
+      "n_repl_crashes": 0,
+      "t_policy_s": 3.3226,
+      "t_step_s": 4.599,
+      "t_oracle_s": 18.9022,
+      "t_simulate_s": 276.6608,
+      "t_select_s": 0.005,
+      "t_total_s": 303.4896,
+      "ms_per_step": 1.39,
+      "ms_per_oracle": 73.8,
+      "pct_step": 1.5,
+      "pct_policy": 1.1,
+      "pct_oracle": 6.2,
+      "pct_simulate": 91.2
+    },
+    "depth_distribution": {
+      "0": 1,
+      "1": 1,
+      "2": 499
+    },
+    "task": "split_even_odd",
+    "category": "multistep",
+    "ghc_equivalent": "split_even_odd",
+    "wall_time_s": 303.5
+  }
+]
